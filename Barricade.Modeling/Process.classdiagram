@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="9ac98026-eb99-4d88-9461-2bd5b43d2979" name="Process" linkedPackageId="010d8d57-2671-41a1-8bdf-a9d982020771" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="9ac98026-eb99-4d88-9461-2bd5b43d2979" name="Process" linkedPackageId="010d8d57-2671-41a1-8bdf-a9d982020771" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <appliedStereotypesInternal>
     <stereotypeInstance Id="464844d5-4aca-44bf-936b-befb491a7891" name="namespace" profile="CSharpProfile">
       <elementDefinition Id="f48c2951-7ff7-4af1-955e-485e26118e7c" />
@@ -40,13 +40,13 @@
           <elementDefinition Id="c86fc5c3-0e71-4d78-8e10-7d7824fb85d9" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances Id="33a88e22-6e97-4190-88c9-7b24251d7821">
-          <propertyInstance Id="317b6c15-479a-4cb8-b8ec-84ac2314e67b" name="ProjectPath" value="ClassTemplate=..\Barricade.Logic\Barricade.Logic.csproj|EnumTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj|InterfaceTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj|StructTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj">
+          <propertyInstance Id="317b6c15-479a-4cb8-b8ec-84ac2314e67b" name="ProjectPath" value="ClassTemplate=..\Barricade\Barricade.csproj|EnumTemplate=..\Barricade\Barricade.csproj|InterfaceTemplate=..\Barricade\Barricade.csproj|StructTemplate=..\Barricade\Barricade.csproj">
             <elementDefinition Id="58d62d21-3e22-41e5-898f-3b71fbd4f10e" />
           </propertyInstance>
           <elementDefinition Id="4198f6d2-0748-4b69-9da9-9dbe92fb36be" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances Id="e568c008-7fb9-4586-81fd-8eccb0a73f11">
-          <propertyInstance Id="237d182b-fb84-4721-804a-37c564a1d8a1" name="TargetDirectory" value="ClassTemplate={PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+          <propertyInstance Id="237d182b-fb84-4721-804a-37c564a1d8a1" name="TargetDirectory" value="ClassTemplate={PackageStructure}|EnumTemplate={PackageStructure}|InterfaceTemplate={PackageStructure}|StructTemplate={PackageStructure}">
             <elementDefinition Id="87ac7ef7-d2b8-4691-a469-8de2e3c814bd" />
           </propertyInstance>
           <elementDefinition Id="09471332-3cf5-4a4f-9bf9-12df1efe0e3c" />
@@ -58,7 +58,7 @@
           <elementDefinition Id="9ad479de-7c62-45e8-b95d-2c51721484ee" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances Id="e9036d02-fbf0-4e44-a931-54f34b7a97a8">
-          <propertyInstance Id="f73199e7-eb8f-4041-91d4-6308e54f267f" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+          <propertyInstance Id="f73199e7-eb8f-4041-91d4-6308e54f267f" name="Overwrite" value="ClassTemplate=False|EnumTemplate=False|InterfaceTemplate=False|StructTemplate=False">
             <elementDefinition Id="d0d36c56-cbb0-4ac5-80c7-f9abb71eca94" />
           </propertyInstance>
           <elementDefinition Id="4c9d2cbb-6433-460a-891e-d88786d70409" />
@@ -72,32 +72,6 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="870d85e5-24ae-44d1-a6e4-0805148fe8bb">
-      <profileInstance Id="2a3f31d6-930c-4b80-b07f-6e78ecb7159f" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="aec5eb41-e0df-4fc6-99aa-e95db94fc8f9">
-      <profileInstance Id="f2c22f31-2b45-49bb-ba6b-4aba7dd9a2ab" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="fa022d7d-5eea-44a5-9d53-fd6eeb4d02ef">
-      <profileInstance Id="3974a9c0-cec6-42ae-9c76-98d7a009be7b" name="CSharpProfile">
-        <elementDefinition Id="7425ede2-cb4f-4fc2-a7cd-8b852ba24dfb" />
-      </profileInstance>
-      <elementDefinition Id="11d91cb2-76f8-4799-a0ef-afe97c07e395" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="1294152f-fcf0-4ed4-9298-40f5d36e1c98">
-      <profileInstance Id="98b19e82-399c-4fb5-b24d-cd52b2eaf01d" name="TextTemplateBindings">
-        <elementDefinition Id="60c91028-ca96-4d92-9206-29143c7706d9" />
-      </profileInstance>
-      <elementDefinition Id="a68f1681-406e-433c-8e88-03f3ad3ec3fc" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="c80ada8e-4f8c-4718-acab-4f1e2b8029d2" name="Process">
@@ -156,24 +130,6 @@
                 </operation>
                 <operation Id="3b138885-4c12-47ef-b09c-c8e1024df1d4" name="Verplaats" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="58e71fb4-6309-4468-8837-db382027b241" />
-                  <ownedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="8cdf67a3-3895-4358-a1ef-75d4f7a3ff7c" name="barricade" direction="In">
-                        <elementDefinition Id="39d75b0c-554f-4b7d-b5ad-7ca18293a7a6" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="2a6e1f2c-7721-4446-b3b3-bd6ec6e9a828" LastKnownName="Barricade" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="60234400-6963-4f77-9c6a-ef0607f48f3d" name="bestemming" direction="In">
-                        <elementDefinition Id="8c3a8fdb-c589-43b4-be22-3bf95ae53db0" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="6a9df777-3cf8-409d-8d05-7cf271f11c49" LastKnownName="Veld" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                  </ownedParameters>
                 </operation>
               </ownedOperationsInternal>
             </class>
@@ -196,18 +152,34 @@
         <elementDefinition Id="bb8ced73-025b-46a8-830b-d299a0c5f2e4" />
       </referencedType>
     </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="2a6e1f2c-7721-4446-b3b3-bd6ec6e9a828" name="Barricade" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Barricade">
-        <elementDefinition Id="f906f0bf-8597-439f-b3ce-e1916d14b5ec" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="6a9df777-3cf8-409d-8d05-7cf271f11c49" name="Veld" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Veld">
-        <elementDefinition Id="d49c86f2-fb03-4c6c-b18a-c9141e9df554" />
-      </referencedType>
-    </packageHasNamedElement>
   </packagedElements>
   <package Id="010d8d57-2671-41a1-8bdf-a9d982020771" name="Barricade.Modeling">
     <elementDefinition Id="3e5f4f86-0a24-4669-b7de-0fb16dd60e3e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="870d85e5-24ae-44d1-a6e4-0805148fe8bb">
+        <profileInstance Id="2a3f31d6-930c-4b80-b07f-6e78ecb7159f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="aec5eb41-e0df-4fc6-99aa-e95db94fc8f9">
+        <profileInstance Id="f2c22f31-2b45-49bb-ba6b-4aba7dd9a2ab" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="fa022d7d-5eea-44a5-9d53-fd6eeb4d02ef">
+        <profileInstance Id="3974a9c0-cec6-42ae-9c76-98d7a009be7b" name="CSharpProfile">
+          <elementDefinition Id="7425ede2-cb4f-4fc2-a7cd-8b852ba24dfb" />
+        </profileInstance>
+        <elementDefinition Id="11d91cb2-76f8-4799-a0ef-afe97c07e395" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="1294152f-fcf0-4ed4-9298-40f5d36e1c98">
+        <profileInstance Id="98b19e82-399c-4fb5-b24d-cd52b2eaf01d" name="TextTemplateBindings">
+          <elementDefinition Id="60c91028-ca96-4d92-9206-29143c7706d9" />
+        </profileInstance>
+        <elementDefinition Id="a68f1681-406e-433c-8e88-03f3ad3ec3fc" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

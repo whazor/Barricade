@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="466e9fe4-e36e-4102-8354-b67f9e3f732e" name="Logic" linkedPackageId="eb78212e-253f-4dab-9aa4-f37cbe95672e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="466e9fe4-e36e-4102-8354-b67f9e3f732e" name="Logic" linkedPackageId="eb78212e-253f-4dab-9aa4-f37cbe95672e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <appliedStereotypesInternal>
     <stereotypeInstance Id="5f87d042-3746-4735-8a0a-db6a8b85c557" name="namespace" profile="CSharpProfile">
       <elementDefinition Id="f48c2951-7ff7-4af1-955e-485e26118e7c" />
@@ -40,13 +40,13 @@
           <elementDefinition Id="c86fc5c3-0e71-4d78-8e10-7d7824fb85d9" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances Id="79f43fe3-161d-498f-b786-8425170146a2">
-          <propertyInstance Id="6fdd1ce7-d6e4-4823-89ca-b59ec865ab0e" name="ProjectPath" value="ClassTemplate=..\Barricade.Logic\Barricade.Logic.csproj|EnumTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj|InterfaceTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj|StructTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj">
+          <propertyInstance Id="6fdd1ce7-d6e4-4823-89ca-b59ec865ab0e" name="ProjectPath" value="ClassTemplate=..\Barricade\Barricade.csproj|EnumTemplate=..\Barricade\Barricade.csproj|InterfaceTemplate=..\Barricade\Barricade.csproj|StructTemplate=..\Barricade\Barricade.csproj">
             <elementDefinition Id="58d62d21-3e22-41e5-898f-3b71fbd4f10e" />
           </propertyInstance>
           <elementDefinition Id="4198f6d2-0748-4b69-9da9-9dbe92fb36be" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances Id="2a755ccb-2402-45fd-ad2c-95e0ed919ea4">
-          <propertyInstance Id="fbc3f54e-6ddb-4628-b609-aa5cad7d2f3b" name="TargetDirectory" value="ClassTemplate={PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+          <propertyInstance Id="fbc3f54e-6ddb-4628-b609-aa5cad7d2f3b" name="TargetDirectory" value="ClassTemplate={PackageStructure}|EnumTemplate={PackageStructure}|InterfaceTemplate={PackageStructure}|StructTemplate={PackageStructure}">
             <elementDefinition Id="87ac7ef7-d2b8-4691-a469-8de2e3c814bd" />
           </propertyInstance>
           <elementDefinition Id="09471332-3cf5-4a4f-9bf9-12df1efe0e3c" />
@@ -58,7 +58,7 @@
           <elementDefinition Id="9ad479de-7c62-45e8-b95d-2c51721484ee" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances Id="49bddf03-3e8e-43f9-825c-45888759727a">
-          <propertyInstance Id="a5c69795-de20-4641-ae2d-aed39b85fee2" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+          <propertyInstance Id="a5c69795-de20-4641-ae2d-aed39b85fee2" name="Overwrite" value="ClassTemplate=False|EnumTemplate=False|InterfaceTemplate=False|StructTemplate=False">
             <elementDefinition Id="d0d36c56-cbb0-4ac5-80c7-f9abb71eca94" />
           </propertyInstance>
           <elementDefinition Id="4c9d2cbb-6433-460a-891e-d88786d70409" />
@@ -72,32 +72,6 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="7ae3bdd8-de41-4220-bfea-c13e30265554">
-      <profileInstance Id="d035252d-056a-4b17-822f-cc526193193c" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="1744da36-dbc9-4cc8-8337-fb72102a7e08">
-      <profileInstance Id="65be5c0d-426d-485e-b009-1c5153512548" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="2a27f7bd-73eb-4e2d-b8d6-fefbd2e660a7">
-      <profileInstance Id="c7ec0365-a057-4a80-890b-5095c85a06a4" name="CSharpProfile">
-        <elementDefinition Id="7425ede2-cb4f-4fc2-a7cd-8b852ba24dfb" />
-      </profileInstance>
-      <elementDefinition Id="11d91cb2-76f8-4799-a0ef-afe97c07e395" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="38d7e8eb-eac1-4538-8503-4d876bd6c44b">
-      <profileInstance Id="67b026b9-0b40-483c-8134-aae1b700148f" name="TextTemplateBindings">
-        <elementDefinition Id="60c91028-ca96-4d92-9206-29143c7706d9" />
-      </profileInstance>
-      <elementDefinition Id="a68f1681-406e-433c-8e88-03f3ad3ec3fc" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="2c7a0afa-7ef9-4b6a-85a8-e99e647d7af4" name="Logic">
@@ -1110,5 +1084,31 @@
   </packagedElements>
   <package Id="eb78212e-253f-4dab-9aa4-f37cbe95672e" name="Barricade.Modeling">
     <elementDefinition Id="3e5f4f86-0a24-4669-b7de-0fb16dd60e3e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="7ae3bdd8-de41-4220-bfea-c13e30265554">
+        <profileInstance Id="d035252d-056a-4b17-822f-cc526193193c" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="1744da36-dbc9-4cc8-8337-fb72102a7e08">
+        <profileInstance Id="65be5c0d-426d-485e-b009-1c5153512548" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="2a27f7bd-73eb-4e2d-b8d6-fefbd2e660a7">
+        <profileInstance Id="c7ec0365-a057-4a80-890b-5095c85a06a4" name="CSharpProfile">
+          <elementDefinition Id="7425ede2-cb4f-4fc2-a7cd-8b852ba24dfb" />
+        </profileInstance>
+        <elementDefinition Id="11d91cb2-76f8-4799-a0ef-afe97c07e395" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="38d7e8eb-eac1-4538-8503-4d876bd6c44b">
+        <profileInstance Id="67b026b9-0b40-483c-8134-aae1b700148f" name="TextTemplateBindings">
+          <elementDefinition Id="60c91028-ca96-4d92-9206-29143c7706d9" />
+        </profileInstance>
+        <elementDefinition Id="a68f1681-406e-433c-8e88-03f3ad3ec3fc" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

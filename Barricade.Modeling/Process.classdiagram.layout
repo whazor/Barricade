@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Process">
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.875" name="Process">
   <logicalClassDesignerModelMoniker Id="9ac98026-eb99-4d88-9461-2bd5b43d2979" />
   <nestedChildShapes>
-    <packageShape Id="17ddeb24-dbdd-42c8-82b5-ec7299b24a9f" absoluteBounds="1.375, 2, 6.375, 4" customColor="255, 249, 230" hideQualifiedName="false">
+    <packageShape Id="17ddeb24-dbdd-42c8-82b5-ec7299b24a9f" absoluteBounds="1.375, 2, 7.75, 6.625" customColor="255, 249, 230" hideQualifiedName="false">
       <packageMoniker Id="c80ada8e-4f8c-4718-acab-4f1e2b8029d2" LastKnownName="Process" />
       <nestedChildShapes>
-        <classShape Id="40ed9eda-cb23-4c39-9f8e-54ee11244e24" absoluteBounds="1.5, 2.375, 4.125, 1.3828124701976776" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+        <classShape Id="40ed9eda-cb23-4c39-9f8e-54ee11244e24" absoluteBounds="2.5, 3.5, 3.25, 1.3828124701976776" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
           <classMoniker Id="9911b5f7-ddee-4661-a69d-b4bf645ee1b8" LastKnownName="Spel" />
           <nestedChildShapes>
-            <AttributeElementListCompartment Id="58cbd433-ba1a-4379-8044-cb316afb29fd" absoluteBounds="1.515, 2.765, 4.0950000000000006, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-            <OperationElementListCompartment Id="2c638d53-fc9b-4d97-8b52-e0d74ed6bbf4" absoluteBounds="1.515, 2.9761718675494193, 4.0950000000000006, 0.68164060264825821" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <AttributeElementListCompartment Id="58cbd433-ba1a-4379-8044-cb316afb29fd" absoluteBounds="2.515, 3.89, 3.2199999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <OperationElementListCompartment Id="2c638d53-fc9b-4d97-8b52-e0d74ed6bbf4" absoluteBounds="2.515, 4.10117186754942, 3.2199999999999998, 0.6816406026482581" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </classShape>
       </nestedChildShapes>

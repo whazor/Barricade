@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="3e5f4f86-0a24-4669-b7de-0fb16dd60e3e"
   name="Barricade.Modeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -53,14 +53,14 @@
           <propertyInstance
             Id="58d62d21-3e22-41e5-898f-3b71fbd4f10e"
             name="ProjectPath"
-            value="ClassTemplate=..\Barricade.Logic\Barricade.Logic.csproj|EnumTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj|InterfaceTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj|StructTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj" />
+            value="ClassTemplate=..\Barricade\Barricade.csproj|EnumTemplate=..\Barricade\Barricade.csproj|InterfaceTemplate=..\Barricade\Barricade.csproj|StructTemplate=..\Barricade\Barricade.csproj" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances
           Id="09471332-3cf5-4a4f-9bf9-12df1efe0e3c">
           <propertyInstance
             Id="87ac7ef7-d2b8-4691-a469-8de2e3c814bd"
             name="TargetDirectory"
-            value="ClassTemplate={PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}" />
+            value="ClassTemplate={PackageStructure}|EnumTemplate={PackageStructure}|InterfaceTemplate={PackageStructure}|StructTemplate={PackageStructure}" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances
           Id="9ad479de-7c62-45e8-b95d-2c51721484ee">
@@ -74,7 +74,7 @@
           <propertyInstance
             Id="d0d36c56-cbb0-4ac5-80c7-f9abb71eca94"
             name="Overwrite"
-            value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True" />
+            value="ClassTemplate=False|EnumTemplate=False|InterfaceTemplate=False|StructTemplate=False" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances
           Id="2fd44cc4-3ad5-474e-98a9-7b0920effe17">
@@ -2551,7 +2551,7 @@
           <operationMoniker
             Id="58e71fb4-6309-4468-8837-db382027b241"
             LastKnownName="Verplaats"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownLocation="Package_1216.uml" />
         </operation>
       </sendOperationEvent>
     </packageHasNamedElement>
@@ -2562,7 +2562,7 @@
           <operationMoniker
             Id="58e71fb4-6309-4468-8837-db382027b241"
             LastKnownName="Verplaats"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownLocation="Package_1216.uml" />
         </operation>
       </receiveOperationEvent>
     </packageHasNamedElement>
@@ -2583,7 +2583,7 @@
           <operationMoniker
             Id="b74731e7-915d-42db-9dd1-079a813977d0"
             LastKnownName="Verplaats"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownLocation="Package_1214.uml" />
         </operation>
       </sendOperationEvent>
     </packageHasNamedElement>
@@ -2594,15 +2594,113 @@
           <operationMoniker
             Id="b74731e7-915d-42db-9dd1-079a813977d0"
             LastKnownName="Verplaats"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownLocation="Package_1214.uml" />
         </operation>
       </receiveOperationEvent>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <packageMoniker
-        Id="f782e9f7-b07c-4b53-ad93-bd23ebb0c46a"
-        LastKnownName="Package1"
-        LastKnownLocation="Package_1352.uml" />
+      <class
+        Id="aaf592be-2db5-448c-a556-37c0724243e7"
+        name="Loader"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c287065d-c7cf-4ce7-b59f-74a940d8c453"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f3dbee0b-3d7e-4995-abac-07db5aa6fb1d">
+                <propertyInstance
+                  Id="58d87e59-c243-4786-a1e7-a38365756f18"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a352e071-493d-4128-af01-81dacce51840">
+                <propertyInstance
+                  Id="bf69553f-f99e-4013-b92b-d7ead06d91a9"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4d300462-5aba-4a5d-bec9-92622bf76782">
+                <propertyInstance
+                  Id="597e8403-781b-4e2c-9e96-474311e04909"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b43ffec1-bb84-41bc-a2f0-6eb192e21519">
+                <propertyInstance
+                  Id="dba94bb3-72bd-4683-bb01-6ff0b46f834f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="04527784-7d0e-4fce-8b7b-fdd557dbaa9a">
+                <propertyInstance
+                  Id="054614bb-f516-492c-b4e3-1c7c07a099ff"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="79e25320-ea32-4534-8def-8bdbc162520a"
+        name="Saver"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e90d8950-a776-41c1-9b28-0e814a7809d4"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a0a226f9-394d-4651-a913-68954d27eb43">
+                <propertyInstance
+                  Id="655a0336-e33e-4e84-8cd9-d5e2586545e5"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eea428a6-f04f-46b2-946d-c0d5e500d460">
+                <propertyInstance
+                  Id="eb26ae29-42be-4796-9f29-e4c63af8a335"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d74ecc27-4925-4dfe-95a1-37dc5d1dbd05">
+                <propertyInstance
+                  Id="465a8ef0-b765-44eb-916f-0cfc5ed0b89a"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="69a0312a-57da-4e27-977e-3266f37ee40a">
+                <propertyInstance
+                  Id="5d392334-dfd1-4e54-99bb-1613396643b0"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d8770ec1-c01e-491e-a62c-6930a0765b9b">
+                <propertyInstance
+                  Id="c4b308be-1977-4e32-9166-81806de75857"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
