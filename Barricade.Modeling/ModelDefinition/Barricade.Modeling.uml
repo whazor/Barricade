@@ -32,6 +32,240 @@
         LastKnownName="Package1"
         LastKnownLocation="Package_1503.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f906f0bf-8597-439f-b3ce-e1916d14b5ec"
+        name="Barricade"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3ad92f36-0bc9-4857-9d82-68cf5d904ef7"
+        name="Startveld"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="f7dd6cbf-1484-4a1d-8d1f-579f52e9af06">
+            <interfaceMoniker
+              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
+              LastKnownName="IVeld"
+              LastKnownLocation="Barricade.Modeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d49c86f2-fb03-4c6c-b18a-c9141e9df554"
+        name="Veld"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="bde4302e-8b2a-46c8-a5d5-327b33fc9f7a">
+            <interfaceMoniker
+              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
+              LastKnownName="IVeld"
+              LastKnownLocation="Barricade.Modeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e662db72-ba30-4a85-ad4c-e154a98b8e96"
+        name="Rustveld"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="a3029f26-34d0-4ae6-b9a7-4a018bb0af01">
+            <interfaceMoniker
+              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
+              LastKnownName="IVeld"
+              LastKnownLocation="Barricade.Modeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="623e934f-6475-407f-81fd-4668ef40e217"
+        name="Dorp"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="438be2d5-fe45-462d-9bd0-d4c93129f053"
+        name="Bos"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="9207d012-3ed3-46d2-b33a-d33a09dfd2ff">
+            <interfaceMoniker
+              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
+              LastKnownName="IVeld"
+              LastKnownLocation="Barricade.Modeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9bab895f-1b08-40bb-ade3-030598f8b17c"
+        name="Spelbord"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1d315494-2b80-4fc0-818e-a3a58b8686c5"
+        name="Speler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="ea0b1f47-5f36-484c-adea-0be9718f5ca9"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Pion"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cecdfa20-532c-4e6d-805d-04da79377c61"
+              LastKnownName="Pion"
+              LastKnownLocation="Barricade.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2020e6c0-17f4-456c-8444-fce748220760"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="true"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="812c2ac0-9ef8-4e32-983d-0f74e1198b71"
+                  name="Pion"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="true"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f7949fcb-de40-447d-806c-fb252308004f"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="4830c466-dafb-4ccb-9a45-882a64fa6ab5"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3e84b563-1330-473e-a85c-86c92363f573"
+        name="Finishveld"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="d804a23a-ede0-4737-8a79-267abd243f3c">
+            <interfaceMoniker
+              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
+              LastKnownName="IVeld"
+              LastKnownLocation="Barricade.Modeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cecdfa20-532c-4e6d-805d-04da79377c61"
+        name="Pion"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
+        name="IVeld"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="ecf1b64c-2916-4463-90de-a0f231ff11e4"
+            name="IsDorp"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="7604fd89-c194-46e9-875a-ea8ce16977e0"
+            name="IsPlaatsbaar"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="990d443d-e172-4150-99c9-a5d92007eb4d"
+        name="Plaatsbaar"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="a8e5c084-ce63-45a3-9d15-beafc32279c6"
+            name="GEEN" />
+          <enumerationLiteral
+            Id="d22921e9-b442-4f6e-bc50-8c3e7d02d48c"
+            name="EEN" />
+          <enumerationLiteral
+            Id="60a2e719-72bf-4adf-8a73-0e97eeab10e3"
+            name="MULTI" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

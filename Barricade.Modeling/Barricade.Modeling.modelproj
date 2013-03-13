@@ -22,6 +22,13 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="Logic.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Logic.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Logic.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Package_1503.uml">
       <SubType>Content</SubType>
     </Content>

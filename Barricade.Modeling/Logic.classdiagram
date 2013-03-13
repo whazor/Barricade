@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="466e9fe4-e36e-4102-8354-b67f9e3f732e" name="Logic" linkedPackageId="eb78212e-253f-4dab-9aa4-f37cbe95672e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="7ae3bdd8-de41-4220-bfea-c13e30265554">
+      <profileInstance Id="d035252d-056a-4b17-822f-cc526193193c" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1744da36-dbc9-4cc8-8337-fb72102a7e08">
+      <profileInstance Id="65be5c0d-426d-485e-b009-1c5153512548" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="de5b5bf9-37a8-427f-8f8c-d0efed334c89" name="Barricade" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f906f0bf-8597-439f-b3ce-e1916d14b5ec" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="20873191-eb75-4f3d-bc98-e83029f9ae50" name="Startveld" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3ad92f36-0bc9-4857-9d82-68cf5d904ef7" />
+        <suppliersInternal>
+          <interfaceRealization Id="ebb9b44c-22df-480a-bde0-2e536ee910b6">
+            <interfaceMoniker Id="9a693033-7e2e-4275-8cb2-dbf3a552d665" LastKnownName="IVeld" />
+            <elementDefinition Id="f7dd6cbf-1484-4a1d-8d1f-579f52e9af06" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="40c051d9-dae2-4183-80a3-16857c7a279a" name="Veld" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d49c86f2-fb03-4c6c-b18a-c9141e9df554" />
+        <suppliersInternal>
+          <interfaceRealization Id="d6070365-3c19-462b-9523-a9e59e2033e5">
+            <interfaceMoniker Id="9a693033-7e2e-4275-8cb2-dbf3a552d665" LastKnownName="IVeld" />
+            <elementDefinition Id="bde4302e-8b2a-46c8-a5d5-327b33fc9f7a" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="972616f3-972a-4b6b-8819-809870e6520d" name="Rustveld" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e662db72-ba30-4a85-ad4c-e154a98b8e96" />
+        <suppliersInternal>
+          <interfaceRealization Id="c4a5ed37-6cf6-4f09-b5d5-a4166dfb24be">
+            <interfaceMoniker Id="9a693033-7e2e-4275-8cb2-dbf3a552d665" LastKnownName="IVeld" />
+            <elementDefinition Id="a3029f26-34d0-4ae6-b9a7-4a018bb0af01" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3fae6f35-113e-4733-ab56-45286d8cc3f7" name="Bos" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="438be2d5-fe45-462d-9bd0-d4c93129f053" />
+        <suppliersInternal>
+          <interfaceRealization Id="7e83ad9c-269d-40dd-a8fa-3513b924f7fa">
+            <interfaceMoniker Id="9a693033-7e2e-4275-8cb2-dbf3a552d665" LastKnownName="IVeld" />
+            <elementDefinition Id="9207d012-3ed3-46d2-b33a-d33a09dfd2ff" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c8cbd58c-edff-4767-a020-31ed2b8b512e" name="Spelbord" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9bab895f-1b08-40bb-ade3-030598f8b17c" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9f322681-3d26-40cd-b8c4-0dcbd134cd1a" name="Speler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1d315494-2b80-4fc0-818e-a3a58b8686c5" />
+        <targetEnds>
+          <association Id="a86622fe-3983-41c4-8505-19f66148b898" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Pion" isLeaf="false" isAbstract="false">
+            <classMoniker Id="aef4d4e9-46f0-4655-9e34-0a9382aae196" LastKnownName="Pion" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="72b630e4-d3ca-4154-9bd8-1d72ea5b1524" name="Speler" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2020e6c0-17f4-456c-8444-fce748220760" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8491f0f4-5f01-4234-8250-a1859c63ea8d" name="Pion" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="71bd92bf-843f-4020-9cf2-8c89a083d664" name="Lower" value="1">
+                      <elementDefinition Id="f7949fcb-de40-447d-806c-fb252308004f" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="24d131da-550d-4afd-8c04-b051550e775c" name="Upper" value="*">
+                      <elementDefinition Id="4830c466-dafb-4ccb-9a45-882a64fa6ab5" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="812c2ac0-9ef8-4e32-983d-0f74e1198b71" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ea0b1f47-5f36-484c-adea-0be9718f5ca9" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="384fd6e7-dd07-418a-aad2-8168a34da50e" name="Finishveld" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3e84b563-1330-473e-a85c-86c92363f573" />
+        <suppliersInternal>
+          <interfaceRealization Id="74fba890-a9d4-4c70-bb3a-e7d2eeefa98b">
+            <interfaceMoniker Id="9a693033-7e2e-4275-8cb2-dbf3a552d665" LastKnownName="IVeld" />
+            <elementDefinition Id="d804a23a-ede0-4737-8a79-267abd243f3c" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="aef4d4e9-46f0-4655-9e34-0a9382aae196" name="Pion" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cecdfa20-532c-4e6d-805d-04da79377c61" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="9a693033-7e2e-4275-8cb2-dbf3a552d665" name="IVeld" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189" />
+        <ownedAttributes>
+          <property Id="909f3e55-b581-4d4f-9199-aee9dc1b8b52" name="IsDorp" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ecf1b64c-2916-4463-90de-a0f231ff11e4" />
+          </property>
+          <property Id="ce5f8e0d-f647-4367-b608-ac902a49b615" name="IsPlaatsbaar" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7604fd89-c194-46e9-875a-ea8ce16977e0" />
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="d8972df1-1018-460e-8ea6-c17aa3c2ed7e" name="Plaatsbaar" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="990d443d-e172-4150-99c9-a5d92007eb4d" />
+        <ownedLiterals>
+          <enumerationLiteral Id="b3878377-4c8b-4549-ade2-9939fb1937a6" name="GEEN">
+            <elementDefinition Id="a8e5c084-ce63-45a3-9d15-beafc32279c6" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="710f41c3-4519-4714-be87-7fddb3b4b974" name="EEN">
+            <elementDefinition Id="d22921e9-b442-4f6e-bc50-8c3e7d02d48c" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="1abef8e6-2a4a-4853-8c79-03dedf26781b" name="MULTI">
+            <elementDefinition Id="60a2e719-72bf-4adf-8a73-0e97eeab10e3" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="eb78212e-253f-4dab-9aa4-f37cbe95672e" name="Barricade.Modeling">
+    <elementDefinition Id="3e5f4f86-0a24-4669-b7de-0fb16dd60e3e" />
+  </package>
+</logicalClassDesignerModel>
