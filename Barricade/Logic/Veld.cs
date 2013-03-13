@@ -25,6 +25,10 @@ namespace Logic
 			set;
 		}
 
+	    public object IsDorp { get; set; }
+	    public object IsPlaatsbaar { get; set; }
+	    public IEnumerable<IVeld> IVeld { get; set; }
+	    public IEnumerable<Pion> Pion { get; set; }
 	}
 }
 

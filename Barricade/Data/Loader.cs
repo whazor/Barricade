@@ -13,6 +13,12 @@ namespace Data
 
 	public class Loader
 	{
+        public Loader()
+        {
+            
+        }
+
+
 	}
 }
 

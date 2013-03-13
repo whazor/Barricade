@@ -61,12 +61,25 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\Loader.cs" />
+    <Compile Include="Data\Saver.cs" />
+    <Compile Include="Logic\Barricade.cs" />
+    <Compile Include="Logic\Bos.cs" />
+    <Compile Include="Logic\Finishveld.cs" />
+    <Compile Include="Logic\IVeld.cs" />
+    <Compile Include="Logic\Pion.cs" />
+    <Compile Include="Logic\Rustveld.cs" />
+    <Compile Include="Logic\Spelbord.cs" />
+    <Compile Include="Logic\Speler.cs" />
+    <Compile Include="Logic\Startveld.cs" />
+    <Compile Include="Logic\Veld.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Process\Spel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

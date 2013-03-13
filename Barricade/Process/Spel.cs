@@ -4,19 +4,31 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Logic
+namespace Process
 {
+	using Logic;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
 
-	public class Startveld : IVeld
+	public class Spel
 	{
-	    public object IsDorp { get; set; }
-	    public object IsPlaatsbaar { get; set; }
-	    public IEnumerable<IVeld> IVeld { get; set; }
-	    public IEnumerable<Pion> Pion { get; set; }
+		public virtual void Verplaats(Pion pion, IVeld bestemming)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public virtual List<IVeld> MogelijkeZetten(Pion pion)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public virtual void Verplaats()
+		{
+			throw new System.NotImplementedException();
+		}
+
 	}
 }
 

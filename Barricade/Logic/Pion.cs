@@ -26,7 +26,7 @@ namespace Logic
 			private set;
 		}
 
-		public virtual List<Barricade.Modeling::Logic::IVeld> MogelijkeZetten()
+		public virtual List<IVeld> MogelijkeZetten()
 		{
 			throw new System.NotImplementedException();
 		}
