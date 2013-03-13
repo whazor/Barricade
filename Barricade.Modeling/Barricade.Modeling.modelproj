@@ -77,4 +77,10 @@
       <DependentUpon>LayerDiagram.layerdiagram</DependentUpon>
     </Validate>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Barricade\Barricade.csproj">
+      <Name>Barricade</Name>
+      <Project>{7ac8ce8e-4d3a-4e7d-a5f2-7e2db2299f52}</Project>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
