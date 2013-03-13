@@ -1,27 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="541a1c6b-1bd4-4d83-9092-bf8f81d2280f" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
   <layers>
-    <layer Id="170d0833-f383-4d6e-b9a1-4be9d4b6f5c0" name="Logic">
-      <dependencyToLayers>
-        <dependencyFromLayerToLayer Id="0ab8489b-9c9f-45f4-b6df-e6770bbc3bc3" direction="Forward">
-          <layerMoniker Id="ce4a0e8c-b4c6-41a5-909a-a1b3c592372d" />
-        </dependencyFromLayerToLayer>
-      </dependencyToLayers>
-    </layer>
-    <layer Id="ce4a0e8c-b4c6-41a5-909a-a1b3c592372d" name="Entity" />
-    <layer Id="fcd47e4e-793e-44d1-9914-25311115ccaa" name="Presentation">
-      <dependencyToLayers>
-        <dependencyFromLayerToLayer Id="ec2bb540-510d-46b1-839b-5f2a17a0f551" direction="Forward">
-          <layerMoniker Id="56f35101-8da8-4369-b1b6-6fd3829261a5" />
-        </dependencyFromLayerToLayer>
-      </dependencyToLayers>
-    </layer>
+    <layer Id="fcd47e4e-793e-44d1-9914-25311115ccaa" name="Presentation" />
     <layer Id="56f35101-8da8-4369-b1b6-6fd3829261a5" name="Process">
       <dependencyToLayers>
         <dependencyFromLayerToLayer Id="2339267c-4474-4740-a9e5-038c74d14072" direction="Forward">
           <layerMoniker Id="170d0833-f383-4d6e-b9a1-4be9d4b6f5c0" />
         </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="3542660c-e91b-4747-b911-35d6187a1597" direction="Forward">
+          <layerMoniker Id="fcd47e4e-793e-44d1-9914-25311115ccaa" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="2d53eb3b-9a0a-4990-9814-2e8fbd96b412" direction="Forward">
+          <layerMoniker Id="ce4a0e8c-b4c6-41a5-909a-a1b3c592372d" />
+        </dependencyFromLayerToLayer>
       </dependencyToLayers>
+    </layer>
+    <layer Id="7ee1b711-4860-4a01-9fa0-5a3a4130d62b" name="Data">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5e46e396-f7f5-4421-ba23-a5aed31deab6" direction="Bidirectional">
+          <layerMoniker Id="56f35101-8da8-4369-b1b6-6fd3829261a5" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="2b7d15fa-acec-43a2-9fbb-e44fb5e623fc" name="Domain">
+      <childLayers>
+        <layer Id="170d0833-f383-4d6e-b9a1-4be9d4b6f5c0" name="Logic" />
+        <layer Id="ce4a0e8c-b4c6-41a5-909a-a1b3c592372d" name="Bot">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="fe2370f1-4d41-43b5-984e-707ee2e74e05" direction="Forward">
+              <layerMoniker Id="170d0833-f383-4d6e-b9a1-4be9d4b6f5c0" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
     </layer>
   </layers>
 </layerModel>
