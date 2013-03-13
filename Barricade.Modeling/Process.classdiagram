@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="9ac98026-eb99-4d88-9461-2bd5b43d2979" name="Process" linkedPackageId="010d8d57-2671-41a1-8bdf-a9d982020771" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="464844d5-4aca-44bf-936b-befb491a7891" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="f48c2951-7ff7-4af1-955e-485e26118e7c" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="a36ae95d-dfd8-4f7b-a276-8763a5b2b063">
+          <propertyInstance Id="df0ee6b1-340a-4435-87fa-f90fcab70373" name="BaseName">
+            <elementDefinition Id="c3978a33-05d5-46b3-b65a-96d1396989de" />
+          </propertyInstance>
+          <elementDefinition Id="95b4ed45-4f0b-44c7-a867-87a4bcdf1947" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="2949d07a-231f-44fd-ac67-ceb922c57d86">
+          <propertyInstance Id="fb66a91b-03ae-4da3-8274-2beecb665946" name="ClrAttributes">
+            <elementDefinition Id="370bea9a-949b-45d6-8b67-8c53c45d632a" />
+          </propertyInstance>
+          <elementDefinition Id="78149b53-bc0e-4d73-b43d-98c9684fa600" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="75b15d39-d5cc-4dcd-97c7-4fe8a035b920">
+          <propertyInstance Id="3ba4c399-d4c2-4d12-8247-074925ac149e" name="Usings">
+            <elementDefinition Id="e0ea2e9b-1328-42c8-953b-d27066ba41e8" />
+          </propertyInstance>
+          <elementDefinition Id="47568e55-e8de-46e5-bfcd-0ef1faa6d4b5" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="f42ae372-cfc1-4ffe-bb96-8c0d9dc53d85" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="7994fd9d-16a7-4fef-ba18-9005066e4b64" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="a2d261d2-e932-4185-bb48-896247de4bd8">
+          <propertyInstance Id="b407868f-f519-4157-a7ec-941352d67379" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="4a6ad0dd-00ea-4d76-992b-d79a32c45356" />
+          </propertyInstance>
+          <elementDefinition Id="f9e62442-ab74-41f9-9ed5-887b000cc3ea" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="0a61d7e6-1930-4ec4-b0ef-3629519d9414">
+          <propertyInstance Id="4002f721-e0d3-4d4f-b636-85068ae2f55d" name="TemplateFilePath" value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="5f7a9dd3-c703-41c8-8e91-5a31a44c124c" />
+          </propertyInstance>
+          <elementDefinition Id="c86fc5c3-0e71-4d78-8e10-7d7824fb85d9" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="33a88e22-6e97-4190-88c9-7b24251d7821">
+          <propertyInstance Id="317b6c15-479a-4cb8-b8ec-84ac2314e67b" name="ProjectPath" value="ClassTemplate=..\Barricade.Logic\Barricade.Logic.csproj|EnumTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj|InterfaceTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj|StructTemplate=..\Barricade.ModelingLib\Barricade.ModelingLib.csproj">
+            <elementDefinition Id="58d62d21-3e22-41e5-898f-3b71fbd4f10e" />
+          </propertyInstance>
+          <elementDefinition Id="4198f6d2-0748-4b69-9da9-9dbe92fb36be" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="e568c008-7fb9-4586-81fd-8eccb0a73f11">
+          <propertyInstance Id="237d182b-fb84-4721-804a-37c564a1d8a1" name="TargetDirectory" value="ClassTemplate={PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="87ac7ef7-d2b8-4691-a469-8de2e3c814bd" />
+          </propertyInstance>
+          <elementDefinition Id="09471332-3cf5-4a4f-9bf9-12df1efe0e3c" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="26497dbd-e096-40ef-bb29-8bc80b07d92a">
+          <propertyInstance Id="2f48c273-2137-4e51-af05-a0c7127e31ce" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="ed981011-79b1-4bd5-91a5-e53282a1a81b" />
+          </propertyInstance>
+          <elementDefinition Id="9ad479de-7c62-45e8-b95d-2c51721484ee" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="e9036d02-fbf0-4e44-a931-54f34b7a97a8">
+          <propertyInstance Id="f73199e7-eb8f-4041-91d4-6308e54f267f" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="d0d36c56-cbb0-4ac5-80c7-f9abb71eca94" />
+          </propertyInstance>
+          <elementDefinition Id="4c9d2cbb-6433-460a-891e-d88786d70409" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="2d0d5829-2c95-443a-99e6-11eba06b9e45">
+          <propertyInstance Id="fa755cc9-8b89-4131-95f1-c0a6b99c9b51" name="Parameters">
+            <elementDefinition Id="4a62903d-f130-4f81-9d38-08db827a1e38" />
+          </propertyInstance>
+          <elementDefinition Id="2fd44cc4-3ad5-474e-98a9-7b0920effe17" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="870d85e5-24ae-44d1-a6e4-0805148fe8bb">
+      <profileInstance Id="2a3f31d6-930c-4b80-b07f-6e78ecb7159f" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="aec5eb41-e0df-4fc6-99aa-e95db94fc8f9">
+      <profileInstance Id="f2c22f31-2b45-49bb-ba6b-4aba7dd9a2ab" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="fa022d7d-5eea-44a5-9d53-fd6eeb4d02ef">
+      <profileInstance Id="3974a9c0-cec6-42ae-9c76-98d7a009be7b" name="CSharpProfile">
+        <elementDefinition Id="7425ede2-cb4f-4fc2-a7cd-8b852ba24dfb" />
+      </profileInstance>
+      <elementDefinition Id="11d91cb2-76f8-4799-a0ef-afe97c07e395" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1294152f-fcf0-4ed4-9298-40f5d36e1c98">
+      <profileInstance Id="98b19e82-399c-4fb5-b24d-cd52b2eaf01d" name="TextTemplateBindings">
+        <elementDefinition Id="60c91028-ca96-4d92-9206-29143c7706d9" />
+      </profileInstance>
+      <elementDefinition Id="a68f1681-406e-433c-8e88-03f3ad3ec3fc" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="c80ada8e-4f8c-4718-acab-4f1e2b8029d2" name="Process">
+        <elementDefinition Id="034e5f52-270b-4576-a0ef-a141878ff922" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="9911b5f7-ddee-4661-a69d-b4bf645ee1b8" name="Spel" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="526f1d25-7861-4170-a34e-cafce5eba2bc" />
+              <ownedOperationsInternal>
+                <operation Id="429d34cd-c4aa-4d23-b17f-509aeb18b742" name="Verplaats" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="3c1e5bb9-a3b0-40ca-887f-59e2a115aeff" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="068cdc4b-ade2-42a2-a033-e7abd30fbad9" name="pion" direction="In">
+                        <elementDefinition Id="5981fde4-27c3-4661-ad7e-fc3720f1ac7f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="ac6a7812-c694-4487-9504-5aaa456b70e5" LastKnownName="Pion" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a899c740-6c63-4e32-b4f3-5b681079e7cf" name="bestemming" direction="In">
+                        <elementDefinition Id="9aa2d3dc-dcf9-4c44-9bbb-34f5a666b4b0" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="b54563b7-225f-460a-8a78-1bb896c33585" LastKnownName="IVeld" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="17e41318-5d7f-4cdd-87cc-e239e6d5f564" direction="Return">
+                        <elementDefinition Id="0fce43cd-f186-479a-9396-a2d53196915e" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="e8ffa6b0-1079-4801-9759-5853fd08f265" name="MogelijkeZetten" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="da887184-7151-4a8b-bc13-1d626d34784a" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="bce75b22-cf1b-44c6-b837-09370c008309" name="pion" direction="In">
+                        <elementDefinition Id="6e69ae30-303b-4ac7-90fc-79c5124e38cf" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="ac6a7812-c694-4487-9504-5aaa456b70e5" LastKnownName="Pion" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1463d8d5-2385-4130-bf41-017baf099808" direction="Return">
+                        <elementDefinition Id="6a8aa98b-1fed-4335-a3d0-72c01424198c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="61b6f1b8-71f3-4b6c-9db5-b5ece3e76db0" LastKnownName="List&lt;Barricade.Modeling::Logic::IVeld&gt;" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="3b138885-4c12-47ef-b09c-c8e1024df1d4" name="Verplaats" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="58e71fb4-6309-4468-8837-db382027b241" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8cdf67a3-3895-4358-a1ef-75d4f7a3ff7c" name="barricade" direction="In">
+                        <elementDefinition Id="39d75b0c-554f-4b7d-b5ad-7ca18293a7a6" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2a6e1f2c-7721-4446-b3b3-bd6ec6e9a828" LastKnownName="Barricade" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="60234400-6963-4f77-9c6a-ef0607f48f3d" name="bestemming" direction="In">
+                        <elementDefinition Id="8c3a8fdb-c589-43b4-be22-3bf95ae53db0" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="6a9df777-3cf8-409d-8d05-7cf271f11c49" LastKnownName="Veld" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="ac6a7812-c694-4487-9504-5aaa456b70e5" name="Pion" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Pion">
+        <elementDefinition Id="cecdfa20-532c-4e6d-805d-04da79377c61" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b54563b7-225f-460a-8a78-1bb896c33585" name="IVeld" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::IVeld">
+        <elementDefinition Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="61b6f1b8-71f3-4b6c-9db5-b5ece3e76db0" name="List&lt;Barricade.Modeling::Logic::IVeld&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Barricade.Modeling::Logic::IVeld&gt;">
+        <elementDefinition Id="bb8ced73-025b-46a8-830b-d299a0c5f2e4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2a6e1f2c-7721-4446-b3b3-bd6ec6e9a828" name="Barricade" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Barricade">
+        <elementDefinition Id="f906f0bf-8597-439f-b3ce-e1916d14b5ec" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6a9df777-3cf8-409d-8d05-7cf271f11c49" name="Veld" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Veld">
+        <elementDefinition Id="d49c86f2-fb03-4c6c-b18a-c9141e9df554" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="010d8d57-2671-41a1-8bdf-a9d982020771" name="Barricade.Modeling">
+    <elementDefinition Id="3e5f4f86-0a24-4669-b7de-0fb16dd60e3e" />
+  </package>
+</logicalClassDesignerModel>

@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barricade", "Barricade\Barr
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Barricade.Modeling", "Barricade.Modeling\Barricade.Modeling.modelproj", "{028A5B63-AAB3-4704-B1AC-B0DF9ABB8D20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barricade.Logic", "Barricade.Logic\Barricade.Logic.csproj", "{F5A0E16C-A9E7-4E31-AFCB-8986B1F2E7A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barricade.ModelingLib", "Barricade.ModelingLib\Barricade.ModelingLib.csproj", "{F4EE2659-06EF-45AE-8E8F-DDB6E5C7AB6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{028A5B63-AAB3-4704-B1AC-B0DF9ABB8D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{028A5B63-AAB3-4704-B1AC-B0DF9ABB8D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{028A5B63-AAB3-4704-B1AC-B0DF9ABB8D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A0E16C-A9E7-4E31-AFCB-8986B1F2E7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A0E16C-A9E7-4E31-AFCB-8986B1F2E7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A0E16C-A9E7-4E31-AFCB-8986B1F2E7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A0E16C-A9E7-4E31-AFCB-8986B1F2E7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4EE2659-06EF-45AE-8E8F-DDB6E5C7AB6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4EE2659-06EF-45AE-8E8F-DDB6E5C7AB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4EE2659-06EF-45AE-8E8F-DDB6E5C7AB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4EE2659-06EF-45AE-8E8F-DDB6E5C7AB6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

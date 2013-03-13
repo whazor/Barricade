@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="034e5f52-270b-4576-a0ef-a141878ff922"
+  name="Process" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="526f1d25-7861-4170-a34e-cafce5eba2bc"
+        name="Spel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="3c1e5bb9-a3b0-40ca-887f-59e2a115aeff"
+            name="Verplaats"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5981fde4-27c3-4661-ad7e-fc3720f1ac7f"
+                  name="pion"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="cecdfa20-532c-4e6d-805d-04da79377c61"
+                      LastKnownName="Pion"
+                      LastKnownLocation="Package_1214.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9aa2d3dc-dcf9-4c44-9bbb-34f5a666b4b0"
+                  name="bestemming"
+                  direction="In">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
+                      LastKnownName="IVeld"
+                      LastKnownLocation="Package_1214.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0fce43cd-f186-479a-9396-a2d53196915e"
+                  direction="Return" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="da887184-7151-4a8b-bc13-1d626d34784a"
+            name="MogelijkeZetten"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6e69ae30-303b-4ac7-90fc-79c5124e38cf"
+                  name="pion"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="cecdfa20-532c-4e6d-805d-04da79377c61"
+                      LastKnownName="Pion"
+                      LastKnownLocation="Package_1214.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6a8aa98b-1fed-4335-a3d0-72c01424198c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bb8ced73-025b-46a8-830b-d299a0c5f2e4"
+                      LastKnownName="List&lt;Barricade.Modeling::Logic::IVeld&gt;"
+                      LastKnownLocation="Package_1216.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="58e71fb4-6309-4468-8837-db382027b241"
+            name="Verplaats"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="bb8ced73-025b-46a8-830b-d299a0c5f2e4"
+        name="List&lt;Barricade.Modeling::Logic::IVeld&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="0cd18517-fefb-434f-a355-cf05d0e29998"
+        name="void" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
