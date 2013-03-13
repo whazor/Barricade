@@ -74,6 +74,59 @@
               LastKnownLocation="Barricade.Modeling.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="c8def151-d2b8-47b0-8d7a-b334d813ebb6"
+            isDerived="false"
+            sourceEndRoleName="Veld"
+            targetEndRoleName="Barricade"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="f906f0bf-8597-439f-b3ce-e1916d14b5ec"
+              LastKnownName="Barricade"
+              LastKnownLocation="Barricade.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="03a82424-95f4-4330-a2e6-4ffbecfb18f1"
+                  name="Veld"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8ddb94c7-9024-4b2a-b35b-56ec8d66e62d"
+                  name="Barricade"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ca4913a6-81c0-41b1-a964-192ba61fc7e3"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="537821fa-45af-4b72-9109-eb02bb9e7308"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -125,7 +178,62 @@
         name="Spelbord"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="96869c7d-1bbd-484f-88b8-6f4f043f007b"
+            isDerived="false"
+            sourceEndRoleName="Spelbord"
+            targetEndRoleName="Startveld"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="3ad92f36-0bc9-4857-9d82-68cf5d904ef7"
+              LastKnownName="Startveld"
+              LastKnownLocation="Barricade.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bfbf1e20-7594-469d-a532-e5eb6c31a5d0"
+                  name="Spelbord"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="52c2cf25-3242-4000-9704-b785c36e43a7"
+                  name="Startveld"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b5d49d4b-e318-4700-83e6-537068c5df21"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="020efba9-63de-4838-b470-11ccee1f5097"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -186,6 +294,58 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="478fc5de-d4b0-4041-a6f8-c798418b4afb"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Spelbord"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9bab895f-1b08-40bb-ade3-030598f8b17c"
+              LastKnownName="Spelbord"
+              LastKnownLocation="Barricade.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="39521e8f-0f7a-410b-a63a-c6dcb91b260d"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f9bdf8c4-498a-4a67-9329-f01f35ae7862"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d76cbf7a-58b7-4d10-906f-7b38cd0fafd2"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="11d3f75c-3e31-4425-895e-c1c22e5eea54"
+                  name="Spelbord"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </class>
     </packageHasNamedElement>
@@ -213,7 +373,61 @@
         name="Pion"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="f4fc3bf8-92e1-487b-9641-f65cb1ee83ac"
+            isDerived="false"
+            sourceEndRoleName="Pion"
+            targetEndRoleName="IVeld"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
+              LastKnownName="IVeld"
+              LastKnownLocation="Barricade.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e41041f9-442e-4bac-ab0f-422cacca6772"
+                  name="Pion"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c6a90c98-6c9a-4493-8c32-2f2fe43880d2"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c672d7fd-bc6d-46ec-9332-4e3333c8e57b"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="24111c53-bc68-43ed-ae77-68dca0a64391"
+                  name="IVeld"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
@@ -221,6 +435,73 @@
         name="IVeld"
         isAbstract="false"
         isLeaf="false">
+        <targetEnds>
+          <association
+            Id="8baf4ed7-e225-4253-8353-67ed3c303443"
+            isDerived="false"
+            sourceEndRoleName="IVeld"
+            targetEndRoleName="IVeld"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
+              LastKnownName="IVeld"
+              LastKnownLocation="Barricade.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="327b652b-a660-4e93-8e9c-f9c45f641e82"
+                  name="IVeld"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b690a1d4-5eba-4836-a3ff-5964b5cc89db"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f8d219fa-84f8-4264-9a43-d5c0ecd0c419"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="708b1ade-f6e8-447f-b93d-729c9d9a5978"
+                  name="IVeld"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="62360d9b-4a40-464c-8cb5-974fdb6bdca2"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9c3ca44a-284e-4958-ada5-b07b51766aa6"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributes>
           <property
             Id="ecf1b64c-2916-4463-90de-a0f231ff11e4"
