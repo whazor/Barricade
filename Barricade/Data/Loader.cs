@@ -190,6 +190,7 @@ namespace Barricade.Data
                         }
                         //letternr-1, positie;
                         next = null;
+                        expected = '\0';
                     }
                     previous = letter;
                 }
