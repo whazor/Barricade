@@ -6,26 +6,57 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2013-03-13T17:31:19" Importance="High" Text="Code generation or text transformation started." />
-  <Message Timestamp="2013-03-13T17:31:19" Importance="Diagnostic" Text="Name = ClassTemplate" />
-  <Message Timestamp="2013-03-13T17:31:19" Importance="Diagnostic" Text="Overwrite = False" />
-  <Message Timestamp="2013-03-13T17:31:19" Importance="Diagnostic" Text="ProjectPath = ..\Barricade\Barricade.csproj" />
-  <Message Timestamp="2013-03-13T17:31:19" Importance="Diagnostic" Text="TargetDirectory = {PackageStructure}" />
-  <Message Timestamp="2013-03-13T17:31:19" Importance="Diagnostic" Text="TargetName = {Name}" />
-  <Message Timestamp="2013-03-13T17:31:19" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
-  <Message Timestamp="2013-03-13T17:31:19" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
-  <Message Timestamp="2013-03-13T17:31:19" Importance="Medium" Text="Barricade.Modeling's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'Barricade.Modeling::Process::Spel' -  (Class) " />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Medium" Text="'Barricade.Modeling::Process::Spel' -  (Class) : success (file created) - C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Process\Spel.cs" />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Diagnostic" Text="Name = StructTemplate" />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Diagnostic" Text="Overwrite = False" />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Diagnostic" Text="ProjectPath = ..\Barricade\Barricade.csproj" />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Diagnostic" Text="TargetDirectory = {PackageStructure}" />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Diagnostic" Text="TargetName = {Name}" />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Medium" Text="Barricade.Modeling's Text Template Binding: 'StructTemplate' will apply StructTemplate.t4 to: 'Barricade.Modeling::Process::Spel' -  (Class) " />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Diagnostic" Text="'Barricade.Modeling::Process::Spel' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Diagnostic" Text="The selection included 1 elements which were not bound to a template." />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="Diagnostic" Text="'Barricade.Modeling::Process' -  (Package): no bound template." />
-  <Message Timestamp="2013-03-13T17:31:20" Importance="High" Text="Code generation complete. Errors: 0. Warnings: 0." />
+  <Message Timestamp="2013-03-15T00:39:34" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2013-03-15T00:39:34" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2013-03-15T00:39:34" Importance="Diagnostic" Text="Overwrite = False" />
+  <Message Timestamp="2013-03-15T00:39:34" Importance="Diagnostic" Text="ProjectPath = ..\Barricade\Barricade.csproj" />
+  <Message Timestamp="2013-03-15T00:39:34" Importance="Diagnostic" Text="TargetDirectory = {PackageStructure}" />
+  <Message Timestamp="2013-03-15T00:39:34" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2013-03-15T00:39:34" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2013-03-15T00:39:34" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2013-03-15T00:39:34" Importance="Medium" Text="Barricade.Modeling's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'Barricade.Modeling::Logic::Barricade' -  (Class), 'Barricade.Modeling::Logic::Rustveld' -  (Class), 'Barricade.Modeling::Logic::Veld' -  (Class), 'Barricade.Modeling::Logic::Pion' -  (Class), 'Barricade.Modeling::Logic::Finishveld' -  (Class), 'Barricade.Modeling::Logic::Bos' -  (Class), 'Barricade.Modeling::Logic::Startveld' -  (Class), 'Barricade.Modeling::Logic::Spelbord' -  (Class), 'Barricade.Modeling::Logic::Speler' -  (Class) " />
+  <Warning Timestamp="2013-03-15T00:39:35" Importance="Medium" Text="'Barricade.Modeling::Logic::Barricade' -  (Class) : file already exists and will not be overwritten: C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Logic\Barricade.cs" />
+  <Warning Timestamp="2013-03-15T00:39:35" Importance="Medium" Text="'Barricade.Modeling::Logic::Rustveld' -  (Class) : file already exists and will not be overwritten: C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Logic\Rustveld.cs" />
+  <Warning Timestamp="2013-03-15T00:39:35" Importance="Medium" Text="'Barricade.Modeling::Logic::Veld' -  (Class) : file already exists and will not be overwritten: C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Logic\Veld.cs" />
+  <Warning Timestamp="2013-03-15T00:39:35" Importance="Medium" Text="'Barricade.Modeling::Logic::Pion' -  (Class) : file already exists and will not be overwritten: C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Logic\Pion.cs" />
+  <Warning Timestamp="2013-03-15T00:39:35" Importance="Medium" Text="'Barricade.Modeling::Logic::Finishveld' -  (Class) : file already exists and will not be overwritten: C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Logic\Finishveld.cs" />
+  <Warning Timestamp="2013-03-15T00:39:35" Importance="Medium" Text="'Barricade.Modeling::Logic::Bos' -  (Class) : file already exists and will not be overwritten: C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Logic\Bos.cs" />
+  <Warning Timestamp="2013-03-15T00:39:35" Importance="Medium" Text="'Barricade.Modeling::Logic::Startveld' -  (Class) : file already exists and will not be overwritten: C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Logic\Startveld.cs" />
+  <Warning Timestamp="2013-03-15T00:39:35" Importance="Medium" Text="'Barricade.Modeling::Logic::Spelbord' -  (Class) : file already exists and will not be overwritten: C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Logic\Spelbord.cs" />
+  <Message Timestamp="2013-03-15T00:39:35" Importance="Medium" Text="'Barricade.Modeling::Logic::Speler' -  (Class) : success (file created) - C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Logic\Speler.cs" />
+  <Message Timestamp="2013-03-15T00:39:35" Importance="Diagnostic" Text="Name = InterfaceTemplate" />
+  <Message Timestamp="2013-03-15T00:39:35" Importance="Diagnostic" Text="Overwrite = False" />
+  <Message Timestamp="2013-03-15T00:39:35" Importance="Diagnostic" Text="ProjectPath = ..\Barricade\Barricade.csproj" />
+  <Message Timestamp="2013-03-15T00:39:35" Importance="Diagnostic" Text="TargetDirectory = {PackageStructure}" />
+  <Message Timestamp="2013-03-15T00:39:35" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2013-03-15T00:39:35" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2013-03-15T00:39:35" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2013-03-15T00:39:35" Importance="Medium" Text="Barricade.Modeling's Text Template Binding: 'InterfaceTemplate' will apply InterfaceTemplate.t4 to: 'Barricade.Modeling::Logic::IVeld' -  (Interface) " />
+  <Warning Timestamp="2013-03-15T00:39:36" Importance="Medium" Text="'Barricade.Modeling::Logic::IVeld' -  (Interface) : file already exists and will not be overwritten: C:\Users\nanne\Documents\GitHub\Barricade\Barricade\Logic\IVeld.cs" />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="Name = StructTemplate" />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="Overwrite = False" />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="ProjectPath = ..\Barricade\Barricade.csproj" />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="TargetDirectory = {PackageStructure}" />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Medium" Text="Barricade.Modeling's Text Template Binding: 'StructTemplate' will apply StructTemplate.t4 to: 'Barricade.Modeling::Logic::Barricade' -  (Class), 'Barricade.Modeling::Logic::Rustveld' -  (Class), 'Barricade.Modeling::Logic::Veld' -  (Class), 'Barricade.Modeling::Logic::Pion' -  (Class), 'Barricade.Modeling::Logic::Finishveld' -  (Class), 'Barricade.Modeling::Logic::Bos' -  (Class), 'Barricade.Modeling::Logic::Startveld' -  (Class), 'Barricade.Modeling::Logic::Spelbord' -  (Class), 'Barricade.Modeling::Logic::Speler' -  (Class) " />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::Barricade' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::Rustveld' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::Veld' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::Pion' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::Finishveld' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::Bos' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::Startveld' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::Spelbord' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::Speler' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="The selection included 7 elements which were not bound to a template." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::' -  (Association): no bound template." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::' -  (Association): no bound template." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::' -  (Association): no bound template." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic' -  (Package): no bound template." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::' -  (Association): no bound template." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::' -  (Association): no bound template." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="Diagnostic" Text="'Barricade.Modeling::Logic::' -  (Association): no bound template." />
+  <Message Timestamp="2013-03-15T00:39:36" Importance="High" Text="Code generation complete. Errors: 0. Warnings: 9." />
 </Log>

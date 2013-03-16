@@ -576,7 +576,7 @@
             Id="ea0b1f47-5f36-484c-adea-0be9718f5ca9"
             isDerived="false"
             sourceEndRoleName="Speler"
-            targetEndRoleName="Pion"
+            targetEndRoleName="Pionen"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -599,7 +599,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="812c2ac0-9ef8-4e32-983d-0f74e1198b71"
-                  name="Pion"
+                  name="Pionen"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="true"
