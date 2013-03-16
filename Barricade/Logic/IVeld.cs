@@ -19,7 +19,7 @@ namespace Logic
 
 		IEnumerable<IVeld> IVeld { get;set; }
 
-		IEnumerable<Pion> Pion { get;set; }
+		List<Pion> Pionen { get; private set; }
 
 	}
 }

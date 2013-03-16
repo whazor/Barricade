@@ -510,7 +510,7 @@
               </appliedStereotypesInternal>
               <elementDefinition Id="1d315494-2b80-4fc0-818e-a3a58b8686c5" />
               <targetEnds>
-                <association Id="a86622fe-3983-41c4-8505-19f66148b898" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Pion" isLeaf="false" isAbstract="false">
+                <association Id="a86622fe-3983-41c4-8505-19f66148b898" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Pionen" isLeaf="false" isAbstract="false">
                   <classMoniker Id="aef4d4e9-46f0-4655-9e34-0a9382aae196" LastKnownName="Pion" />
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
@@ -519,7 +519,7 @@
                       </memberEnd>
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
-                      <memberEnd Id="8491f0f4-5f01-4234-8250-a1859c63ea8d" name="Pion" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                      <memberEnd Id="8491f0f4-5f01-4234-8250-a1859c63ea8d" name="Pionen" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <lowerValueInternal>
                           <literalString Id="71bd92bf-843f-4020-9cf2-8c89a083d664" name="Lower" value="1">
                             <elementDefinition Id="f7949fcb-de40-447d-806c-fb252308004f" />
