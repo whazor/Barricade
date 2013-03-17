@@ -9,6 +9,8 @@ namespace Barricade.Data
 {
     public class Loader
     {
+        List<Point> nodes;
+
         public Loader(String[] lines)
         {
             // Alle informatie over bijzondere vakjes ophalen
@@ -26,32 +28,36 @@ namespace Barricade.Data
             var firstY = int.MaxValue;
             var lastX = int.MinValue;
             var lastY = int.MinValue;
-            var veldenCount = 0;
 
             // Snelle controle naar spelgrootte en hoe de vakjes staan
             for (var i = 0; i < lines.Length; i++)
             {
-                var lineVeldenCount = 0;
                 for (var j = 0; j < lines[i].Length; j++)
                 {
                     if (!new[] {'<', '(', '[', '{'}.Contains(lines[i][j])) continue;
 
-                    lineVeldenCount++;
-                    firstX = Math.Min(firstX, j + 1);
+                    firstX = Math.Min(firstX, j);
+                    lastX = Math.Max(lastX, j + 3);
+
                     firstY = Math.Min(firstY, i);
-                    lastX = Math.Max(lastX, j + 1);
                     lastY = Math.Max(lastY, i);
                 }
-                veldenCount = Math.Max(lineVeldenCount, veldenCount);
             }
             // Trucje om te kijken waar het middenpunt van een vakje zit
-            var isEven = firstX % 2;
+            var isXeven = (lastX - firstX - 1) % 2;
+            var isYeven = firstY % 2;
 
             var barricades = new List<Logic.Barricade>();
             var spelers = new Dictionary<char, Speler>();
             var connecties = new List<Tuple<Position, Position>>();
+            
+            nodes = new List<Point>();
 
-            var kaart = new IVeld[(lastX-firstX+1) / 4, lastY - firstY];
+            var kaart = new IVeld[(int)Math.Ceiling(((decimal)(lastY - firstY + 1) / 2)), (lastX - firstX) / 4 + 1];
+
+            
+            var getX = new Func<int, int>(x => (x - firstX) / 4);
+            var getY = new Func<int, int>(y => (int)Math.Ceiling(((decimal)(y - firstY + 1) / 2)) - 1);
 
             var linenr = 0;
             foreach (var line in lines)
@@ -94,14 +100,14 @@ namespace Barricade.Data
                                 break;
                             case '-':
                                 connecties.Add(new Tuple<Position, Position>(
-                                    new Position(letternr - firstX - 2, linenr), 
-                                    new Position(letternr - firstX + 2, linenr)
+                                    new Position(getX(letternr - 2), getY(linenr)), 
+                                    new Position(getX(letternr + 2), getY(linenr))
                                     ));
                                 break;
                             case '|':
                                 connecties.Add(new Tuple<Position, Position>(
-                                    new Position(letternr - firstX, linenr - 1),
-                                    new Position(letternr - firstX, linenr + 1)
+                                    new Position(getX(letternr), getY(linenr - 1)),
+                                    new Position(getX(letternr), getY(linenr + 1))
                                     ));
                                 break;
                         }
@@ -181,12 +187,13 @@ namespace Barricade.Data
                         
                         if (next != null)
                         {
-                            var posx = letternr - 1 - firstX;
-                            var posy = linenr;
-                            if (posx % 2 != isEven)
+                            var posx = getX(letternr);
+                            var posy = getY(linenr);
+                            if ((letternr-firstX-1) % 2 != isXeven)
                                 throw new ParserException(linenr, letternr, "Dit symbool staat hier verkeerd, hij staat verkeerd tegenover de rest.");
 
-                            kaart[posx, posy] = next;
+                            kaart[posy, posx] = next;
+                            nodes.Add(new Point(new Position(posx, posy), next));
                         }
                         //letternr-1, positie;
                         next = null;
@@ -195,6 +202,10 @@ namespace Barricade.Data
                     previous = letter;
                 }
             }
+
+            /**
+             * Hier alle nodes koppelen
+             */
         }
 
         public Loader(TextReader file)
@@ -205,7 +216,7 @@ namespace Barricade.Data
 
         public List<Point> ToArray()
         {
-            throw new NotImplementedException();
+            return nodes;
         }
 
         public class Position : Tuple<int, int>
@@ -220,6 +231,11 @@ namespace Barricade.Data
 
         public class Point
         {
+            public Point(Position a1, IVeld a2)
+            {
+                Locatie = a1;
+                Veld = a2;
+            }
             public IVeld Veld { get; set; }
             public Position Locatie { get; set; }
         }
