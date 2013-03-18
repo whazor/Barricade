@@ -1,6 +1,5 @@
 ﻿using System;
 using Barricade.Data;
-using Data;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Barricade.Testing

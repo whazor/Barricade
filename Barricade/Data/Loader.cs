@@ -49,7 +49,7 @@ namespace Barricade.Data
 
             var barricades = new List<Logic.Barricade>();
             var spelers = new Dictionary<char, Speler>();
-            var connecties = new List<Tuple<Position, Position>>();
+            var connecties = new List<Connection>();
             
             nodes = new List<Point>();
 
@@ -79,6 +79,7 @@ namespace Barricade.Data
                 foreach (var letter in line)
                 {
                     letternr++;
+                    if (letternr < firstX) continue;
                     if (expected == '\0')
                         switch (letter)
                         {
@@ -99,16 +100,19 @@ namespace Barricade.Data
                                 next = new Rustveld();
                                 break;
                             case '-':
-                                connecties.Add(new Tuple<Position, Position>(
+                                connecties.Add(new Connection(
                                     new Position(getX(letternr - 2), getY(linenr)), 
                                     new Position(getX(letternr + 2), getY(linenr))
                                     ));
                                 break;
                             case '|':
-                                connecties.Add(new Tuple<Position, Position>(
-                                    new Position(getX(letternr), getY(linenr - 1)),
-                                    new Position(getX(letternr), getY(linenr + 1))
-                                    ));
+                                if (getY(linenr)%2 != isYeven)
+                                {
+                                    connecties.Add(new Connection(
+                                        new Position(getX(letternr), getY(linenr - 1)),
+                                        new Position(getX(letternr), getY(linenr + 1))
+                                        ));                               
+                                }
                                 break;
                         }
                     else if (expected == letter)
@@ -206,6 +210,33 @@ namespace Barricade.Data
             /**
              * Hier alle nodes koppelen
              */
+            foreach (var connectie in connecties)
+            {
+                var first = kaart[connectie.Item1.Y, connectie.Item1.X];
+                var second = kaart[connectie.Item2.Y, connectie.Item2.X];
+
+                if (first != null && second != null)
+                {
+                    first.Buren.Add(second);
+                    second.Buren.Add(first);
+                }
+                else if (first == null && second == null)
+                {
+                    //TODO: hier iets voor verzinnen
+                }
+                else
+                {
+                    var direction = first == null ? 2 : -2;
+                    var found = first ?? second;
+                    // verticaal
+                    var isVertical = connectie.Item1.Y == connectie.Item2.Y;
+                    var third = isVertical ? 
+                        kaart[connectie.Item2.Y, connectie.Item2.X + direction] : 
+                        kaart[connectie.Item2.Y + direction, connectie.Item2.X];
+
+                    third.Buren.Add(found);
+                }
+            }
         }
 
         public Loader(TextReader file)
@@ -217,6 +248,13 @@ namespace Barricade.Data
         public List<Point> ToArray()
         {
             return nodes;
+        }
+
+        public class Connection : Tuple<Position, Position>
+        {
+            public Connection(Position item1, Position item2) : base(item1, item2)
+            {
+            }
         }
 
         public class Position : Tuple<int, int>
