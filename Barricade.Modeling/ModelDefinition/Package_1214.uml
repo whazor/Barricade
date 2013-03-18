@@ -964,10 +964,28 @@
                   direction="Return">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="bb8ced73-025b-46a8-830b-d299a0c5f2e4"
-                      LastKnownName="List&lt;Barricade.Modeling::Logic::IVeld&gt;"
-                      LastKnownLocation="Package_1216.uml" />
+                      Id="0e773b6e-8987-42d2-9e97-222d643025d6"
+                      LastKnownName="List&lt;IVeld&gt;"
+                      LastKnownLocation="Package_1214.uml" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cf2c5e03-c44b-4bb8-946d-892d566e3bd1"
+                  name="stappen"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                  <defaultValue>
+                    <literalString
+                      Id="df945974-7813-4cca-b0c5-124a79a91c1b"
+                      value="1" />
+                  </defaultValue>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1436,6 +1454,16 @@
           </interfaceRealization>
         </suppliersInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="e76feb3d-72dc-4c57-bc57-44a58dae56a9"
+        name="List&lt;Logic::IVeld&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="0e773b6e-8987-42d2-9e97-222d643025d6"
+        name="List&lt;IVeld&gt;" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

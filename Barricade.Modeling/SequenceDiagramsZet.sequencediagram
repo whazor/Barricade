@@ -799,7 +799,7 @@
               <messageOccurrenceSpecificationMoniker Id="78df5994-a305-4b46-a765-0911983eae67" LastKnownName="MessageOccurrenceSpecification17" />
             </receiveEvent>
           </message>
-          <message Id="8c453756-689c-446d-85fb-da769f175883" name="Mogelijkezetten" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="+ MogelijkeZetten() : List&lt;Barricade.Modeling::Logic::IVeld&gt;">
+          <message Id="8c453756-689c-446d-85fb-da769f175883" name="Mogelijkezetten" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="+ MogelijkeZetten(stappen : Integer=1) : List&lt;IVeld&gt;">
             <elementDefinition Id="40e0ad8c-cd22-4707-983c-c6a789e0a9e4" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="11c6ff0a-d69f-4a07-8dfb-8640ea6fd4d0" LastKnownName="MessageOccurrenceSpecification64" />

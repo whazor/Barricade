@@ -6,36 +6,13 @@
 //------------------------------------------------------------------------------
 namespace Logic
 {
-	using Process;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
 
-	public class Pion
+	public class Spel
 	{
-		public virtual IVeld IVeld
-		{
-			get;
-			set;
-		}
-
-		public virtual Speler Speler
-		{
-			get;
-			private set;
-		}
-
-		public virtual List<IVeld> MogelijkeZetten(int stappen = 1)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public virtual bool Verplaats(IVeld bestemming)
-		{
-			throw new System.NotImplementedException();
-		}
-
 	}
 }
 

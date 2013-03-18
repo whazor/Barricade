@@ -1498,7 +1498,7 @@
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false"
-            signatureText="+ MogelijkeZetten() : List&lt;Barricade.Modeling::Logic::IVeld&gt;">
+            signatureText="+ MogelijkeZetten(stappen : Integer=1) : List&lt;IVeld&gt;">
             <sendEvent>
               <messageOccurrenceSpecificationMoniker
                 Id="0bdd007e-b19c-4a7e-b675-eaaf70ff7422"

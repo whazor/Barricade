@@ -758,8 +758,21 @@
                       <parameter Id="3db1c7bd-e55c-476f-9e22-20bb8b0c1795" direction="Return">
                         <elementDefinition Id="e8a80986-4e9c-49a0-8ec4-f46be2520d24" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="4f23b21a-bc8a-41a8-af76-86776e77c9c1" LastKnownName="List&lt;Barricade.Modeling::Logic::IVeld&gt;" />
+                          <referencedTypeMoniker Id="1e15f2de-303b-4ca0-b2f6-f5379be8afc5" LastKnownName="List&lt;IVeld&gt;" />
                         </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="0428ff6c-a227-43a3-b09e-b80abc6b630e" name="stappen" direction="In">
+                        <elementDefinition Id="cf2c5e03-c44b-4bb8-946d-892d566e3bd1" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="76bb4f8d-02cf-4032-9a6d-6e0ee690cf19" LastKnownName="Integer" />
+                        </type_NamedElement>
+                        <defaultValue>
+                          <literalString Id="3ad845cf-3cc2-47a0-8bd1-b7a174e6e732" value="1">
+                            <elementDefinition Id="df945974-7813-4cca-b0c5-124a79a91c1b" />
+                          </literalString>
+                        </defaultValue>
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
@@ -1111,11 +1124,6 @@
       </package>
     </logicalClassDesignerModelHasPackages>
     <packageHasNamedElement>
-      <referencedType Id="4f23b21a-bc8a-41a8-af76-86776e77c9c1" name="List&lt;Barricade.Modeling::Logic::IVeld&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Barricade.Modeling::Logic::IVeld&gt;">
-        <elementDefinition Id="bb8ced73-025b-46a8-830b-d299a0c5f2e4" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="d9294462-c723-47ba-987b-71a1ebbffc5a" name="IVeld" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::IVeld">
         <elementDefinition Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189" />
       </referencedType>
@@ -1143,6 +1151,16 @@
     <packageHasNamedElement>
       <referencedType Id="305d7494-8a75-4ea3-9b94-7f4eb5b0ac3c" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
         <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="76bb4f8d-02cf-4032-9a6d-6e0ee690cf19" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1e15f2de-303b-4ca0-b2f6-f5379be8afc5" name="List&lt;IVeld&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;IVeld&gt;">
+        <elementDefinition Id="0e773b6e-8987-42d2-9e97-222d643025d6" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
