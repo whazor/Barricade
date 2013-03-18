@@ -13,6 +13,16 @@ namespace Logic
 
 	public class Spelbord
 	{
+        public virtual List<Speler> Spelers
+        {
+            get; set;
+        }
+
+        public Spelbord()
+        {
+            Spelers = new List<Speler>();
+        }
+
 	}
 }
 
