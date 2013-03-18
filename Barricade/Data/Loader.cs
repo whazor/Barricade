@@ -9,9 +9,9 @@ namespace Barricade.Data
 {
     public class Loader
     {
-        public IVeld[,] Points { get; private set; }
-
-        public List<Connection> Connections { get; private set; }
+        public Dictionary<char, Speler> Spelers { get; private set; }
+        public IVeld[,] Kaart { get; private set; }
+        public List<Connection> Connecties { get; private set; }
 
         public Loader(String[] lines)
         {
@@ -24,193 +24,67 @@ namespace Barricade.Data
                 line => line.Trim('*').Split(':')[0][0],
                 line => line.Split(':')[1]);
 
-
-            int firstX;
-            int firstY;
-            int lastX;
-            int lastY;
-            int isXeven;
-            int isYeven;
+            int firstX,firstY;
+            int lastX,lastY;
+            int isXeven,isYeven;
             CalculateSize(lines, out firstX, out firstY, out lastX, out lastY, out isXeven, out isYeven);
             var height = (int) Math.Ceiling(((decimal) (lastY - firstY + 1)/2));
             var width = (lastX - firstX)/4 + 1;
 
-            var barricades = new List<Logic.Barricade>();
-            var spelers = new Dictionary<char, Speler>();
-            Connections = new List<Connection>();
-
-            Points = new IVeld[height, width];
+            Spelers = new Dictionary<char, Speler>();
+            Connecties = new List<Connection>();
+            Kaart = new IVeld[height, width];
 
 
             var getX = new Func<int, int>(x => (x - firstX) / 4);
             var getY = new Func<int, int>(y => (int)Math.Ceiling(((decimal)(y - firstY + 1) / 2)) - 1);
 
-            var linenr = 0;
-            foreach (var line in lines)
+            for (var i = 0; i < lines.Length; i++)
             {
-                linenr++;
-                if (line.Length == 0)
-                    continue;
+                if (lines[i].Length < 2) continue;
 
-                // Begin van de regel kan D of - staan, dit betekent iets voor de vakjes.
+                var line = lines[i];
+
                 var isDorp = (line[0] + line[1] + "").Contains("D");
-                var isBarricadeVrij = (line[0] + line[1] + "").Contains("-");
+                var isBarricadeVrij = !(line[0] + line[1] + "").Contains("-");
 
-                var expected = '\0';
-                var previous = '\0';
-
-                var letternr = 0;
-                IVeld next = null;
-
-                foreach (var letter in line)
+                for (var j = firstX; j < line.Length; j++)
                 {
-                    letternr++;
-                    if (letternr < firstX) continue;
-                    if (expected == '\0')
-                        switch (letter)
-                        {
-                            case '<':
-                                expected = '>';
-                                break;
-                            case '(':
-                                expected = ')';
-                                next = new Veld();
-                                break;
-                            case '[':
-                                expected = ']';
-                                next = new Veld();
-                                //TODO: veld rood maken omdat er een barricade opstaat
-                                break;
-                            case '{':
-                                expected = '}';
-                                next = new Rustveld();
-                                break;
-                            case '-':
-                                Connections.Add(new Connection(
-                                    new Position(getX(letternr - 2), getY(linenr)), 
-                                    new Position(getX(letternr + 2), getY(linenr))
-                                    ));
-                                break;
-                            case '|':
-                                if (linenr%2 == isYeven)
-                                {
-                                    var pos1 = new Position(getX(letternr), getY(linenr - 1));
-                                    var pos2 = new Position(getX(letternr), getY(linenr + 1));
-
-                                    Connections.Add(new Connection(pos1, pos2));                               
-                                }
-                                break;
-                        }
-                    else if (expected == letter)
+                    var letter = line[j];
+                    if (new[] {'<', '(', '[', '{'}.Contains(letter))
                     {
-                        // uitzondering
-                        if (expected == '>')
-                        {
-                            if (previous == ' ')
-                            {
-                                next = new Finishveld();
-                            }
-                            else if (uitzonderingen.ContainsKey(previous))
-                            {
-                                var uitzondering = uitzonderingen[previous];
-                                if (uitzondering.StartsWith("BOS"))
-                                {
-                                    next = new Bos();
+                        var letters = line.Substring(j, 3);
 
-                                    var players = uitzondering.Split(',')[1];
-                                    foreach (var player in players)
-                                    {
-                                        if (!spelers.ContainsKey(previous))
-                                        {
-                                            spelers[player] = new Speler(player);
-                                        }
-                                        var pion = new Pion(spelers[player]) { IVeld = next };
-                                        if (!next.Pionen.Contains(pion))
-                                            next.Pionen.Add(pion);
-                                        spelers[player].Pionen.Add(pion);
-                                    }
-                                }
-                                else if (uitzondering.StartsWith("START"))
-                                {
-                                    if (!uitzondering.Contains(",") || uitzondering.EndsWith(","))
-                                    {
-                                        throw new ParserException("Uitzondering '" + previous + "' (START), heeft geen speler");
-                                    }
-                                    next = new Startveld();
+                         Kaart[getY(i), getX(j+1)] = ParseBlock(letters, isBarricadeVrij, isDorp, uitzonderingen);
 
-                                    var players = uitzondering.Split(',')[1];
-                                    foreach (var player in players)
-                                    {
-                                        if (!spelers.ContainsKey(previous))
-                                        {
-                                            spelers[player] = new Speler(player);
-                                        }
-                                        spelers[player].Startveld = next as Startveld;
-                                        var pion = new Pion(spelers[player]) { IVeld = next };
-                                        if (!next.Pionen.Contains(pion))
-                                            next.Pionen.Add(pion);
-                                        spelers[player].Pionen.Add(pion);
-                                    }
-                                }
-                                else
-                                {
-                                    throw new ParserException("Uitzondering '" + previous + "' snap ik niet.");
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Debug.Assert(next != null, "Deze situatie mag niet voorkomen.");
-                            
-                            next.IsDorp = isDorp;
-                            if (next is Veld)
-                            {
-                                (next as Veld).MagBarricade = isBarricadeVrij;
-                                if (isBarricadeVrij && previous == '*')
-                                {
-                                    var barricade = new Logic.Barricade();
-                                    (next as Veld).Barricade = barricade;
-                                    barricades.Add(barricade);
-                                }
-                            }
-                            if (previous != '*' && previous != ' ')
-                            {
-                                if (!spelers.ContainsKey(previous))
-                                {
-                                    spelers[previous] = new Speler(previous);
-                                }
-                                var pion = new Pion(spelers[previous]) { IVeld = next };
-                                if(!next.Pionen.Contains(pion)) 
-                                    next.Pionen.Add(pion);
-                                spelers[previous].Pionen.Add(pion);
-                            }
-                        }
-
-                        
-                        if (next != null)
-                        {
-                            var posx = getX(letternr);
-                            var posy = getY(linenr);
-                            if ((letternr-firstX-1) % 2 != isXeven)
-                                throw new ParserException(linenr, letternr, "Dit symbool staat hier verkeerd, hij staat verkeerd tegenover de rest.");
-
-                            Points[posy, posx] = next;
-                        }
-                        //letternr-1, positie;
-                        next = null;
-                        expected = '\0';
+                        j += 2;
+                    } 
+                    else if (letter == '-')
+                    {
+                        var pos1 = new Position(getX(j - 2), getY(i));
+                        var pos2 = new Position(getX(j + 2), getY(i));
+                        Connecties.Add(new Connection(pos1, pos2));
                     }
-                    previous = letter;
+                    else if (letter == '|')
+                    {
+                        if (i%2 != isYeven)
+                        {
+                            var pos1 = new Position(getX(j), getY(i - 1));
+                            var pos2 = new Position(getX(j), getY(i + 1));
+
+                            Connecties.Add(new Connection(pos1, pos2));
+                        }
+                    }
                 }
             }
 
             /**
              * Hier alle nodes koppelen
              */
-            foreach (var connectie in Connections)
+            foreach (var connectie in Connecties)
             {
-                var first = Points[connectie.Item1.Y, connectie.Item1.X];
-                var second = Points[connectie.Item2.Y, connectie.Item2.X];
+                var first = Kaart[connectie.Item1.Y, connectie.Item1.X];
+                var second = Kaart[connectie.Item2.Y, connectie.Item2.X];
 
                 if (first != null && second != null)
                 {
@@ -222,17 +96,17 @@ namespace Barricade.Data
                     // Kijk of de code verticaal of horizontaal moet
                     if (connectie.Item1.X == connectie.Item2.X)
                     {
-                        for (var i = connectie.Item2.Y; i < Points.GetLength(0); i++)
+                        for (var i = connectie.Item2.Y; i < Kaart.GetLength(0); i++)
                         {
-                            second = Points[i, connectie.Item2.X];
+                            second = Kaart[i, connectie.Item2.X];
                             if (second != null) break;
                         }
                     }
                     else if (connectie.Item1.Y == connectie.Item2.Y)
                     {
-                        for (var i = connectie.Item2.X; i < Points.GetLength(1); i++)
+                        for (var i = connectie.Item2.X; i < Kaart.GetLength(1); i++)
                         {
-                            second = Points[connectie.Item2.Y, i];
+                            second = Kaart[connectie.Item2.Y, i];
                             if (second != null) break;
                         }
                     }
@@ -241,9 +115,109 @@ namespace Barricade.Data
                         first.Buren.Add(second);
                         second.Buren.Add(first);
                     }
-                    //TODO: hier iets voor verzinnen
                 }
             }
+        }
+
+        private IVeld ParseBlock(string letters, bool isBarricadeVrij, bool isDorp, IReadOnlyDictionary<char, string> uitzonderingen)
+        {
+            IVeld veld = null;
+            if (letters[0] == '<' && letters[2] == '>')
+            {
+                if(letters[1] == ' ')
+                    veld = new Finishveld();
+                else
+                {
+                    if (uitzonderingen.ContainsKey(letters[1]))
+                    {
+                        var uitzondering = uitzonderingen[letters[1]];
+                        if (uitzondering.StartsWith("BOS"))
+                        {
+                            veld = new Bos();
+
+                            var players = uitzondering.Split(',')[1];
+                            foreach (var player in players)
+                            {
+                                CreatePlayer(player, Spelers, veld);
+                            }
+                        }
+                        else if (uitzondering.StartsWith("START"))
+                        {
+                            if (!uitzondering.Contains(",") || uitzondering.EndsWith(","))
+                            {
+                                throw new ParserException("Uitzondering '" + letters[1] + "' (START), heeft geen speler");
+                            }
+                            veld = new Startveld();
+
+                            var players = uitzondering.Split(',')[1];
+                            foreach (var player in players)
+                            {
+                                CreatePlayer(player, Spelers, veld);
+                            }
+                        }
+                        else
+                        {
+                            throw new ParserException("Uitzondering '" + letters[1] + "' snap ik niet.");
+                        }
+                    }
+                }
+
+                return veld;
+            }
+
+            if (letters[0] == '(' && letters[2] == ')')
+            {
+                veld = new Veld();
+            }
+            else if (letters[0] == '[' && letters[2] == ']')
+            {
+                veld = new Veld();
+                //TODO: veld rood maken omdat er een barricade opstaat
+            }
+            else if (letters[0] == '{' && letters[2] == '}')
+            {
+                veld = new Rustveld();
+            }
+            else
+            {
+                throw new ParserException("Dit veld ken ik niet");
+            }
+            veld.IsDorp = isDorp;
+            /**
+             * Kijken of er een barricade op mag komen.
+             */
+            if (veld is Veld)
+            {
+                var barricadeVeld = veld as Veld;
+                barricadeVeld.MagBarricade = isBarricadeVrij;
+                if (isBarricadeVrij && letters[1] == '*')
+                {
+                    var barricade = new Logic.Barricade();
+                    barricadeVeld.Barricade = barricade;
+                }
+            }
+
+            /**
+             * Kijken of er een speler op staat
+             */
+            if (letters[1] != '*' && letters[1] != ' ')
+            {
+                CreatePlayer(letters[1], Spelers, veld);
+            }
+
+            return veld;
+        }
+
+        private static void CreatePlayer(char letter, Dictionary<char, Speler> spelers, IVeld veld)
+        {
+            if (!spelers.ContainsKey(letter))
+            {
+                spelers[letter] = new Speler(letter);
+            }
+            var pion = new Pion(spelers[letter]) {IVeld = veld};
+            if (!veld.Pionen.Contains(pion))
+                veld.Pionen.Add(pion);
+            spelers[letter].Pionen.Add(pion);
         }
 
         private static void CalculateSize(IList<string> lines, out int firstX, out int firstY, out int lastX, out int lastY,
@@ -282,7 +256,7 @@ namespace Barricade.Data
 
         public IVeld[,] ToArray()
         {
-            return Points;
+            return Kaart;
         }
 
         public class Connection : Tuple<Position, Position>
