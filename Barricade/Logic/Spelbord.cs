@@ -13,19 +13,6 @@ namespace Logic
 
 	public class Spelbord
 	{
-	    private List<Speler> spelers = new List<Speler>();
-
-
-        public List<Speler> GetSpelers()
-        {
-            return spelers; 
-        }
-
-        public void AddSpeler(Speler s)
-        {
-            spelers.Add(s);
-        }
-
 	}
 }
 

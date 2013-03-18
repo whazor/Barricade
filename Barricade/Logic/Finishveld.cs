@@ -11,12 +11,8 @@ namespace Logic
 	using System.Linq;
 	using System.Text;
 
-	public class Finishveld : IVeld
+	public class Finishveld : VeldBase
 	{
-	    public object IsDorp { get; set; }
-	    public object IsPlaatsbaar { get; set; }
-	    public IEnumerable<IVeld> IVeld { get; set; }
-	    public IEnumerable<Pion> Pion { get; set; }
 	}
 }
 

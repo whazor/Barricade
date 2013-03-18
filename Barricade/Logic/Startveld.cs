@@ -11,12 +11,8 @@ namespace Logic
 	using System.Linq;
 	using System.Text;
 
-	public class Startveld : IVeld
+	public class Startveld : VeldBase
 	{
-	    public object IsDorp { get; set; }
-	    public object IsPlaatsbaar { get; set; }
-	    public IEnumerable<IVeld> IVeld { get; set; }
-	    public IEnumerable<Pion> Pion { get; set; }
 	}
 }
 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="8d31a448-2020-497c-96fb-3dfc396d3117"
   name="Logic" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -192,15 +192,16 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <suppliersInternal>
-          <interfaceRealization
-            Id="f7dd6cbf-1484-4a1d-8d1f-579f52e9af06">
-            <interfaceMoniker
-              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
-              LastKnownName="IVeld"
+        <generalsInternal>
+          <generalization
+            Id="6078dae2-c6ff-410f-867d-32dfe02c20f3"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9934af0f-3a4a-4f91-8792-1a9c7e495bf9"
+              LastKnownName="VeldBase"
               LastKnownLocation="Package_1214.uml" />
-          </interfaceRealization>
-        </suppliersInternal>
+          </generalization>
+        </generalsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -253,15 +254,16 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <suppliersInternal>
-          <interfaceRealization
-            Id="bde4302e-8b2a-46c8-a5d5-327b33fc9f7a">
-            <interfaceMoniker
-              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
-              LastKnownName="IVeld"
+        <generalsInternal>
+          <generalization
+            Id="e6b7b786-9344-4cc0-874d-9ece4a0b9209"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9934af0f-3a4a-4f91-8792-1a9c7e495bf9"
+              LastKnownName="VeldBase"
               LastKnownLocation="Package_1214.uml" />
-          </interfaceRealization>
-        </suppliersInternal>
+          </generalization>
+        </generalsInternal>
         <targetEnds>
           <association
             Id="c8def151-d2b8-47b0-8d7a-b334d813ebb6"
@@ -449,15 +451,16 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <suppliersInternal>
-          <interfaceRealization
-            Id="a3029f26-34d0-4ae6-b9a7-4a018bb0af01">
-            <interfaceMoniker
-              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
-              LastKnownName="IVeld"
+        <generalsInternal>
+          <generalization
+            Id="48f444af-8857-4b30-984d-32f7052e30d4"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9934af0f-3a4a-4f91-8792-1a9c7e495bf9"
+              LastKnownName="VeldBase"
               LastKnownLocation="Package_1214.uml" />
-          </interfaceRealization>
-        </suppliersInternal>
+          </generalization>
+        </generalsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -780,15 +783,16 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <suppliersInternal>
-          <interfaceRealization
-            Id="d804a23a-ede0-4737-8a79-267abd243f3c">
-            <interfaceMoniker
-              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
-              LastKnownName="IVeld"
+        <generalsInternal>
+          <generalization
+            Id="7556d5a5-a777-4a33-b764-3c679c705dae"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9934af0f-3a4a-4f91-8792-1a9c7e495bf9"
+              LastKnownName="VeldBase"
               LastKnownLocation="Package_1214.uml" />
-          </interfaceRealization>
-        </suppliersInternal>
+          </generalization>
+        </generalsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1104,7 +1108,7 @@
             Id="8baf4ed7-e225-4253-8353-67ed3c303443"
             isDerived="false"
             sourceEndRoleName="IVeld"
-            targetEndRoleName="IVeld"
+            targetEndRoleName="Buren"
             isLeaf="false"
             isAbstract="false">
             <interfaceMoniker
@@ -1141,10 +1145,10 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="708b1ade-f6e8-447f-b93d-729c9d9a5978"
-                  name="IVeld"
+                  name="Buren"
                   isLeaf="false"
                   isStatic="false"
-                  isReadOnly="false"
+                  isReadOnly="true"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
@@ -1235,6 +1239,12 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="Barricade.Modeling.uml" />
+            </type_NamedElement>
           </property>
           <property
             Id="7604fd89-c194-46e9-875a-ea8ce16977e0"
@@ -1304,6 +1314,12 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="Barricade.Modeling.uml" />
+            </type_NamedElement>
           </property>
         </ownedAttributes>
       </Interface>
@@ -1358,6 +1374,67 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9934af0f-3a4a-4f91-8792-1a9c7e495bf9"
+        name="VeldBase"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b032ea75-cceb-4a41-89d4-2e1155d9783c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b056c761-b02a-4b23-9a7b-e44dd8345df8">
+                <propertyInstance
+                  Id="82b1a8e4-8084-4e8a-a4b7-8f65a0822716"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3ebe6b91-9785-4e48-9d89-f6088c8c6a28">
+                <propertyInstance
+                  Id="49b53623-48b4-4d95-8d28-0de817823222"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ce2b3706-bd63-4ccd-b3fc-bb5b174ab9b7">
+                <propertyInstance
+                  Id="20836f63-3513-46c8-9d6c-d3f02184619e"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c13bfae5-6e5e-4ef0-ab39-c23c0111d99b">
+                <propertyInstance
+                  Id="98596739-4733-4702-8676-19388464bf5b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="55f24261-132e-4975-a24c-c4608dce3c7b">
+                <propertyInstance
+                  Id="a901cd25-fd61-4f79-9e63-a8addcd52755"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="37a41905-72a5-49f5-bf44-700bda9004fe">
+            <interfaceMoniker
+              Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189"
+              LastKnownName="IVeld"
+              LastKnownLocation="Package_1214.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
       </class>
     </packageHasNamedElement>
   </packagedElements>

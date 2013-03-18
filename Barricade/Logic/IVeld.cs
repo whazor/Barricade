@@ -13,13 +13,13 @@ namespace Logic
 
 	public interface IVeld 
 	{
-		object IsDorp { get;set; }
+		bool IsDorp { get;set; }
 
-		object IsPlaatsbaar { get;set; }
+		bool IsPlaatsbaar { get;set; }
 
-		IEnumerable<IVeld> IVeld { get;set; }
+		IEnumerable<IVeld> Buren { get; }
 
-		List<Pion> Pionen { get; private set; }
+		IEnumerable<Pion> Pion { get;set; }
 
 	}
 }
