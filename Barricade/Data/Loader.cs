@@ -191,7 +191,7 @@ namespace Barricade.Data
                                     barricades.Add(barricade);
                                 }
                             }
-                            if (previous != '*')
+                            if (previous != '*' && previous != ' ')
                             {
                                 if (!spelers.ContainsKey(previous))
                                 {
