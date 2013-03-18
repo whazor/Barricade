@@ -32,10 +32,10 @@ namespace Barricade.Testing
                     "         |       |               |       |     ",
                     "        <2>     <3>             <4>     <5>    ",
                     "*1:BOS,",
-                    "*2:START,R4",
-                    "*3:START,G4",
-                    "*4:START,Y4",
-                    "*5:START,B4"
+                    "*2:START,RRRR",
+                    "*3:START,GGGG",
+                    "*4:START,YYYY",
+                    "*5:START,BBBB"
                 }    
             );
 

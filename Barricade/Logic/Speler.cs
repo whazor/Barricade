@@ -25,7 +25,7 @@ namespace Logic
 			set;
 		}
 
-		public virtual List<Startveld> Startveld
+		public virtual Startveld Startveld
 		{
 			get;
 			set;
@@ -34,7 +34,6 @@ namespace Logic
         public Speler()
         {
             Pionen = new List<Pion>();
-            Startveld = new List<Startveld>();
         }
 
 	}

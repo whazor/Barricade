@@ -10,6 +10,9 @@ namespace Barricade.Data
     public class Loader
     {
         List<Point> nodes;
+        public IVeld[,] Points { get; private set; }
+
+        public List<Connection> Connections { get; private set; }
 
         public Loader(String[] lines)
         {
@@ -49,13 +52,14 @@ namespace Barricade.Data
 
             var barricades = new List<Logic.Barricade>();
             var spelers = new Dictionary<char, Speler>();
-            var connecties = new List<Connection>();
+            Connections = new List<Connection>();
             
             nodes = new List<Point>();
 
-            var kaart = new IVeld[(int)Math.Ceiling(((decimal)(lastY - firstY + 1) / 2)), (lastX - firstX) / 4 + 1];
-
             
+            Points = new IVeld[(int)Math.Ceiling(((decimal)(lastY - firstY + 1) / 2)), (lastX - firstX) / 4 + 1];
+
+
             var getX = new Func<int, int>(x => (x - firstX) / 4);
             var getY = new Func<int, int>(y => (int)Math.Ceiling(((decimal)(y - firstY + 1) / 2)) - 1);
 
@@ -100,7 +104,7 @@ namespace Barricade.Data
                                 next = new Rustveld();
                                 break;
                             case '-':
-                                connecties.Add(new Connection(
+                                Connections.Add(new Connection(
                                     new Position(getX(letternr - 2), getY(linenr)), 
                                     new Position(getX(letternr + 2), getY(linenr))
                                     ));
@@ -108,7 +112,7 @@ namespace Barricade.Data
                             case '|':
                                 if (getY(linenr)%2 != isYeven)
                                 {
-                                    connecties.Add(new Connection(
+                                    Connections.Add(new Connection(
                                         new Position(getX(letternr), getY(linenr - 1)),
                                         new Position(getX(letternr), getY(linenr + 1))
                                         ));                               
@@ -130,7 +134,19 @@ namespace Barricade.Data
                                 if (uitzondering.StartsWith("BOS"))
                                 {
                                     next = new Bos();
-                                    //TODO: spelers uitzoeken
+
+                                    var players = uitzondering.Split(',')[1];
+                                    foreach (var player in players)
+                                    {
+                                        if (!spelers.ContainsKey(previous))
+                                        {
+                                            spelers[player] = new Speler();
+                                        }
+                                        var pion = new Pion { IVeld = next };
+                                        if (!next.Pionen.Contains(pion))
+                                            next.Pionen.Add(pion);
+                                        spelers[player].Pionen.Add(pion);
+                                    }
                                 }
                                 else if (uitzondering.StartsWith("START"))
                                 {
@@ -140,18 +156,18 @@ namespace Barricade.Data
                                     }
                                     next = new Startveld();
 
-                                    var playerName = uitzondering.Split(',')[1][0];
-                                    if (!spelers.ContainsKey(previous))
+                                    var players = uitzondering.Split(',')[1];
+                                    foreach (var player in players)
                                     {
-                                        spelers[playerName] = new Speler();
-                                    }
-                                    spelers[playerName].Startveld.Add(next as Startveld);
-                                    for (var i = 0; i < int.Parse(uitzondering.Split(',')[1][1]+""); i++)
-                                    {
+                                        if (!spelers.ContainsKey(previous))
+                                        {
+                                            spelers[player] = new Speler();
+                                        }
+                                        spelers[player].Startveld = next as Startveld;
                                         var pion = new Pion { IVeld = next };
                                         if (!next.Pionen.Contains(pion))
                                             next.Pionen.Add(pion);
-                                        spelers[playerName].Pionen.Add(pion);   
+                                        spelers[player].Pionen.Add(pion);
                                     }
                                 }
                                 else
@@ -196,7 +212,7 @@ namespace Barricade.Data
                             if ((letternr-firstX-1) % 2 != isXeven)
                                 throw new ParserException(linenr, letternr, "Dit symbool staat hier verkeerd, hij staat verkeerd tegenover de rest.");
 
-                            kaart[posy, posx] = next;
+                            Points[posy, posx] = next;
                             nodes.Add(new Point(new Position(posx, posy), next));
                         }
                         //letternr-1, positie;
@@ -210,10 +226,10 @@ namespace Barricade.Data
             /**
              * Hier alle nodes koppelen
              */
-            foreach (var connectie in connecties)
+            foreach (var connectie in Connections)
             {
-                var first = kaart[connectie.Item1.Y, connectie.Item1.X];
-                var second = kaart[connectie.Item2.Y, connectie.Item2.X];
+                var first = Points[connectie.Item1.Y, connectie.Item1.X];
+                var second = Points[connectie.Item2.Y, connectie.Item2.X];
 
                 if (first != null && second != null)
                 {
@@ -231,8 +247,8 @@ namespace Barricade.Data
                     // verticaal
                     var isVertical = connectie.Item1.Y == connectie.Item2.Y;
                     var third = isVertical ? 
-                        kaart[connectie.Item2.Y, connectie.Item2.X + direction] : 
-                        kaart[connectie.Item2.Y + direction, connectie.Item2.X];
+                        Points[connectie.Item2.Y, connectie.Item2.X + direction] : 
+                        Points[connectie.Item2.Y + direction, connectie.Item2.X];
 
                     third.Buren.Add(found);
                 }
