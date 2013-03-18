@@ -537,7 +537,7 @@
                   <elementDefinition Id="ea0b1f47-5f36-484c-adea-0be9718f5ca9" />
                 </association>
                 <association Id="77f4c73f-43de-47bb-aa38-4e7ab3395cbb" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Spelbord" isLeaf="false" isAbstract="false">
-                  <classMoniker Id="c8cbd58c-edff-4767-a020-31ed2b8b512e" LastKnownName="Spelbord" />
+                  <classMoniker Id="c8cbd58c-edff-4767-a020-31ed2b8b512e" LastKnownName="Spel" />
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
                       <memberEnd Id="48b020ad-280b-455c-9285-a164a263cc97" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -1018,7 +1018,7 @@
             </Interface>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="c8cbd58c-edff-4767-a020-31ed2b8b512e" name="Spelbord" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="c8cbd58c-edff-4767-a020-31ed2b8b512e" name="Spel" isAbstract="false" isLeaf="false" isActiveClass="false">
               <appliedStereotypesInternal>
                 <stereotypeInstance Id="e062085a-ae2e-4ca9-a3ee-7bde19bbb2ae" name="class" profile="CSharpProfile">
                   <elementDefinition Id="97629a2d-595d-419e-b6e3-c40b17686f22" />

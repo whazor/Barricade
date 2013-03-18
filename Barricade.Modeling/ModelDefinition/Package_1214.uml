@@ -635,7 +635,7 @@
             isAbstract="false">
             <classMoniker
               Id="9bab895f-1b08-40bb-ade3-030598f8b17c"
-              LastKnownName="Spelbord"
+              LastKnownName="Spel"
               LastKnownLocation="Package_1214.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1327,7 +1327,7 @@
     <packageHasNamedElement>
       <class
         Id="9bab895f-1b08-40bb-ade3-030598f8b17c"
-        name="Spelbord"
+        name="Spel"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
