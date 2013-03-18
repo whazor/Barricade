@@ -10,8 +10,14 @@ namespace Logic
 	{
 	    public bool IsDorp { get; set; }
 	    public bool IsPlaatsbaar { get; set; }
-	    public IEnumerable<IVeld> Buren { get; private set; }
-	    public IEnumerable<Pion> Pion { get; set; }
+	    public List<IVeld> Buren { get; private set; }
+	    public List<Pion> Pionen { get; private set; }
+
+        public VeldBase()
+        {
+            Buren = new List<IVeld>();
+            Pionen = new List<Pion>();
+        }
 	}
 }
 

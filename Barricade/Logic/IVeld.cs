@@ -17,9 +17,9 @@ namespace Logic
 
 		bool IsPlaatsbaar { get;set; }
 
-		IEnumerable<IVeld> Buren { get; }
+		List<IVeld> Buren { get; }
 
-		IEnumerable<Pion> Pion { get;set; }
+		List<Pion> Pionen { get; }
 
 	}
 }

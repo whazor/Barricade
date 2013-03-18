@@ -13,7 +13,7 @@ namespace Logic
 
 	public class Speler
 	{
-		public virtual IEnumerable<Pion> Pionen
+		public virtual List<Pion> Pionen
 		{
 			get;
 			private set;
@@ -25,11 +25,17 @@ namespace Logic
 			set;
 		}
 
-		public virtual IEnumerable<Startveld> Startveld
+		public virtual List<Startveld> Startveld
 		{
 			get;
 			set;
 		}
+
+        public Speler()
+        {
+            Pionen = new List<Pion>();
+            Startveld = new List<Startveld>();
+        }
 
 	}
 }

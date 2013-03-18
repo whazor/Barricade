@@ -13,6 +13,10 @@ namespace Logic
 
 	public class Bos : IVeld
 	{
+	    public bool IsDorp { get; set; }
+	    public bool IsPlaatsbaar { get; set; }
+	    public List<IVeld> Buren { get; private set; }
+	    public List<Pion> Pionen { get; set; }
 	}
 }
 

@@ -73,6 +73,7 @@
     <Compile Include="Logic\Speler.cs" />
     <Compile Include="Logic\Startveld.cs" />
     <Compile Include="Logic\Veld.cs" />
+    <Compile Include="Logic\VeldBase.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
