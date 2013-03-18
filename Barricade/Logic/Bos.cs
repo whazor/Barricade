@@ -17,6 +17,14 @@ namespace Logic
 	    public bool IsPlaatsbaar { get; set; }
 	    public List<IVeld> Buren { get; private set; }
 	    public List<Pion> Pionen { get; set; }
+
+        public Bos()
+        {
+            Buren = new List<IVeld>();
+            Pionen = new List<Pion>();
+        }
 	}
+
+
 }
 
