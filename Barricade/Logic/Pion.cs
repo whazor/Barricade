@@ -14,7 +14,12 @@ namespace Logic
 
 	public class Pion
 	{
-		public virtual IVeld IVeld
+	    public Pion(Speler speler)
+	    {
+	        Speler = speler;
+	    }
+
+	    public virtual IVeld IVeld
 		{
 			get;
 			set;
@@ -22,8 +27,7 @@ namespace Logic
 
 		public virtual Speler Speler
 		{
-			get;
-			private set;
+			get; private set;
 		}
 
 		public virtual List<IVeld> MogelijkeZetten(int stappen = 1)

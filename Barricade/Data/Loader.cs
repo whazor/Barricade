@@ -9,7 +9,6 @@ namespace Barricade.Data
 {
     public class Loader
     {
-        List<Point> nodes;
         public IVeld[,] Points { get; private set; }
 
         public List<Connection> Connections { get; private set; }
@@ -26,38 +25,21 @@ namespace Barricade.Data
                 line => line.Split(':')[1]);
 
 
-            // Min, max values, voor uitrekenen van breedte en lengte
-            var firstX = int.MaxValue;
-            var firstY = int.MaxValue;
-            var lastX = int.MinValue;
-            var lastY = int.MinValue;
-
-            // Snelle controle naar spelgrootte en hoe de vakjes staan
-            for (var i = 0; i < lines.Length; i++)
-            {
-                for (var j = 0; j < lines[i].Length; j++)
-                {
-                    if (!new[] {'<', '(', '[', '{'}.Contains(lines[i][j])) continue;
-
-                    firstX = Math.Min(firstX, j);
-                    lastX = Math.Max(lastX, j + 3);
-
-                    firstY = Math.Min(firstY, i);
-                    lastY = Math.Max(lastY, i);
-                }
-            }
-            // Trucje om te kijken waar het middenpunt van een vakje zit
-            var isXeven = (lastX - firstX - 1) % 2;
-            var isYeven = firstY % 2;
+            int firstX;
+            int firstY;
+            int lastX;
+            int lastY;
+            int isXeven;
+            int isYeven;
+            CalculateSize(lines, out firstX, out firstY, out lastX, out lastY, out isXeven, out isYeven);
+            var height = (int) Math.Ceiling(((decimal) (lastY - firstY + 1)/2));
+            var width = (lastX - firstX)/4 + 1;
 
             var barricades = new List<Logic.Barricade>();
             var spelers = new Dictionary<char, Speler>();
             Connections = new List<Connection>();
-            
-            nodes = new List<Point>();
 
-            
-            Points = new IVeld[(int)Math.Ceiling(((decimal)(lastY - firstY + 1) / 2)), (lastX - firstX) / 4 + 1];
+            Points = new IVeld[height, width];
 
 
             var getX = new Func<int, int>(x => (x - firstX) / 4);
@@ -110,12 +92,12 @@ namespace Barricade.Data
                                     ));
                                 break;
                             case '|':
-                                if (getY(linenr)%2 != isYeven)
+                                if (linenr%2 == isYeven)
                                 {
-                                    Connections.Add(new Connection(
-                                        new Position(getX(letternr), getY(linenr - 1)),
-                                        new Position(getX(letternr), getY(linenr + 1))
-                                        ));                               
+                                    var pos1 = new Position(getX(letternr), getY(linenr - 1));
+                                    var pos2 = new Position(getX(letternr), getY(linenr + 1));
+
+                                    Connections.Add(new Connection(pos1, pos2));                               
                                 }
                                 break;
                         }
@@ -140,9 +122,9 @@ namespace Barricade.Data
                                     {
                                         if (!spelers.ContainsKey(previous))
                                         {
-                                            spelers[player] = new Speler();
+                                            spelers[player] = new Speler(player);
                                         }
-                                        var pion = new Pion { IVeld = next };
+                                        var pion = new Pion(spelers[player]) { IVeld = next };
                                         if (!next.Pionen.Contains(pion))
                                             next.Pionen.Add(pion);
                                         spelers[player].Pionen.Add(pion);
@@ -161,10 +143,10 @@ namespace Barricade.Data
                                     {
                                         if (!spelers.ContainsKey(previous))
                                         {
-                                            spelers[player] = new Speler();
+                                            spelers[player] = new Speler(player);
                                         }
                                         spelers[player].Startveld = next as Startveld;
-                                        var pion = new Pion { IVeld = next };
+                                        var pion = new Pion(spelers[player]) { IVeld = next };
                                         if (!next.Pionen.Contains(pion))
                                             next.Pionen.Add(pion);
                                         spelers[player].Pionen.Add(pion);
@@ -195,9 +177,9 @@ namespace Barricade.Data
                             {
                                 if (!spelers.ContainsKey(previous))
                                 {
-                                    spelers[previous] = new Speler();
+                                    spelers[previous] = new Speler(previous);
                                 }
-                                var pion = new Pion {IVeld = next};
+                                var pion = new Pion(spelers[previous]) { IVeld = next };
                                 if(!next.Pionen.Contains(pion)) 
                                     next.Pionen.Add(pion);
                                 spelers[previous].Pionen.Add(pion);
@@ -213,7 +195,6 @@ namespace Barricade.Data
                                 throw new ParserException(linenr, letternr, "Dit symbool staat hier verkeerd, hij staat verkeerd tegenover de rest.");
 
                             Points[posy, posx] = next;
-                            nodes.Add(new Point(new Position(posx, posy), next));
                         }
                         //letternr-1, positie;
                         next = null;
@@ -236,23 +217,61 @@ namespace Barricade.Data
                     first.Buren.Add(second);
                     second.Buren.Add(first);
                 }
-                else if (first == null && second == null)
+                else if (first != null && second == null)
                 {
+                    // Kijk of de code verticaal of horizontaal moet
+                    if (connectie.Item1.X == connectie.Item2.X)
+                    {
+                        for (var i = connectie.Item2.Y; i < Points.GetLength(0); i++)
+                        {
+                            second = Points[i, connectie.Item2.X];
+                            if (second != null) break;
+                        }
+                    }
+                    else if (connectie.Item1.Y == connectie.Item2.Y)
+                    {
+                        for (var i = connectie.Item2.X; i < Points.GetLength(1); i++)
+                        {
+                            second = Points[connectie.Item2.Y, i];
+                            if (second != null) break;
+                        }
+                    }
+
+                    if (second != null) {
+                        first.Buren.Add(second);
+                        second.Buren.Add(first);
+                    }
                     //TODO: hier iets voor verzinnen
                 }
-                else
-                {
-                    var direction = first == null ? 2 : -2;
-                    var found = first ?? second;
-                    // verticaal
-                    var isVertical = connectie.Item1.Y == connectie.Item2.Y;
-                    var third = isVertical ? 
-                        Points[connectie.Item2.Y, connectie.Item2.X + direction] : 
-                        Points[connectie.Item2.Y + direction, connectie.Item2.X];
+            }
+        }
 
-                    third.Buren.Add(found);
+        private static void CalculateSize(IList<string> lines, out int firstX, out int firstY, out int lastX, out int lastY,
+                                             out int isXeven, out int isYeven)
+        {
+            // Min, max values, voor uitrekenen van breedte en lengte
+            firstX = int.MaxValue;
+            firstY = int.MaxValue;
+            lastX = int.MinValue;
+            lastY = int.MinValue;
+
+            // Snelle controle naar spelgrootte en hoe de vakjes staan
+            for (var i = 0; i < lines.Count; i++)
+            {
+                for (var j = 0; j < lines[i].Length; j++)
+                {
+                    if (!new[] {'<', '(', '[', '{'}.Contains(lines[i][j])) continue;
+
+                    firstX = Math.Min(firstX, j);
+                    lastX = Math.Max(lastX, j + 3);
+
+                    firstY = Math.Min(firstY, i);
+                    lastY = Math.Max(lastY, i);
                 }
             }
+            // Trucje om te kijken waar het middenpunt van een vakje zit
+            isXeven = (lastX - firstX - 1)%2;
+            isYeven = firstY%2;
         }
 
         public Loader(TextReader file)
@@ -261,9 +280,9 @@ namespace Barricade.Data
         }
 
 
-        public List<Point> ToArray()
+        public IVeld[,] ToArray()
         {
-            return nodes;
+            return Points;
         }
 
         public class Connection : Tuple<Position, Position>

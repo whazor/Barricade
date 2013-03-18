@@ -13,7 +13,9 @@ namespace Logic
 
 	public class Speler
 	{
-		public virtual List<Pion> Pionen
+	    public char Name { get; private set; }
+
+	    public virtual List<Pion> Pionen
 		{
 			get;
 			private set;
@@ -31,11 +33,11 @@ namespace Logic
 			set;
 		}
 
-        public Speler()
+        public Speler(char name)
         {
+            Name = name;
             Pionen = new List<Pion>();
         }
-
 	}
 }
 
