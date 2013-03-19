@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Logic;
@@ -10,12 +9,10 @@ namespace Barricade.Data
 	public class Saver
 	{
 	    private readonly IVeld[,] _points;
-	    private readonly IEnumerable<Loader.Connection> _connections;
 
-	    public Saver(IVeld[,] points, IEnumerable<Loader.Connection> connections)
+	    public Saver(IVeld[,] points)
 	    {
 	        _points = points;
-	        _connections = connections;
 	    }
 
         public String Output()

@@ -86,12 +86,7 @@ namespace Barricade.Data
                 var first = Kaart[connectie.Item1.Y, connectie.Item1.X];
                 var second = Kaart[connectie.Item2.Y, connectie.Item2.X];
 
-                if (first != null && second != null)
-                {
-                    first.Buren.Add(second);
-                    second.Buren.Add(first);
-                }
-                else if (first != null && second == null)
+                if (first != null && second == null)
                 {
                     // Kijk of de code verticaal of horizontaal moet
                     if (connectie.Item1.X == connectie.Item2.X)
@@ -110,12 +105,11 @@ namespace Barricade.Data
                             if (second != null) break;
                         }
                     }
-
-                    if (second != null) {
-                        first.Buren.Add(second);
-                        second.Buren.Add(first);
-                    }
                 }
+                if (first == null || second == null) continue;
+
+                first.Buren.Add(second);
+                second.Buren.Add(first);
             }
         }
 

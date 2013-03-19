@@ -40,7 +40,7 @@ namespace Barricade.Shell
                 }
             );
 
-            var saver = new Saver(loader.Kaart, loader.Connecties);
+            var saver = new Saver(loader.Kaart);
 
             Console.WriteLine(saver.Output());
             Console.Read();
