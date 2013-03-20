@@ -32,8 +32,27 @@ namespace Logic
 
 		public virtual List<IVeld> MogelijkeZetten(int stappen = 1)
 		{
-			throw new System.NotImplementedException();
+            return MogelijkeZetten(IVeld, IVeld, stappen);
 		}
+
+        private List<IVeld> MogelijkeZetten(IVeld vorige, IVeld begin, int stappen)
+        {
+            var list = new List<IVeld>();
+            if (stappen < 1)
+            {
+                list.Add(begin);
+            }
+            else
+            {
+                foreach (var veld in begin.Buren)
+                {
+                    if (veld == vorige) continue;
+                    
+                    list.Concat(MogelijkeZetten(begin, veld, stappen - 1));
+                }
+            }
+            return list;
+        }
 
 		public virtual bool Verplaats(IVeld bestemming)
 		{
