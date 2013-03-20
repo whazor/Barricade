@@ -11,14 +11,14 @@ namespace Logic
 	using System.Linq;
 	using System.Text;
 
-	public class Spelbord
+	public class Spel
 	{
         public virtual List<Speler> Spelers
         {
-            get; set;
+            get; private set;
         }
 
-        public Spelbord()
+        public Spel()
         {
             Spelers = new List<Speler>();
         }

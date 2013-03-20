@@ -21,7 +21,7 @@ namespace Logic
 			private set;
 		}
 
-		public virtual Spelbord Spelbord
+		public virtual Spel Spel
 		{
 			get;
 			set;

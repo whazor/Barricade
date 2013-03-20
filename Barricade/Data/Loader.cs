@@ -12,6 +12,7 @@ namespace Barricade.Data
         public Dictionary<char, Speler> Spelers { get; private set; }
         public IVeld[,] Kaart { get; private set; }
         public List<Connection> Connecties { get; private set; }
+        public Spel Spel { get; set; }
 
         public Loader(String[] lines)
         {
@@ -111,7 +112,15 @@ namespace Barricade.Data
                 first.Buren.Add(second);
                 second.Buren.Add(first);
             }
+
+            Spel = new Spel();
+            foreach (var speler in Spelers)
+            {
+                Spel.Spelers.Add(speler.Value);
+            }
         }
+
+        
 
         private IVeld ParseBlock(string letters, bool isBarricadeVrij, bool isDorp, IReadOnlyDictionary<char, string> uitzonderingen)
         {
