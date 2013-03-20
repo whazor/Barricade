@@ -11,8 +11,18 @@ namespace Logic
 	using System.Linq;
 	using System.Text;
 
-	public class Spel
+	public class Spelbord
 	{
+        public virtual List<Speler> Spelers
+        {
+            get; set;
+        }
+
+        public Spelbord()
+        {
+            Spelers = new List<Speler>();
+        }
+
 	}
 }
 

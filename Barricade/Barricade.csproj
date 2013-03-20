@@ -69,6 +69,7 @@
     <Compile Include="Logic\IVeld.cs" />
     <Compile Include="Logic\Pion.cs" />
     <Compile Include="Logic\Rustveld.cs" />
+    <Compile Include="Logic\Spel.cs" />
     <Compile Include="Logic\Spelbord.cs" />
     <Compile Include="Logic\Speler.cs" />
     <Compile Include="Logic\Startveld.cs" />
