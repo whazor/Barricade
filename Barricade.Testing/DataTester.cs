@@ -80,7 +80,6 @@ namespace Barricade.Testing
 
             var loader2 = new Loader(level2);
             loader2.ToArray();
-
         }
 
         [TestMethod]
