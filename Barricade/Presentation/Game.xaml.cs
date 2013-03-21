@@ -69,11 +69,52 @@ namespace Barricade.Presentation
 
                     var vakje = new Vakje(level[i, j]);
                     Grid.SetRow(vakje, i * 2);
+                    
                     Grid.SetColumn(vakje, j * 2);
+                    if (level[i, j] is Logic.Bos)
+                    {
+                        Grid.SetColumn(vakje, j * 2 - 2);
+                        Grid.SetColumnSpan(vakje, 5);
+                    }
                     Spelbord.Children.Add(vakje);
 
-//                    
-
+                    for (var k = j + 1; k < width; k++)
+                    {
+                        if (level[i, k] == null)
+                        {
+                            break;
+                        }
+                        if (level[i, j].Buren.Contains(level[i, k]))
+                        {
+                            for (var l = 1; l < (k - j - 1) * 2 + 2; l++)
+                            {
+                                var line = new Rectangle {Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0)), Height = 5};
+                                Grid.SetRow(line, i * 2);
+                                Grid.SetColumn(line, j * 2 + l);
+                                Spelbord.Children.Add(line);
+                            }
+                        }
+                        break;
+                    }
+                    for (var k = i + 1; k < height; k++)
+                    {
+                        if (level[k, j] == null)
+                        {
+                            continue;
+                        }
+                        if (level[i, j].Buren.Contains(level[k, j]))
+                        {
+                            for (var l = 1; l < (k - i) * 2; l++)
+                            {
+                                var line = new Rectangle { Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0)), Width = 5 };
+                                Grid.SetRow(line, i * 2 + l);
+                                Grid.SetColumn(line, j * 2 );
+                                Spelbord.Children.Add(line);
+                            }
+                        }
+                        break;
+                    }
+                
                 }
             }
         }

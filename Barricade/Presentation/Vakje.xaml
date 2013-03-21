@@ -7,5 +7,6 @@
              d:DesignHeight="50" d:DesignWidth="50" Width="50" Height="50">
     <Grid>
         <Image Source="/Presentation\Images\vakje.png" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50"/>
+        <Label Name="BurenCount" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" FontSize="20"/>
     </Grid>
 </UserControl>

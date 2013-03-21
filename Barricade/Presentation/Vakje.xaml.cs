@@ -24,6 +24,10 @@ namespace Barricade.Presentation
         public Vakje(IVeld veld)
         {
             InitializeComponent();
+            BurenCount.Content = veld.Buren.Count + "";
+            if (!(veld is Bos)) return;
+            Width = 100;
+            Background = new SolidColorBrush(Color.FromRgb(100, 235, 100));
         }
     }
 }

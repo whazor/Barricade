@@ -27,7 +27,7 @@ namespace Barricade
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonLang_Click(object sender, RoutedEventArgs e)
         {
             var level2 = new[]
             {
@@ -64,6 +64,39 @@ namespace Barricade
 	"*2:START,GGGGG",
 	"*3:START,YYYYY",
 	"*4:START,BBBBB"
+            };
+            var game = new Game(new Loader(level2));
+            Content = game;
+        }
+
+        private void ButtonKort_Click(object sender, RoutedEventArgs e)
+        {
+            var level2 = new[]
+            {
+                    "                        < >                    ",
+                    "                         |                     ",
+                    "D       ( )-( )-( )-( )-[*]-( )-( )-( )-( )    ",
+                    "         |                               |     ",
+                    "D       ( )-( )-( )-{ }-[*]-{ }-( )-( )-( )    ",
+                    "                         |                     ",
+                    "D           ( )-( )-[*]-( )-[*]-( )-( )        ",
+                    "             |                       |         ",
+                    "            { }-[*]-( )-( )-( )-[*]-{ }        ",
+                    "                         |                     ",
+                    "                ( )-( )-{ }-( )-( )            ",
+                    "                 |       |       |             ",
+                    "                 |      <1>      |             ",
+                    "                 |               |             ",
+                    "    { }-( )-{ }-( )-( )-{ }-( )-( )-{ }-( )-{ }",
+                    "     |       |           |           |       | ",
+                    "-   ( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )",
+                    "         |       |               |       |     ",
+                    "        <2>     <3>             <4>     <5>    ",
+                    "*1:BOS,",
+                    "*2:START,RRRR",
+                    "*3:START,GGGG",
+                    "*4:START,YYYY",
+                    "*5:START,BBBB"
             };
             var game = new Game(new Loader(level2));
             Content = game;

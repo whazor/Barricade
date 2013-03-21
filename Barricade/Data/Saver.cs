@@ -113,7 +113,7 @@ namespace Barricade.Data
                 }
                 result += "\r\n";
 
-                for (var j = 0; j < width; j++)
+                for (var j = 0; j < height; j++)
                 {
                     if (_points[i, j] == null)
                     {
