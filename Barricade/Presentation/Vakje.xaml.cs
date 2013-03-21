@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Logic;
 
 namespace Barricade.Presentation
 {
@@ -20,7 +21,7 @@ namespace Barricade.Presentation
     /// </summary>
     public partial class Vakje : UserControl
     {
-        public Vakje()
+        public Vakje(IVeld veld)
         {
             InitializeComponent();
         }
