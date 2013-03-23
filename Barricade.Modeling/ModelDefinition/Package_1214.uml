@@ -1085,6 +1085,7 @@
         name="IVeld"
         isAbstract="false"
         isLeaf="false">
+        <description>IsPlaatsbaar wilt zeggen dat op dit veld wel of geen barricade geplaatst kan worden(voor de eerste rij).</description>
         <appliedStereotypesInternal>
           <stereotypeInstance
             Id="d702bdde-1af0-420e-8ad7-d4a9d9e8d889"

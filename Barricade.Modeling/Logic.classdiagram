@@ -846,6 +846,7 @@
           </packageHasNamedElement>
           <packageHasNamedElement>
             <Interface Id="9a693033-7e2e-4275-8cb2-dbf3a552d665" name="IVeld" isAbstract="false" isLeaf="false">
+              <description>IsPlaatsbaar wilt zeggen dat op dit veld wel of geen barricade geplaatst kan worden(voor de eerste rij).</description>
               <appliedStereotypesInternal>
                 <stereotypeInstance Id="d8d9c946-7167-4be6-828d-6c99ca00e9f8" name="interface" profile="CSharpProfile">
                   <elementDefinition Id="d702bdde-1af0-420e-8ad7-d4a9d9e8d889" />
