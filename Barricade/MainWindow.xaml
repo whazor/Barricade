@@ -1,8 +1,9 @@
 ﻿<Window x:Class="Barricade.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Top="20">
+    <Grid Height="300" Width="300">
+        <Button Content="Lang" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="41" Click="ButtonLang_Click" Margin="86,155,86,104"/>
+        <Button Content="Kort" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="41" Click="ButtonKort_Click" Margin="86,109,86,150"/>
     </Grid>
-</Window>
+</Window> 

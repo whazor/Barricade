@@ -1,44 +1,86 @@
-﻿using System.Diagnostics;
-using System.IO;
-using Logic;
-using System.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Logic;
 
 namespace Barricade.Data
 {
     public class Loader
     {
-        public Dictionary<char, Speler> Spelers { get; private set; }
+        #region Constructor
+        public Loader(String[] lines)
+        {
+            Parse(lines);
+        }
+
+        public Loader(TextReader file)
+        {
+            var list = new List<string>();
+            while (file.Peek() >= 0)
+            {
+                list.Add(file.ReadLine());
+            }
+            Parse(list.ToArray());
+        }
+        #endregion
+
+        #region Properties
+        private Dictionary<char, Speler> Spelers { get; set; }
         public IVeld[,] Kaart { get; private set; }
         public List<Connection> Connecties { get; private set; }
         public Spel Spel { get; set; }
+        #endregion
 
-        public Loader(String[] lines)
+        #region Methodes
+        private static void CalculateSize(IList<string> lines, out int firstX, out int firstY, out int lastX,
+                                  out int lastY,
+                                  out int isXeven, out int isYeven)
+        {
+            // Min, max values, voor uitrekenen van breedte en lengte
+            firstX = int.MaxValue;
+            firstY = int.MaxValue;
+            lastX = int.MinValue;
+            lastY = int.MinValue;
+
+            // Snelle controle naar spelgrootte en hoe de vakjes staan
+            for (int i = 0; i < lines.Count; i++)
+            {
+                for (int j = 0; j < lines[i].Length; j++)
+                {
+                    if (!new[] { '<', '(', '[', '{' }.Contains(lines[i][j])) continue;
+
+                    firstX = Math.Min(firstX, j);
+                    lastX = Math.Max(lastX, j + 3);
+
+                    firstY = Math.Min(firstY, i);
+                    lastY = Math.Max(lastY, i);
+                }
+            }
+            // Trucje om te kijken waar het middenpunt van een vakje zit
+            isXeven = (lastX - firstX - 1) % 2;
+            isYeven = firstY % 2;
+        }
+        
+        private void Parse(string[] lines)
         {
             // Alle informatie over bijzondere vakjes ophalen
-            var lastList = from line in lines
-                           where line.StartsWith("*") && line.Contains(":") && !line.EndsWith(":")
-                           select line;
+            var uitzonderingen = ParseUitzonderingen(lines);
 
-            var uitzonderingen = lastList.ToDictionary(
-                line => line.Trim('*').Split(':')[0][0],
-                line => line.Split(':')[1]);
-
-            int firstX,firstY;
-            int lastX,lastY;
-            int isXeven,isYeven;
+            int firstX, firstY;
+            int lastX, lastY;
+            int isXeven, isYeven;
             CalculateSize(lines, out firstX, out firstY, out lastX, out lastY, out isXeven, out isYeven);
+
             var height = (int) Math.Ceiling(((decimal) (lastY - firstY + 1)/2));
             var width = (lastX - firstX)/4 + 1;
 
             Spelers = new Dictionary<char, Speler>();
             Connecties = new List<Connection>();
-            Kaart = new IVeld[height, width];
+            Kaart = new IVeld[height,width];
 
-
-            var getX = new Func<int, int>(x => (x - firstX) / 4);
-            var getY = new Func<int, int>(y => (int)Math.Ceiling(((decimal)(y - firstY + 1) / 2)) - 1);
+            var getX = new Func<int, int>(x => (x - firstX)/4);
+            var getY = new Func<int, int>(y => (int) Math.Ceiling(((decimal) (y - firstY + 1)/2)) - 1);
 
             for (var i = 0; i < lines.Length; i++)
             {
@@ -56,26 +98,30 @@ namespace Barricade.Data
                     {
                         var letters = line.Substring(j, 3);
 
-                         Kaart[getY(i), getX(j+1)] = ParseBlock(letters, isBarricadeVrij, isDorp, uitzonderingen);
+                        Kaart[getY(i), getX(j + 1)] = ParseBlock(letters, isBarricadeVrij, isDorp, uitzonderingen);
 
                         j += 2;
-                    } 
-                    else if (letter == '-')
-                    {
-                        var pos1 = new Position(getX(j - 2), getY(i));
-                        var pos2 = new Position(getX(j + 2), getY(i));
-                        Connecties.Add(new Connection(pos1, pos2));
                     }
-                    else if (letter == '|')
-                    {
-                        if (i%2 != isYeven)
+                    else
+                        switch (letter)
                         {
-                            var pos1 = new Position(getX(j), getY(i - 1));
-                            var pos2 = new Position(getX(j), getY(i + 1));
+                            case '-':
+                                {
+                                    var pos1 = new Position(getX(j - 2), getY(i));
+                                    var pos2 = new Position(getX(j + 2), getY(i));
+                                    Connecties.Add(new Connection(pos1, pos2));
+                                }
+                                break;
+                            case '|':
+                                if (i%2 != isYeven)
+                                {
+                                    var pos1 = new Position(getX(j), getY(i - 1));
+                                    var pos2 = new Position(getX(j), getY(i + 1));
 
-                            Connecties.Add(new Connection(pos1, pos2));
+                                    Connecties.Add(new Connection(pos1, pos2));
+                                }
+                                break;
                         }
-                    }
                 }
             }
 
@@ -120,26 +166,39 @@ namespace Barricade.Data
             }
         }
 
-        
+        private static Dictionary<char, string> ParseUitzonderingen(IEnumerable<string> lines)
+        {
+            var lastList = from line in lines
+                           where line.StartsWith("*") && line.Contains(":") && !line.EndsWith(":")
+                           select line;
 
-        private IVeld ParseBlock(string letters, bool isBarricadeVrij, bool isDorp, IReadOnlyDictionary<char, string> uitzonderingen)
+            var uitzonderingen = lastList.ToDictionary(
+                line => line.Trim('*').Split(':')[0][0],
+                line => line.Split(':')[1]);
+            return uitzonderingen;
+        }
+
+
+
+        private IVeld ParseBlock(string letters, bool isBarricadeVrij, bool isDorp,
+                                 IReadOnlyDictionary<char, string> uitzonderingen)
         {
             IVeld veld = null;
             if (letters[0] == '<' && letters[2] == '>')
             {
-                if(letters[1] == ' ')
+                if (letters[1] == ' ')
                     veld = new Finishveld();
                 else
                 {
                     if (uitzonderingen.ContainsKey(letters[1]))
                     {
-                        var uitzondering = uitzonderingen[letters[1]];
+                        string uitzondering = uitzonderingen[letters[1]];
                         if (uitzondering.StartsWith("BOS"))
                         {
                             veld = new Bos();
 
-                            var players = uitzondering.Split(',')[1];
-                            foreach (var player in players)
+                            string players = uitzondering.Split(',')[1];
+                            foreach (char player in players)
                             {
                                 CreatePlayer(player, Spelers, veld);
                             }
@@ -152,8 +211,8 @@ namespace Barricade.Data
                             }
                             veld = new Startveld();
 
-                            var players = uitzondering.Split(',')[1];
-                            foreach (var player in players)
+                            string players = uitzondering.Split(',')[1];
+                            foreach (char player in players)
                             {
                                 CreatePlayer(player, Spelers, veld);
                             }
@@ -223,60 +282,17 @@ namespace Barricade.Data
             spelers[letter].Pionen.Add(pion);
         }
 
-        private static void CalculateSize(IList<string> lines, out int firstX, out int firstY, out int lastX, out int lastY,
-                                             out int isXeven, out int isYeven)
-        {
-            // Min, max values, voor uitrekenen van breedte en lengte
-            firstX = int.MaxValue;
-            firstY = int.MaxValue;
-            lastX = int.MinValue;
-            lastY = int.MinValue;
-
-            // Snelle controle naar spelgrootte en hoe de vakjes staan
-            for (var i = 0; i < lines.Count; i++)
-            {
-                for (var j = 0; j < lines[i].Length; j++)
-                {
-                    if (!new[] {'<', '(', '[', '{'}.Contains(lines[i][j])) continue;
-
-                    firstX = Math.Min(firstX, j);
-                    lastX = Math.Max(lastX, j + 3);
-
-                    firstY = Math.Min(firstY, i);
-                    lastY = Math.Max(lastY, i);
-                }
-            }
-            // Trucje om te kijken waar het middenpunt van een vakje zit
-            isXeven = (lastX - firstX - 1)%2;
-            isYeven = firstY%2;
-        }
-
-        public Loader(TextReader file)
-        {
-            throw new NotImplementedException();
-        }
-
-
         public IVeld[,] ToArray()
         {
             return Kaart;
         }
+        #endregion
 
         public class Connection : Tuple<Position, Position>
         {
             public Connection(Position item1, Position item2) : base(item1, item2)
             {
             }
-        }
-
-        public class Position : Tuple<int, int>
-        {
-            public Position(int item1, int item2) : base(item1, item2)
-            {
-            }
-
-            public int X { get { return Item1; } }
-            public int Y { get { return Item2; } }
         }
 
         public class Point
@@ -286,8 +302,26 @@ namespace Barricade.Data
                 Locatie = a1;
                 Veld = a2;
             }
+
             public IVeld Veld { get; set; }
             public Position Locatie { get; set; }
+        }
+
+        public class Position : Tuple<int, int>
+        {
+            public Position(int item1, int item2) : base(item1, item2)
+            {
+            }
+
+            public int X
+            {
+                get { return Item1; }
+            }
+
+            public int Y
+            {
+                get { return Item2; }
+            }
         }
     }
 
@@ -296,13 +330,11 @@ namespace Barricade.Data
         public ParserException(string s)
             : base(s)
         {
-
         }
 
-        public ParserException(int linenr, int letternr, string message) 
-            : base ("[regel "+linenr+", karakter "+letternr+"] "+message)
+        public ParserException(int linenr, int letternr, string message)
+            : base("[regel " + linenr + ", karakter " + letternr + "] " + message)
         {
         }
     }
 }
-
