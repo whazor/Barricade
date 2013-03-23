@@ -5,8 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="50" Width="50" Height="50">
+    <UserControl.Resources>
+        <!-- Alle velden -->
+        <ResourceDictionary>
+            <ImageSource x:Key="Vakje">/Presentation\Images\vakje.png</ImageSource>
+            <ImageSource x:Key="Bos">/Presentation\Images\forrest.png</ImageSource>
+            <ImageSource x:Key="Finish">/Presentation\Images\finish.png</ImageSource>
+            <ImageSource x:Key="Rust">/Presentation\Images\rustveld.png</ImageSource>
+            <ImageSource x:Key="Barricade">/Presentation\Images\barricadeveld.png</ImageSource>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
-        <Image Source="/Presentation\Images\vakje.png" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50"/>
-        <Label Name="BurenCount" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" FontSize="20"/>
+        <Image Name="Plaatje" Source="{StaticResource Vakje}" Height="50" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

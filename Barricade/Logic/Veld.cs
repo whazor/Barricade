@@ -13,6 +13,8 @@ namespace Logic
 
 	public class Veld : VeldBase
 	{
+	    public bool StandaardBarricade = false;
+
 		public virtual bool MagBarricade
 		{
 			get;

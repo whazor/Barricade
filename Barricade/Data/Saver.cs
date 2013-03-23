@@ -85,7 +85,7 @@ namespace Barricade.Data
                             {
                                 inhoud = "*";
                             }
-                            result += "(" + inhoud + ")";
+                            result += veld.StandaardBarricade ? "[" + inhoud + "]" : "(" + inhoud + ")";
                         } 
                         else
                         {

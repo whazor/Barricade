@@ -24,10 +24,28 @@ namespace Barricade.Presentation
         public Vakje(IVeld veld)
         {
             InitializeComponent();
-            BurenCount.Content = veld.Buren.Count + "";
-            if (!(veld is Bos)) return;
-            Width = 100;
-            Background = new SolidColorBrush(Color.FromRgb(100, 235, 100));
+
+            if (veld is Bos)
+            {
+                Width = 110;
+                Plaatje.Source = (ImageSource) FindResource("Bos");
+            }
+            else if (veld is Finishveld)
+            {
+                Plaatje.Source = (ImageSource) FindResource("Finish");
+            }
+            else if (veld is Rustveld)
+            {
+                Plaatje.Source = (ImageSource)FindResource("Rust");
+            }
+            else if (veld is Veld)
+            {
+                if ((veld as Veld).StandaardBarricade)
+                {
+                    Plaatje.Source = (ImageSource)FindResource("Barricade");    
+                }
+            }
+            //Background = new SolidColorBrush(Color.FromRgb(100, 235, 100));
         }
     }
 }
