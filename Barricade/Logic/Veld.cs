@@ -25,6 +25,22 @@ namespace Logic
 			set;
 		}
 
+        public new bool PlaatsPion(Pion pion)
+        {
+             VerwijderPion(pion);
+
+            //staat al iets op, sla deze pion
+            if (Pionnen.Any())
+            {
+                Pionnen.First().IVeld = Pionnen.First().Speler.Startveld;
+                Pionnen.First().Speler.Startveld.PlaatsPion(Pionnen.First());
+                Pionnen = new List<Pion>();
+            }
+
+            Pionnen.Add(pion);
+            return true;
+        }
+
 	}
 }
 

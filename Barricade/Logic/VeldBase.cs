@@ -11,12 +11,25 @@ namespace Logic
 	    public bool IsDorp { get; set; }
 	    public bool IsPlaatsbaar { get; set; }
 	    public List<IVeld> Buren { get; private set; }
-	    public List<Pion> Pionen { get; private set; }
+	    public List<Pion> Pionnen { get; protected set; }
 
         public VeldBase()
         {
             Buren = new List<IVeld>();
-            Pionen = new List<Pion>();
+            Pionnen = new List<Pion>();
+        }
+
+        protected bool VerwijderPion(Pion pion)
+        {
+            return pion.IVeld.Pionnen.Remove(pion);
+        }
+
+        public bool PlaatsPion(Pion pion)
+        {
+            //meerdere pionnen op dit veld toegestaan
+            VerwijderPion(pion);
+            Pionnen.Add(pion);
+            return true;
         }
 	}
 }

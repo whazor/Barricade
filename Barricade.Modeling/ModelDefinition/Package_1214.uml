@@ -522,6 +522,38 @@
               LastKnownLocation="Package_1214.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="72c68f2a-4bf6-4270-a321-79bd29e63fe1"
+            name="PlaatsPion"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a76f73b2-8361-4398-9497-7bd1576cc055"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0676102d-e373-450f-adb4-1f2ef41cf560"
+                  name="Pion"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1340,7 +1372,57 @@
                 LastKnownLocation="Barricade.Modeling.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="f66c0eab-10f7-483f-b908-99e12103a7b6"
+            name="Pionnen"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="1cbaaaf6-3424-4458-91d2-45ab8fb33d89"
+                LastKnownName="List&lt;Pion&gt;"
+                LastKnownLocation="Package_1214.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="ae557fbc-fe8d-44b2-9047-65be1a7650e9"
+            name="PlaatsPion"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="da598e29-0bef-4ac5-bbec-24358dcc1b19"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6b5b0add-e033-4663-9ef1-f359d6e52049"
+                  name="Pion"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
       </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1454,6 +1536,38 @@
               LastKnownLocation="Package_1214.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2c65ba9f-7b6a-4050-a589-0fa01d4b5535"
+            name="PlaatsPion"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1c58eb7a-ab0f-4551-b32b-1e010d0598e4"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="35e71579-ba47-4e82-8a72-da8d53abb4b4"
+                  name="Pion"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1465,6 +1579,17 @@
       <undefinedType
         Id="0e773b6e-8987-42d2-9e97-222d643025d6"
         name="List&lt;IVeld&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="1cbaaaf6-3424-4458-91d2-45ab8fb33d89"
+        name="List&lt;Pion&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="05d76eb7-84bd-47db-9840-15122e925cdd"
+        LastKnownName="Exceptions"
+        LastKnownLocation="Package_1656.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

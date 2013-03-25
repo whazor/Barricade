@@ -277,8 +277,8 @@ namespace Barricade.Data
                 spelers[letter] = new Speler(letter);
             }
             var pion = new Pion(spelers[letter]) {IVeld = veld};
-            if (!veld.Pionen.Contains(pion))
-                veld.Pionen.Add(pion);
+            if (!veld.Pionnen.Contains(pion))
+                veld.Pionnen.Add(pion);
             spelers[letter].Pionen.Add(pion);
         }
 

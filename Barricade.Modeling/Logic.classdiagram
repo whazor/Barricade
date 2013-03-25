@@ -467,6 +467,26 @@
                   <elementDefinition Id="9207d012-3ed3-46d2-b33a-d33a09dfd2ff" />
                 </interfaceRealization>
               </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="258c4228-c62d-4665-b6fe-846a08588837" name="PlaatsPion" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="72c68f2a-4bf6-4270-a321-79bd29e63fe1" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="fe466140-d7da-4427-b9bc-1ff7de1d7bba" direction="Return">
+                        <elementDefinition Id="a76f73b2-8361-4398-9497-7bd1576cc055" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="b065ecaf-1b9f-46bc-9633-58259055a5f6" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="db6dac48-3020-41a6-967c-3b51e95e8dd7" name="Pion" direction="In" isUnique="false">
+                        <elementDefinition Id="0676102d-e373-450f-adb4-1f2ef41cf560" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -1028,7 +1048,33 @@
                     <referencedTypeMoniker Id="305d7494-8a75-4ea3-9b94-7f4eb5b0ac3c" LastKnownName="Boolean" />
                   </type_NamedElement>
                 </property>
+                <property Id="095afbc0-6eaf-4198-970d-a47d440793e4" name="Pionnen" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f66c0eab-10f7-483f-b908-99e12103a7b6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="722e95a6-8caf-4bdc-9181-967ec0244db6" LastKnownName="List&lt;Pion&gt;" />
+                  </type_NamedElement>
+                </property>
               </ownedAttributes>
+              <ownedOperations>
+                <operation Id="c45b4bdb-39ed-4c74-b0bc-dba740c94767" name="PlaatsPion" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ae557fbc-fe8d-44b2-9047-65be1a7650e9" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b115ff84-9c93-48ca-b315-815a098cc9f8" direction="Return">
+                        <elementDefinition Id="da598e29-0bef-4ac5-bbec-24358dcc1b19" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="e5086b37-25f6-4c70-9dbe-e89385d891d3" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a9abb8c6-2463-424e-a012-7677afaf6d25" name="Pion" direction="In" isUnique="false">
+                        <elementDefinition Id="6b5b0add-e033-4663-9ef1-f359d6e52049" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
             </Interface>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -1119,7 +1165,39 @@
                   <elementDefinition Id="37a41905-72a5-49f5-bf44-700bda9004fe" />
                 </interfaceRealization>
               </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="70c23216-cd15-4cb2-beff-7dc8f3bae4b3" name="PlaatsPion" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2c65ba9f-7b6a-4050-a589-0fa01d4b5535" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2b016b32-06df-4e95-8c5c-ce3773e53f5d" direction="Return">
+                        <elementDefinition Id="1c58eb7a-ab0f-4551-b32b-1e010d0598e4" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="b065ecaf-1b9f-46bc-9633-58259055a5f6" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="6634732c-3974-4615-ac99-df52bb0a7fd6" name="Pion" direction="In" isUnique="false">
+                        <elementDefinition Id="35e71579-ba47-4e82-8a72-da8d53abb4b4" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="ded18b6b-475f-4ae1-93e8-9e87205b4600" name="Exceptions">
+              <elementDefinition Id="05d76eb7-84bd-47db-9840-15122e925cdd" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="c20c9f8c-fc16-4e6a-87dc-e5f19e8bf907" name="GewonnenException" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="96ccd1df-cc7f-4119-b8de-44b7d372d48a" />
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
           </packageHasNamedElement>
         </packagedElements>
       </package>
@@ -1162,6 +1240,16 @@
     <packageHasNamedElement>
       <referencedType Id="1e15f2de-303b-4ca0-b2f6-f5379be8afc5" name="List&lt;IVeld&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;IVeld&gt;">
         <elementDefinition Id="0e773b6e-8987-42d2-9e97-222d643025d6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e5086b37-25f6-4c70-9dbe-e89385d891d3" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="722e95a6-8caf-4bdc-9181-967ec0244db6" name="List&lt;Pion&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Pion&gt;">
+        <elementDefinition Id="1cbaaaf6-3424-4458-91d2-45ab8fb33d89" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

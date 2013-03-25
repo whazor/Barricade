@@ -13,7 +13,7 @@ namespace Logic
 
 	public class Spel
 	{
-        public virtual List<Speler> Spelers
+        public List<Speler> Spelers
         {
             get; private set;
         }

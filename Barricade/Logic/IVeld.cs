@@ -19,7 +19,7 @@ namespace Logic
 
 		List<IVeld> Buren { get; }
 
-		List<Pion> Pionen { get; }
+		List<Pion> Pionnen { get; }
 
 	}
 }
