@@ -233,8 +233,7 @@ namespace Barricade.Data
             }
             else if (letters[0] == '[' && letters[2] == ']')
             {
-                veld = new Veld();
-                //TODO: veld rood maken omdat er een barricade opstaat
+                veld = new Veld() { StandaardBarricade = true };
             }
             else if (letters[0] == '{' && letters[2] == '}')
             {

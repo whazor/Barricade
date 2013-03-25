@@ -14,20 +14,16 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Logic;
 
-namespace Barricade.Presentation
+namespace Barricade.Presentation.Images
 {
     /// <summary>
-    /// Interaction logic for Vakje.xaml
+    /// Interaction logic for Bos.xaml
     /// </summary>
-    public partial class Vakje : UserControl
+    public partial class Bos //: Vakje
     {
-        public Vakje(IVeld veld)
+        public Bos(IVeld vakje) 
         {
             InitializeComponent();
-            BurenCount.Content = veld.Buren.Count + "";
-            if (!(veld is Bos)) return;
-            Width = 100;
-            Background = new SolidColorBrush(Color.FromRgb(100, 235, 100));
         }
     }
 }

@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Barricade.Presentation.Images.FinishVeld"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="50" d:DesignWidth="50">
+
+    <Grid>
+
+
+        <Ellipse Margin="0,0,0,0" Fill="White"/>
+        <Ellipse Margin="5,5,5,5" Fill="White" Stroke="Black" StrokeThickness="2"/>
+
+        <Grid Margin="0,10.5,0,10.5" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="120"/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Rectangle Fill="#C1272D" Width="2" Margin="0,2,0,2"></Rectangle>
+            <Ellipse Fill="#C1272D" HorizontalAlignment="Center" Height="4" VerticalAlignment="Top" Width="4" Margin="0,0,0,0"/>
+            <Ellipse Fill="#C1272D" HorizontalAlignment="Center" Height="4" VerticalAlignment="Bottom" Width="4" Margin="0,0,0,0"/>
+        </Grid>
+
+        <Grid Margin="0,10.5,0,10.5" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="60"/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Rectangle Fill="#C1272D" Width="2" Margin="0,2,0,2"></Rectangle>
+            <Ellipse Fill="#C1272D" HorizontalAlignment="Center" Height="4" VerticalAlignment="Top" Width="4" Margin="0,0,0,0"/>
+            <Ellipse Fill="#C1272D" HorizontalAlignment="Center" Height="4" VerticalAlignment="Bottom" Width="4" Margin="0,0,0,0"/>
+        </Grid>
+
+        <Grid Margin="0,10.5,0,10.5">
+            <Rectangle Fill="#C1272D" Width="2" Margin="0,2,0,2"></Rectangle>
+            <Ellipse Fill="#C1272D" HorizontalAlignment="Center" Height="4" VerticalAlignment="Top" Width="4" Margin="0,0,0,0"/>
+            <Ellipse Fill="#C1272D" HorizontalAlignment="Center" Height="4" VerticalAlignment="Bottom" Width="4" Margin="0,0,0,0"/>
+        </Grid>
+
+    </Grid>
+</UserControl>
