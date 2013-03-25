@@ -82,7 +82,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\Vakje.xaml">
+    <Page Include="Presentation\Images\StartVeld.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Images\FinishVeld.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Images\Bos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Images\Veld.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -91,8 +103,17 @@
     <Compile Include="Presentation\Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Vakje.xaml.cs">
-      <DependentUpon>Vakje.xaml</DependentUpon>
+    <Compile Include="Presentation\Images\StartVeld.xaml.cs">
+      <DependentUpon>StartVeld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Images\FinishVeld.xaml.cs">
+      <DependentUpon>FinishVeld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Images\Bos.xaml.cs">
+      <DependentUpon>Bos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Images\Veld.xaml.cs">
+      <DependentUpon>Veld.xaml</DependentUpon>
     </Compile>
     <Compile Include="Process\Spel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -122,22 +143,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Presentation\Images\vakje.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Presentation\Images\background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Presentation\Images\forrest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Presentation\Images\finish.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Presentation\Images\barricadeveld.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Presentation\Images\rustveld.png" />
+    <Resource Include="Presentation\Images\noisy_net_%402X.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
