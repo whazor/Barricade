@@ -14,7 +14,7 @@ namespace Logic
         public new bool PlaatsPion(Pion pion)
         {
             VerwijderPion(pion);
-            throw new GewonnenExceptionException();
+            throw new GewonnenException();
         }
 
 	}
