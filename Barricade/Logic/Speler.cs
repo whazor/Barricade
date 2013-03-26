@@ -15,7 +15,7 @@ namespace Barricade.Logic
 	{
 	    public char Name { get; private set; }
 
-	    public virtual List<Pion> Pionen
+	    public virtual List<Pion> Pionnen
 		{
 			get;
 			private set;
@@ -36,7 +36,7 @@ namespace Barricade.Logic
         public Speler(char name)
         {
             Name = name;
-            Pionen = new List<Pion>();
+            Pionnen = new List<Pion>();
         }
 	}
 }

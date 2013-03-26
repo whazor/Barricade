@@ -220,7 +220,7 @@ namespace Barricade.Data
                                 var pion = new Pion(speler) {IVeld = veld};
                                 if (!veld.Pionnen.Contains(pion))
                                     veld.Pionnen.Add(pion);
-                                speler.Pionen.Add(pion);
+                                speler.Pionnen.Add(pion);
                             }
                             // bijhouden welk veld van welke speler is
                             speler.Startveld = veld as Startveld;
