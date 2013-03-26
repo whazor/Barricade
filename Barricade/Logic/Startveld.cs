@@ -4,7 +4,7 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Logic
+namespace Barricade.Logic
 {
 	using System;
 	using System.Collections.Generic;
@@ -21,6 +21,7 @@ namespace Logic
             return true;
         }
 
+	    public Speler Speler { get; set; }
 	}
 }
 

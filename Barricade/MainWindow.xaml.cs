@@ -60,10 +60,10 @@ namespace Barricade
 	"-   ( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )",
 	"             |               |               |               |         ",	
 	"            <1>             <2>             <3>             <4>        ",	
-	"*1:START,RRRRR",
-	"*2:START,GGGGG",
-	"*3:START,YYYYY",
-	"*4:START,BBBBB"
+	"*1:START,R5",
+	"*2:START,G5",
+	"*3:START,Y5",
+	"*4:START,B5"
             };
             var game = new Game(new Loader(level2));
             Content = game;
@@ -93,10 +93,10 @@ namespace Barricade
                     "         |       |               |       |     ",
                     "        <2>     <3>             <4>     <5>    ",
                     "*1:BOS,",
-                    "*2:START,RRRR",
-                    "*3:START,GGGG",
-                    "*4:START,YYYY",
-                    "*5:START,BBBB"
+                    "*2:START,R4",
+                    "*3:START,G4",
+                    "*4:START,Y4",
+                    "*5:START,B4"
             };
             var game = new Game(new Loader(level2));
             Content = game;

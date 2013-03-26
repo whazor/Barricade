@@ -4,10 +4,10 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Process
+namespace Barricade.Process
 {
-	using Logic;
 	using System;
+    using Barricade.Logic;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;

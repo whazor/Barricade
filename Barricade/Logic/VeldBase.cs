@@ -1,5 +1,5 @@
 ﻿
-namespace Logic
+namespace Barricade.Logic
 {
 	using System;
 	using System.Collections.Generic;

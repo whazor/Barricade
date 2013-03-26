@@ -29,38 +29,45 @@ namespace Barricade.Presentation
             var width = loader.Kaart.GetLength(1);
 
             const int nodeSize = 50;
-            int pathSize = (Math.Max(width, height) > 15 ? 10 : 30);
+            int pathSize = (Math.Max(width, height) > 15 ? 5 : 30);
 
             var gameWidth = (nodeSize + pathSize)*width - pathSize;
-            var gameHeight = (nodeSize + pathSize)*height - pathSize + (nodeSize * 3);
+            var gameHeight = (nodeSize + pathSize) * (height - 1) + (200 - pathSize);
 
             Spelbord.Width = gameWidth;
             Spelbord.Height = gameHeight;
 
             for (var i = 0; i < width; i++)
             {
-                var size = new GridLength(nodeSize, GridUnitType.Star);
+                var size = new GridLength(nodeSize, GridUnitType.Pixel);
                 var nodeColumnDefinition = new ColumnDefinition {Width = size};
                 var pathDefinition = new ColumnDefinition
                     {
-                        Width = new GridLength(pathSize, GridUnitType.Star)
+                        Width = new GridLength(pathSize, GridUnitType.Pixel)
                     };
                 Spelbord.ColumnDefinitions.Add(nodeColumnDefinition);
                 if (i < width - 1)
                     Spelbord.ColumnDefinitions.Add(pathDefinition);
             }
-            for (var i = 0; i < height + 3; i++)
+            for (var i = 0; i < height - 1; i++)
             {
-                var size = new GridLength(nodeSize, GridUnitType.Star);
+                var size = new GridLength(nodeSize, GridUnitType.Pixel);
                 var nodeRowDefinition = new RowDefinition {Height = size};
                 var pathDefinition = new RowDefinition
                     {
-                        Height = new GridLength(pathSize, GridUnitType.Star)
+                        Height = new GridLength(pathSize, GridUnitType.Pixel)
                     };
                 Spelbord.RowDefinitions.Add(nodeRowDefinition);
-                if (i < height - 1)
+                if (i < height)
                     Spelbord.RowDefinitions.Add(pathDefinition);
             }
+
+            var startDefinition = new RowDefinition
+            {
+                Height = new GridLength(200 - pathSize, GridUnitType.Pixel)
+            };
+            Spelbord.RowDefinitions.Add(startDefinition);
+
             var level = loader.Kaart;
             for (var i = 0; i < height; i++)
             {
@@ -81,8 +88,8 @@ namespace Barricade.Presentation
                     else if (veld is Logic.Startveld)
                     {
                         vakje = new StartVeld();
-                        Grid.SetRow(vakje, i * 2);
-                        Grid.SetRowSpan(vakje, 5);
+                        Grid.SetRow(vakje, i * 2 + 2);
+                        Grid.SetRowSpan(vakje, 1);
                         Grid.SetColumn(vakje, j * 2 - 2);
                         Grid.SetColumnSpan(vakje, 5);
                     }
@@ -156,6 +163,10 @@ namespace Barricade.Presentation
                                     };
                                 Grid.SetRow(line, i*2 + l - 1);
                                 Grid.SetRowSpan(line, 3);
+                                if (k == height - 1)
+                                {
+                                    line.Margin = new Thickness(0, 10, 0, 130);
+                                }
                                 Grid.SetColumn(line, j*2);
                                 Grid.SetZIndex(line, -1);
                                 Spelbord.Children.Add(line);
