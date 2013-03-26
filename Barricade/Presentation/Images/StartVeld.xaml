@@ -4,14 +4,11 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="200" d:DesignWidth="200">
+      d:DesignHeight="200" d:DesignWidth="200" SizeChanged="UserControl_SizeChanged" >
 
-    <Grid>
+    <Grid Name="Holder" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-
-        <Ellipse Margin="20,20,20,20" Stroke="Black" StrokeThickness="5"/>
-
-
+        <Ellipse Name="MainEllipse" Margin="0,0,0,0" Width="200" Height="200" Stroke="Black"  StrokeDashArray="1.0"  StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Left" />
 
 
     </Grid>

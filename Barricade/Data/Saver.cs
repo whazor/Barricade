@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using Logic;
+using Barricade.Logic;
 
 namespace Barricade.Data
 {
@@ -52,9 +52,9 @@ namespace Barricade.Data
                     else
                     {
                         var inhoud = " ";
-                        if (_points[i, j].Pionen.Count > 0)
+                        if (_points[i, j].Pionnen.Count > 0)
                         {
-                            inhoud = _points[i, j].Pionen.First().Speler.Name + "";
+                            inhoud = _points[i, j].Pionnen.First().Speler.Name + "";
                         }
 
                         if (_points[i, j] is Rustveld)
@@ -74,7 +74,7 @@ namespace Barricade.Data
                                 uitzondering += uitzonderingCount+":BOS,";
 
                             // voeg spelers toe
-                            uitzondering = _points[i, j].Pionen.Aggregate(uitzondering, (current, point) => current + (point.Speler.Name + ""));
+                            uitzondering = _points[i, j].Pionnen.Aggregate(uitzondering, (current, point) => current + (point.Speler.Name + ""));
                             // enter voor de volgende uitzondering
                             uitzondering += "\r\n";
                         } 
