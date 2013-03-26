@@ -12,7 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Barricade.Presentation.Images;
+using Barricade.Logic;
+using Barricade.Presentation.Blocks;
+using Bos = Barricade.Presentation.Blocks.Bos;
+using FinishVeld = Barricade.Presentation.Blocks.FinishVeld;
+using Pion = Barricade.Logic.Pion;
+using StartVeld = Barricade.Presentation.Blocks.StartVeld;
 
 namespace Barricade.Presentation
 {
@@ -21,9 +26,15 @@ namespace Barricade.Presentation
     /// </summary>
     public partial class Game : Page
     {
+        private Spel _spel;
+// ReSharper disable RedundantNameQualifier - VOOR DUIDELIJKHEID
+        private readonly Dictionary<Logic.IVeld, Presentation.Blocks.IBlock> _velden = new Dictionary<IVeld, IBlock>(); 
+// ReSharper restore RedundantNameQualifier
+
         public Game(Data.Loader loader)
         {
             InitializeComponent();
+            _spel = loader.Spel;
 
             var height = loader.Kaart.GetLength(0);
             var width = loader.Kaart.GetLength(1);
@@ -36,7 +47,6 @@ namespace Barricade.Presentation
 
             Spelbord.Width = gameWidth;
             Spelbord.Height = gameHeight;
-
             for (var i = 0; i < width; i++)
             {
                 var size = new GridLength(nodeSize, GridUnitType.Pixel);
@@ -87,7 +97,7 @@ namespace Barricade.Presentation
                     }
                     else if (veld is Logic.Startveld)
                     {
-                        vakje = new StartVeld();
+                        vakje = new StartVeld(veld as Logic.Startveld);
                         Grid.SetRow(vakje, i * 2 + 2);
                         Grid.SetRowSpan(vakje, 1);
                         Grid.SetColumn(vakje, j * 2 - 2);
@@ -101,7 +111,7 @@ namespace Barricade.Presentation
                     }
                     else if (veld is Logic.Rustveld)
                     {
-                        vakje = new Veld()
+                        vakje = new LoopVeld()
                             {
                                 IsRustVeld = true
                             };
@@ -110,7 +120,7 @@ namespace Barricade.Presentation
                     }
                     else if (veld is Logic.Veld)
                     {
-                        vakje = new Veld()
+                        vakje = new LoopVeld()
                             {
                                 IsBarricadeVeld = (veld as Logic.Veld).StandaardBarricade
                             };
@@ -118,64 +128,96 @@ namespace Barricade.Presentation
                         Grid.SetColumn(vakje, j*2);
                     }
 
-                    if (vakje != null) Spelbord.Children.Add(vakje);
-
-                    for (var k = j + 1; k < width; k++)
+                    if (vakje != null)
                     {
-                        if (level[i, k] == null)
-                        {
-                            break;
-                        }
-                        if (level[i, j].Buren.Contains(level[i, k]))
-                        {
-                            for (var l = 1; l < (k - j - 1)*2 + 2; l++)
-                            {
-                                var line = new Rectangle
-                                    {
-                                        Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0)),
-                                        Height = 5,
-                                        Margin = new Thickness(10, 0, 10, 0)
-                                    };
-                                Grid.SetRow(line, i*2);
-                                Grid.SetColumn(line, j*2 + l - 1);
-                                Grid.SetColumnSpan(line, 3);
-                                Grid.SetZIndex(line, -1);
-                                Spelbord.Children.Add(line);
-                            }
-                        }
-                        break;
+                        Spelbord.Children.Add(vakje);
+                        _velden[veld] = vakje as IBlock;
                     }
-                    for (var k = i + 1; k < height; k++)
-                    {
-                        if (level[k, j] == null)
-                        {
-                            continue;
-                        }
-                        if (level[i, j].Buren.Contains(level[k, j]))
-                        {
-                            for (var l = 1; l < (k - i)*2; l++)
-                            {
-                                var line = new Rectangle
-                                    {
-                                        Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0)),
-                                        Width = 5,
-                                        Margin = new Thickness(0, 10, 0, 10)
-                                    };
-                                Grid.SetRow(line, i*2 + l - 1);
-                                Grid.SetRowSpan(line, 3);
-                                if (k == height - 1)
-                                {
-                                    line.Margin = new Thickness(0, 10, 0, 130);
-                                }
-                                Grid.SetColumn(line, j*2);
-                                Grid.SetZIndex(line, -1);
-                                Spelbord.Children.Add(line);
-                            }
-                        }
-                        break;
-                    }
+                    GenereerLijntjes(j, width, level, i, height);
                 }
             }
+
+//            var pion = new Images.Pion();
+//            Pionnen.Children.Add(pion);
+//            pion.Arrange(new Rect(new Point(20, 20), pion.DesiredSize));
         }
+
+
+        private void Viewbox_Loaded(object sender, RoutedEventArgs e)
+        {
+            var enumerable = from speler in _spel.Spelers select speler.Pionnen;
+            foreach (var pion in enumerable.SelectMany(i => i))
+            {
+                var target = _velden[pion.IVeld].PionHead(pion).TranslatePoint(new Point(0, 0), Houder);
+                var icon = new Blocks.Pion(pion)
+                {
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    VerticalAlignment = VerticalAlignment.Top,
+                    Margin = new Thickness(target.X, target.Y, 0, 0)
+                };
+                //                        Pionnen.Background = new SolidColorBrush(Color.FromRgb(24, 23, 23));
+                Pionnen.Children.Add(icon);  
+            }
+
+        }
+
+        private void GenereerLijntjes(int j, int width, IVeld[,] level, int i, int height)
+        {
+            for (var k = j + 1; k < width; k++)
+            {
+                if (level[i, k] == null)
+                {
+                    break;
+                }
+                if (level[i, j].Buren.Contains(level[i, k]))
+                {
+                    for (var l = 1; l < (k - j - 1)*2 + 2; l++)
+                    {
+                        var line = new Rectangle
+                            {
+                                Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0)),
+                                Height = 5,
+                                Margin = new Thickness(10, 0, 10, 0)
+                            };
+                        Grid.SetRow(line, i*2);
+                        Grid.SetColumn(line, j*2 + l - 1);
+                        Grid.SetColumnSpan(line, 3);
+                        Grid.SetZIndex(line, -1);
+                        Spelbord.Children.Add(line);
+                    }
+                }
+                break;
+            }
+            for (var k = i + 1; k < height; k++)
+            {
+                if (level[k, j] == null)
+                {
+                    continue;
+                }
+                if (level[i, j].Buren.Contains(level[k, j]))
+                {
+                    for (var l = 1; l < (k - i)*2; l++)
+                    {
+                        var line = new Rectangle
+                            {
+                                Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0)),
+                                Width = 5,
+                                Margin = new Thickness(0, 10, 0, 10)
+                            };
+                        Grid.SetRow(line, i*2 + l - 1);
+                        Grid.SetRowSpan(line, 3);
+                        if (k == height - 1)
+                        {
+                            line.Margin = new Thickness(0, 10, 0, 130);
+                        }
+                        Grid.SetColumn(line, j*2);
+                        Grid.SetZIndex(line, -1);
+                        Spelbord.Children.Add(line);
+                    }
+                }
+                break;
+            }
+        }
+
     }
 }

@@ -9,6 +9,7 @@
     <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
     <Name>Barricade.Modeling</Name>
     <RootNamespace>Barricade.Modeling</RootNamespace>
+    <ValidateArchitecture>true</ValidateArchitecture>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -47,6 +48,19 @@
     </Content>
     <Content Include="ModelDefinition\Package_1711.uml">
       <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2320.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2326.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Presentation.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Presentation.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Presentation.classdiagram</DependentUpon>
     </Content>
     <Content Include="Process.classdiagram">
       <SubType>Content</SubType>

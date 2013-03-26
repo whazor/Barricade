@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -79,42 +81,50 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Presentation\Blocks\Bos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Blocks\FinishVeld.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Blocks\Pion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Blocks\StartVeld.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Blocks\LoopVeld.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Presentation\Game.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\Images\StartVeld.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Presentation\Images\FinishVeld.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\Images\Bos.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\Images\Veld.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presentation\Game.xaml.cs">
-      <DependentUpon>Game.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Images\StartVeld.xaml.cs">
-      <DependentUpon>StartVeld.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Images\FinishVeld.xaml.cs">
-      <DependentUpon>FinishVeld.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Images\Bos.xaml.cs">
+    <Compile Include="Presentation\Blocks\Bos.xaml.cs">
       <DependentUpon>Bos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Images\Veld.xaml.cs">
-      <DependentUpon>Veld.xaml</DependentUpon>
+    <Compile Include="Presentation\Blocks\FinishVeld.xaml.cs">
+      <DependentUpon>FinishVeld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Blocks\IBlock.cs" />
+    <Compile Include="Presentation\Blocks\Pion.xaml.cs">
+      <DependentUpon>Pion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Blocks\StartVeld.xaml.cs">
+      <DependentUpon>StartVeld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Blocks\LoopVeld.xaml.cs">
+      <DependentUpon>LoopVeld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Game.xaml.cs">
+      <DependentUpon>Game.xaml</DependentUpon>
     </Compile>
     <Compile Include="Process\Spel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

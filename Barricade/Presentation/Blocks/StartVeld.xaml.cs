@@ -1,46 +1,38 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Barricade.Presentation.Images
+namespace Barricade.Presentation.Blocks
 {
     /// <summary>
     /// Interaction logic for StartVeld.xaml
     /// </summary>
-    public partial class StartVeld : UserControl
+    public partial class StartVeld : UserControl, IBlock
     {
-        const int Hoeveel = 5;
-        private readonly Ellipse[] _ellipses;
+        private readonly Dictionary<Logic.Pion, Ellipse> _ellipses = new Dictionary<Logic.Pion, Ellipse>(); 
+//        private readonly Ellipse[] _ellipses;
 
-        public StartVeld()
+        public StartVeld(Logic.Startveld veld)
         {
             InitializeComponent();
 
             // Maak alle velden in het startveld aan.
-            _ellipses = new Ellipse[Hoeveel];
-            for (var i = 0; i < Hoeveel; i++)
+//            _ellipses = new Ellipse[_hoeveel];
+            foreach (var pion in veld.Speler.Pionnen)
             {
-                // positie en uiterlijk van veld
-                _ellipses[i] = new Ellipse() {
+                var ellipse = new Ellipse
+                {
                     VerticalAlignment = VerticalAlignment.Top,
                     HorizontalAlignment = HorizontalAlignment.Left,
                     Fill = new SolidColorBrush(Color.FromRgb(255, 255, 255)),
                     Stroke = new SolidColorBrush(Color.FromRgb(0, 0, 0)),
                     StrokeThickness = 2
-                    
                 };
-                Holder.Children.Add(_ellipses[i]);
+                _ellipses.Add(pion, ellipse);
+                Holder.Children.Add(ellipse);   
             }
         }
 
@@ -61,24 +53,27 @@ namespace Barricade.Presentation.Images
             MainEllipse.Width = bigRadius*2;
             MainEllipse.Height = bigRadius*2;
 
-            var radius = size / 2 - bigRadius;
-
-            for (var i = 0; i < Hoeveel; i++)
+            var i = 0;
+            foreach (var ellipse in _ellipses.Values)
             {
                 const double kwart = (Math.PI / 2); // ook wel 90 graden
                 // reken uit hoeveel rondjes er in het grote rondje passen
-                var draai = kwart + ((2*Math.PI)/Hoeveel)*i;
+                var draai = kwart + ((2 * Math.PI) / _ellipses.Count) * (i++);
 
                 var top = Math.Sin(draai) * bigRadius;
                 var left = Math.Cos(draai) * bigRadius;
-
-                _ellipses[i].Margin = new Thickness(
+                ellipse.Margin = new Thickness(
                     (size / 2) - smallRadius - left,
                     (size / 2) - smallRadius - top,
                     0, 0);
-                _ellipses[i].Width = smallRadius * 2;
-                _ellipses[i].Height = smallRadius * 2;
+                ellipse.Width = smallRadius * 2;
+                ellipse.Height = smallRadius * 2;
             }
+        }
+
+        public UIElement PionHead(Logic.Pion pion)
+        {
+            return _ellipses[pion];
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -272,7 +271,11 @@ namespace Barricade.Data
              */
             if (letters[1] != '*' && letters[1] != ' ')
             {
-                CreatePlayer(letters[1], Spelers, veld);
+                var speler = CreatePlayer(letters[1], Spelers, veld);
+                var pion = new Pion(speler) { IVeld = veld };
+                if (!veld.Pionnen.Contains(pion))
+                    veld.Pionnen.Add(pion);
+                speler.Pionnen.Add(pion);
             }
 
             return veld;

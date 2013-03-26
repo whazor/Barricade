@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="efa4655e-a1f5-4083-aff2-700788f83342"
+  name="Presentation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="53cb593b-4354-42fc-97c2-7b25a6f97526">
+      <body>Dictionary/keyvalue!
+
+Van Logic.IVeld naar een presentatieblokje.</body>
+      <annotatedElements>
+        <classMoniker
+          Id="c8769902-8045-4783-a1f1-7562ea984526"
+          LastKnownName="Spel"
+          LastKnownLocation="Package_2320.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="c8769902-8045-4783-a1f1-7562ea984526"
+        name="Spel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="c1ff59a0-b6fd-4722-ba5f-56814235c77a"
+            isDerived="false"
+            sourceEndRoleName="Spel"
+            targetEndRoleName="IBlock"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="4664b5e9-f69c-420b-8a43-a08b29045ee4"
+              LastKnownName="IBlock"
+              LastKnownLocation="Package_2326.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="82c77d0b-71f7-4e6e-acc9-46939d8a2e39"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a8b9942e-edf5-4d10-9e61-472c320cdf01"
+                  name="IBlock"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="68f0dbaa-65bc-4e7a-a1bf-98ade63d0b0e"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="62c1b6c5-0e13-4e02-892c-83c1812c892a"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e9226d03-bd8f-4c84-9b14-6cf7f63383ab"
+        name="Pion"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1d98a993-1bc9-4cb8-a61c-53069beb0053"
+        LastKnownName="Blocks"
+        LastKnownLocation="Package_2326.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
