@@ -13,6 +13,7 @@ namespace Logic
 
 	public class Startveld : VeldBase
 	{
+	    public Speler Speler { get; set; }
 	}
 }
 

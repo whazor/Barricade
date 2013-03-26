@@ -204,18 +204,26 @@ namespace Barricade.Data
                             }
                         }
                         else if (uitzondering.StartsWith("START"))
-                        {
+                        {                            
                             if (!uitzondering.Contains(",") || uitzondering.EndsWith(","))
                             {
                                 throw new ParserException("Uitzondering '" + letters[1] + "' (START), heeft geen speler");
                             }
                             veld = new Startveld();
-
-                            string players = uitzondering.Split(',')[1];
-                            foreach (char player in players)
+                            char playerName = uitzondering.Split(',')[1][0];
+                            int amount = int.Parse(uitzondering.Split(',')[1].Substring(1));
+                            
+                            var speler = CreatePlayer(playerName, Spelers, veld);
+                            for (int i = 0; i < amount; i++)
                             {
-                                CreatePlayer(player, Spelers, veld);
+                                var pion = new Pion(speler) {IVeld = veld};
+                                if (!veld.Pionen.Contains(pion))
+                                    veld.Pionen.Add(pion);
+                                speler.Pionen.Add(pion);
                             }
+                            // bijhouden welk veld van welke speler is
+                            speler.Startveld = veld as Startveld;
+                            (veld as Startveld).Speler = speler;
                         }
                         else
                         {
@@ -269,16 +277,13 @@ namespace Barricade.Data
             return veld;
         }
 
-        private static void CreatePlayer(char letter, Dictionary<char, Speler> spelers, IVeld veld)
+        private static Speler CreatePlayer(char letter, Dictionary<char, Speler> spelers, IVeld veld)
         {
             if (!spelers.ContainsKey(letter))
             {
                 spelers[letter] = new Speler(letter);
             }
-            var pion = new Pion(spelers[letter]) {IVeld = veld};
-            if (!veld.Pionen.Contains(pion))
-                veld.Pionen.Add(pion);
-            spelers[letter].Pionen.Add(pion);
+            return spelers[letter];
         }
 
         public IVeld[,] ToArray()
