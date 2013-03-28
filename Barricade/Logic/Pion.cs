@@ -30,14 +30,14 @@ namespace Barricade.Logic
 			get; private set;
 		}
 
-		public virtual List<IVeld> MogelijkeZetten(int stappen = 1)
+		public virtual List<List<IVeld>> MogelijkeZetten(int stappen = 1)
 		{
             return MogelijkeZetten(IVeld, IVeld, stappen);
 		}
 
-        private List<IVeld> MogelijkeZetten(IVeld vorige, IVeld begin, int stappen)
+        private List<List<IVeld>> MogelijkeZetten(IVeld vorige, IVeld begin, int stappen)
         {
-            var list = new List<IVeld>();
+            var lijsten = new List<List<IVeld>>();
             foreach (var veld in begin.Buren)
             {
                 if (veld == vorige) continue;
@@ -45,7 +45,13 @@ namespace Barricade.Logic
                 if (stappen >= 1)
                 {
                     if (veld is Veld && (veld as Veld).Barricade != null) continue;
-                    list.AddRange(MogelijkeZetten(begin, veld, stappen - 1));
+
+                    var nieuw = MogelijkeZetten(begin, veld, stappen - 1);
+                    foreach (var lijst in nieuw)
+                    {
+                        lijst.Add(begin);
+                        lijsten.Add(lijst);
+                    }
                 }
                 else
                 {
@@ -56,10 +62,35 @@ namespace Barricade.Logic
                     // wanneer het veld geen bos is, maar wel een speler opstaat
                     if (!(veld is Bos) && veld.Pionnen.Count > 0 && veld.Pionnen.First().Speler == Speler) continue;
 
-                    list.Add(veld);
+                    var lijst = new List<IVeld>();
+                    lijst.Add(veld);
+                    lijsten.Add(lijst);
                 }
             }
-            return list;
+            return lijsten;
+//            var list = new List<IVeld>();
+//            foreach (var veld in begin.Buren)
+//            {
+//                if (veld == vorige) continue;
+//
+//                if (stappen >= 1)
+//                {
+//                    if (veld is Veld && (veld as Veld).Barricade != null) continue;
+//                    list.AddRange(MogelijkeZetten(begin, veld, stappen - 1));
+//                }
+//                else
+//                {
+//                    // mag niet terug naar startveld
+//                    if (veld is Startveld) continue;
+//                    // bezette rustvelden worden oververslagen
+//                    if (veld is Rustveld && veld.Pionnen.Count > 0) continue;
+//                    // wanneer het veld geen bos is, maar wel een speler opstaat
+//                    if (!(veld is Bos) && veld.Pionnen.Count > 0 && veld.Pionnen.First().Speler == Speler) continue;
+//
+//                    list.Add(veld);
+//                }
+//            }
+//            return list;
         }
 
 	    public virtual bool Verplaats(IVeld bestemming)

@@ -117,6 +117,7 @@
     <Compile Include="Presentation\Dynamisch\Pion.xaml.cs">
       <DependentUpon>Pion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\StatischGrid.cs" />
     <Compile Include="Presentation\Statisch\Bos.xaml.cs">
       <DependentUpon>Bos.xaml</DependentUpon>
     </Compile>

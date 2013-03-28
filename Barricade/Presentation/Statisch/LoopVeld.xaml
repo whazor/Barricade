@@ -14,11 +14,11 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Ellipse Margin="0,0,0,0">
+        <Ellipse Margin="0,0,0,0" x:Name="Ellipse">
             <Ellipse.Fill>
                 <ImageBrush ImageSource="..\Images\noisy_net_@2X.png" TileMode="Tile"/>
             </Ellipse.Fill>
         </Ellipse>
-        <Ellipse Margin="0,0,0,0" Name="Overlay"/>
+        <Ellipse Margin="0,0,0,0" x:Name="Overlay"/>
     </Grid>
 </UserControl>

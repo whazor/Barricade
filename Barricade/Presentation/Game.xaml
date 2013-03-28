@@ -12,10 +12,10 @@
                 <ImageBrush ImageSource="/Presentation\Images\background.png" TileMode="FlipY" Stretch="Uniform" Viewport="0,0,608,612" ViewportUnits="Absolute" Viewbox="0,0,608,612" ViewboxUnits="Absolute" />
             </Rectangle.Fill>
         </Rectangle>
-        <Viewbox Stretch="Uniform" Loaded="Viewbox_Loaded">
+        <Viewbox Stretch="Uniform">
             <Grid x:Name="Houder">
                 <Grid x:Name="Spelbord" HorizontalAlignment="Center" Margin="20,20,20,20" Height="501" VerticalAlignment="Center" Width="718"/>
-                <Grid x:Name="Pionnen">
+                <Grid x:Name="DynamischGrid">
                     <!--Margin="278,292,0,0"-->
                 </Grid>
                 
