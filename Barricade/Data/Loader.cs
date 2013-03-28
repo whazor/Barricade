@@ -82,6 +82,8 @@ namespace Barricade.Data
             var getX = new Func<int, int>(x => (x - firstX)/4);
             var getY = new Func<int, int>(y => (int) Math.Ceiling(((decimal) (y - firstY + 1)/2)) - 1);
 
+            Spel = new Spel();
+
             for (var i = 0; i < lines.Length; i++)
             {
                 if (lines[i].Length < 2) continue;
@@ -159,7 +161,6 @@ namespace Barricade.Data
                 second.Buren.Add(first);
             }
 
-            Spel = new Spel();
             foreach (var speler in Spelers)
             {
                 Spel.Spelers.Add(speler.Value);
@@ -196,6 +197,7 @@ namespace Barricade.Data
                         if (uitzondering.StartsWith("BOS"))
                         {
                             veld = new Bos();
+                            Spel.Bos = (Bos) veld;
 
                             string players = uitzondering.Split(',')[1];
                             foreach (char player in players)

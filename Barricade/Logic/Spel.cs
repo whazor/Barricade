@@ -18,6 +18,8 @@ namespace Barricade.Logic
             get; private set;
         }
 
+        public Bos Bos { get; set; }
+
         public Spel()
         {
             Spelers = new List<Speler>();

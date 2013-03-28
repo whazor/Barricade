@@ -1117,6 +1117,32 @@
                 </stereotypeInstance>
               </appliedStereotypesInternal>
               <elementDefinition Id="9bab895f-1b08-40bb-ade3-030598f8b17c" />
+              <targetEnds>
+                <association Id="72c1d52a-9203-4ffd-8ffe-278534244bf3" isDerived="false" sourceEndRoleName="Spel" targetEndRoleName="Bos" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="3fae6f35-113e-4733-ab56-45286d8cc3f7" LastKnownName="Bos" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="c84a4fd0-e4fc-4432-89fa-b34d7f3eda87" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="340d0393-8e09-4fb9-9dd8-ab131e5dc8b2" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="c0a7f6c4-ff36-40f1-a2bc-6f1e318f66ef" name="Bos" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="6a2da3f1-61b4-4e59-ae02-216363038a5f" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="a7fe3eb6-0e9a-49ba-aff6-7ec5d8119316" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="df415e0d-4352-41a7-9955-22a06542cffb" name="Bos" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="39fa3b1e-56b5-4dc9-9bd4-87b4834a4e04" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="18f986e9-ea92-444b-b2b2-5999b179bbea" LastKnownName="Bos" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -1250,6 +1276,11 @@
     <packageHasNamedElement>
       <referencedType Id="722e95a6-8caf-4bdc-9181-967ec0244db6" name="List&lt;Pion&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Pion&gt;">
         <elementDefinition Id="1cbaaaf6-3424-4458-91d2-45ab8fb33d89" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="18f986e9-ea92-444b-b2b2-5999b179bbea" name="Bos" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Bos">
+        <elementDefinition Id="438be2d5-fe45-462d-9bd0-d4c93129f053" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
