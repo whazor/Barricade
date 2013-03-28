@@ -25,6 +25,9 @@ namespace Barricade
         public MainWindow()
         {
             InitializeComponent();
+//            MaxHeight = 
+            MaxWidth = SystemParameters.WorkArea.Width;
+            MaxHeight = SystemParameters.WorkArea.Height;
         }
 
         private void ButtonLang_Click(object sender, RoutedEventArgs e)
@@ -67,6 +70,8 @@ namespace Barricade
             };
             var game = new Game(new Loader(level2));
             Content = game;
+            Top = 0;
+            Left = 0;
         }
 
         private void ButtonKort_Click(object sender, RoutedEventArgs e)
@@ -100,6 +105,8 @@ namespace Barricade
             };
             var game = new Game(new Loader(level2));
             Content = game;
+            Top = 0;
+            Left = 0;
         }
     }
 }
