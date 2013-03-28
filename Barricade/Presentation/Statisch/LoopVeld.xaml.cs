@@ -1,6 +1,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Barricade.Logic;
 
 namespace Barricade.Presentation.Statisch
 {
@@ -12,8 +13,9 @@ namespace Barricade.Presentation.Statisch
         private bool _isBarricadeVeld = false;
         private bool _isRustVeld;
 
-        public LoopVeld()
+        public LoopVeld(IVeld vakje)
         {
+            Veld = vakje;
             InitializeComponent();
         }
 
@@ -66,5 +68,7 @@ namespace Barricade.Presentation.Statisch
             BorderThickness = new Thickness(status ? 5 : 0);
             BorderBrush = new SolidColorBrush(Color.FromRgb(244, 0, 233));
         }
+
+        public IVeld Veld { get; private set; }
     }
 }

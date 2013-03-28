@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using Barricade.Logic;
 
 namespace Barricade.Presentation.Statisch
 {
@@ -18,6 +19,7 @@ namespace Barricade.Presentation.Statisch
         public StartVeld(Logic.Startveld veld)
         {
             InitializeComponent();
+            Veld = veld;
 
             // Maak alle velden in het startveld aan.
 //            _ellipses = new Ellipse[_hoeveel];
@@ -86,5 +88,7 @@ namespace Barricade.Presentation.Statisch
             BorderThickness = new Thickness(status ? 5 : 0);
             BorderBrush = new SolidColorBrush(Color.FromRgb(244, 0, 233));
         }
+
+        public IVeld Veld { get; private set; }
     }
 }

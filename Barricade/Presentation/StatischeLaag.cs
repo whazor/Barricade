@@ -89,13 +89,13 @@ namespace Barricade.Presentation
                     }
                     else if (veld is Logic.Finishveld)
                     {
-                        vakje = new Statisch.FinishVeld();
+                        vakje = new Statisch.FinishVeld(veld);
                         Grid.SetRow(vakje, i * 2);
                         Grid.SetColumn(vakje, j * 2);
                     }
                     else if (veld is Logic.Rustveld)
                     {
-                        vakje = new Statisch.LoopVeld()
+                        vakje = new Statisch.LoopVeld(veld)
                         {
                             IsRustVeld = true
                         };
@@ -104,7 +104,7 @@ namespace Barricade.Presentation
                     }
                     else if (veld is Logic.Veld)
                     {
-                        vakje = new Statisch.LoopVeld()
+                        vakje = new Statisch.LoopVeld(veld)
                         {
                             IsBarricadeVeld = (veld as Logic.Veld).StandaardBarricade
                         };

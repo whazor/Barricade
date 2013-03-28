@@ -10,8 +10,9 @@ namespace Barricade.Presentation.Statisch
     /// </summary>
     public partial class Bos : UserControl, IElement
     {
-        public Bos(IVeld vakje) 
+        public Bos(IVeld vakje)
         {
+            Veld = vakje;
             InitializeComponent();
         }
 
@@ -30,5 +31,7 @@ namespace Barricade.Presentation.Statisch
             BorderThickness = new Thickness(status ? 5 : 0);
             BorderBrush = new SolidColorBrush(Color.FromRgb(244,0, 233));
         }
+
+        public IVeld Veld { get; private set; }
     }
 }

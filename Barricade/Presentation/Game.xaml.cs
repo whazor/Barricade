@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Barricade.Logic;
@@ -21,9 +22,12 @@ namespace Barricade.Presentation
     {
         private readonly Spel _spel;
 
-        
         private readonly StatischeLaag _statischeLaag;
         private DynamischeLaag _dynamischeLaag;
+
+        private Pion _pion;
+        private readonly List<IElement> _opgelicht = new List<IElement>();
+        private Dictionary<IVeld, List<IVeld>> _mogelijkePaden = new Dictionary<IVeld, List<IVeld>>();
 
         public Game(Data.Loader loader)
         {
@@ -42,7 +46,48 @@ namespace Barricade.Presentation
                                  .Where(veld => veld != null && veld.Barricade != null)
                                  .Select(veld => new Tuple<IVeld, Logic.Barricade>(veld, veld.Barricade)));
             _dynamischeLaag.TekenPionnen(pionnen);
-            _dynamischeLaag.TekenBarricades(barricades.ToList());   
+            _dynamischeLaag.TekenBarricades(barricades.ToList());
+            _dynamischeLaag.PionClick += _dynamischeLaag_PionClick;
+        }
+
+        void _dynamischeLaag_PionClick(Pion item)
+        {
+            Spelbord.Cursor = Cursors.No;
+            DynamischGrid.IsHitTestVisible = false;
+            DynamischGrid.Opacity = .7;
+
+            _pion = item;
+            _mogelijkePaden = item.MogelijkeZetten(4).ToDictionary(list => list.First());
+            foreach (var element in _opgelicht)
+            {
+                element.WisselLicht(false);
+            }
+            _opgelicht.Clear();
+            foreach (var zet in _mogelijkePaden.Keys)
+            {
+                _opgelicht.Add(_statischeLaag.Velden[zet]);
+                _statischeLaag.Velden[zet].WisselLicht(true);
+                var element = (UserControl) _statischeLaag.Velden[zet];
+                element.Cursor = Cursors.Hand;
+                element.MouseUp += OnMouseUp;
+            }
+        }
+
+        private void OnMouseUp(object sender, MouseButtonEventArgs mouseButtonEventArgs)
+        {
+            Spelbord.Cursor = null;
+            DynamischGrid.Opacity = 1;
+            DynamischGrid.IsHitTestVisible = true;
+
+            _dynamischeLaag.Beweeg(_pion, _mogelijkePaden[((IElement) sender).Veld]);
+            
+            foreach (var item in _opgelicht)
+            {
+                item.WisselLicht(false);
+                var element = (UserControl)item;
+                element.Cursor = null;
+                element.MouseUp -= OnMouseUp;
+            }
         }
     }
 }

@@ -26,11 +26,12 @@
 
 		public virtual List<List<IVeld>> MogelijkeZetten(int stappen = 1)
 		{
-            return MogelijkeZetten(IVeld, IVeld, stappen);
+            return MogelijkeZetten(IVeld, IVeld, stappen).GroupBy(lijst => lijst.First()).Select(a => a.First()).ToList();
 		}
 
-        private List<List<IVeld>> MogelijkeZetten(IVeld vorige, IVeld begin, int stappen)
+        private IEnumerable<List<IVeld>> MogelijkeZetten(IVeld vorige, IVeld begin, int stappen)
         {
+            stappen--;
             var lijsten = new List<List<IVeld>>();
             foreach (var veld in begin.Buren.Where(veld => veld != vorige))
             {
@@ -38,10 +39,11 @@
                 {
                     if (veld is Veld && (veld as Veld).Barricade != null) continue;
 
-                    var nieuw = MogelijkeZetten(begin, veld, stappen - 1);
+                    var nieuw = MogelijkeZetten(begin, veld, stappen);
                     foreach (var lijst in nieuw)
                     {
-                        lijst.Add(begin);
+                        lijst.Add(veld);
+//                        lijst.Add(begin);
                         lijsten.Add(lijst);
                     }
                 }
@@ -57,14 +59,13 @@
                     lijsten.Add(new List<IVeld> {veld});
                 }
             }
-            return lijsten;
+            return lijsten.Where(lijst => lijst.Any()).ToList();
         }
 
 	    public virtual bool Verplaats(IVeld bestemming)
 		{
 			throw new System.NotImplementedException();
 		}
-
 	}
 }
 

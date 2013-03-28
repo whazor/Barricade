@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Barricade.Logic;
 
 namespace Barricade.Presentation.Statisch
 {
@@ -9,6 +10,7 @@ namespace Barricade.Presentation.Statisch
         UIElement BerekenPunt(Logic.Pion pion);
         UIElement BerekenPunt(Logic.Barricade barricade);
 	    void WisselLicht(bool status);
+	    IVeld Veld { get; }
 	}
 }
 
