@@ -38,23 +38,31 @@ namespace Barricade.Logic
         private List<IVeld> MogelijkeZetten(IVeld vorige, IVeld begin, int stappen)
         {
             var list = new List<IVeld>();
-            if (stappen < 1)
+            foreach (var veld in begin.Buren)
             {
-                list.Add(begin);
-            }
-            else
-            {
-                foreach (var veld in begin.Buren)
+                if (veld == vorige) continue;
+
+                if (stappen >= 1)
                 {
-                    if (veld == vorige) continue;
-                    
-                    list.Concat(MogelijkeZetten(begin, veld, stappen - 1));
+                    if (veld is Veld && (veld as Veld).Barricade != null) continue;
+                    list.AddRange(MogelijkeZetten(begin, veld, stappen - 1));
+                }
+                else
+                {
+                    // mag niet terug naar startveld
+                    if (veld is Startveld) continue;
+                    // bezette rustvelden worden oververslagen
+                    if (veld is Rustveld && veld.Pionnen.Count > 0) continue;
+                    // wanneer het veld geen bos is, maar wel een speler opstaat
+                    if (!(veld is Bos) && veld.Pionnen.Count > 0 && veld.Pionnen.First().Speler == Speler) continue;
+
+                    list.Add(veld);
                 }
             }
             return list;
         }
 
-		public virtual bool Verplaats(IVeld bestemming)
+	    public virtual bool Verplaats(IVeld bestemming)
 		{
 			throw new System.NotImplementedException();
 		}
