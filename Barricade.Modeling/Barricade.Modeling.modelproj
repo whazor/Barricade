@@ -72,17 +72,25 @@
       <SubType>Content</SubType>
       <DependentUpon>Process.classdiagram</DependentUpon>
     </Content>
-    <Content Include="SequenceDiagramsZet.sequencediagram">
+    <Content Include="Verplaats.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="SequenceDiagramsZet.sequencediagram.layout">
+    <Content Include="Verplaats.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>SequenceDiagramsZet.sequencediagram</DependentUpon>
+      <DependentUpon>Verplaats.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Zet.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Zet.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Zet.sequencediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\Barricade.Modeling.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Validate Include="LayerDiagram.layerdiagram">
