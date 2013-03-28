@@ -10,13 +10,13 @@ using Bos = Barricade.Logic.Bos;
 
 namespace Barricade.Presentation
 {
-    public class StatischGrid
+    public class StatischeLaag
     {
         private readonly Grid _grid;
         // IVeld komt uit domeinlaag, IElement uit presentatielaag
         public readonly Dictionary<IVeld, IElement> Velden = new Dictionary<IVeld, IElement>();
 
-        public StatischGrid(Grid grid, IVeld[,] kaart)
+        public StatischeLaag(Grid grid, IVeld[,] kaart)
         {
             _grid = grid;
 
