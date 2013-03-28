@@ -12,11 +12,11 @@ Het dynamische grid niet.</body>
       <annotatedElements>
         <classMoniker
           Id="6a1a9338-3efb-4156-86ac-d0a69e71683b"
-          LastKnownName="StatischGrid"
+          LastKnownName="StatischeLaag"
           LastKnownLocation="Package_2320.uml" />
         <classMoniker
           Id="ea170cc6-2f9d-4e1f-bc92-12b0a721c61b"
-          LastKnownName="DynamischGrid"
+          LastKnownName="DynamischeLaag"
           LastKnownLocation="Package_2320.uml" />
       </annotatedElements>
     </comment>
@@ -34,12 +34,12 @@ Het dynamische grid niet.</body>
             Id="2112a37f-10ff-4bd2-9959-a87a273e5ad4"
             isDerived="false"
             sourceEndRoleName="Spel"
-            targetEndRoleName="StatischGrid"
+            targetEndRoleName="StatischeLaag"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
               Id="6a1a9338-3efb-4156-86ac-d0a69e71683b"
-              LastKnownName="StatischGrid"
+              LastKnownName="StatischeLaag"
               LastKnownLocation="Package_2320.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -58,7 +58,7 @@ Het dynamische grid niet.</body>
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="b0cfa6b6-85d6-40e6-bf58-fdae395cb980"
-                  name="StatischGrid"
+                  name="StatischeLaag"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -73,12 +73,12 @@ Het dynamische grid niet.</body>
             Id="f174dd03-1145-4ae0-92e5-a9a5cd5127aa"
             isDerived="false"
             sourceEndRoleName="Spel"
-            targetEndRoleName="DynamischGrid"
+            targetEndRoleName="DynamischeLaag"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
               Id="ea170cc6-2f9d-4e1f-bc92-12b0a721c61b"
-              LastKnownName="DynamischGrid"
+              LastKnownName="DynamischeLaag"
               LastKnownLocation="Package_2320.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -97,7 +97,7 @@ Het dynamische grid niet.</body>
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="99f22a71-d6d9-45a9-b02d-6a4e5046e82e"
-                  name="DynamischGrid"
+                  name="DynamischeLaag"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -128,7 +128,7 @@ Het dynamische grid niet.</body>
     <packageHasNamedElement>
       <class
         Id="6a1a9338-3efb-4156-86ac-d0a69e71683b"
-        name="StatischGrid"
+        name="StatischeLaag"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -191,27 +191,26 @@ Het dynamische grid niet.</body>
     <packageHasNamedElement>
       <class
         Id="ea170cc6-2f9d-4e1f-bc92-12b0a721c61b"
-        name="DynamischGrid"
+        name="DynamischeLaag"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <targetEnds>
           <association
-            Id="13407741-4013-4d00-b142-bb40144bcf08"
+            Id="4843cb56-6f31-4696-b0df-78b191f3925f"
             isDerived="false"
-            sourceEndRoleName="DynamischGrid"
-            targetEndRoleName="IElement"
+            sourceEndRoleName=""
+            targetEndRoleName="Pionnen"
             isLeaf="false"
             isAbstract="false">
-            <interfaceMoniker
-              Id="2dc90f7d-7ee4-485e-9de8-b42a9efcb4e0"
-              LastKnownName="UIElement"
+            <classMoniker
+              Id="5d1104b0-4afe-4a71-9721-19c3f82e28c0"
+              LastKnownName="Pion"
               LastKnownLocation="Package_2058.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="6c06f361-71d9-42ea-869d-fb3e29bf131c"
-                  name="DynamischGrid"
+                  Id="2f5d2a98-cc4e-4a63-b109-594598c8194a"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -223,8 +222,8 @@ Het dynamische grid niet.</body>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="98823b84-43e2-4f40-9595-0815d82f4a0e"
-                  name="IElement"
+                  Id="8eeda694-fff8-403c-b4cf-65f6f373bbb3"
+                  name="Pionnen"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -234,13 +233,64 @@ Het dynamische grid niet.</body>
                   isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="ce2bb2d8-69c1-41c8-a1dc-5f21baf1a292"
+                      Id="71d624f3-b88c-46ca-bd23-3e7f5dbc87d8"
                       name="Lower"
                       value="*" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="dbdfc643-19f6-4f4b-bb62-6466354d25ae"
+                      Id="8a5aa27d-9b28-49d0-a563-58bb94c73769"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5bdc2916-650b-4eec-b79a-92a7df420024"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="Barricades"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="f00f7889-627c-4d5f-90e8-1ab0dc20f383"
+              LastKnownName="Barricade"
+              LastKnownLocation="Package_2058.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="77772901-fb22-49a6-98a0-7324a7db0e75"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="15ed07ae-71f7-4983-979f-429cc2d62342"
+                  name="Barricades"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d8f9868b-98e3-486a-9ca4-89ee710555bd"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a49c0233-6283-470b-a1fc-46cf8859e601"
                       name="Upper"
                       value="*" />
                   </upperValueInternal>
