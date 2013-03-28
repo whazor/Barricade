@@ -1,1 +1,51 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="3d4e0441-5ad5-423e-89ec-084d15cab4d7"
+  name="Dynamisch" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="5d1104b0-4afe-4a71-9721-19c3f82e28c0"
+        name="Pion"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="7d29a7b9-75ad-4e7f-bdd2-f2b647635e9e">
+            <interfaceMoniker
+              Id="2dc90f7d-7ee4-485e-9de8-b42a9efcb4e0"
+              LastKnownName="UIElement"
+              LastKnownLocation="Package_2058.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f00f7889-627c-4d5f-90e8-1ab0dc20f383"
+        name="Barricade"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c5347a43-7159-4b4b-93b3-5a1636883761">
+            <interfaceMoniker
+              Id="2dc90f7d-7ee4-485e-9de8-b42a9efcb4e0"
+              LastKnownName="UIElement"
+              LastKnownLocation="Package_2058.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="2dc90f7d-7ee4-485e-9de8-b42a9efcb4e0"
+        name="UIElement"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

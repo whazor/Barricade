@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b7c6aa2b-feb0-486c-8793-e8065449a33c" name="Presentation" linkedPackageId="662f71f3-274e-4f39-b8a0-2b58bb0c5192" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b7c6aa2b-feb0-486c-8793-e8065449a33c" name="Presentation" linkedPackageId="662f71f3-274e-4f39-b8a0-2b58bb0c5192" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="4f96e5c6-44f1-4026-9c6a-db9030bfa725">
+      <elementDefinition Id="171a8359-0412-486d-8730-18843868017c" />
+      <body>Dit klassediagram gaat meer over het tekenen, wat hier ontbreekt is de koppeling tussen andere lagen.</body>
+      <annotatedElements>
+        <packageMoniker Id="f9318817-a007-4370-88b7-5f41cce2fb9b" LastKnownName="Presentation" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
   <appliedStereotypesInternal>
     <stereotypeInstance Id="8c5611f5-4ef9-418d-b23d-6ca03b9e7ff0" name="namespace" profile="CSharpProfile">
       <elementDefinition Id="f48c2951-7ff7-4af1-955e-485e26118e7c" />
@@ -76,57 +85,64 @@
     <logicalClassDesignerModelHasPackages>
       <package Id="f9318817-a007-4370-88b7-5f41cce2fb9b" name="Presentation">
         <ownedCommentsInternal>
-          <comment Id="09724b85-47c6-4fe3-89e3-b86bb1c332f0">
-            <elementDefinition Id="53cb593b-4354-42fc-97c2-7b25a6f97526" />
-            <body>Dictionary/keyvalue!
+          <comment Id="6edc74eb-510f-4087-beb2-bdf089d8b0c5">
+            <elementDefinition Id="c51e6964-55b3-4035-9783-37fcaf4656d3" />
+            <body>Het statische grid gaat op basis van rijen en kolommen.
 
-Van Logic.IVeld naar een presentatieblokje.</body>
+Het dynamische grid niet.</body>
             <annotatedElements>
-              <classMoniker Id="fd06ae19-529f-4c81-a93c-595c8cf40468" LastKnownName="Spel" />
+              <classMoniker Id="0958e1aa-b94c-40a2-af94-c7f153532df0" LastKnownName="StatischGrid" />
+              <classMoniker Id="6c18fac4-c2a1-485c-a90f-32b385d805d7" LastKnownName="DynamischGrid" />
             </annotatedElements>
           </comment>
         </ownedCommentsInternal>
         <elementDefinition Id="efa4655e-a1f5-4083-aff2-700788f83342" />
         <packagedElements>
           <packageHasNamedElement>
-            <class Id="fd06ae19-529f-4c81-a93c-595c8cf40468" name="Spel" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="fd06ae19-529f-4c81-a93c-595c8cf40468" name="SpelBord" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="c8769902-8045-4783-a1f1-7562ea984526" />
               <targetEnds>
-                <association Id="2c43021c-588c-47f5-b0dc-60ca11c3e9e7" isDerived="false" sourceEndRoleName="Spel" targetEndRoleName="IBlock" isLeaf="false" isAbstract="false">
-                  <interfaceMoniker Id="ef2df8b6-5689-4811-818f-3474fe726d54" LastKnownName="IBlock" />
+                <association Id="d37bdd97-9df2-4094-b918-06791661e4c8" isDerived="false" sourceEndRoleName="Spel" targetEndRoleName="StatischGrid" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="0958e1aa-b94c-40a2-af94-c7f153532df0" LastKnownName="StatischGrid" />
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
-                      <memberEnd Id="17b4eab3-9fe6-4ee6-9758-161c75e93051" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                        <elementDefinition Id="82c77d0b-71f7-4e6e-acc9-46939d8a2e39" />
+                      <memberEnd Id="74379a94-0084-4a01-8b19-18ec55076b1d" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="dbc5037d-3945-4a05-a80f-566b181e7bcf" />
                       </memberEnd>
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
-                      <memberEnd Id="170b9094-95c0-4b4f-937e-037d8732e877" name="IBlock" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <lowerValueInternal>
-                          <literalString Id="8e7f66b6-d32b-48fe-bb17-e8bcd50fb686" name="Lower" value="*">
-                            <elementDefinition Id="68f0dbaa-65bc-4e7a-a1bf-98ade63d0b0e" />
-                          </literalString>
-                        </lowerValueInternal>
-                        <upperValueInternal>
-                          <literalString Id="fd2972d1-d70d-4f71-bc03-da054ece09af" name="Upper" value="*">
-                            <elementDefinition Id="62c1b6c5-0e13-4e02-892c-83c1812c892a" />
-                          </literalString>
-                        </upperValueInternal>
-                        <elementDefinition Id="a8b9942e-edf5-4d10-9e61-472c320cdf01" />
+                      <memberEnd Id="6f6bf959-1ba3-4041-8502-862b6b047a21" name="StatischGrid" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="b0cfa6b6-85d6-40e6-bf58-fdae395cb980" />
                       </memberEnd>
                     </associationHasOwnedEnds>
                   </relationshipOwnedElementsInternal>
-                  <elementDefinition Id="c1ff59a0-b6fd-4722-ba5f-56814235c77a" />
+                  <elementDefinition Id="2112a37f-10ff-4bd2-9959-a87a273e5ad4" />
+                </association>
+                <association Id="73121a11-2f10-4ad0-8675-d1bc4c8178bc" isDerived="false" sourceEndRoleName="Spel" targetEndRoleName="DynamischGrid" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="6c18fac4-c2a1-485c-a90f-32b385d805d7" LastKnownName="DynamischGrid" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="fe7e275b-5c9f-4d52-a21b-3f84984223f7" name="Spel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="dcc0a85a-509c-4263-b9db-d3e12a73d6b3" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="85876e7c-1efb-41fe-bde4-b413e50a329b" name="DynamischGrid" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="99f22a71-d6d9-45a9-b02d-6a4e5046e82e" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="f174dd03-1145-4ae0-92e5-a9a5cd5127aa" />
                 </association>
               </targetEnds>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <package Id="96e5a12f-464b-4833-970f-976782cca241" name="Blocks">
+            <package Id="96e5a12f-464b-4833-970f-976782cca241" name="Statisch">
               <elementDefinition Id="1d98a993-1bc9-4cb8-a61c-53069beb0053" />
               <packagedElements>
                 <packageHasNamedElement>
-                  <Interface Id="ef2df8b6-5689-4811-818f-3474fe726d54" name="IBlock" isAbstract="false" isLeaf="false">
+                  <Interface Id="ef2df8b6-5689-4811-818f-3474fe726d54" name="IElement" isAbstract="false" isLeaf="false">
                     <appliedStereotypesInternal>
                       <stereotypeInstance Id="8e5c1ae5-3c79-41c9-bf1f-5f67eca08f8e" name="interface" profile="CSharpProfile">
                         <elementDefinition Id="989c6739-366c-4d32-b529-0b236bc275e6" />
@@ -160,7 +176,7 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                     </appliedStereotypesInternal>
                     <elementDefinition Id="4664b5e9-f69c-420b-8a43-a08b29045ee4" />
                     <ownedOperations>
-                      <operation Id="a680c432-2d9b-4fee-9f40-0a5085a9cbcc" name="PionHead" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                      <operation Id="a680c432-2d9b-4fee-9f40-0a5085a9cbcc" name="BerekenPunt" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
                         <appliedStereotypesInternal>
                           <stereotypeInstance Id="b8eb620b-bde1-47d4-a156-3920090f7d64" name="method" profile="CSharpProfile">
                             <elementDefinition Id="3453dbec-d602-4269-abf6-d9d31ee35ca9" />
@@ -207,10 +223,10 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                         <elementDefinition Id="b805e9fe-a913-47a1-b533-00a5873c5a26" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="f7e8e6de-f5c6-4a46-a1dc-98094103c65b" name="pion" direction="In">
+                            <parameter Id="f7e8e6de-f5c6-4a46-a1dc-98094103c65b" name="barricade" direction="In">
                               <elementDefinition Id="05fe1213-45cd-44eb-bf5d-319dd9ef8210" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="8d4ded98-0e05-46ba-8064-0f3db104c0cf" LastKnownName="Pion" />
+                                <referencedTypeMoniker Id="2b2d55e9-a5ac-4dc0-b1f1-be50fb303af5" LastKnownName="Barricade" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -224,6 +240,83 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="98eb94ef-e725-44f0-b14d-f4798852a535" name="BerekenPunt" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <appliedStereotypesInternal>
+                          <stereotypeInstance Id="49f8ccfe-ea59-4622-b332-aaabf0b519eb" name="method" profile="CSharpProfile">
+                            <elementDefinition Id="8503abb5-0df4-4615-ad5a-afa8d64d00e6" />
+                            <propertyInstances>
+                              <stereotypeInstanceHasPropertyInstances Id="f9950b67-16ae-4471-9755-bbb472d0ba6a">
+                                <propertyInstance Id="c4f60935-6f6d-4721-9289-de08eaa3eb4a" name="ClrAttributes">
+                                  <elementDefinition Id="302e4c05-70ea-4e9e-a2e5-15ccbdcd1224" />
+                                </propertyInstance>
+                                <elementDefinition Id="ce3b7b0c-87c5-458d-b790-279ba0297cbb" />
+                              </stereotypeInstanceHasPropertyInstances>
+                              <stereotypeInstanceHasPropertyInstances Id="007de24a-bf82-484f-9e04-44a9568f2503">
+                                <propertyInstance Id="1e08473e-acd7-440a-ad76-1ed12738154f" name="IsPartial" value="false">
+                                  <elementDefinition Id="09363c9c-c9b8-4230-a0ba-63eaff4dce7e" />
+                                </propertyInstance>
+                                <elementDefinition Id="48a1d32a-b4ec-4687-a019-dfa9f89cac9b" />
+                              </stereotypeInstanceHasPropertyInstances>
+                              <stereotypeInstanceHasPropertyInstances Id="65675e65-0d89-4c88-b4e8-37290cbc57fa">
+                                <propertyInstance Id="759fb33c-112d-4723-8236-bf91d1f42941" name="IsUnsafe" value="false">
+                                  <elementDefinition Id="5f9aeb2d-b2ff-4bd9-9c1b-6b596b11d53d" />
+                                </propertyInstance>
+                                <elementDefinition Id="ede648c8-2123-470b-81b7-b395957ecf4c" />
+                              </stereotypeInstanceHasPropertyInstances>
+                              <stereotypeInstanceHasPropertyInstances Id="952e5d73-8db3-4c3f-82c6-f457f1d9bb54">
+                                <propertyInstance Id="e0ae72e7-c0e4-45b7-8c99-ea81fb6e63ad" name="Inheritance" value="none">
+                                  <elementDefinition Id="3c5df34a-efcf-4b96-aa7e-81508125ca1a" />
+                                </propertyInstance>
+                                <elementDefinition Id="b97d7871-d5c9-41da-9069-b938e12368e2" />
+                              </stereotypeInstanceHasPropertyInstances>
+                              <stereotypeInstanceHasPropertyInstances Id="510b44b7-bf72-4687-92aa-f0f91b585d2a">
+                                <propertyInstance Id="e7a2352d-f45e-416f-a5a0-4a7c6ce32911" name="PackageVisibility" value="internal">
+                                  <elementDefinition Id="d224c2eb-284d-4c7f-962f-f296ff523296" />
+                                </propertyInstance>
+                                <elementDefinition Id="4e8cee4a-13cf-45fe-97cc-d45dccab73c7" />
+                              </stereotypeInstanceHasPropertyInstances>
+                              <stereotypeInstanceHasPropertyInstances Id="9f09cdf2-2f5f-4c8a-a25a-6f7b05751ace">
+                                <propertyInstance Id="bedb1399-7b05-4d4e-bd71-1584f8a521be" name="params" value="false">
+                                  <elementDefinition Id="b976fd13-d63c-4698-b321-8b62d871f65c" />
+                                </propertyInstance>
+                                <elementDefinition Id="150d12bf-4121-4a99-9df9-98e67b1b3d20" />
+                              </stereotypeInstanceHasPropertyInstances>
+                            </propertyInstances>
+                          </stereotypeInstance>
+                        </appliedStereotypesInternal>
+                        <elementDefinition Id="0c91d631-38d3-4098-96fb-f56efd0def60" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="da3f5625-6d3d-4698-ba29-ebfe046be7c4" name="poin" direction="In">
+                              <elementDefinition Id="d0176fa8-0dfd-4d1c-a66d-9666188002d8" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="e7b9307c-2bec-459d-a9f4-cf0b9a0eb005" LastKnownName="Pion" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="1b355603-019e-4c2b-ae3b-8bb7738410e7" direction="Return">
+                              <elementDefinition Id="f4fa532a-01d4-422e-8807-ddd35a513b84" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="570b8f5e-0df3-4e84-801c-b3e9558c32f7" LastKnownName="UIElement" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="36b6b94e-24f0-4cd6-b581-4b62da614bc8" name="WisselLicht" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="8e06029a-af2b-42d6-84ba-f3c260a1d1c7" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="3e3ad539-f3a8-475f-a0a6-798cb94053e4" name="status" direction="In">
+                              <elementDefinition Id="f8ebe621-f5ed-4630-8e93-51b0279ccd76" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="83244a8d-ac4f-4049-8c89-b4f2305d9611" LastKnownName="Boolean" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperations>
                   </Interface>
                 </packageHasNamedElement>
@@ -232,12 +325,12 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                     <elementDefinition Id="9d78b0cd-b459-407d-9319-39bf3f57891b" />
                     <suppliersInternal>
                       <interfaceRealization Id="7b7145be-a0ca-4cb3-b4d5-431610cfbba4">
-                        <interfaceMoniker Id="ef2df8b6-5689-4811-818f-3474fe726d54" LastKnownName="IBlock" />
+                        <interfaceMoniker Id="ef2df8b6-5689-4811-818f-3474fe726d54" LastKnownName="IElement" />
                         <elementDefinition Id="5856019a-03b6-4f75-88bc-18ad8ad554db" />
                       </interfaceRealization>
                     </suppliersInternal>
                     <ownedOperationsInternal>
-                      <operation Id="62a5b36b-4cfc-40e9-a5a6-c0f07be8626e" name="PionHead" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                      <operation Id="62a5b36b-4cfc-40e9-a5a6-c0f07be8626e" name="BerekenPunt" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                         <appliedStereotypesInternal>
                           <stereotypeInstance Id="8eec30f5-1908-4d75-803e-b9537c889eaf" name="method" profile="CSharpProfile">
                             <elementDefinition Id="af7267a3-6109-444d-adff-bfdb3952a387" />
@@ -287,7 +380,7 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                             <parameter Id="f029b0b2-11df-4268-b504-91f093c50f7a" name="pion" direction="In">
                               <elementDefinition Id="84e1e8ff-f9d9-4144-86aa-1e72860c1b24" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="8d4ded98-0e05-46ba-8064-0f3db104c0cf" LastKnownName="Pion" />
+                                <referencedTypeMoniker Id="e7b9307c-2bec-459d-a9f4-cf0b9a0eb005" LastKnownName="Pion" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -301,6 +394,19 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="65309051-0223-4fb5-85f0-8e5d7c90e026" name="WisselLicht" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="edea95df-7b53-470b-93d7-7996facad00a" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="d7d96b86-29ce-450d-bd60-b4a7a45b6221" name="status" direction="In">
+                              <elementDefinition Id="1f7b37b5-4d87-41c4-b818-46e8ba545917" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="83244a8d-ac4f-4049-8c89-b4f2305d9611" LastKnownName="Boolean" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperationsInternal>
                   </class>
                 </packageHasNamedElement>
@@ -309,12 +415,12 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                     <elementDefinition Id="8b8e8da4-36fd-4a63-a5ac-69a02ebdd7f4" />
                     <suppliersInternal>
                       <interfaceRealization Id="8434118a-23f5-47d4-b262-ec7766511ec0">
-                        <interfaceMoniker Id="ef2df8b6-5689-4811-818f-3474fe726d54" LastKnownName="IBlock" />
+                        <interfaceMoniker Id="ef2df8b6-5689-4811-818f-3474fe726d54" LastKnownName="IElement" />
                         <elementDefinition Id="4f18f143-79bb-45cd-96ff-2b0e5fc75dfe" />
                       </interfaceRealization>
                     </suppliersInternal>
                     <ownedOperationsInternal>
-                      <operation Id="009420e6-958d-494f-86c8-2bc43bf9747e" name="PionHead" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                      <operation Id="009420e6-958d-494f-86c8-2bc43bf9747e" name="BerekenPunt" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                         <appliedStereotypesInternal>
                           <stereotypeInstance Id="d8fb9655-1f99-4bbe-a1eb-f0d5795eb578" name="method" profile="CSharpProfile">
                             <elementDefinition Id="98067f68-4a26-40c8-b932-4dba6ac81778" />
@@ -364,7 +470,7 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                             <parameter Id="a9dbf0f5-c1ff-422c-b9c8-a49503175e1c" name="pion" direction="In">
                               <elementDefinition Id="ea236527-9ce5-4130-8e7f-13890734f255" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="8d4ded98-0e05-46ba-8064-0f3db104c0cf" LastKnownName="Pion" />
+                                <referencedTypeMoniker Id="e7b9307c-2bec-459d-a9f4-cf0b9a0eb005" LastKnownName="Pion" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -378,6 +484,19 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="17224df5-5439-4632-a835-5146f8da3910" name="WisselLicht" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="410d90e6-1dde-4e41-b460-574c5fb77113" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="21d5fa42-e2b7-40ff-828c-62afb7c7cb2c" name="status" direction="In">
+                              <elementDefinition Id="82638e65-c4e8-4ac3-9619-d2cfb07bb4e0" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="83244a8d-ac4f-4049-8c89-b4f2305d9611" LastKnownName="Boolean" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperationsInternal>
                   </class>
                 </packageHasNamedElement>
@@ -386,12 +505,12 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                     <elementDefinition Id="60b88c02-032e-454d-81ad-654818034f41" />
                     <suppliersInternal>
                       <interfaceRealization Id="1bf0354c-908d-4e4d-a7fb-6a88ef67e8fa">
-                        <interfaceMoniker Id="ef2df8b6-5689-4811-818f-3474fe726d54" LastKnownName="IBlock" />
+                        <interfaceMoniker Id="ef2df8b6-5689-4811-818f-3474fe726d54" LastKnownName="IElement" />
                         <elementDefinition Id="d4aee086-116d-479f-ae00-586ca91ef73d" />
                       </interfaceRealization>
                     </suppliersInternal>
                     <ownedOperationsInternal>
-                      <operation Id="a88d3a1e-7f52-45b9-8d29-16e15d835f3d" name="PionHead" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                      <operation Id="a88d3a1e-7f52-45b9-8d29-16e15d835f3d" name="BerekenPunt" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                         <appliedStereotypesInternal>
                           <stereotypeInstance Id="0ce99917-27d0-4e9d-90a0-f9a39bf039e1" name="method" profile="CSharpProfile">
                             <elementDefinition Id="510c9b50-4946-46a9-8c35-6d5c8a063689" />
@@ -441,7 +560,7 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                             <parameter Id="9f9f4865-a5cf-4183-b44b-37e06b70985c" name="pion" direction="In">
                               <elementDefinition Id="12185a05-779d-4634-b87e-97655d62e901" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="8d4ded98-0e05-46ba-8064-0f3db104c0cf" LastKnownName="Pion" />
+                                <referencedTypeMoniker Id="e7b9307c-2bec-459d-a9f4-cf0b9a0eb005" LastKnownName="Pion" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -455,6 +574,19 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="1f77f64a-1f86-4e2c-b8ba-8fc291f684b6" name="WisselLicht" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="8b2f017e-8edb-4fed-b7bd-77bf217a5166" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="c52cbab0-887e-4312-ac18-de1f4e601e45" name="status" direction="In">
+                              <elementDefinition Id="03c49745-bd56-4328-89ed-6d9a693f4127" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="83244a8d-ac4f-4049-8c89-b4f2305d9611" LastKnownName="Boolean" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperationsInternal>
                   </class>
                 </packageHasNamedElement>
@@ -463,12 +595,12 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                     <elementDefinition Id="ce9e184f-c8e8-4361-ac31-66fbc68207ef" />
                     <suppliersInternal>
                       <interfaceRealization Id="512b8b15-f939-4f7e-9383-ef5ca38244b0">
-                        <interfaceMoniker Id="ef2df8b6-5689-4811-818f-3474fe726d54" LastKnownName="IBlock" />
+                        <interfaceMoniker Id="ef2df8b6-5689-4811-818f-3474fe726d54" LastKnownName="IElement" />
                         <elementDefinition Id="74df7381-20e8-4433-ad72-e4e44ff5ad70" />
                       </interfaceRealization>
                     </suppliersInternal>
                     <ownedOperationsInternal>
-                      <operation Id="3ae131ac-b8ea-4495-b22e-d1e5d13991aa" name="PionHead" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                      <operation Id="3ae131ac-b8ea-4495-b22e-d1e5d13991aa" name="BerekenPunt" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                         <appliedStereotypesInternal>
                           <stereotypeInstance Id="237dd97a-dac7-4ea1-8888-d05eb4f07af5" name="method" profile="CSharpProfile">
                             <elementDefinition Id="affd21d8-21c5-4d58-9667-32a39dfd6829" />
@@ -518,7 +650,7 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                             <parameter Id="c6aa8103-5833-43dd-9d50-f7caf8fe95ce" name="pion" direction="In">
                               <elementDefinition Id="72d8e7b6-8478-4f78-a731-f9d1a6b715d1" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="8d4ded98-0e05-46ba-8064-0f3db104c0cf" LastKnownName="Pion" />
+                                <referencedTypeMoniker Id="e7b9307c-2bec-459d-a9f4-cf0b9a0eb005" LastKnownName="Pion" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -532,8 +664,121 @@ Van Logic.IVeld naar een presentatieblokje.</body>
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="26caf080-aaec-4a0d-95c4-d5fa20139837" name="WisselLicht" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="842a783a-ccc5-4ae1-a2ca-598d8379126f" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="bbbd8a39-006d-4ed5-ab66-0c6863550afe" name="status" direction="In">
+                              <elementDefinition Id="76476159-04b5-4886-ad62-7096b1f03b8f" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="83244a8d-ac4f-4049-8c89-b4f2305d9611" LastKnownName="Boolean" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperationsInternal>
                   </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="0958e1aa-b94c-40a2-af94-c7f153532df0" name="StatischGrid" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6a1a9338-3efb-4156-86ac-d0a69e71683b" />
+              <targetEnds>
+                <association Id="6df69408-8ceb-422a-ba71-c36e56713ae7" isDerived="false" sourceEndRoleName="StatischGrid" targetEndRoleName="IBlock" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="ef2df8b6-5689-4811-818f-3474fe726d54" LastKnownName="IElement" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="6ae7326f-baec-4058-ba64-72c6fdc82a26" name="StatischGrid" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="08d58439-a987-4197-aad4-41ed486fac6d" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="d6893646-46a6-4379-98f0-8f98b6fdd0a9" name="IBlock" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="c1b62911-e72d-4752-b5e9-ee0bf4f7eb46" name="Lower" value="*">
+                            <elementDefinition Id="07242c6e-ea5a-4ff3-8e7f-2082a618b933" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="ae5ae480-60a6-48e0-bf00-58b20e242320" name="Upper" value="*">
+                            <elementDefinition Id="779f2998-9787-405b-bca8-0a254e3d14f5" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="92392bd2-412e-4f11-81f5-155801937e29" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="271cff33-7380-460c-8f98-9e65d71f1d13" />
+                </association>
+              </targetEnds>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="6c18fac4-c2a1-485c-a90f-32b385d805d7" name="DynamischGrid" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="ea170cc6-2f9d-4e1f-bc92-12b0a721c61b" />
+              <targetEnds>
+                <association Id="108f0788-6511-435e-84c5-a5f7e6a62afe" isDerived="false" sourceEndRoleName="DynamischGrid" targetEndRoleName="IElement" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="fd79d2e2-3e2d-4f9f-8b8c-f27975e5ff34" LastKnownName="UIElement" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="c7e1f941-04d0-4a91-9624-9d45c730dbad" name="DynamischGrid" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="6c06f361-71d9-42ea-869d-fb3e29bf131c" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="5086bda6-9cbf-4ce9-b484-4ba5a87d6513" name="IElement" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="c6ef21a3-97c7-488f-8691-90cfb3bb1ded" name="Lower" value="*">
+                            <elementDefinition Id="ce2bb2d8-69c1-41c8-a1dc-5f21baf1a292" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="8acc11a9-09db-4e7b-895a-68e0f3a45d35" name="Upper" value="*">
+                            <elementDefinition Id="dbdfc643-19f6-4f4b-bb62-6466354d25ae" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="98823b84-43e2-4f40-9595-0815d82f4a0e" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="13407741-4013-4d00-b142-bb40144bcf08" />
+                </association>
+              </targetEnds>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="fed81cf4-6bdf-48af-9142-724a839c2ee8" name="Dynamisch">
+              <elementDefinition Id="3d4e0441-5ad5-423e-89ec-084d15cab4d7" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="b27101bf-0914-41cb-87d6-44adf7aaceed" name="Pion" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="5d1104b0-4afe-4a71-9721-19c3f82e28c0" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="38a82a12-2e61-4e21-9568-f1053e487128">
+                        <interfaceMoniker Id="fd79d2e2-3e2d-4f9f-8b8c-f27975e5ff34" LastKnownName="UIElement" />
+                        <elementDefinition Id="7d29a7b9-75ad-4e7f-bdd2-f2b647635e9e" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="ed5dedee-a08f-4a4e-b204-2be7b9cd11e4" name="Barricade" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="f00f7889-627c-4d5f-90e8-1ab0dc20f383" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="92fa32bc-3da9-4310-93cf-be0a3bfa7d91">
+                        <interfaceMoniker Id="fd79d2e2-3e2d-4f9f-8b8c-f27975e5ff34" LastKnownName="UIElement" />
+                        <elementDefinition Id="c5347a43-7159-4b4b-93b3-5a1636883761" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="fd79d2e2-3e2d-4f9f-8b8c-f27975e5ff34" name="UIElement" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="2dc90f7d-7ee4-485e-9de8-b42a9efcb4e0" />
+                  </Interface>
                 </packageHasNamedElement>
               </packagedElements>
             </package>
@@ -542,13 +787,28 @@ Van Logic.IVeld naar een presentatieblokje.</body>
       </package>
     </logicalClassDesignerModelHasPackages>
     <packageHasNamedElement>
-      <referencedType Id="8d4ded98-0e05-46ba-8064-0f3db104c0cf" name="Pion" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Pion">
+      <referencedType Id="54449a48-7c75-4b0c-9eb8-13499c864fa0" name="UIElement" isAbstract="false" isLeaf="false" cachedFullName="UIElement">
+        <elementDefinition Id="a5160d08-b430-457b-87f9-2657de4931dc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="570b8f5e-0df3-4e84-801c-b3e9558c32f7" name="UIElement" isAbstract="false" isLeaf="false" cachedFullName="UIElement">
+        <elementDefinition Id="a5160d08-b430-457b-87f9-2657de4931dc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e7b9307c-2bec-459d-a9f4-cf0b9a0eb005" name="Pion" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Pion">
         <elementDefinition Id="cecdfa20-532c-4e6d-805d-04da79377c61" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="54449a48-7c75-4b0c-9eb8-13499c864fa0" name="UIElement" isAbstract="false" isLeaf="false" cachedFullName="UIElement">
-        <elementDefinition Id="a5160d08-b430-457b-87f9-2657de4931dc" />
+      <referencedType Id="2b2d55e9-a5ac-4dc0-b1f1-be50fb303af5" name="Barricade" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Barricade">
+        <elementDefinition Id="f906f0bf-8597-439f-b3ce-e1916d14b5ec" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="83244a8d-ac4f-4049-8c89-b4f2305d9611" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

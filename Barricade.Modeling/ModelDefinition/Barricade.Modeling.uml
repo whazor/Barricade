@@ -1,8 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="3e5f4f86-0a24-4669-b7de-0fb16dd60e3e"
   name="Barricade.Modeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="171a8359-0412-486d-8730-18843868017c">
+      <body>Dit klassediagram gaat meer over het tekenen, wat hier ontbreekt is de koppeling tussen andere lagen.</body>
+      <annotatedElements>
+        <packageMoniker
+          Id="efa4655e-a1f5-4083-aff2-700788f83342"
+          LastKnownName="Presentation"
+          LastKnownLocation="Package_2320.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
   <appliedStereotypesInternal>
     <stereotypeInstance
       Id="f48c2951-7ff7-4af1-955e-485e26118e7c"
@@ -1038,22 +1050,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="da2c4285-5a8f-4ef7-849e-938ee730bc6e"
-            name="MessageOccurrenceSpecification28">
-            <covered>
-              <lifelineMoniker
-                Id="e78f5c96-fa84-46b2-9bf4-2b4f932d6c5e"
-                LastKnownName="spel : Spel"
-                LastKnownLocation="Barricade.Modeling.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="e7028ddd-7611-4357-b94f-80c3c0f172ee"
             name="MessageOccurrenceSpecification29">
             <covered>
               <lifelineMoniker
                 Id="3d9bad1b-fa22-43e1-bbf2-596a08e943e2"
                 LastKnownName="Player"
+                LastKnownLocation="Barricade.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="da2c4285-5a8f-4ef7-849e-938ee730bc6e"
+            name="MessageOccurrenceSpecification28">
+            <covered>
+              <lifelineMoniker
+                Id="e78f5c96-fa84-46b2-9bf4-2b4f932d6c5e"
+                LastKnownName="spel : Spel"
                 LastKnownLocation="Barricade.Modeling.uml" />
             </covered>
           </messageOccurrenceSpecification>

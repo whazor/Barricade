@@ -1,18 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="efa4655e-a1f5-4083-aff2-700788f83342"
   name="Presentation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
     <comment
-      Id="53cb593b-4354-42fc-97c2-7b25a6f97526">
-      <body>Dictionary/keyvalue!
+      Id="c51e6964-55b3-4035-9783-37fcaf4656d3">
+      <body>Het statische grid gaat op basis van rijen en kolommen.
 
-Van Logic.IVeld naar een presentatieblokje.</body>
+Het dynamische grid niet.</body>
       <annotatedElements>
         <classMoniker
-          Id="c8769902-8045-4783-a1f1-7562ea984526"
-          LastKnownName="Spel"
+          Id="6a1a9338-3efb-4156-86ac-d0a69e71683b"
+          LastKnownName="StatischGrid"
+          LastKnownLocation="Package_2320.uml" />
+        <classMoniker
+          Id="ea170cc6-2f9d-4e1f-bc92-12b0a721c61b"
+          LastKnownName="DynamischGrid"
           LastKnownLocation="Package_2320.uml" />
       </annotatedElements>
     </comment>
@@ -21,26 +25,26 @@ Van Logic.IVeld naar een presentatieblokje.</body>
     <packageHasNamedElement>
       <class
         Id="c8769902-8045-4783-a1f1-7562ea984526"
-        name="Spel"
+        name="SpelBord"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <targetEnds>
           <association
-            Id="c1ff59a0-b6fd-4722-ba5f-56814235c77a"
+            Id="2112a37f-10ff-4bd2-9959-a87a273e5ad4"
             isDerived="false"
             sourceEndRoleName="Spel"
-            targetEndRoleName="IBlock"
+            targetEndRoleName="StatischGrid"
             isLeaf="false"
             isAbstract="false">
-            <interfaceMoniker
-              Id="4664b5e9-f69c-420b-8a43-a08b29045ee4"
-              LastKnownName="IBlock"
-              LastKnownLocation="Package_2326.uml" />
+            <classMoniker
+              Id="6a1a9338-3efb-4156-86ac-d0a69e71683b"
+              LastKnownName="StatischGrid"
+              LastKnownLocation="Package_2320.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="82c77d0b-71f7-4e6e-acc9-46939d8a2e39"
+                  Id="dbc5037d-3945-4a05-a80f-566b181e7bcf"
                   name="Spel"
                   isLeaf="false"
                   isStatic="false"
@@ -53,28 +57,54 @@ Van Logic.IVeld naar een presentatieblokje.</body>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="a8b9942e-edf5-4d10-9e61-472c320cdf01"
-                  name="IBlock"
+                  Id="b0cfa6b6-85d6-40e6-bf58-fdae395cb980"
+                  name="StatischGrid"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="68f0dbaa-65bc-4e7a-a1bf-98ade63d0b0e"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="62c1b6c5-0e13-4e02-892c-83c1812c892a"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f174dd03-1145-4ae0-92e5-a9a5cd5127aa"
+            isDerived="false"
+            sourceEndRoleName="Spel"
+            targetEndRoleName="DynamischGrid"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ea170cc6-2f9d-4e1f-bc92-12b0a721c61b"
+              LastKnownName="DynamischGrid"
+              LastKnownLocation="Package_2320.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dcc0a85a-509c-4263-b9db-d3e12a73d6b3"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="99f22a71-d6d9-45a9-b02d-6a4e5046e82e"
+                  name="DynamischGrid"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -92,8 +122,140 @@ Van Logic.IVeld naar een presentatieblokje.</body>
     <packageHasNamedElement>
       <packageMoniker
         Id="1d98a993-1bc9-4cb8-a61c-53069beb0053"
-        LastKnownName="Blocks"
+        LastKnownName="Statisch"
         LastKnownLocation="Package_2326.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6a1a9338-3efb-4156-86ac-d0a69e71683b"
+        name="StatischGrid"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="271cff33-7380-460c-8f98-9e65d71f1d13"
+            isDerived="false"
+            sourceEndRoleName="StatischGrid"
+            targetEndRoleName="IBlock"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="4664b5e9-f69c-420b-8a43-a08b29045ee4"
+              LastKnownName="IElement"
+              LastKnownLocation="Package_2326.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="08d58439-a987-4197-aad4-41ed486fac6d"
+                  name="StatischGrid"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="92392bd2-412e-4f11-81f5-155801937e29"
+                  name="IBlock"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="07242c6e-ea5a-4ff3-8e7f-2082a618b933"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="779f2998-9787-405b-bca8-0a254e3d14f5"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ea170cc6-2f9d-4e1f-bc92-12b0a721c61b"
+        name="DynamischGrid"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="13407741-4013-4d00-b142-bb40144bcf08"
+            isDerived="false"
+            sourceEndRoleName="DynamischGrid"
+            targetEndRoleName="IElement"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="2dc90f7d-7ee4-485e-9de8-b42a9efcb4e0"
+              LastKnownName="UIElement"
+              LastKnownLocation="Package_2058.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6c06f361-71d9-42ea-869d-fb3e29bf131c"
+                  name="DynamischGrid"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="98823b84-43e2-4f40-9595-0815d82f4a0e"
+                  name="IElement"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ce2bb2d8-69c1-41c8-a1dc-5f21baf1a292"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="dbdfc643-19f6-4f4b-bb62-6466354d25ae"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="3d4e0441-5ad5-423e-89ec-084d15cab4d7"
+        LastKnownName="Dynamisch"
+        LastKnownLocation="Package_2058.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

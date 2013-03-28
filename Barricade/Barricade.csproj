@@ -81,23 +81,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Presentation\Blocks\Bos.xaml">
+    <Page Include="Presentation\Dynamisch\Barricade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Dynamisch\Pion.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Presentation\Blocks\FinishVeld.xaml">
+    <Page Include="Presentation\Statisch\Bos.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Presentation\Blocks\Pion.xaml">
+    <Page Include="Presentation\Statisch\FinishVeld.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Presentation\Blocks\StartVeld.xaml">
+    <Page Include="Presentation\Statisch\StartVeld.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Presentation\Blocks\LoopVeld.xaml">
+    <Page Include="Presentation\Statisch\LoopVeld.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -107,20 +111,23 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presentation\Blocks\Bos.xaml.cs">
-      <DependentUpon>Bos.xaml</DependentUpon>
+    <Compile Include="Presentation\Dynamisch\Barricade.xaml.cs">
+      <DependentUpon>Barricade.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Blocks\FinishVeld.xaml.cs">
-      <DependentUpon>FinishVeld.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Blocks\IBlock.cs" />
-    <Compile Include="Presentation\Blocks\Pion.xaml.cs">
+    <Compile Include="Presentation\Dynamisch\Pion.xaml.cs">
       <DependentUpon>Pion.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Blocks\StartVeld.xaml.cs">
+    <Compile Include="Presentation\Statisch\Bos.xaml.cs">
+      <DependentUpon>Bos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Statisch\FinishVeld.xaml.cs">
+      <DependentUpon>FinishVeld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Statisch\IElement.cs" />
+    <Compile Include="Presentation\Statisch\StartVeld.xaml.cs">
       <DependentUpon>StartVeld.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Blocks\LoopVeld.xaml.cs">
+    <Compile Include="Presentation\Statisch\LoopVeld.xaml.cs">
       <DependentUpon>LoopVeld.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Game.xaml.cs">

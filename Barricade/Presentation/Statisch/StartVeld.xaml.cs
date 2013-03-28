@@ -75,5 +75,16 @@ namespace Barricade.Presentation.Statisch
         {
             return _ellipses[pion];
         }
+
+        public UIElement BerekenPunt(Logic.Barricade barricade)
+        {
+            return this;
+        }
+
+        public void WisselLicht(bool status)
+        {
+            BorderThickness = new Thickness(status ? 5 : 0);
+            BorderBrush = new SolidColorBrush(Color.FromRgb(244, 0, 233));
+        }
     }
 }

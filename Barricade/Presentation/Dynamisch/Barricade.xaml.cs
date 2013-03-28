@@ -20,7 +20,7 @@ namespace Barricade.Presentation.Dynamisch
     /// </summary>
     public partial class Barricade : UserControl
     {
-        public Barricade()
+        public Barricade(Logic.Barricade barricade)
         {
             InitializeComponent();
         }

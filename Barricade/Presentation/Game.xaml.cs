@@ -1,23 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Barricade.Logic;
-using Barricade.Presentation.Blocks;
-using Bos = Barricade.Presentation.Blocks.Bos;
-using FinishVeld = Barricade.Presentation.Blocks.FinishVeld;
+using Barricade.Presentation.Statisch;
+using Bos = Barricade.Presentation.Statisch.Bos;
+using FinishVeld = Barricade.Presentation.Statisch.FinishVeld;
 using Pion = Barricade.Logic.Pion;
-using StartVeld = Barricade.Presentation.Blocks.StartVeld;
+using StartVeld = Barricade.Presentation.Statisch.StartVeld;
 
 namespace Barricade.Presentation
 {
@@ -26,10 +19,10 @@ namespace Barricade.Presentation
     /// </summary>
     public partial class Game : Page
     {
-        private Spel _spel;
-// ReSharper disable RedundantNameQualifier - VOOR DUIDELIJKHEID
-        private readonly Dictionary<Logic.IVeld, Presentation.Blocks.IBlock> _velden = new Dictionary<IVeld, IBlock>(); 
-// ReSharper restore RedundantNameQualifier
+        private readonly Spel _spel;
+
+        // IVeld komt uit domeinlaag, IElement uit presentatielaag
+        private readonly Dictionary<IVeld, IElement> _velden = new Dictionary<IVeld, IElement>(); 
 
         public Game(Data.Loader loader)
         {
@@ -40,7 +33,7 @@ namespace Barricade.Presentation
             var width = loader.Kaart.GetLength(1);
 
             const int nodeSize = 50;
-            int pathSize = (Math.Max(width, height) > 15 ? 5 : 30);
+            var pathSize = (Math.Max(width, height) > 15 ? 5 : 30);
 
             var gameWidth = (nodeSize + pathSize)*width - pathSize;
             var gameHeight = (nodeSize + pathSize) * (height - 1) + (200 - pathSize);
@@ -131,7 +124,7 @@ namespace Barricade.Presentation
                     if (vakje != null)
                     {
                         Spelbord.Children.Add(vakje);
-                        _velden[veld] = vakje as IBlock;
+                        _velden[veld] = vakje as IElement;
                     }
                     GenereerLijntjes(j, width, level, i, height);
                 }
@@ -142,21 +135,66 @@ namespace Barricade.Presentation
 //            pion.Arrange(new Rect(new Point(20, 20), pion.DesiredSize));
         }
 
-
+        private readonly List<IElement> _opgelicht = new List<IElement>(); 
         private void Viewbox_Loaded(object sender, RoutedEventArgs e)
         {
             var enumerable = from speler in _spel.Spelers select speler.Pionnen;
-            foreach (var pion in enumerable.SelectMany(i => i))
+            var list = enumerable.SelectMany(i => i)
+                      .Select(
+                          pion =>
+                          new
+                              {
+                                  pion,
+                                  target = _velden[pion.IVeld].BerekenPunt(pion).TranslatePoint(new Point(0, 0), Houder)
+                              });
+            foreach (var item in list)
             {
-                var target = _velden[pion.IVeld].PionHead(pion).TranslatePoint(new Point(0, 0), Houder);
-                var icon = new Blocks.Pion(pion)
+                var icon =  new Dynamisch.Pion(item.pion)
+                    {
+                        HorizontalAlignment = HorizontalAlignment.Left,
+                        VerticalAlignment = VerticalAlignment.Top,
+                        Margin = new Thickness(item.target.X, item.target.Y, 0, 0)
+                    };
+                var item1 = item;
+                Pionnen.Children.Add(icon);
+                icon.Icon.Click += (o, args) =>
                 {
-                    HorizontalAlignment = HorizontalAlignment.Left,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Margin = new Thickness(target.X, target.Y, 0, 0)
+                    var zetten = item1.pion.MogelijkeZetten(4);
+                    foreach (var element in _opgelicht)
+                    {
+                        element.WisselLicht(false);
+                    }
+                    _opgelicht.Clear();
+                    foreach (var zet in zetten)
+                    {
+                        _opgelicht.Add(_velden[zet]);
+                        _velden[zet].WisselLicht(true);
+                    }
                 };
-                //                        Pionnen.Background = new SolidColorBrush(Color.FromRgb(24, 23, 23));
-                Pionnen.Children.Add(icon);  
+            }
+
+            var barricades = from veld in _velden.Keys 
+                             let veld1 = veld as Veld
+                             where veld1 != null && veld1.Barricade != null
+                             select new Tuple<IVeld, Logic.Barricade>(veld1, veld1.Barricade);
+
+            foreach (var icon in
+                barricades.Select(
+                    barricade =>
+                    new
+                        {
+                            barricade,
+                            target =
+                        _velden[barricade.Item1].BerekenPunt(barricade.Item2).TranslatePoint(new Point(0, 0), Houder)
+                        })
+                          .Select(@t => new Dynamisch.Barricade(@t.barricade.Item2)
+                              {
+                                  HorizontalAlignment = HorizontalAlignment.Left,
+                                  VerticalAlignment = VerticalAlignment.Top,
+                                  Margin = new Thickness(@t.target.X, @t.target.Y, 0, 0)
+                              }))
+            {
+                Pionnen.Children.Add(icon);
             }
 
         }

@@ -1,5 +1,6 @@
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Barricade.Presentation.Statisch
 {
@@ -53,6 +54,17 @@ namespace Barricade.Presentation.Statisch
         public UIElement BerekenPunt(Logic.Pion pion)
         {
             return this;
+        }
+
+        public UIElement BerekenPunt(Logic.Barricade barricade)
+        {
+            return this;
+        }
+
+        public void WisselLicht(bool status)
+        {
+            BorderThickness = new Thickness(status ? 5 : 0);
+            BorderBrush = new SolidColorBrush(Color.FromRgb(244, 0, 233));
         }
     }
 }

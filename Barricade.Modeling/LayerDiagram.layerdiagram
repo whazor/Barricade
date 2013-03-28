@@ -20,6 +20,9 @@
         <dependencyFromLayerToLayer Id="5e46e396-f7f5-4421-ba23-a5aed31deab6" direction="Bidirectional">
           <layerMoniker Id="56f35101-8da8-4369-b1b6-6fd3829261a5" />
         </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4d045207-23e1-4feb-8b28-3bde1232ce3e" direction="Forward">
+          <layerMoniker Id="170d0833-f383-4d6e-b9a1-4be9d4b6f5c0" />
+        </dependencyFromLayerToLayer>
       </dependencyToLayers>
     </layer>
     <layer Id="2b7d15fa-acec-43a2-9fbb-e44fb5e623fc" name="Domain">

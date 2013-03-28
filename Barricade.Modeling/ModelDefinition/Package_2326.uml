@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="1d98a993-1bc9-4cb8-a61c-53069beb0053"
-  name="Blocks" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  name="Statisch" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <packagedElements>
     <packageHasNamedElement>
       <class
@@ -15,7 +15,7 @@
     <packageHasNamedElement>
       <Interface
         Id="4664b5e9-f69c-420b-8a43-a08b29045ee4"
-        name="IBlock"
+        name="IElement"
         isAbstract="false"
         isLeaf="false">
         <appliedStereotypesInternal>
@@ -57,7 +57,7 @@
         <ownedOperations>
           <operation
             Id="b805e9fe-a913-47a1-b533-00a5873c5a26"
-            name="PionHead"
+            name="BerekenPunt"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -117,12 +117,12 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="05fe1213-45cd-44eb-bf5d-319dd9ef8210"
-                  name="pion"
+                  name="barricade"
                   direction="In">
                   <type_NamedElement>
                     <classMoniker
-                      Id="cecdfa20-532c-4e6d-805d-04da79377c61"
-                      LastKnownName="Pion"
+                      Id="f906f0bf-8597-439f-b3ce-e1916d14b5ec"
+                      LastKnownName="Barricade"
                       LastKnownLocation="Package_1214.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -136,6 +136,116 @@
                       Id="a5160d08-b430-457b-87f9-2657de4931dc"
                       LastKnownName="UIElement"
                       LastKnownLocation="Package_2326.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0c91d631-38d3-4098-96fb-f56efd0def60"
+            name="BerekenPunt"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8503abb5-0df4-4615-ad5a-afa8d64d00e6"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce3b7b0c-87c5-458d-b790-279ba0297cbb">
+                    <propertyInstance
+                      Id="302e4c05-70ea-4e9e-a2e5-15ccbdcd1224"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48a1d32a-b4ec-4687-a019-dfa9f89cac9b">
+                    <propertyInstance
+                      Id="09363c9c-c9b8-4230-a0ba-63eaff4dce7e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ede648c8-2123-470b-81b7-b395957ecf4c">
+                    <propertyInstance
+                      Id="5f9aeb2d-b2ff-4bd9-9c1b-6b596b11d53d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b97d7871-d5c9-41da-9069-b938e12368e2">
+                    <propertyInstance
+                      Id="3c5df34a-efcf-4b96-aa7e-81508125ca1a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e8cee4a-13cf-45fe-97cc-d45dccab73c7">
+                    <propertyInstance
+                      Id="d224c2eb-284d-4c7f-962f-f296ff523296"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="150d12bf-4121-4a99-9df9-98e67b1b3d20">
+                    <propertyInstance
+                      Id="b976fd13-d63c-4698-b321-8b62d871f65c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d0176fa8-0dfd-4d1c-a66d-9666188002d8"
+                  name="poin"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="cecdfa20-532c-4e6d-805d-04da79377c61"
+                      LastKnownName="Pion"
+                      LastKnownLocation="Package_1214.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f4fa532a-01d4-422e-8807-ddd35a513b84"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a5160d08-b430-457b-87f9-2657de4931dc"
+                      LastKnownName="UIElement"
+                      LastKnownLocation="Package_2326.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8e06029a-af2b-42d6-84ba-f3c260a1d1c7"
+            name="WisselLicht"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f8ebe621-f5ed-4630-8e93-51b0279ccd76"
+                  name="status"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Barricade.Modeling.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -156,14 +266,14 @@
             Id="5856019a-03b6-4f75-88bc-18ad8ad554db">
             <interfaceMoniker
               Id="4664b5e9-f69c-420b-8a43-a08b29045ee4"
-              LastKnownName="IBlock"
+              LastKnownName="IElement"
               LastKnownLocation="Package_2326.uml" />
           </interfaceRealization>
         </suppliersInternal>
         <ownedOperationsInternal>
           <operation
             Id="a80efdc3-2f15-4673-bee5-c3927ade7b43"
-            name="PionHead"
+            name="BerekenPunt"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -247,6 +357,30 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="edea95df-7b53-470b-93d7-7996facad00a"
+            name="WisselLicht"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1f7b37b5-4d87-41c4-b818-46e8ba545917"
+                  name="status"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -262,14 +396,14 @@
             Id="4f18f143-79bb-45cd-96ff-2b0e5fc75dfe">
             <interfaceMoniker
               Id="4664b5e9-f69c-420b-8a43-a08b29045ee4"
-              LastKnownName="IBlock"
+              LastKnownName="IElement"
               LastKnownLocation="Package_2326.uml" />
           </interfaceRealization>
         </suppliersInternal>
         <ownedOperationsInternal>
           <operation
             Id="0e496b3b-4fbc-4d20-a5db-c924636c4715"
-            name="PionHead"
+            name="BerekenPunt"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -353,6 +487,30 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="410d90e6-1dde-4e41-b460-574c5fb77113"
+            name="WisselLicht"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="82638e65-c4e8-4ac3-9619-d2cfb07bb4e0"
+                  name="status"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -368,14 +526,14 @@
             Id="d4aee086-116d-479f-ae00-586ca91ef73d">
             <interfaceMoniker
               Id="4664b5e9-f69c-420b-8a43-a08b29045ee4"
-              LastKnownName="IBlock"
+              LastKnownName="IElement"
               LastKnownLocation="Package_2326.uml" />
           </interfaceRealization>
         </suppliersInternal>
         <ownedOperationsInternal>
           <operation
             Id="29a1a799-189b-4563-aead-15941df9197a"
-            name="PionHead"
+            name="BerekenPunt"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -459,6 +617,30 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="8b2f017e-8edb-4fed-b7bd-77bf217a5166"
+            name="WisselLicht"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="03c49745-bd56-4328-89ed-6d9a693f4127"
+                  name="status"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -479,14 +661,14 @@
             Id="74df7381-20e8-4433-ad72-e4e44ff5ad70">
             <interfaceMoniker
               Id="4664b5e9-f69c-420b-8a43-a08b29045ee4"
-              LastKnownName="IBlock"
+              LastKnownName="IElement"
               LastKnownLocation="Package_2326.uml" />
           </interfaceRealization>
         </suppliersInternal>
         <ownedOperationsInternal>
           <operation
             Id="f3976742-7cff-4d20-bcec-7994dccb92f3"
-            name="PionHead"
+            name="BerekenPunt"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -565,6 +747,30 @@
                       Id="a5160d08-b430-457b-87f9-2657de4931dc"
                       LastKnownName="UIElement"
                       LastKnownLocation="Package_2326.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="842a783a-ccc5-4ae1-a2ca-598d8379126f"
+            name="WisselLicht"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="76476159-04b5-4886-ad62-7096b1f03b8f"
+                  name="status"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Barricade.Modeling.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
