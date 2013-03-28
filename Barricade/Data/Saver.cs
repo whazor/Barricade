@@ -97,7 +97,7 @@ namespace Barricade.Data
                             if (_points[i, k] == null)
                             {
                                 result += " ";
-                                break;
+                                continue;
                             }
                             if (_points[i, j].Buren.Contains(_points[i, k]))
                             {
