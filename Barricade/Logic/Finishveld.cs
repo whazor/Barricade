@@ -15,6 +15,7 @@ namespace Barricade.Logic
         {
             VerwijderPion(pion);
             throw new GewonnenException();
+            // TODO: player informatie toevoegen
         }
 
 	}

@@ -41,7 +41,7 @@ namespace Barricade.Process
             }
 		}
 
-		public virtual void Verplaats()
+		public virtual void Verplaats(Logic.Barricade barricade, IVeld bestemming)
 		{
 			throw new System.NotImplementedException();
 		}
