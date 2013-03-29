@@ -11,7 +11,7 @@ namespace Barricade.Logic
 	public class Finishveld : VeldBase
 	{
 
-        public new bool Plaats(Pion pion)
+        public override bool Plaats(Pion pion)
         {
             VerwijderPion(pion);
             throw new GewonnenException();

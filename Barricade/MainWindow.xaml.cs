@@ -36,11 +36,11 @@ namespace Barricade
             {
     "                                    < >                                ",
     "                                     |                                 ",
-    "    (A)-(B)-(C)-(D)-(E)-(F)-(G)-(H)-[*]-(I)-(J)-(K)-(L)-(M)-(N)-(O)-(P)",
+    "    ( )-( )-( )-( )-( )-( )-( )-( )-[*]-( )-( )-( )-( )-( )-( )-( )-( )",
     "     |                                                               | ",
-    "    ( )                                                             (Q)",
+    "    ( )                                                             ( )",
     "     |                                                               | ",
-    "    ( )-( )-( )-( )-( )-( )-( )-(Z)-[*]-(Y)-(X)-(W)-(V)-(U)-(T)-(S)-(R)",
+    "    ( )-( )-( )-( )-( )-( )-( )-( )-[*]-( )-( )-( )-( )-( )-( )-( )-( )",
     "                                     |                                 ",
     "                                    [*]                                ",
     "                                     |                                 ",
@@ -69,17 +69,20 @@ namespace Barricade
 	"*4:START,B5"
             };
             var game = new Game(new Loader(level2));
-            game.Visibility = Visibility.Hidden;
-
-            Houder.Children.Add(game);
-            game.Showable += (a, b) =>
-                {
-                    Houder.Children.Clear();
-                    Content = game;
-                    game.Visibility = Visibility.Visible;
-                };
+            Content = game;
             Top = 0;
             Left = 0;
+//            game.Visibility = Visibility.Hidden;
+//
+//            Houder.Children.Add(game);
+//            game.Showable += (a, b) =>
+//                {
+//                    Houder.Children.Clear();
+//                    Content = game;
+//                    game.Visibility = Visibility.Visible;
+//                };
+//            Top = 0;
+//            Left = 0;
         }
 
         private void ButtonKort_Click(object sender, RoutedEventArgs e)

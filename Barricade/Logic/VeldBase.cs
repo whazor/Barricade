@@ -13,7 +13,7 @@ namespace Barricade.Logic
 	    public List<IVeld> Buren { get; private set; }
 	    public List<Pion> Pionnen { get; protected set; }
 
-        public VeldBase()
+	    protected VeldBase()
         {
             Buren = new List<IVeld>();
             Pionnen = new List<Pion>();
@@ -24,13 +24,7 @@ namespace Barricade.Logic
             return pion.IVeld.Pionnen.Remove(pion);
         }
 
-        public bool Plaats(Pion pion)
-        {
-            //meerdere pionnen op dit veld toegestaan
-            VerwijderPion(pion);
-            Pionnen.Add(pion);
-            return true;
-        }
+	    public abstract bool Plaats(Pion pion);
 	}
 }
 

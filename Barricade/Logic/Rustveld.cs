@@ -9,7 +9,7 @@ namespace Barricade.Logic
 	public class Rustveld : VeldBase
 	{
 
-        public new bool Plaats(Pion pion)
+        public override bool Plaats(Pion pion)
         {
             VerwijderPion(pion);
 

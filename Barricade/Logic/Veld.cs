@@ -1,4 +1,6 @@
 ﻿
+using Barricade.Logic.Exceptions;
+
 namespace Barricade.Logic
 {
 	using System;
@@ -22,17 +24,25 @@ namespace Barricade.Logic
 			set;
 		}
 
-        public new bool Plaats(Pion pion)
+        public override bool Plaats(Pion pion)
         {
-             VerwijderPion(pion);
+            if (Barricade != null)
+            {
+                throw new BarricadeVerplaatsException(this, Barricade);
+            }
+
+            VerwijderPion(pion);
 
             //staat al iets op, sla deze pion
             if (Pionnen.Any())
             {
-                var nieuwVeld = IsDorp ? (IVeld) pion.Speler.Spel.Bos : Pionnen.First().Speler.Startveld;
-                Pionnen.First().IVeld = nieuwVeld;
-                nieuwVeld.Pionnen.Add(Pionnen.First());
-                Pionnen = new List<Pion>();
+                foreach (var vorig in Pionnen.ToArray())
+                {
+                    var nieuwVeld = IsDorp ? (IVeld)pion.Speler.Spel.Bos : vorig.Speler.Startveld;
+                    vorig.Verplaats(nieuwVeld);
+                }
+
+                Pionnen.Clear();
             }
 
             Pionnen.Add(pion);

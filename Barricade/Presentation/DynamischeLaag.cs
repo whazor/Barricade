@@ -51,6 +51,8 @@ namespace Barricade.Presentation
                 _poinnen.Add(item.pion, icon);
                 _dynamischGrid.Children.Add(icon);
 
+                item.pion.PositieWijziging += Beweeg;
+
                 icon.MouseUp += (o, args) => PionKlik((Dynamisch.Pion)o, ((Dynamisch.Pion)o).Stuk);
             }
         }
@@ -80,12 +82,21 @@ namespace Barricade.Presentation
             }
         }
 
+        public void Beweeg(Pion pion, IVeld bestemming)
+        {
+            var icon = _poinnen[pion];
+            const int milliseconds = 500;
+            var stack = new Stack<IVeld>();
+            stack.Push(bestemming);
+            Beweeg(pion, stack, icon, milliseconds);
+        }
+
         public void Beweeg(Pion pion, IList<IVeld> velds)
         {
             var icon = _poinnen[pion];
             const int milliseconds = 500;
             var stack = new Stack<IVeld>(velds);
-            Beweeg(pion, stack, icon, milliseconds);
+//            Beweeg(pion, stack, icon, milliseconds);
         }
 
         private void Beweeg(Pion pion, Stack<IVeld> stack, FrameworkElement icon, int milliseconds)

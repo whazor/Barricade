@@ -20,11 +20,15 @@ namespace Barricade.Presentation
     /// </summary>
     public partial class Game : UserControl
     {
-        private readonly Spel _spel;
+        // Logic spel
+        private readonly Logic.Spel _logicSpel;
+        private readonly Process.Spel _processSpel;
 
+        // De lagen
         private readonly StatischeLaag _statischeLaag;
         private DynamischeLaag _dynamischeLaag;
 
+        // Properties voor het oplichten van mogelijkheden
         private Pion _pion;
         private readonly List<IElement> _opgelicht = new List<IElement>();
         private Dictionary<IVeld, List<IVeld>> _mogelijkePaden = new Dictionary<IVeld, List<IVeld>>();
@@ -32,30 +36,43 @@ namespace Barricade.Presentation
         public Game(Data.Loader loader)
         {
             InitializeComponent();
-            _spel = loader.Spel;
+
+            _logicSpel = loader.Spel;
+            _processSpel = new Process.Spel(_logicSpel);
+            
+
             _statischeLaag = new StatischeLaag(Spelbord, loader.Kaart);
             Loaded += LaadDynamischeLaag;
         }
 
         public delegate void ShowableEvent(object sender, RoutedEventArgs e);
-
         public event ShowableEvent Showable;
 
-        private void LaadDynamischeLaag(object sender, RoutedEventArgs e)
+        void LaadDynamischeLaag(object sender, RoutedEventArgs e)
         {
-            _dynamischeLaag = new DynamischeLaag(DynamischGrid, Houder, _statischeLaag.Velden);
-            var pionnen = new List<Pion>(_spel.Spelers.Select(speler => speler.Pionnen).SelectMany(i => i));
+            // Niet dubbel laden
+            Loaded -= LaadDynamischeLaag;
+            // Zoek alle poinnen op
+            var pionnen = new List<Pion>(_logicSpel.Spelers.Select(speler => speler.Pionnen).SelectMany(i => i));
+            // Zoek alle barricades op
             var barricades = (
                     _statischeLaag.Velden.Keys.Select(veld => veld as Veld)
                                  .Where(veld => veld != null && veld.Barricade != null)
                                  .Select(veld => new Tuple<IVeld, Logic.Barricade>(veld, veld.Barricade)));
+
+            // Maak de dynamische laag aan en teken alles
+            _dynamischeLaag = new DynamischeLaag(DynamischGrid, Houder, _statischeLaag.Velden);
             _dynamischeLaag.TekenPionnen(pionnen);
             _dynamischeLaag.TekenBarricades(barricades.ToList());
-            _dynamischeLaag.PionClick += _dynamischeLaag_PionClick;
+
+            // Bij een pion klik wordt er een actie uitgevoerd
+            _dynamischeLaag.PionKlik += VeldKlik;
+
+            // Geef een event af voor het laadscherm
             if(Showable != null) Showable(sender, e);
         }
 
-        void _dynamischeLaag_PionClick(Dynamisch.Pion icon, Pion item)
+        void VeldKlik(Dynamisch.Pion icon, Pion item)
         {
             Spelbord.Cursor = Cursors.No;
             DynamischGrid.IsHitTestVisible = false;
@@ -74,11 +91,11 @@ namespace Barricade.Presentation
                 _statischeLaag.Velden[zet].WisselLicht(true);
                 var element = (UserControl) _statischeLaag.Velden[zet];
                 element.Cursor = Cursors.Hand;
-                element.MouseUp += OnMouseUp;
+                element.MouseUp += VeldKlik;
             }
         }
 
-        private void OnMouseUp(object sender, MouseButtonEventArgs mouseButtonEventArgs)
+        private void VeldKlik(object sender, MouseButtonEventArgs mouseButtonEventArgs)
         {
             var bestemming = ((IElement) sender).Veld;
             Spelbord.Cursor = null;
@@ -95,7 +112,7 @@ namespace Barricade.Presentation
                 item.WisselLicht(false);
                 var element = (UserControl)item;
                 element.Cursor = null;
-                element.MouseUp -= OnMouseUp;
+                element.MouseUp -= VeldKlik;
             }
             _opgelicht.Clear();
         }
