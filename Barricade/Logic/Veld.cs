@@ -22,7 +22,7 @@ namespace Barricade.Logic
 			set;
 		}
 
-        public new bool PlaatsPion(Pion pion)
+        public new bool Plaats(Pion pion)
         {
              VerwijderPion(pion);
 

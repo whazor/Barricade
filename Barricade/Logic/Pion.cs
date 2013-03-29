@@ -63,9 +63,9 @@
         }
 
 	    public virtual bool Verplaats(IVeld bestemming)
-		{
-			throw new System.NotImplementedException();
-		}
+	    {
+	        return bestemming.Plaats(this);
+	    }
 	}
 }
 

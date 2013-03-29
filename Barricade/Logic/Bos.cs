@@ -20,7 +20,7 @@ namespace Barricade.Logic
             Pionnen = new List<Pion>();
         }
 
-        public bool PlaatsPion(Pion pion)
+        public bool Plaats(Pion pion)
         {
             //verwijder pion van vorige veld
             pion.IVeld.Pionnen.Remove(pion);

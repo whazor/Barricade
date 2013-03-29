@@ -24,7 +24,7 @@ namespace Barricade.Logic
             return pion.IVeld.Pionnen.Remove(pion);
         }
 
-        public bool PlaatsPion(Pion pion)
+        public bool Plaats(Pion pion)
         {
             //meerdere pionnen op dit veld toegestaan
             VerwijderPion(pion);
