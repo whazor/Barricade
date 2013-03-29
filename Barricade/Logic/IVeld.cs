@@ -21,7 +21,7 @@ namespace Barricade.Logic
 
 		List<Pion> Pionnen { get; }
 
-	    bool Plaats(Pion);
+	    bool Plaats(Pion pion);
 
 	}
 }
