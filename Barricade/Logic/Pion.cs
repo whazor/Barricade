@@ -26,24 +26,34 @@
 
 		public virtual List<List<IVeld>> MogelijkeZetten(int stappen = 1)
 		{
-            return MogelijkeZetten(IVeld, IVeld, stappen).GroupBy(lijst => lijst.First()).Select(a => a.First()).ToList();
+            // Kijk welke zetten er mogelijk zijn
+		    var mogelijk = MogelijkeZetten(IVeld, IVeld, stappen);
+            // Groepeer per bestemming
+		    var perBestemming = mogelijk.GroupBy(lijst => lijst.First());
+            // Selecteer een willekeurig pad
+		    var willkeurigUniek =
+		        perBestemming.Select(a => a.Count() == 1 ? a.First() : a.Skip(new Random().Next(0, a.Count())).Take(1).First());
+            // Geef alle paden terug
+            return willkeurigUniek.ToList();
 		}
 
         private IEnumerable<List<IVeld>> MogelijkeZetten(IVeld vorige, IVeld begin, int stappen)
         {
             stappen--;
             var lijsten = new List<List<IVeld>>();
+            // Ga alle buren af
             foreach (var veld in begin.Buren.Where(veld => veld != vorige))
             {
+                // Wanneer de pion meer dan 1 stappen mag zetten moeten de buren bezocht worden.
                 if (stappen >= 1)
                 {
+                    // Kijk of er een barricade opstaat
                     if (veld is Veld && (veld as Veld).Barricade != null) continue;
 
                     var nieuw = MogelijkeZetten(begin, veld, stappen);
                     foreach (var lijst in nieuw)
                     {
                         lijst.Add(veld);
-//                        lijst.Add(begin);
                         lijsten.Add(lijst);
                     }
                 }
@@ -59,6 +69,7 @@
                     lijsten.Add(new List<IVeld> {veld});
                 }
             }
+            // Filter de lege lijsten eruit
             return lijsten.Where(lijst => lijst.Any()).ToList();
         }
 
