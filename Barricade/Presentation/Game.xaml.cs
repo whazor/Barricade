@@ -18,7 +18,7 @@ namespace Barricade.Presentation
     /// <summary>
     /// Interaction logic for Game.xaml
     /// </summary>
-    public partial class Game : Page
+    public partial class Game : UserControl
     {
         private readonly Spel _spel;
 
@@ -34,10 +34,14 @@ namespace Barricade.Presentation
             InitializeComponent();
             _spel = loader.Spel;
             _statischeLaag = new StatischeLaag(Spelbord, loader.Kaart);
-            Loaded += Game_Loaded;
+            Loaded += LaadDynamischeLaag;
         }
 
-        private void Game_Loaded(object sender, RoutedEventArgs e)
+        public delegate void ShowableEvent(object sender, RoutedEventArgs e);
+
+        public event ShowableEvent Showable;
+
+        private void LaadDynamischeLaag(object sender, RoutedEventArgs e)
         {
             _dynamischeLaag = new DynamischeLaag(DynamischGrid, Houder, _statischeLaag.Velden);
             var pionnen = new List<Pion>(_spel.Spelers.Select(speler => speler.Pionnen).SelectMany(i => i));
@@ -48,9 +52,10 @@ namespace Barricade.Presentation
             _dynamischeLaag.TekenPionnen(pionnen);
             _dynamischeLaag.TekenBarricades(barricades.ToList());
             _dynamischeLaag.PionClick += _dynamischeLaag_PionClick;
+            if(Showable != null) Showable(sender, e);
         }
 
-        void _dynamischeLaag_PionClick(Pion item)
+        void _dynamischeLaag_PionClick(Dynamisch.Pion icon, Pion item)
         {
             Spelbord.Cursor = Cursors.No;
             DynamischGrid.IsHitTestVisible = false;
@@ -75,11 +80,15 @@ namespace Barricade.Presentation
 
         private void OnMouseUp(object sender, MouseButtonEventArgs mouseButtonEventArgs)
         {
+            var bestemming = ((IElement) sender).Veld;
             Spelbord.Cursor = null;
             DynamischGrid.Opacity = 1;
             DynamischGrid.IsHitTestVisible = true;
 
-            _dynamischeLaag.Beweeg(_pion, _mogelijkePaden[((IElement) sender).Veld]);
+            _pion.Verplaats(bestemming);
+
+            _dynamischeLaag.Beweeg(_pion, _mogelijkePaden[bestemming]);
+            _mogelijkePaden.Clear();
             
             foreach (var item in _opgelicht)
             {
@@ -88,6 +97,7 @@ namespace Barricade.Presentation
                 element.Cursor = null;
                 element.MouseUp -= OnMouseUp;
             }
+            _opgelicht.Clear();
         }
     }
 }

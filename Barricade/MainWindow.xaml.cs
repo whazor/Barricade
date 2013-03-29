@@ -69,7 +69,15 @@ namespace Barricade
 	"*4:START,B5"
             };
             var game = new Game(new Loader(level2));
-            Content = game;
+            game.Visibility = Visibility.Hidden;
+
+            Houder.Children.Add(game);
+            game.Showable += (a, b) =>
+                {
+                    Houder.Children.Clear();
+                    Content = game;
+                    game.Visibility = Visibility.Visible;
+                };
             Top = 0;
             Left = 0;
         }
