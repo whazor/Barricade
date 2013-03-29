@@ -64,7 +64,13 @@
 
 	    public virtual bool Verplaats(IVeld bestemming)
 	    {
-	        return bestemming.Plaats(this);
+            if (bestemming.Plaats(this))
+            {
+                IVeld = (IVeld) bestemming;
+                return true;
+            }
+
+	        return false;
 	    }
 	}
 }
