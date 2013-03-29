@@ -29,7 +29,7 @@ namespace Barricade.Logic
             //staat al iets op, sla deze pion
             if (Pionnen.Any())
             {
-                IVeld nieuwVeld = (this.IsDorp) ? (IVeld) pion.Speler.Spel.Bos : (IVeld) Pionnen.First().Speler.Startveld;
+                var nieuwVeld = IsDorp ? (IVeld) pion.Speler.Spel.Bos : Pionnen.First().Speler.Startveld;
                 Pionnen.First().IVeld = nieuwVeld;
                 nieuwVeld.Pionnen.Add(Pionnen.First());
                 Pionnen = new List<Pion>();
@@ -39,6 +39,12 @@ namespace Barricade.Logic
             return true;
         }
 
+	    public bool Plaats(Barricade pion)
+	    {
+	        if (Barricade != null || !MagBarricade) return false;
+	        Barricade = pion;
+	        return true;
+	    }
 	}
 }
 

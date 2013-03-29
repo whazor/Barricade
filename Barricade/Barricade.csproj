@@ -67,6 +67,7 @@
     <Compile Include="Data\Saver.cs" />
     <Compile Include="Logic\Barricade.cs" />
     <Compile Include="Logic\Bos.cs" />
+    <Compile Include="Logic\Exceptions\BarricadeVerplaatsException.cs" />
     <Compile Include="Logic\Exceptions\GewonnenException.cs" />
     <Compile Include="Logic\Finishveld.cs" />
     <Compile Include="Logic\IVeld.cs" />

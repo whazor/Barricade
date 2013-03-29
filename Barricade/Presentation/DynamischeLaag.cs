@@ -27,7 +27,7 @@ namespace Barricade.Presentation
 
         public delegate void PionClickHandler(Dynamisch.Pion item, Logic.Pion sender);
 
-        public event PionClickHandler PionClick;
+        public event PionClickHandler PionKlik;
 
         public void TekenPionnen(List<Pion> pionnen)
         {
@@ -51,7 +51,7 @@ namespace Barricade.Presentation
                 _poinnen.Add(item.pion, icon);
                 _dynamischGrid.Children.Add(icon);
 
-                icon.MouseUp += (o, args) => PionClick((Dynamisch.Pion)o, ((Dynamisch.Pion)o).Stuk);
+                icon.MouseUp += (o, args) => PionKlik((Dynamisch.Pion)o, ((Dynamisch.Pion)o).Stuk);
             }
         }
 

@@ -8,6 +8,9 @@
 
 	public class Pion
 	{
+        public delegate void PositieWijzigingEvent(IVeld nieuwVeld);
+        public event PositieWijzigingEvent PositieWijziging;
+
 	    public Pion(Speler speler)
 	    {
 	        Speler = speler;
@@ -77,7 +80,8 @@
 	    {
             if (bestemming.Plaats(this))
             {
-                IVeld = (IVeld) bestemming;
+                IVeld = bestemming;
+                if (PositieWijziging != null) PositieWijziging(bestemming);
                 return true;
             }
 
