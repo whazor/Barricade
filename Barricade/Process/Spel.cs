@@ -97,7 +97,7 @@ namespace Barricade.Process
                 {
                     _game.Klem(barricade, true);
                     var target = await _game.KiesVeld(a => a.MagBarricade);
-                    _game.Klem(barricade, true);
+                    _game.Klem(barricade, false);
 
                     barricade.Verplaats(target as Veld);
                 }

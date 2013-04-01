@@ -1,21 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Shapes;
 using Barricade.Logic;
 using Barricade.Presentation.Statisch;
-using Barricade = Barricade.Logic.Barricade;
-using Bos = Barricade.Presentation.Statisch.Bos;
-using FinishVeld = Barricade.Presentation.Statisch.FinishVeld;
 using Pion = Barricade.Logic.Pion;
-using Spel = Barricade.Process.Spel;
-using StartVeld = Barricade.Presentation.Statisch.StartVeld;
 
 namespace Barricade.Presentation
 {
@@ -34,6 +26,7 @@ namespace Barricade.Presentation
 
         // Properties voor het slepen van barricades
         private UserControl _sleepTarget;
+        private bool _sleepende;
 
         // Dit is voor de async methodes
         private TaskCompletionSource<Pion> _pionCompletion = new TaskCompletionSource<Pion>();
@@ -58,6 +51,7 @@ namespace Barricade.Presentation
 
             // Inladen moet later voor het opzoeken van veldposities
             Loaded += LaadDynamischeLaag;
+            MouseMove += OnMove;
         }
 
         /// <summary>
@@ -121,14 +115,7 @@ namespace Barricade.Presentation
         public void Klem(Logic.Barricade barricade, bool b)
         {
             _sleepTarget = _dynamischeLaag.Zoek(barricade);
-            if (b)
-            {
-                MouseMove += OnMove;
-            } 
-            else
-            {
-                MouseMove -= OnMove;
-            }
+            _sleepende = b;
         }
 
         /// <summary>
@@ -138,6 +125,7 @@ namespace Barricade.Presentation
         /// <param name="args"></param>
         private void OnMove(object sender, MouseEventArgs args)
         {
+            if (!_sleepende) return;
             var position = args.GetPosition(DynamischGrid);
             _sleepTarget.Margin = new Thickness(Math.Min(position.X + 20, DynamischGrid.ActualWidth - 50), Math.Min(position.Y + 20, DynamischGrid.ActualHeight - 50), 0, 0);
         }

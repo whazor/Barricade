@@ -87,6 +87,8 @@ namespace Barricade.Presentation
             var target = _velden[nieuwveld].BerekenPunt(barricade).TranslatePoint(new Point(0, 0), _houder);
             var thickness = new Thickness(target.X, target.Y, 0, 0);
             var moveAnimation = new ThicknessAnimation(icon.Margin, thickness, TimeSpan.FromMilliseconds(milliseconds));
+            moveAnimation.FillBehavior = FillBehavior.Stop;
+            moveAnimation.Completed += (sender, args) => icon.Margin = thickness;
             icon.BeginAnimation(FrameworkElement.MarginProperty, moveAnimation);
         }
 
@@ -113,7 +115,11 @@ namespace Barricade.Presentation
             
             var target = _velden[stack.Pop()].BerekenPunt(pion).TranslatePoint(new Point(0, 0), _houder);
             var thickness = new Thickness(target.X, target.Y, 0, 0);
-            var moveAnimation = new ThicknessAnimation(icon.Margin, thickness, TimeSpan.FromMilliseconds(milliseconds));
+            var moveAnimation = new ThicknessAnimation(icon.Margin, thickness, TimeSpan.FromMilliseconds(milliseconds))
+                {
+                    FillBehavior = FillBehavior.Stop
+                };
+            moveAnimation.Completed += (sender, args) => icon.Margin = thickness;
             moveAnimation.Completed += (sender, args) => Beweeg(pion, stack, icon, milliseconds);
             icon.BeginAnimation(FrameworkElement.MarginProperty, moveAnimation);
         }
