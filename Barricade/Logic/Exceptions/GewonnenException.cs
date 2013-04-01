@@ -9,5 +9,12 @@ namespace Barricade.Logic.Exceptions
 {
     class GewonnenException : Exception
     {
+
+        public Speler Speler { get; set; }
+
+        public GewonnenException(Speler speler)
+        {
+            Speler = speler;
+        }
     }
 }

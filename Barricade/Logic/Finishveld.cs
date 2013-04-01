@@ -14,8 +14,7 @@ namespace Barricade.Logic
 
         public override bool Plaats(Pion pion)
         {
-            throw new GewonnenException();
-            // TODO: player informatie toevoegen
+            throw new GewonnenException(pion.Speler);
         }
 
 	}
