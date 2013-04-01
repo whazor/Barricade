@@ -72,32 +72,6 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="5f8ded41-a984-4dab-aa16-0b0cad5f022b">
-      <profileInstance Id="c194f603-0daf-4025-8a4f-63baed0e837a" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="27b818ae-886c-44bb-8c61-10eee9c90053">
-      <profileInstance Id="d8b3b096-f46c-4e4c-9ce7-c46e46e18890" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="dd2816fe-0aa7-40bf-853a-f19db8998305">
-      <profileInstance Id="7b83b96f-3a3e-45c9-a5c6-9b9816595fed" name="CSharpProfile">
-        <elementDefinition Id="7425ede2-cb4f-4fc2-a7cd-8b852ba24dfb" />
-      </profileInstance>
-      <elementDefinition Id="11d91cb2-76f8-4799-a0ef-afe97c07e395" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="92a8781b-3909-4414-a599-ae519aef937c">
-      <profileInstance Id="3c8c49b8-1ec8-4d40-9be3-eb66576e5d8b" name="TextTemplateBindings">
-        <elementDefinition Id="60c91028-ca96-4d92-9206-29143c7706d9" />
-      </profileInstance>
-      <elementDefinition Id="a68f1681-406e-433c-8e88-03f3ad3ec3fc" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="bda5a5f0-a67c-41ca-9006-836e5244532e" name="Verplaats" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
@@ -286,16 +260,16 @@
               <lifelineMoniker Id="44f84c9a-7600-4f7a-9de2-35a8147f969b" LastKnownName="gevonden : Pion" />
             </covered>
           </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="b96d7eb6-00c4-435e-92eb-27362df906c2" name="OperandOccurrenceSpecification9">
-            <elementDefinition Id="e88715fd-b079-4c77-958c-fc6c3353a4ae" />
-            <covered>
-              <lifelineMoniker Id="44f84c9a-7600-4f7a-9de2-35a8147f969b" LastKnownName="gevonden : Pion" />
-            </covered>
-          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="77367620-f43d-4d7b-8652-80c8bc163a5d" name="OperandOccurrenceSpecification7">
             <elementDefinition Id="303ea98c-05c3-48ee-839b-54c68e7656e1" />
             <covered>
               <lifelineMoniker Id="e2a61c94-73d1-414c-87fe-300ef388c7e6" LastKnownName="pion : Pion" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="b96d7eb6-00c4-435e-92eb-27362df906c2" name="OperandOccurrenceSpecification9">
+            <elementDefinition Id="e88715fd-b079-4c77-958c-fc6c3353a4ae" />
+            <covered>
+              <lifelineMoniker Id="44f84c9a-7600-4f7a-9de2-35a8147f969b" LastKnownName="gevonden : Pion" />
             </covered>
           </operandOccurrenceSpecification>
           <behaviorExecutionSpecification Id="30e767ce-cfb3-4f90-bb26-b775dbccfb72" name="BehaviorExecutionSpecification18">
@@ -416,16 +390,16 @@
               <lifelineMoniker Id="e2a61c94-73d1-414c-87fe-300ef388c7e6" LastKnownName="pion : Pion" />
             </covered>
           </operandOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="616dd2c4-539f-4c9d-b19a-e875c7844e51" name="MessageOccurrenceSpecification36">
-            <elementDefinition Id="dcbb9921-2255-4e95-9aaf-4a3ec32ed4b3" />
-            <covered>
-              <lifelineMoniker Id="e2a61c94-73d1-414c-87fe-300ef388c7e6" LastKnownName="pion : Pion" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="c03b4dd3-0bcc-43f5-b463-3776cc9db9eb" name="MessageOccurrenceSpecification37">
             <elementDefinition Id="14efb0fd-6dc6-4ef9-8eb7-90b4e562213c" />
             <covered>
               <lifelineMoniker Id="268ad7e3-d39a-4efd-9405-506604af1a91" LastKnownName="spel : Spel" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="616dd2c4-539f-4c9d-b19a-e875c7844e51" name="MessageOccurrenceSpecification36">
+            <elementDefinition Id="dcbb9921-2255-4e95-9aaf-4a3ec32ed4b3" />
+            <covered>
+              <lifelineMoniker Id="e2a61c94-73d1-414c-87fe-300ef388c7e6" LastKnownName="pion : Pion" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="f7e9191e-9945-4850-8dc4-ff3f599248c1" name="ExecutionOccurrenceSpecification26">
@@ -596,5 +570,31 @@
   </packagedElements>
   <package Id="6b6c265e-6444-419d-8bb3-9b8144387b13" name="Barricade.Modeling">
     <elementDefinition Id="3e5f4f86-0a24-4669-b7de-0fb16dd60e3e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="5f8ded41-a984-4dab-aa16-0b0cad5f022b">
+        <profileInstance Id="c194f603-0daf-4025-8a4f-63baed0e837a" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="27b818ae-886c-44bb-8c61-10eee9c90053">
+        <profileInstance Id="d8b3b096-f46c-4e4c-9ce7-c46e46e18890" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="dd2816fe-0aa7-40bf-853a-f19db8998305">
+        <profileInstance Id="7b83b96f-3a3e-45c9-a5c6-9b9816595fed" name="CSharpProfile">
+          <elementDefinition Id="7425ede2-cb4f-4fc2-a7cd-8b852ba24dfb" />
+        </profileInstance>
+        <elementDefinition Id="11d91cb2-76f8-4799-a0ef-afe97c07e395" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="92a8781b-3909-4414-a599-ae519aef937c">
+        <profileInstance Id="3c8c49b8-1ec8-4d40-9be3-eb66576e5d8b" name="TextTemplateBindings">
+          <elementDefinition Id="60c91028-ca96-4d92-9206-29143c7706d9" />
+        </profileInstance>
+        <elementDefinition Id="a68f1681-406e-433c-8e88-03f3ad3ec3fc" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </SequenceDesignerModel>
