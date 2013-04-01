@@ -6,6 +6,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+        <Grid Name="Targets">
+            
+        </Grid>
         <Viewbox Stretch="Uniform">
         <Canvas Width="110" Height="50">
                 <Canvas Name="Layer_12">

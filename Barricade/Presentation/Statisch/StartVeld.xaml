@@ -9,6 +9,7 @@
     <Grid Name="Holder" HorizontalAlignment="Center" VerticalAlignment="Center">
 
         <Ellipse Name="MainEllipse" Margin="0,0,0,0" Width="200" Height="200" Stroke="Black"  StrokeDashArray="1.0"  StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <Ellipse Name="MiddleEllipse" HorizontalAlignment="Center" Height="20" Margin="0,0,0,0" StrokeThickness="4" VerticalAlignment="Center" Width="20"/>
 
 
     </Grid>

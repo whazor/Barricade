@@ -21,6 +21,8 @@ namespace Barricade.Presentation.Statisch
             InitializeComponent();
             Veld = veld;
 
+            MiddleEllipse.Fill = new SolidColorBrush(veld.Speler.Kleur);
+
             // Maak alle velden in het startveld aan.
 //            _ellipses = new Ellipse[_hoeveel];
             foreach (var pion in veld.Speler.Pionnen)

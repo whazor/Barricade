@@ -208,7 +208,11 @@ namespace Barricade.Data
                             string players = uitzondering.Split(',')[1];
                             foreach (char player in players)
                             {
-                                CreatePlayer(player, Spelers, veld);
+                                var speler = CreatePlayer(player, Spelers, veld);
+                                var pion = new Pion(speler) { IVeld = veld };
+                                if (!veld.Pionnen.Contains(pion))
+                                    veld.Pionnen.Add(pion);
+                                speler.Pionnen.Add(pion);
                             }
                         }
                         else if (uitzondering.StartsWith("START"))
