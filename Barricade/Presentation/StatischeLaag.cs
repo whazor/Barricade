@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Barricade.Logic;
@@ -115,6 +116,10 @@ namespace Barricade.Presentation
                     if (vakje != null)
                     {
                         grid.Children.Add(vakje);
+                        vakje.MouseUp += (sender, args) =>
+                            {
+                                if (VeldKlik != null) VeldKlik(sender, args);
+                            };
                         Velden[veld] = vakje as IElement;
                     }
                     GenereerLijntjes(j, width, level, i, height);
@@ -180,5 +185,15 @@ namespace Barricade.Presentation
                 break;
             }
         }
+
+        public void Highlight(IEnumerable<IVeld> velden, bool status)
+        {
+            foreach (var veld in velden)
+            {
+                Velden[veld].WisselLicht(status);
+            }
+        }
+
+        public event EventHandler<MouseButtonEventArgs> VeldKlik;
     }
 }

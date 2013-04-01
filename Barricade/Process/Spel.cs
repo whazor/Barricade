@@ -1,73 +1,107 @@
 ﻿using System;
+using System.Threading;
 using Barricade.Logic;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Barricade.Presentation;
 
 namespace Barricade.Process
 {
 	public class Spel
 	{
 	    private readonly Logic.Spel _logicSpel;
+	    private readonly Game _game;
 	    private int _beurt;
-	    public Logic.Speler AanDeBeurt { get; private set; }
 
-        public int Plaatsen { get; set; }
-
-	    public delegate void BeurtWijzigingEvent(Logic.Speler speler, int dobbel);
-	    public delegate void Neerzetten(Logic.Barricade barricade, IVeld bestemming);
-        public delegate void BarricadeVerplaatsEvent(Logic.Barricade barricade, Neerzetten zetOp);
-
-        public event BeurtWijzigingEvent BeurtWijziging;
-        public event BarricadeVerplaatsEvent BarricadeVerplaatsing;
-
-	    public Spel(Logic.Spel logicSpel)
+	    public Spel(Logic.Spel logicSpel, Game game)
 	    {
 	        _logicSpel = logicSpel;
+	        _game = game;
 	    }
 
-        public virtual void Start()
+	    public virtual void Start()
         {
             VolgendeBeurt();
         }
 
-	    public virtual void Verplaats(Pion pion, IVeld bestemming)
-	    {
-            try
-            {
-                pion.Verplaats(bestemming);
-                VolgendeBeurt();
-            }
-            catch (Logic.Exceptions.GewonnenException e)
-            {
-                //TODO: iemand heeft gewonnen
-            }
-            catch (Logic.Exceptions.BarricadeVerplaatsException e)
-            {
-                BarricadeVerplaatsing(e.Barricade, (a, b) =>
-                    {
-                        // Plaats barricade
-                        Verplaats(a, b);
-                        // Opnieuw pion plaatsen
-                        Verplaats(pion, bestemming);
-                    });
-            }
-		}
-
-		public virtual void Verplaats(Logic.Barricade barricade, IVeld veld)
-		{
-            barricade.Verplaats(veld as Veld);
-		}
-
-	    readonly Random random = new Random();
-        private void VolgendeBeurt()
+        readonly Random _random = new Random();
+        
+        /// <summary>
+        /// Doorloop alle stappen van een beurt
+        /// </summary>
+        private async void VolgendeBeurt()
         {
-            AanDeBeurt = _logicSpel.Spelers[_beurt++ % _logicSpel.Spelers.Count];
-            //TODO: check naar mogelijkheden
-            Plaatsen = random.Next(1, 7);
-            if(BeurtWijziging != null) 
-                BeurtWijziging(AanDeBeurt, Plaatsen);
-            //TODO check of het klopt
+            var speler = _logicSpel.Spelers[_beurt++ % _logicSpel.Spelers.Count];
+
+            //TODO: speler markeren
+
+            // Rol dobbelsteen
+            int gedobbeld = _random.Next(1, 7);
+
+            //TODO: dobbelsteen weergeven
+
+            // Selecteer alle pionnen die kunnen lopen
+            var pionnen = speler.Pionnen.Where(pion => pion.MogelijkeZetten(gedobbeld).Count != 0).ToList();
+
+            // Wanneer er geen zetten mogelijk zijn doorspelen
+            if (!pionnen.Any())
+            {
+                //TODO: kijken of deze slaapwaarde goed is
+                // Tijdelijk de dobbelsteenwaarde laten zien
+                Thread.Sleep(4000);
+                VolgendeBeurt();
+                return;
+            }
+            
+            // Markeer alle kiesbare pionnen
+            _game.Highlight(pionnen, true);
+
+            // Laat speler een pion kiezen
+            var gekozen = await _game.KiesPion(pionnen);
+
+            // Markeer nu alleen de gekozen pion
+            _game.Highlight(pionnen, false);
+            _game.Highlight(new[]{gekozen}, true);
+
+            // Markeer alle kiesbare velden
+            var mogelijk = gekozen.MogelijkeZetten(gedobbeld);
+            _game.Highlight(mogelijk, true);
+
+            // Laat speler een veld kiezen
+            var veld = await _game.KiesVeld(mogelijk);
+
+            // Markeer nu niks meer
+            _game.Highlight(mogelijk, false);
+            _game.Highlight(new[] { gekozen }, false);
+
+            // Het spel de zet laten zetten
+            while(true)
+            {
+                Logic.Barricade barricade;
+                try
+                {
+                    gekozen.Verplaats(veld);
+                    VolgendeBeurt();
+                    return;
+                }
+                catch (Logic.Exceptions.GewonnenException)
+                {
+                    //TODO: iemand heeft gewonnen
+                    break;
+                }
+                catch (Logic.Exceptions.BarricadeVerplaatsException e)
+                {
+                    barricade = e.Barricade;
+                }
+                // Barricade verplaatsen
+                if (barricade != null)
+                {
+                    _game.Klem(barricade, true);
+                    var target = await _game.KiesVeld(a => a.MagBarricade);
+                    _game.Klem(barricade, true);
+
+                    barricade.Verplaats(target as Veld);
+                }
+            }
         }
 	}
 }

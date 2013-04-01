@@ -11,12 +11,13 @@
 			set;
 		}
 
-		public virtual void Verplaats(Veld bestemming)
+		public virtual bool Verplaats(Veld bestemming)
 		{
-            if (!bestemming.Plaats(this)) return;
+            if (!bestemming.Plaats(this)) return false;
             if (Veld != null) Veld.Barricade = null;
 		    Veld = bestemming;
 		    if (PositieWijziging != null) PositieWijziging(this, bestemming);
+		    return true;
 		}
 
 	}

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="034e5f52-270b-4576-a0ef-a141878ff922"
   name="Process" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -54,6 +54,110 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="ac7a0341-41f2-4c33-bd62-a9f678914c3c"
+            name="AanDeBeurt"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="1d315494-2b80-4fc0-818e-a3a58b8686c5"
+                LastKnownName="Speler"
+                LastKnownLocation="Package_1214.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="051d1eb3-eef8-4ea2-a7b2-5a0792dfc4f5"
+            name="PlaatsenVoorruit"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="Barricade.Modeling.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="488fd885-580a-4632-a96e-437337f3cfe0"
+            name="BeurtWijziging"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3438c80e-c518-4d08-b83d-7fb48d497941"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="10e20512-e1c3-4807-a4ab-0d9b2a517b7a">
+                    <propertyInstance
+                      Id="f12db7a2-643c-4d7d-ace5-a8fe40b0fb9c"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b236537-8270-4071-b3ca-9cf3483facf2">
+                    <propertyInstance
+                      Id="fd4648fa-9d38-43a4-ae71-4ca8a9fa0ed4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b776396f-f347-473b-b2c7-d8289b1df547">
+                    <propertyInstance
+                      Id="ebe1741f-5a5b-4987-b5d3-276510c89c8b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="815f647a-a331-4686-8ea4-01cbc22b6d0d">
+                    <propertyInstance
+                      Id="3d383f42-389e-4704-bd40-c25a00cf20e2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa395da2-ea77-4456-aa8a-08ffe29db1dc">
+                    <propertyInstance
+                      Id="2a183c1f-a80b-4d79-b617-c0476d4d5fd8"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </property>
+          <property
+            Id="f2d21eb0-5f39-46e6-8fd9-3480fa9162cf"
+            name="BarrivadeVerplaatsing"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="3c1e5bb9-a3b0-40ca-887f-59e2a115aeff"
@@ -148,92 +252,6 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="da887184-7151-4a8b-bc13-1d626d34784a"
-            name="MogelijkeZetten"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="c087c1f1-3325-4c94-961a-0c68e9b44100"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="8e682ecc-1f1f-478c-b382-19f3dcb3f8ba">
-                    <propertyInstance
-                      Id="a2b211b4-426e-4160-84f4-88e12d11904f"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="c5f7e861-5b17-4a9c-9666-88e89dc8c12d">
-                    <propertyInstance
-                      Id="7768ed53-7e84-45ff-8817-f793445eaea9"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="2da6ee13-2a41-4fd1-8ba3-38e3ce3fcf25">
-                    <propertyInstance
-                      Id="33f087f8-a66a-4d9f-b257-cf59b8638cc8"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="da0438dc-7304-413a-af3e-a4c0102e66c8">
-                    <propertyInstance
-                      Id="4e0b7a08-12e6-46f3-a82c-5e254018a461"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="36c14e94-5843-48be-8a30-ae13c665ef76">
-                    <propertyInstance
-                      Id="f6ae665f-d7fd-4914-95be-fc620512f33e"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="5446aa31-a41b-4650-aa28-e2e26baad81c">
-                    <propertyInstance
-                      Id="d43f432b-ef1b-4e63-a063-961953f2e21e"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="6e69ae30-303b-4ac7-90fc-79c5124e38cf"
-                  name="pion"
-                  direction="In">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="cecdfa20-532c-4e6d-805d-04da79377c61"
-                      LastKnownName="Pion"
-                      LastKnownLocation="Package_1214.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="6a8aa98b-1fed-4335-a3d0-72c01424198c"
-                  direction="Return">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="bb8ced73-025b-46a8-830b-d299a0c5f2e4"
-                      LastKnownName="List&lt;Barricade.Modeling::Logic::IVeld&gt;"
-                      LastKnownLocation="Package_1216.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="58e71fb4-6309-4468-8837-db382027b241"
             name="Verplaats"
             isLeaf="false"
@@ -291,7 +309,52 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="26c1cc19-1c0f-4993-a41d-4d755bd5435d"
+                  name="barricade"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f906f0bf-8597-439f-b3ce-e1916d14b5ec"
+                      LastKnownName="Barricade"
+                      LastKnownLocation="Package_1214.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="255581a9-114b-4765-a2b1-d51504e0cca5"
+                  name="veld"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d49c86f2-fb03-4c6c-b18a-c9141e9df554"
+                      LastKnownName="Veld"
+                      LastKnownLocation="Package_1214.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
+          <operation
+            Id="2f4cd0e8-e6ac-42fd-a7f9-aeec6b94d7f5"
+            name="Start"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8e9616e8-6c58-4928-8822-36baf7a67810"
+            name="VolgendeBeurt"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

@@ -64,6 +64,7 @@ namespace Barricade.Logic
 
 	    public bool Plaats(Barricade bar)
 	    {
+            //TODO: kijk of er een pion op staat!!!!!!!!
             if (Barricade != null || !MagBarricade) return false;
 	        Barricade = bar;
 	        return true;

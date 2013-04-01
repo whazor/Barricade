@@ -28,7 +28,7 @@ namespace Barricade.Presentation
         }
 
 
-        public delegate void PionClickHandler(Dynamisch.Pion item, Logic.Pion sender);
+        public delegate void PionClickHandler(Logic.Pion sender);
 
         public event PionClickHandler PionKlik;
 
@@ -51,7 +51,7 @@ namespace Barricade.Presentation
 
                 // Kijk naar wijzingen
                 pion.PositieWijziging += Beweeg;
-                icon.MouseUp += (o, args) => PionKlik((Dynamisch.Pion)o, ((Dynamisch.Pion)o).Stuk);
+                icon.MouseUp += (o, args) => PionKlik(((Dynamisch.Pion)o).Stuk);
             }
         }
 
@@ -92,7 +92,6 @@ namespace Barricade.Presentation
 
         public void Beweeg(Pion pion, IVeld bestemming)
         {
-            DoofLicht();
             var icon = _poinnen[pion];
 
             Stack<IVeld> stack;
@@ -119,27 +118,18 @@ namespace Barricade.Presentation
             icon.BeginAnimation(FrameworkElement.MarginProperty, moveAnimation);
         }
 
-        public void OntsteekLicht(Speler speler)
-        {
-            DoofLicht();
-            var pionnen = _poinnen.Where(a => a.Key.Speler == speler).Select(a => a.Value);
-            foreach (var pion in pionnen)
-            {
-                pion.WisselLicht(true);
-            }
-        }
-
-        public void DoofLicht()
-        {
-            foreach (var pion in _poinnen.Values)
-            {
-                pion.WisselLicht(false);
-            }
-        }
 
         public UserControl Zoek(Logic.Barricade barricade)
         {
             return _barricades[barricade];
+        }
+
+        public void Highlight(IEnumerable<Pion> pionnen, bool status)
+        {
+            foreach (var pion in pionnen)
+            {
+                _poinnen[pion].WisselLicht(status);
+            }
         }
     }
 }

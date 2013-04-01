@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b7c6aa2b-feb0-486c-8793-e8065449a33c" name="Presentation" linkedPackageId="662f71f3-274e-4f39-b8a0-2b58bb0c5192" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="b7c6aa2b-feb0-486c-8793-e8065449a33c" name="Presentation" linkedPackageId="662f71f3-274e-4f39-b8a0-2b58bb0c5192" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="4f96e5c6-44f1-4026-9c6a-db9030bfa725">
       <elementDefinition Id="171a8359-0412-486d-8730-18843868017c" />
@@ -135,6 +135,63 @@ Het dynamische grid niet.</body>
                   <elementDefinition Id="f174dd03-1145-4ae0-92e5-a9a5cd5127aa" />
                 </association>
               </targetEnds>
+              <ownedOperationsInternal>
+                <operation Id="37ab02c7-1a9a-4276-8ce2-1c1d7263aab5" name="Highlight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="66f34eaf-0c89-4795-b308-a142b98c3efa" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="111bc653-5b79-4ac0-8cde-2e86249848d6" name="pionnen" direction="In">
+                        <lowerValueInternal>
+                          <literalString Id="58718e8d-a6f9-4a23-8405-d741ec965eca" name="Lower" value="1">
+                            <elementDefinition Id="bd1b9df3-2978-4293-8316-d55233d9bcd6" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="719fc20b-8a5d-468e-b73a-31dc7ac7e296" name="Upper" value="*">
+                            <elementDefinition Id="b4c415ab-dbb2-4e47-a859-01872d233f55" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="a06e4201-02a2-4d19-bf5a-d5eb64ad2851" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="e7b9307c-2bec-459d-a9f4-cf0b9a0eb005" LastKnownName="Pion" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="65c4a695-64ce-4682-b249-db1dcb654b11" name="status" direction="In">
+                        <description>Aan of uit?</description>
+                        <elementDefinition Id="41b0f3c6-8b3b-424d-8de5-2044372bbbaa" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="83244a8d-ac4f-4049-8c89-b4f2305d9611" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="5e9243f8-ae29-4d62-b1fb-242805e4e852" name="Highlight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f7dd01c2-819d-4286-b449-f11c096f2412" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3db4f1c3-226d-40f1-966e-6da3026cd8c7" name="velden" direction="In">
+                        <lowerValueInternal>
+                          <literalString Id="98b192c8-5e60-4cd3-958b-754c8c447244" name="Lower" value="1">
+                            <elementDefinition Id="e4c3c798-4c47-4eaa-982f-84bdeaf47117" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="89271855-f813-4b67-84cd-9b86488f7dd8" name="Upper" value="*">
+                            <elementDefinition Id="66b73171-dfdf-4c5a-a041-3d0a683d4d08" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="24b92d83-df6b-4f0f-88bf-743ed04c203b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="757c30b2-2810-410b-a714-24070a51bce3" LastKnownName="IVeld" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -818,6 +875,11 @@ Het dynamische grid niet.</body>
     <packageHasNamedElement>
       <referencedType Id="83244a8d-ac4f-4049-8c89-b4f2305d9611" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
         <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="757c30b2-2810-410b-a714-24070a51bce3" name="IVeld" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::IVeld">
+        <elementDefinition Id="02f6fd95-2a8e-4a6e-8425-9d1ac962b189" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
