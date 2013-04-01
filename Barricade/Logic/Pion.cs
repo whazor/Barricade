@@ -10,6 +10,8 @@
 	{
         public delegate void PositieWijzigingEvent(Pion pion, IVeld nieuwVeld);
         public event PositieWijzigingEvent PositieWijziging;
+	    public Dictionary<IVeld, List<IVeld>> Paden { get; private set; }
+	    private int aantalStappen;
 
 	    public Pion(Speler speler)
 	    {
@@ -27,7 +29,7 @@
 			get; private set;
 		}
 
-		public virtual List<List<IVeld>> MogelijkeZetten(int stappen = 1)
+		public virtual List<IVeld> MogelijkeZetten(int stappen = 1)
 		{
             // Kijk welke zetten er mogelijk zijn
 		    var mogelijk = MogelijkeZetten(IVeld, IVeld, stappen);
@@ -35,9 +37,11 @@
 		    var perBestemming = mogelijk.GroupBy(lijst => lijst.First());
             // Selecteer een willekeurig pad
 		    var willkeurigUniek =
-		        perBestemming.Select(a => a.Count() == 1 ? a.First() : a.Skip(new Random().Next(0, a.Count())).Take(1).First());
-            // Geef alle paden terug
-            return willkeurigUniek.ToList();
+		        perBestemming.Select(a => a.Count() == 1 ? a.First() : a.Skip(new Random().Next(0, a.Count())).Take(1).First()).ToList();
+            // Sla alle paden tijdelijk op
+		    Paden = willkeurigUniek.ToDictionary(lijst => lijst.First(), lijst => lijst);
+            // Geef alle mogelijkheden terug
+            return willkeurigUniek.Select(lijst => lijst.First()).ToList();
 		}
 
         private IEnumerable<List<IVeld>> MogelijkeZetten(IVeld vorige, IVeld begin, int stappen)
@@ -78,10 +82,14 @@
 
 	    public virtual bool Verplaats(IVeld bestemming)
 	    {
+	        var vorig = IVeld;
             if (bestemming.Plaats(this))
             {
+                vorig.Pionnen.Remove(this);
                 IVeld = bestemming;
+
                 if (PositieWijziging != null) PositieWijziging(this, bestemming);
+                Paden = null;
                 return true;
             }
 

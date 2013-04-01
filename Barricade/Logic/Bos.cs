@@ -13,8 +13,9 @@ namespace Barricade.Logic
 	    public bool IsPlaatsbaar { get; set; }
 	    public List<IVeld> Buren { get; private set; }
 	    public List<Pion> Pionnen { get; set; }
+	    public bool MagBarricade { get { return false; } }
 
-        public Bos()
+	    public Bos()
         {
             Buren = new List<IVeld>();
             Pionnen = new List<Pion>();

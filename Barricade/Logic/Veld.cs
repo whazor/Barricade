@@ -12,7 +12,7 @@ namespace Barricade.Logic
 	{
 	    public bool StandaardBarricade = false;
 
-		public virtual bool MagBarricade
+		public virtual bool IsBeschermd
 		{
 			get;
 			set;
@@ -24,35 +24,48 @@ namespace Barricade.Logic
 			set;
 		}
 
-        public override bool Plaats(Pion pion)
-        {
-            if (Barricade != null)
-            {
-                throw new BarricadeVerplaatsException(this, Barricade);
-            }
+	    public override bool MagBarricade
+	    {
+            get { return !IsBeschermd; }
+	    }
 
-            VerwijderPion(pion);
+	    public override bool Plaats(Pion pion)
+        {
+            CheckBarricade();
 
             //staat al iets op, sla deze pion
             if (Pionnen.Any())
             {
                 foreach (var vorig in Pionnen.ToArray())
                 {
-                    var nieuwVeld = IsDorp ? (IVeld)pion.Speler.Spel.Bos : vorig.Speler.Startveld;
+                    //TODO: fixen!!!! bos wordt niet gevonden, spel bestaat niet in speler
+                    // misschien moet dit static worden??
+                    var nieuwVeld = IsDorp ? (IVeld) pion.Speler.Spel.Bos : vorig.Speler.Startveld;
                     vorig.Verplaats(nieuwVeld);
                 }
-
+                 
+                
                 Pionnen.Clear();
             }
 
             Pionnen.Add(pion);
+            
             return true;
         }
 
-	    public bool Plaats(Barricade pion)
+        [System.Diagnostics.DebuggerHidden()]
+	    private void CheckBarricade()
 	    {
-	        if (Barricade != null || !MagBarricade) return false;
-	        Barricade = pion;
+	        if (Barricade != null)
+	        {
+	            throw new BarricadeVerplaatsException(this, Barricade);
+	        }
+	    }
+
+	    public bool Plaats(Barricade bar)
+	    {
+            if (Barricade != null || !MagBarricade) return false;
+	        Barricade = bar;
 	        return true;
 	    }
 	}

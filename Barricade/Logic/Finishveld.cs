@@ -10,10 +10,10 @@ namespace Barricade.Logic
 
 	public class Finishveld : VeldBase
 	{
+        public override bool MagBarricade { get { return false; } }
 
         public override bool Plaats(Pion pion)
         {
-            VerwijderPion(pion);
             throw new GewonnenException();
             // TODO: player informatie toevoegen
         }

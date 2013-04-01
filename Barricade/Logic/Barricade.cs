@@ -2,7 +2,7 @@
 {
     public class Barricade
 	{
-        public delegate void PositieWijzigingEvent(Veld nieuwVeld);
+        public delegate void PositieWijzigingEvent(Barricade barricade, Veld nieuwVeld);
         public event PositieWijzigingEvent PositieWijziging;
 
 		public virtual Veld Veld
@@ -13,9 +13,10 @@
 
 		public virtual void Verplaats(Veld bestemming)
 		{
-            Veld = bestemming;
-		    Veld.Plaats(this);
-            if (PositieWijziging != null) PositieWijziging(bestemming);
+            if (!bestemming.Plaats(this)) return;
+            if (Veld != null) Veld.Barricade = null;
+		    Veld = bestemming;
+		    if (PositieWijziging != null) PositieWijziging(this, bestemming);
 		}
 
 	}

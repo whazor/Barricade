@@ -12,16 +12,12 @@ namespace Barricade.Logic
 	    public bool IsPlaatsbaar { get; set; }
 	    public List<IVeld> Buren { get; private set; }
 	    public List<Pion> Pionnen { get; protected set; }
+	    public abstract bool MagBarricade { get; }
 
 	    protected VeldBase()
         {
             Buren = new List<IVeld>();
             Pionnen = new List<Pion>();
-        }
-
-        protected bool VerwijderPion(Pion pion)
-        {
-            return pion.IVeld.Pionnen.Remove(pion);
         }
 
 	    public abstract bool Plaats(Pion pion);

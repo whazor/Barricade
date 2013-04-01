@@ -13,10 +13,9 @@ namespace Barricade.Logic
 
 	public class Startveld : VeldBase
 	{
-
-        public override bool Plaats(Pion pion)
+        public override bool MagBarricade { get { return false; } }
+	    public override bool Plaats(Pion pion)
         {
-            VerwijderPion(pion);
             Pionnen.Add(pion);
             return true;
         }

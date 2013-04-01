@@ -8,11 +8,9 @@ namespace Barricade.Logic
 
 	public class Rustveld : VeldBase
 	{
-
+        public override bool MagBarricade { get { return false; } }
         public override bool Plaats(Pion pion)
         {
-            VerwijderPion(pion);
-
             //staat al iets op
             if (Pionnen.Any()) return false;
 

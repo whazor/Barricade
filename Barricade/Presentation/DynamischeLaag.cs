@@ -16,6 +16,9 @@ namespace Barricade.Presentation
         private readonly Grid _houder;
         private readonly Dictionary<IVeld, IElement> _velden;
         private readonly Dictionary<Logic.Pion, Dynamisch.Pion> _poinnen = new Dictionary<Pion, Dynamisch.Pion>();
+        private readonly Dictionary<Logic.Barricade, Dynamisch.Barricade> _barricades = new Dictionary<Logic.Barricade, Dynamisch.Barricade>();
+
+        const int milliseconds = 500;
 
         public DynamischeLaag(Grid dynamischGrid, Grid houder, Dictionary<IVeld, IElement> velden)
         {
@@ -31,72 +34,78 @@ namespace Barricade.Presentation
 
         public void TekenPionnen(List<Pion> pionnen)
         {
-            var list = pionnen.Select(
-                         found =>
-                         new
-                         {
-                             pion = found,
-                             target =
-                         _velden[found.IVeld].BerekenPunt(found)
-                                                          .TranslatePoint(new Point(0, 0), _houder)
-                         });
-            foreach (var item in list)
+            foreach (var pion in pionnen)
             {
-                var icon = new Dynamisch.Pion(item.pion)
+                // Kijk waar de pion heen moet
+                var target = _velden[pion.IVeld].BerekenPunt(pion).TranslatePoint(new Point(0, 0), _houder);
+
+                var icon = new Dynamisch.Pion(pion)
                 {
                     HorizontalAlignment = HorizontalAlignment.Left,
                     VerticalAlignment = VerticalAlignment.Top,
-                    Margin = new Thickness(item.target.X, item.target.Y, 0, 0)
+                    Margin = new Thickness(target.X, target.Y, 0, 0)
                 };
-                _poinnen.Add(item.pion, icon);
+                // Toon barricade
+                _poinnen.Add(pion, icon);
                 _dynamischGrid.Children.Add(icon);
 
-                item.pion.PositieWijziging += Beweeg;
-
+                // Kijk naar wijzingen
+                pion.PositieWijziging += Beweeg;
                 icon.MouseUp += (o, args) => PionKlik((Dynamisch.Pion)o, ((Dynamisch.Pion)o).Stuk);
             }
         }
 
         public void TekenBarricades(List<Tuple<IVeld, Logic.Barricade>> barricades)
         {
-            //var barricades = lijst.Select(@t => new Tuple<IVeld, Logic.Barricade>(@t.veld1, @t.veld1.Barricade));
-
-            foreach (var icon in
-                barricades.Select(
-                    barricade =>
-                    new
-                    {
-                        barricade,
-                        target =
-                    _velden[barricade.Item1].BerekenPunt(barricade.Item2)
-                                                         .TranslatePoint(new Point(0, 0), _houder)
-                    })
-                          .Select(@t => new Dynamisch.Barricade(@t.barricade.Item2)
-                          {
-                              HorizontalAlignment = HorizontalAlignment.Left,
-                              VerticalAlignment = VerticalAlignment.Top,
-                              Margin = new Thickness(@t.target.X, @t.target.Y, 0, 0)
-                          }))
+            foreach (var tuple in barricades)
             {
+                var barricade = tuple.Item2;
+                var plaats = tuple.Item1;
+                // Kijk waar de barricade heen moet
+                var target = _velden[plaats].BerekenPunt(barricade).TranslatePoint(new Point(0, 0), _houder);
+
+                // Maak een barricade aan
+                var icon = new Dynamisch.Barricade(barricade)
+                    {
+                        HorizontalAlignment = HorizontalAlignment.Left,
+                        VerticalAlignment = VerticalAlignment.Top,
+                        Margin = new Thickness(target.X, @target.Y, 0, 0)
+                    };
+
+                // Toon barricade
+                _barricades.Add(barricade, icon);
                 _dynamischGrid.Children.Add(icon);
+
+                // Kijk naar wijzingen
+                barricade.PositieWijziging += Beweeg;
             }
+        }
+
+        private void Beweeg(Logic.Barricade barricade, Veld nieuwveld)
+        {
+            var icon = _barricades[barricade];
+            var target = _velden[nieuwveld].BerekenPunt(barricade).TranslatePoint(new Point(0, 0), _houder);
+            var thickness = new Thickness(target.X, target.Y, 0, 0);
+            var moveAnimation = new ThicknessAnimation(icon.Margin, thickness, TimeSpan.FromMilliseconds(milliseconds));
+            icon.BeginAnimation(FrameworkElement.MarginProperty, moveAnimation);
         }
 
         public void Beweeg(Pion pion, IVeld bestemming)
         {
+            DoofLicht();
             var icon = _poinnen[pion];
-            const int milliseconds = 500;
-            var stack = new Stack<IVeld>();
-            stack.Push(bestemming);
-            Beweeg(pion, stack, icon, milliseconds);
-        }
 
-        public void Beweeg(Pion pion, IList<IVeld> velds)
-        {
-            var icon = _poinnen[pion];
-            const int milliseconds = 500;
-            var stack = new Stack<IVeld>(velds);
-//            Beweeg(pion, stack, icon, milliseconds);
+            Stack<IVeld> stack;
+            if (pion.Paden != null && pion.Paden[bestemming] != null)
+            {
+                stack = new Stack<IVeld>(pion.Paden[bestemming]);
+            }
+            else
+            {
+                stack = new Stack<IVeld>();
+                stack.Push(bestemming);                
+            }
+            Beweeg(pion, stack, icon, milliseconds);
         }
 
         private void Beweeg(Pion pion, Stack<IVeld> stack, FrameworkElement icon, int milliseconds)
@@ -108,6 +117,29 @@ namespace Barricade.Presentation
             var moveAnimation = new ThicknessAnimation(icon.Margin, thickness, TimeSpan.FromMilliseconds(milliseconds));
             moveAnimation.Completed += (sender, args) => Beweeg(pion, stack, icon, milliseconds);
             icon.BeginAnimation(FrameworkElement.MarginProperty, moveAnimation);
+        }
+
+        public void OntsteekLicht(Speler speler)
+        {
+            DoofLicht();
+            var pionnen = _poinnen.Where(a => a.Key.Speler == speler).Select(a => a.Value);
+            foreach (var pion in pionnen)
+            {
+                pion.WisselLicht(true);
+            }
+        }
+
+        public void DoofLicht()
+        {
+            foreach (var pion in _poinnen.Values)
+            {
+                pion.WisselLicht(false);
+            }
+        }
+
+        public UserControl Zoek(Logic.Barricade barricade)
+        {
+            return _barricades[barricade];
         }
     }
 }

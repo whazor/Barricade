@@ -23,6 +23,12 @@ namespace Barricade.Data
             }
             Parse(list.ToArray());
         }
+
+        public Loader(string file)
+        {
+            Parse(file.Split('\n'));
+        }
+
         #endregion
 
         #region Properties
@@ -90,8 +96,8 @@ namespace Barricade.Data
 
                 var line = lines[i];
 
-                var isDorp = (line[0] + line[1] + "").Contains("D");
-                var isBarricadeVrij = !(line[0] + line[1] + "").Contains("-");
+                var isDorp = line.Substring(0,2).Contains("D");
+                var isBeschermd = line.Substring(0, 2).Contains("-");
 
                 for (var j = firstX; j < line.Length; j++)
                 {
@@ -100,7 +106,7 @@ namespace Barricade.Data
                     {
                         var letters = line.Substring(j, 3);
 
-                        Kaart[getY(i), getX(j + 1)] = ParseBlock(letters, isBarricadeVrij, isDorp, uitzonderingen);
+                        Kaart[getY(i), getX(j + 1)] = ParseBlock(letters, isBeschermd, isDorp, uitzonderingen);
 
                         j += 2;
                     }
@@ -181,7 +187,7 @@ namespace Barricade.Data
 
 
 
-        private IVeld ParseBlock(string letters, bool isBarricadeVrij, bool isDorp,
+        private IVeld ParseBlock(string letters, bool isBeschermd, bool isDorp,
                                  IReadOnlyDictionary<char, string> uitzonderingen)
         {
             IVeld veld = null;
@@ -260,11 +266,12 @@ namespace Barricade.Data
             if (veld is Veld)
             {
                 var barricadeVeld = veld as Veld;
-                barricadeVeld.MagBarricade = isBarricadeVrij;
-                if (isBarricadeVrij && letters[1] == '*')
+                barricadeVeld.IsBeschermd = isBeschermd;
+                if (!isBeschermd && letters[1] == '*')
                 {
                     var barricade = new Logic.Barricade();
                     barricadeVeld.Barricade = barricade;
+                    barricade.Veld = barricadeVeld;
                 }
             }
 

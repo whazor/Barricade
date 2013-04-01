@@ -11,6 +11,7 @@ using Barricade.Presentation.Statisch;
 using Bos = Barricade.Presentation.Statisch.Bos;
 using FinishVeld = Barricade.Presentation.Statisch.FinishVeld;
 using Pion = Barricade.Logic.Pion;
+using Spel = Barricade.Process.Spel;
 using StartVeld = Barricade.Presentation.Statisch.StartVeld;
 
 namespace Barricade.Presentation
@@ -31,7 +32,10 @@ namespace Barricade.Presentation
         // Properties voor het oplichten van mogelijkheden
         private Pion _pion;
         private readonly List<IElement> _opgelicht = new List<IElement>();
-        private Dictionary<IVeld, List<IVeld>> _mogelijkePaden = new Dictionary<IVeld, List<IVeld>>();
+
+        // Voor het inladen van het spel (klaar met laden)
+        public delegate void ShowableEvent(object sender, RoutedEventArgs e);
+        public event ShowableEvent Showable;
 
         public Game(Data.Loader loader)
         {
@@ -39,14 +43,14 @@ namespace Barricade.Presentation
 
             _logicSpel = loader.Spel;
             _processSpel = new Process.Spel(_logicSpel);
-            
 
             _statischeLaag = new StatischeLaag(Spelbord, loader.Kaart);
+            _processSpel.BeurtWijziging += ProcessSpelOnBeurtWijziging;
+            _processSpel.BarricadeVerplaatsing += ProcessSpelOnBarricadeVerplaatsing;
+
+            // Inladen moet later voor het opzoeken van veldposities
             Loaded += LaadDynamischeLaag;
         }
-
-        public delegate void ShowableEvent(object sender, RoutedEventArgs e);
-        public event ShowableEvent Showable;
 
         void LaadDynamischeLaag(object sender, RoutedEventArgs e)
         {
@@ -66,26 +70,78 @@ namespace Barricade.Presentation
             _dynamischeLaag.TekenBarricades(barricades.ToList());
 
             // Bij een pion klik wordt er een actie uitgevoerd
-            _dynamischeLaag.PionKlik += VeldKlik;
+            _dynamischeLaag.PionKlik += PionKlik;
 
             // Geef een event af voor het laadscherm
             if(Showable != null) Showable(sender, e);
+
+            // Start spel
+            _processSpel.Start();
         }
 
-        void VeldKlik(Dynamisch.Pion icon, Pion item)
+
+        private void ProcessSpelOnBeurtWijziging(Speler speler, int dobbel)
         {
+            _dynamischeLaag.OntsteekLicht(speler);
+        }
+
+        private UserControl _currentBarricade;
+        private Logic.Barricade _barricade;
+        private Spel.Neerzetten _zetOp;
+
+        private void ProcessSpelOnBarricadeVerplaatsing(Logic.Barricade barricade, Spel.Neerzetten zetOp)
+        {
+            _barricade = barricade;
+            _zetOp = zetOp;
+            _currentBarricade = _dynamischeLaag.Zoek(barricade);
+            MouseMove += OnMove;
+            foreach (var veld in _statischeLaag.Velden.Where(a => a.Key.MagBarricade))
+            {
+                var element = (UserControl) veld.Value;
+                element.Cursor = Cursors.Hand;
+                element.MouseUp += VeldKlikBarricade;
+            }
+        }
+
+        private void OnMove(object sender, MouseEventArgs args)
+        {
+            var position = args.GetPosition(DynamischGrid);
+            _currentBarricade.Margin = new Thickness(Math.Min(position.X + 20, DynamischGrid.ActualWidth - 50), Math.Min(position.Y + 20, DynamischGrid.ActualHeight - 50), 0, 0);
+        }
+
+        private void VeldKlikBarricade(object sender, MouseButtonEventArgs mouseButtonEventArgs)
+        {
+            MouseMove -= OnMove;
+
+            foreach (var veld in _statischeLaag.Velden)
+            {
+                var element = (UserControl)veld.Value;
+                element.Cursor = null;
+                element.MouseUp -= VeldKlikBarricade;
+            }
+            var bestemming = ((IElement)sender).Veld;
+            _zetOp(_barricade, bestemming);
+        }
+
+        void PionKlik(Dynamisch.Pion icon, Pion item)
+        {
+            if (item.Speler != _processSpel.AanDeBeurt) return;
+
+            _dynamischeLaag.DoofLicht();
+            icon.WisselLicht(true);
+
             Spelbord.Cursor = Cursors.No;
             DynamischGrid.IsHitTestVisible = false;
             DynamischGrid.Opacity = .7;
 
             _pion = item;
-            _mogelijkePaden = item.MogelijkeZetten(4).ToDictionary(list => list.First());
+            var _mogelijkePaden = item.MogelijkeZetten(_processSpel.Plaatsen);
             foreach (var element in _opgelicht)
             {
                 element.WisselLicht(false);
             }
             _opgelicht.Clear();
-            foreach (var zet in _mogelijkePaden.Keys)
+            foreach (var zet in _mogelijkePaden)
             {
                 _opgelicht.Add(_statischeLaag.Velden[zet]);
                 _statischeLaag.Velden[zet].WisselLicht(true);
@@ -102,10 +158,7 @@ namespace Barricade.Presentation
             DynamischGrid.Opacity = 1;
             DynamischGrid.IsHitTestVisible = true;
 
-            _pion.Verplaats(bestemming);
-
-            _dynamischeLaag.Beweeg(_pion, _mogelijkePaden[bestemming]);
-            _mogelijkePaden.Clear();
+            _processSpel.Verplaats(_pion, bestemming);
             
             foreach (var item in _opgelicht)
             {

@@ -59,8 +59,10 @@ namespace Barricade.Presentation.Statisch
             foreach (var ellipse in _ellipses.Values)
             {
                 const double kwart = (Math.PI / 2); // ook wel 90 graden
+                // afstand tussen de startvelden
+                var afstand = (2 * Math.PI) / _ellipses.Count;
                 // reken uit hoeveel rondjes er in het grote rondje passen
-                var draai = kwart + ((2 * Math.PI) / _ellipses.Count) * (i++);
+                var draai = kwart + afstand * (i++);
 
                 var top = Math.Sin(draai) * bigRadius;
                 var left = Math.Cos(draai) * bigRadius;

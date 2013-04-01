@@ -43,6 +43,37 @@ namespace Barricade.Data
 
             for (var i = 0; i < height; i++)
             {
+                var isDorp = false;
+                var barricadeVrij = false;
+
+                for (var j = 0; j < width; j++)
+                {
+                    if (_points[i, j] == null) continue;
+
+                    isDorp = isDorp || _points[i, j].IsDorp;
+
+                    if(_points[i,j] is Veld)
+                        barricadeVrij = barricadeVrij || (_points[i, j] as Veld).IsBeschermd;
+                }
+
+                var spaties = 4;
+
+                if (barricadeVrij)
+                {
+                    result += "-";
+                    spaties--;
+                }
+                if (isDorp)
+                {
+                    result += "D";
+                    spaties--;
+                }
+
+                for (var j = 0; j < spaties; j++)
+                {
+                    result += " ";
+                }
+
                 for (var j = 0; j < width; j++)
                 {
                     if (_points[i, j] == null)
@@ -69,12 +100,19 @@ namespace Barricade.Data
                         {
                             result += "<"+(++uitzonderingCount)+">";
                             if (_points[i, j] is Startveld)
-                                uitzondering += uitzonderingCount + ":START,";
+                            {
+                                uitzondering += "*"+ uitzonderingCount + ":START,";
+                                // voeg speler toe
+                                uitzondering += ""+(_points[i, j] as Startveld).Speler.Name + _points[i, j].Pionnen.Count;
+                            }
                             else
-                                uitzondering += uitzonderingCount+":BOS,";
-
-                            // voeg spelers toe
-                            uitzondering = _points[i, j].Pionnen.Aggregate(uitzondering, (current, point) => current + (point.Speler.Name + ""));
+                            {
+                                uitzondering += "*" + uitzonderingCount + ":BOS,";
+                                // voeg spelers toe
+                                uitzondering = _points[i, j].Pionnen.Aggregate(uitzondering,
+                                                                               (current, point) =>
+                                                                               current + (point.Speler.Name + ""));
+                            }
                             // enter voor de volgende uitzondering
                             uitzondering += "\r\n";
                         } 
@@ -92,27 +130,26 @@ namespace Barricade.Data
                             throw new Exception("Ik ken dit veld niet.");
                         }
 
-                        for (var k = j + 1; k < width; k++)
+                        var k = j + 1;
+
+                        if (k >= width) break;
+
+                        if (_points[i, k] == null)
                         {
-                            if (_points[i, k] == null)
+                            result += " ";
+                        }
+                        if (_points[i, j].Buren.Contains(_points[i, k]))
+                        {
+                            for (var l = -1; l < (k - j - 1) * 3; l++)
                             {
-                                result += " ";
-                                continue;
+                                result += "-";
                             }
-                            if (_points[i, j].Buren.Contains(_points[i, k]))
-                            {
-//                                result += "-";
-                                for (var l = -1; l < (k - j - 1) * 3; l++)
-                                {
-                                    result += "-";
-                                }
-                            }
-                            break;
                         }
                     }
                 }
                 result += "\r\n";
 
+                result += "    ";
                 for (var j = 0; j < height; j++)
                 {
                     if (_points[i, j] == null)
@@ -126,8 +163,7 @@ namespace Barricade.Data
                         for (var k = i + 1; k < height; k++)
                         {
                             if (_points[k, j] == null) continue;
-                            if(!add)
-                                add = _points[i, j].Buren.Contains(_points[k, j]);
+                            add = add || _points[i, j].Buren.Contains(_points[k, j]);
                         }
                         result += add ? "|" : " ";
                         result += "  ";
@@ -136,8 +172,6 @@ namespace Barricade.Data
 
                 result += "\r\n";
             }
-
-
 
             return result + uitzondering;
 
