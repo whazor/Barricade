@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Windows.Forms;
 using Barricade.Logic;
 using System.Linq;
 using Barricade.Presentation;
@@ -83,9 +84,10 @@ namespace Barricade.Process
                     VolgendeBeurt();
                     return;
                 }
-                catch (Logic.Exceptions.GewonnenException)
+                catch (Logic.Exceptions.GewonnenException e)
                 {
-                    //TODO: iemand heeft gewonnen
+                    //TODO: Naam aan speler hangen en spel afsluiten.
+                    MessageBox.Show("Speler "+e.Speler.Name+" heeft gewonnen!", "Er is een winnaar!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 }
                 catch (Logic.Exceptions.BarricadeVerplaatsException e)
