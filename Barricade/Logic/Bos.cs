@@ -30,6 +30,8 @@ namespace Barricade.Logic
             Pionnen.Add(pion);
             return true;
         }
+
+	    public int Score { get; set; }
 	}
 
 

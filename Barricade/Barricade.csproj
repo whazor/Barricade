@@ -58,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Bot\Rusher.cs" />
+    <Compile Include="Process\ISpeler.cs" />
+    <Compile Include="Process\IView.cs" />
     <Compile Include="Utilities\LinqExtensions.cs" />
     <Compile Include="Utilities\Waiter.cs" />
     <Page Include="MainWindow.xaml">

@@ -209,10 +209,7 @@ namespace Barricade.Data
                             foreach (char player in players)
                             {
                                 var speler = CreatePlayer(player, Spelers, veld);
-                                var pion = new Pion(speler) { IVeld = veld };
-                                if (!veld.Pionnen.Contains(pion))
-                                    veld.Pionnen.Add(pion);
-                                speler.Pionnen.Add(pion);
+                                NieuwPion(speler, veld);
                             }
                         }
                         else if (uitzondering.StartsWith("START"))
@@ -228,10 +225,7 @@ namespace Barricade.Data
                             var speler = CreatePlayer(playerName, Spelers, veld);
                             for (int i = 0; i < amount; i++)
                             {
-                                var pion = new Pion(speler) {IVeld = veld};
-                                if (!veld.Pionnen.Contains(pion))
-                                    veld.Pionnen.Add(pion);
-                                speler.Pionnen.Add(pion);
+                                NieuwPion(speler, veld);
                             }
                             // bijhouden welk veld van welke speler is
                             speler.Startveld = veld as Startveld;
@@ -285,13 +279,18 @@ namespace Barricade.Data
             if (letters[1] != '*' && letters[1] != ' ')
             {
                 var speler = CreatePlayer(letters[1], Spelers, veld);
-                var pion = new Pion(speler) { IVeld = veld };
-                if (!veld.Pionnen.Contains(pion))
-                    veld.Pionnen.Add(pion);
-                speler.Pionnen.Add(pion);
+                NieuwPion(speler, veld);
             }
 
             return veld;
+        }
+
+        private static void NieuwPion(Speler speler, IVeld veld)
+        {
+            var pion = new Pion(speler) {IVeld = veld};
+            if (!veld.Pionnen.Contains(pion))
+                veld.Pionnen.Add(pion);
+            speler.Pionnen.Add(pion);
         }
 
         private static Speler CreatePlayer(char letter, Dictionary<char, Speler> spelers, IVeld veld)

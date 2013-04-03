@@ -25,6 +25,7 @@ namespace Barricade.Logic
 
 	    bool Plaats(Pion pion);
 
+        int Score { get; set; }
 	}
 }
 

@@ -6,27 +6,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Barricade.Logic;
+using Barricade.Utilities;
 
 namespace Barricade.Bot
 {
-    static class Extensions
-    {
-        public static void Shuffle<T>(this IList<T> list)
-        {
-            var rng = new Random();
-            var n = list.Count;
-            while (n > 1)
-            {
-                n--;
-                var k = rng.Next(n + 1);
-                var value = list[k];
-                list[k] = list[n];
-                list[n] = value;
-            }
-        }
-    }
-
-
     class Rusher : Process.ISpeler
     {
         private readonly Speler _speler;

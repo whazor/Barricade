@@ -21,6 +21,8 @@ namespace Barricade.Logic
         }
 
 	    public abstract bool Plaats(Pion pion);
+
+	    public int Score { get; set; }
 	}
 }
 
