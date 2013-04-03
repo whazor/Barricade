@@ -293,11 +293,11 @@ namespace Barricade.Data
             speler.Pionnen.Add(pion);
         }
 
-        private static Speler CreatePlayer(char letter, Dictionary<char, Speler> spelers, IVeld veld)
+        private Speler CreatePlayer(char letter, Dictionary<char, Speler> spelers, IVeld veld)
         {
             if (!spelers.ContainsKey(letter))
             {
-                spelers[letter] = new Speler(letter);
+                spelers[letter] = new Speler(letter) {Spel = Spel};
             }
             return spelers[letter];
         }
