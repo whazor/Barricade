@@ -171,6 +171,8 @@ namespace Barricade.Data
             {
                 Spel.Spelers.Add(speler.Value);
             }
+            Spel.BerekenScores();
+
         }
 
         private static Dictionary<char, string> ParseUitzonderingen(IEnumerable<string> lines)
@@ -194,7 +196,10 @@ namespace Barricade.Data
             if (letters[0] == '<' && letters[2] == '>')
             {
                 if (letters[1] == ' ')
+                {
                     veld = new Finishveld();
+                    Spel.Finishvelden.Add(veld as Finishveld);
+                }
                 else
                 {
                     if (uitzonderingen.ContainsKey(letters[1]))
@@ -213,7 +218,7 @@ namespace Barricade.Data
                             }
                         }
                         else if (uitzondering.StartsWith("START"))
-                        {                            
+                        {
                             if (!uitzondering.Contains(",") || uitzondering.EndsWith(","))
                             {
                                 throw new ParserException("Uitzondering '" + letters[1] + "' (START), heeft geen speler");
@@ -221,7 +226,7 @@ namespace Barricade.Data
                             veld = new Startveld();
                             char playerName = uitzondering.Split(',')[1][0];
                             int amount = int.Parse(uitzondering.Split(',')[1].Substring(1));
-                            
+
                             var speler = CreatePlayer(playerName, Spelers, veld);
                             for (int i = 0; i < amount; i++)
                             {

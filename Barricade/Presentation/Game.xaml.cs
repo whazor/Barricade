@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Barricade.Logic;
 using Barricade.Presentation.Statisch;
+using Barricade.Process;
 using Barricade.Utilities;
 using Pion = Barricade.Logic.Pion;
 
@@ -15,7 +16,7 @@ namespace Barricade.Presentation
     /// <summary>
     /// Interaction logic for Game.xaml
     /// </summary>
-    public partial class Game : UserControl
+    public partial class Game : UserControl, ISpeler
     {
         // Logic spel
         private readonly Logic.Spel _logicSpel;
@@ -146,22 +147,17 @@ namespace Barricade.Presentation
             _veldCompletion.Return(bestemming);
         }
 
-        public async Task<Pion> KiesPion(List<Pion> mogelijk)
+        public async Task<Pion> KiesPion(ICollection<Pion> pionnen)
         {
-            return await KiesPion(mogelijk.Contains);
-        }
-
-        public async Task<Pion> KiesPion(Func<Pion, bool> mogelijk)
-        {   
             while (true)
             {
                 var pion = await _pionCompletion.Wait();
-                if (mogelijk(pion))
+                if (pionnen.Contains(pion))
                     return pion;
             }
         }
 
-        public async Task<IVeld> KiesVeld(Func<IVeld, bool> mogelijk)
+        public async Task<IVeld> VerplaatsBarricade(Func<IVeld, bool> mogelijk)
         {
             DynamischGrid.IsHitTestVisible = false;
             while (true)
@@ -178,9 +174,36 @@ namespace Barricade.Presentation
             }
         }
 
-        public async Task<IVeld> KiesVeld(List<IVeld> mogelijk)
+        public async Task<IVeld> VerplaatsPion(Pion gekozen, ICollection<IVeld> mogelijk)
         {
-            return await KiesVeld(mogelijk.Contains);
+            DynamischGrid.IsHitTestVisible = false;
+            while (true)
+            {
+                var veld = await _veldCompletion.Wait();
+
+                if (!mogelijk.Contains(veld))
+                {
+                    continue;
+                }
+
+                DynamischGrid.IsHitTestVisible = true;
+                return veld;
+            }
+        }
+
+        public int Gedobbeld { get; set; }
+        public Speler AanDeBeurt { get; set; }
+
+        public async Task Wacht(int p)
+        {
+            Waiter wachter = new Waiter();
+            var dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += (sender, args) => wachter.Return();
+            dispatcherTimer.Interval = TimeSpan.FromMilliseconds(p);
+            dispatcherTimer.Start();
+
+            await wachter.Wait();
+            dispatcherTimer.Stop();
         }
     }
 }

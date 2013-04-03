@@ -1,27 +1,45 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Barricade.Bot;
 using Barricade.Logic;
 using System.Linq;
 using Barricade.Presentation;
+using System.Collections;
 
 namespace Barricade.Process
 {
 	public class Spel
 	{
+	    private const int _wachttijdBot = 2000;
 	    private readonly Logic.Spel _logicSpel;
 	    private readonly Game _game;
 	    private int _beurt;
+	    private readonly Dictionary<Logic.Speler, ISpeler> spelers;
 
 	    public Spel(Logic.Spel logicSpel, Game game)
 	    {
 	        _logicSpel = logicSpel;
 	        _game = game;
+            spelers = new Dictionary<Speler, ISpeler>();
+	        foreach (var speler in logicSpel.Spelers)
+	        {
+	            spelers.Add(speler, new Rusher(speler, logicSpel));
+	        }
+	        //spelers[spelers.First().Key] = _game;
 	    }
 
-	    public virtual void Start()
+	    public virtual async void Start()
         {
-            VolgendeBeurt();
+	        while (true)
+	        {
+	            var speler = _logicSpel.Spelers[_beurt++%_logicSpel.Spelers.Count];
+                //TODO BUG!!!
+	            await VolgendeBeurt(speler, spelers[speler]);
+                await _game.Wacht(_wachttijdBot);
+	        }
         }
 
         readonly Random _random = new Random();
@@ -29,9 +47,8 @@ namespace Barricade.Process
         /// <summary>
         /// Doorloop alle stappen van een beurt
         /// </summary>
-        private async void VolgendeBeurt()
+        private async Task VolgendeBeurt(Speler speler, ISpeler controller)
         {
-            var speler = _logicSpel.Spelers[_beurt++ % _logicSpel.Spelers.Count];
 
             //TODO: speler markeren
 
@@ -48,8 +65,8 @@ namespace Barricade.Process
             {
                 //TODO: kijken of deze slaapwaarde goed is
                 // Tijdelijk de dobbelsteenwaarde laten zien
-                Thread.Sleep(4000);
-                VolgendeBeurt();
+                //Thread.Sleep(4000);
+                //_game.wait; //voorlater
                 return;
             }
             
@@ -57,7 +74,7 @@ namespace Barricade.Process
             _game.Highlight(pionnen, true);
 
             // Laat speler een pion kiezen
-            var gekozen = await _game.KiesPion(pionnen);
+            var gekozen = await controller.KiesPion(pionnen);
 
             // Markeer nu alleen de gekozen pion
             _game.Highlight(pionnen, false);
@@ -68,7 +85,7 @@ namespace Barricade.Process
             _game.Highlight(mogelijk, true);
 
             // Laat speler een veld kiezen
-            var veld = await _game.KiesVeld(mogelijk);
+            var veld = await controller.VerplaatsPion(gekozen, mogelijk);
 
             // Markeer nu niks meer
             _game.Highlight(mogelijk, false);
@@ -81,7 +98,6 @@ namespace Barricade.Process
                 try
                 {
                     gekozen.Verplaats(veld);
-                    VolgendeBeurt();
                     return;
                 }
                 catch (Logic.Exceptions.GewonnenException e)
@@ -98,7 +114,7 @@ namespace Barricade.Process
                 if (barricade != null)
                 {
                     _game.Klem(barricade, true);
-                    var target = await _game.KiesVeld(a => a.MagBarricade);
+                    var target = await controller.VerplaatsBarricade(a => a.MagBarricade);
                     _game.Klem(barricade, false);
 
                     barricade.Verplaats(target as Veld);
