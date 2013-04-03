@@ -26,7 +26,7 @@ namespace Barricade.Logic
 
 	    public override bool MagBarricade
 	    {
-            get { return !IsBeschermd; }
+            get { return !IsBeschermd && Barricade == null && Pionnen.Count == 0; }
 	    }
 
 	    public override bool Plaats(Pion pion)
@@ -64,8 +64,7 @@ namespace Barricade.Logic
 
 	    public bool Plaats(Barricade bar)
 	    {
-            //TODO: kijk of er een pion op staat!!!!!!!!
-            if (Barricade != null || !MagBarricade) return false;
+            if (!MagBarricade) return false;
 	        Barricade = bar;
 	        return true;
 	    }
