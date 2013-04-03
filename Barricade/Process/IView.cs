@@ -4,7 +4,7 @@ using Barricade.Logic;
 
 namespace Barricade.Process
 {
-    public interface IView : ISpeler
+    public interface IView
     {
         void Highlight(IEnumerable<Pion> pionnen, bool status);
         void Highlight(IEnumerable<IVeld> mogelijk, bool status);

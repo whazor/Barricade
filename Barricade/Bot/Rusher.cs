@@ -10,6 +10,8 @@ using Barricade.Utilities;
 
 namespace Barricade.Bot
 {
+// zet foutmelding over async uit.
+#pragma warning disable 1998
     class Rusher : Process.ISpeler
     {
         private readonly Speler _speler;
@@ -22,12 +24,8 @@ namespace Barricade.Bot
         }
 
 
-//        public Task<Pion> KiesPion(Func<Pion, bool> mogelijk)
-//        {
-//            throw new NotImplementedException();
-//        }
-//
-        public async Task<IVeld> KiesVeld(Func<IVeld, bool> mogelijk)
+
+        public async Task<IVeld> VerplaatsBarricade(Func<IVeld, bool> magBarricade)
         {
             var concurrentie = _spel.Spelers.Where(speler => speler != _speler).OrderBy(speler => speler.Pionnen.OrderBy(pion => pion.IVeld.Score).First().IVeld.Score).ToList();
             concurrentie.Shuffle();
@@ -39,7 +37,7 @@ namespace Barricade.Bot
                 {
                     for (var i = 0; i < following; i++)
                     {
-                        foreach (var buur in velden.SelectMany(veld => veld.Buren.OrderBy(a => a.Score).Where(mogelijk)))
+                        foreach (var buur in velden.SelectMany(veld => veld.Buren.OrderBy(a => a.Score).Where(magBarricade)))
                         {
                             return buur;
                         }
@@ -53,40 +51,33 @@ namespace Barricade.Bot
             }
         }
 
-        //readonly Random random = new Random();
-        private int VanafVeld(Pion pion, IVeld veld)
+        private static int VanafVeld(Pion pion, IVeld veld)
         {
             if (veld is Finishveld) return int.MinValue;
             return veld.Score - pion.IVeld.Score - veld.Pionnen.Count == 1 ? 4 : 0;
-            //return random.Next();
         }
 
-        private Pion _pion;
-#pragma warning disable 1998
         public async Task<Pion> KiesPion(ICollection<Pion> pionnen)
-#pragma warning restore 1998
         {
-            _pion = pionnen.ToList()
+            return pionnen.ToList()
                 .OrderBy(pion =>
                     {
                         var tmp = pion
                         .MogelijkeZetten(Gedobbeld)
-                        .OrderBy(veld => VanafVeld(pion, veld))// veld.Score /*- pion.IVeld.Score*/ - veld.Pionnen.Count == 1 ? 2 : 0)
+                        .OrderBy(veld => VanafVeld(pion, veld))
                         .First();
-                        return VanafVeld(pion, tmp); // tmp.Score /*- pion.IVeld.Score*/ - tmp.Pionnen.Count == 1 ? 2 : 0;
+                        return VanafVeld(pion, tmp);
                     })
                 .First();
-            return _pion;
         }
 
-#pragma warning disable 1998
-        public async Task<IVeld> KiesVeld(ICollection<IVeld> velden)
-#pragma warning restore 1998
+        public async Task<IVeld> VerplaatsPion(Pion gekozen, ICollection<IVeld> mogelijk)
         {
-            return velden.ToList().OrderBy(veld => VanafVeld(_pion, veld)).First();
+            return mogelijk.ToList().OrderBy(veld => VanafVeld(gekozen, veld)).First();
         }
 
         public int Gedobbeld { get; set; }
         public Speler AanDeBeurt { get; set; }
     }
+#pragma warning restore 1998
 }
