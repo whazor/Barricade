@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -23,6 +24,17 @@ namespace Barricade.Presentation.Dynamisch
         public Barricade(Logic.Barricade barricade)
         {
             InitializeComponent();
+        }
+
+        public void Beweeg(Point target)
+        {
+            var thickness = new Thickness(target.X, target.Y, 0, 0);
+            var moveAnimation = new ThicknessAnimation(Margin, thickness, TimeSpan.FromMilliseconds(500))
+                {
+                    FillBehavior = FillBehavior.Stop
+                };
+            moveAnimation.Completed += (sender, args) => Margin = thickness;
+            BeginAnimation(MarginProperty, moveAnimation);
         }
     }
 }

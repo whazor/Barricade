@@ -81,47 +81,28 @@ namespace Barricade.Presentation
             }
         }
 
-        private void Beweeg(Logic.Barricade barricade, Veld nieuwveld)
+        private void Beweeg(Logic.Barricade barricade, Veld bestemming)
         {
-            var icon = _barricades[barricade];
-            var target = _velden[nieuwveld].BerekenPunt(barricade).TranslatePoint(new Point(0, 0), _houder);
-            var thickness = new Thickness(target.X, target.Y, 0, 0);
-            var moveAnimation = new ThicknessAnimation(icon.Margin, thickness, TimeSpan.FromMilliseconds(milliseconds));
-            moveAnimation.FillBehavior = FillBehavior.Stop;
-            moveAnimation.Completed += (sender, args) => icon.Margin = thickness;
-            icon.BeginAnimation(FrameworkElement.MarginProperty, moveAnimation);
+            _barricades[barricade].Beweeg(_velden[bestemming].BerekenPunt(barricade).TranslatePoint(new Point(0.0, 0.0), _houder));
         }
 
         public void Beweeg(Pion pion, IVeld bestemming)
         {
             var icon = _poinnen[pion];
 
-            Stack<IVeld> stack;
-            if (pion.Paden != null && pion.Paden[bestemming] != null)
+            List<IVeld> list;
+            if (pion.Paden != null && pion.Paden.ContainsKey(bestemming))
             {
-                stack = new Stack<IVeld>(pion.Paden[bestemming]);
+                list = new List<IVeld>(pion.Paden[bestemming]);
             }
             else
             {
-                stack = new Stack<IVeld>();
-                stack.Push(bestemming);                
+                list = new List<IVeld> {bestemming};
             }
-            Beweeg(pion, stack, icon, milliseconds);
-        }
-
-        private void Beweeg(Pion pion, Stack<IVeld> stack, FrameworkElement icon, int milliseconds)
-        {
-            if (!stack.Any()) return;
-            
-            var target = _velden[stack.Pop()].BerekenPunt(pion).TranslatePoint(new Point(0, 0), _houder);
-            var thickness = new Thickness(target.X, target.Y, 0, 0);
-            var moveAnimation = new ThicknessAnimation(icon.Margin, thickness, TimeSpan.FromMilliseconds(milliseconds))
-                {
-                    FillBehavior = FillBehavior.Stop
-                };
-            moveAnimation.Completed += (sender, args) => icon.Margin = thickness;
-            moveAnimation.Completed += (sender, args) => Beweeg(pion, stack, icon, milliseconds);
-            icon.BeginAnimation(FrameworkElement.MarginProperty, moveAnimation);
+            var stack = list.Select(veld => _velden[veld].BerekenPunt(pion).TranslatePoint(new Point(0.0, 0.0), _houder));
+            //IEnumerable<Point> stack = Enumerable.Select<IElement, Point>(list, icon.BerekenPunt(pion).TranslatePoint(new Point(0.0, 0.0), _houder))));
+            icon.Beweeg(stack);
+//            Beweeg(pion, stack, icon, milliseconds);
         }
 
 
