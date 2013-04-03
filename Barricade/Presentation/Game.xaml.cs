@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Barricade.Logic;
 using Barricade.Presentation.Statisch;
+using Barricade.Utilities;
 using Pion = Barricade.Logic.Pion;
 
 namespace Barricade.Presentation
@@ -29,8 +30,8 @@ namespace Barricade.Presentation
         private bool _sleepende;
 
         // Dit is voor de async methodes
-        private TaskCompletionSource<Pion> _pionCompletion = new TaskCompletionSource<Pion>();
-        private TaskCompletionSource<IVeld> _veldCompletion = new TaskCompletionSource<IVeld>();
+        private readonly Waiter<Pion> _pionCompletion = new Waiter<Pion>();
+        private readonly Waiter<IVeld> _veldCompletion = new Waiter<IVeld>();
 
         // Voor het inladen van het spel (klaar met laden)
         public delegate void ShowableEvent(object sender, RoutedEventArgs e);
@@ -136,13 +137,13 @@ namespace Barricade.Presentation
         /// <param name="item"></param>
         private void PionKlik(Pion item)
         {
-            _pionCompletion.TrySetResult(item);
+            _pionCompletion.Return(item);
         }
 
         private void VeldKlik(object sender, MouseButtonEventArgs mouseButtonEventArgs)
         {
             var bestemming = ((IElement) sender).Veld;
-            _veldCompletion.TrySetResult(bestemming);
+            _veldCompletion.Return(bestemming);
         }
 
         public async Task<Pion> KiesPion(List<Pion> mogelijk)
@@ -154,8 +155,7 @@ namespace Barricade.Presentation
         {   
             while (true)
             {
-                var pion = await _pionCompletion.Task;
-                _pionCompletion = new TaskCompletionSource<Pion>();
+                var pion = await _pionCompletion.Wait();
                 if (mogelijk(pion))
                     return pion;
             }
@@ -166,8 +166,7 @@ namespace Barricade.Presentation
             DynamischGrid.IsHitTestVisible = false;
             while (true)
             {
-                var veld = await _veldCompletion.Task;
-                _veldCompletion = new TaskCompletionSource<IVeld>();
+                var veld = await _veldCompletion.Wait();
 
                 if (!mogelijk(veld))
                 {    
