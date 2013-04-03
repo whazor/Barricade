@@ -11,16 +11,25 @@
                 <ImageBrush ImageSource="/Presentation\Images\background.png" TileMode="FlipY" Stretch="Uniform" Viewport="0,0,608,612" ViewportUnits="Absolute" Viewbox="0,0,608,612" ViewboxUnits="Absolute" />
             </Rectangle.Fill>
         </Rectangle>
-        <Viewbox Stretch="Uniform">
+        <Viewbox Stretch="Uniform" Margin="65,0,0,0">
             <Grid x:Name="Houder">
-                <Grid x:Name="Spelbord" HorizontalAlignment="Center" Margin="20,20,20,20" Height="501" VerticalAlignment="Center" Width="718"/>
+                <Grid x:Name="Spelbord" HorizontalAlignment="Center" Margin="20" Height="501" VerticalAlignment="Center" Width="718"/>
                 <Grid x:Name="DynamischGrid">
                     <!--Margin="278,292,0,0"-->
                 </Grid>
                 
             </Grid>
         </Viewbox>
-
+        
         <!--        <Images:Bos HorizontalAlignment="Left" Margin="283,185,0,0" VerticalAlignment="Top"/>-->
+        <Grid x:Name="UserControls" Height="50" HorizontalAlignment="Left" MaxHeight="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="DobbelKnop">Dobbel</Button>
+        </Grid>
     </Grid>
 </UserControl>
