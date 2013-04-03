@@ -13,7 +13,7 @@ namespace Barricade.Process
 {
 	public class Spel
 	{
-	    private const int _wachttijdBot = 2000;
+	    private const int _wachttijdBot = 300;
 	    private readonly Logic.Spel _logicSpel;
 	    private readonly Game _game;
 	    private int _beurt;
@@ -55,6 +55,7 @@ namespace Barricade.Process
             // Rol dobbelsteen
             int gedobbeld = _random.Next(1, 7);
 
+            controller.Gedobbeld = gedobbeld;
             //TODO: dobbelsteen weergeven
 
             // Selecteer alle pionnen die kunnen lopen
