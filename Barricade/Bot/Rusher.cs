@@ -23,6 +23,8 @@ namespace Barricade.Bot
             _spel = spel;
         }
 
+        public int Gedobbeld { get; set; }
+        public Speler AanDeBeurt { get; set; }
 
 
         public async Task<IVeld> VerplaatsBarricade(Func<IVeld, bool> magBarricade)
@@ -76,8 +78,9 @@ namespace Barricade.Bot
             return mogelijk.ToList().OrderBy(veld => VanafVeld(gekozen, veld)).First();
         }
 
-        public int Gedobbeld { get; set; }
-        public Speler AanDeBeurt { get; set; }
+        public async Task DobbelTask()
+        {
+        }
     }
 #pragma warning restore 1998
 }

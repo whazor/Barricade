@@ -33,10 +33,25 @@ namespace Barricade.Presentation
         // Dit is voor de async methodes
         private readonly Waiter<Pion> _pionCompletion = new Waiter<Pion>();
         private readonly Waiter<IVeld> _veldCompletion = new Waiter<IVeld>();
+        private Waiter wachter = new Waiter();
+        private int _gedobbeld;
+
 
         // Voor het inladen van het spel (klaar met laden)
         public delegate void ShowableEvent(object sender, RoutedEventArgs e);
         public event ShowableEvent Showable;
+
+        public int Gedobbeld
+        {
+            get { return _gedobbeld; }
+            set
+            {
+                GetalLabel.Content = value;
+                _gedobbeld = value;
+            }
+        }
+
+        public Speler AanDeBeurt { get; set; }
 
         /// <summary>
         /// Maak een spelview aan.
@@ -191,8 +206,10 @@ namespace Barricade.Presentation
             }
         }
 
-        public int Gedobbeld { get; set; }
-        public Speler AanDeBeurt { get; set; }
+        public async Task DobbelTask()
+        {
+            await wachter.Wait();
+        }
 
         public async Task Wacht(int p)
         {
@@ -204,6 +221,11 @@ namespace Barricade.Presentation
 
             await wachter.Wait();
             dispatcherTimer.Stop();
+        }
+
+        private void DobbelKnop_Click(object sender, RoutedEventArgs e)
+        {
+            wachter.Return();
         }
     }
 }

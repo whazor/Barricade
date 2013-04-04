@@ -14,6 +14,8 @@ namespace Barricade.Logic
 
         public override bool Plaats(Pion pion)
         {
+            Pionnen.Add(pion);
+            pion.IVeld = this;
             throw new GewonnenException(pion.Speler);
         }
 

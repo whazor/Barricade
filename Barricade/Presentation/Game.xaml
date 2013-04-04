@@ -11,10 +11,10 @@
                 <ImageBrush ImageSource="/Presentation\Images\background.png" TileMode="FlipY" Stretch="Uniform" Viewport="0,0,608,612" ViewportUnits="Absolute" Viewbox="0,0,608,612" ViewboxUnits="Absolute" />
             </Rectangle.Fill>
         </Rectangle>
-        <Viewbox Stretch="Uniform" Margin="65,0,0,0">
+        <Viewbox Stretch="Uniform" Margin="126,0,0,0">
             <Grid x:Name="Houder">
                 <Grid x:Name="Spelbord" HorizontalAlignment="Center" Margin="20" Height="501" VerticalAlignment="Center" Width="718"/>
-                <Grid x:Name="DynamischGrid">
+                <Grid x:Name="DynamischGrid" Margin="0,0,0,0">
                     <!--Margin="278,292,0,0"-->
                 </Grid>
                 
@@ -29,7 +29,8 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button x:Name="DobbelKnop">Dobbel</Button>
+            <Button x:Name="DobbelKnop" Click="DobbelKnop_Click" Grid.ColumnSpan="4" Margin="15,-158,-119,132">Dobbel</Button>
         </Grid>
+        <Label x:Name="GetalLabel" Content="0" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Height="66" Width="100" FontSize="50" HorizontalContentAlignment="Center" />
     </Grid>
 </UserControl>
