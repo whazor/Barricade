@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,8 +17,10 @@ namespace Barricade.Presentation
     /// <summary>
     /// Interaction logic for Game.xaml
     /// </summary>
-    public partial class Game : UserControl, ISpeler
+    public partial class Game : Window, ISpeler
     {
+        public static MainWindow mainWindow;
+
         // Logic spel
         private readonly Logic.Spel _logicSpel;
         private readonly Process.Spel _processSpel;
@@ -57,9 +60,11 @@ namespace Barricade.Presentation
         /// Maak een spelview aan.
         /// </summary>
         /// <param name="loader">desbetreffend spel</param>
-        public Game(Data.Loader loader)
+        public Game(Data.Loader loader, MainWindow main)
         {
             InitializeComponent();
+
+            mainWindow = main;
 
             _logicSpel = loader.Spel;
             _processSpel = new Process.Spel(_logicSpel, this);
@@ -69,6 +74,13 @@ namespace Barricade.Presentation
             // Inladen moet later voor het opzoeken van veldposities
             Loaded += LaadDynamischeLaag;
             MouseMove += OnMove;
+
+            Closing += OnClosing;
+        }
+
+        private void OnClosing(object sender, CancelEventArgs e)
+        {
+            mainWindow.Show();
         }
 
         /// <summary>
@@ -227,5 +239,17 @@ namespace Barricade.Presentation
         {
             wachter.Return();
         }
+
+        private void AfsluitKnop_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void AfbreekKnop_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+            mainWindow.Show();
+        }
+
     }
 }

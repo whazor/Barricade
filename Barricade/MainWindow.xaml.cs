@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,15 @@ namespace Barricade
         public MainWindow()
         {
             InitializeComponent();
-//            MaxHeight = 
             MaxWidth = SystemParameters.WorkArea.Width;
             MaxHeight = SystemParameters.WorkArea.Height;
+
+            Closing += OnClosing;
+        }
+
+        private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
+        {
+            Environment.Exit(0);
         }
 
         private void ButtonLang_Click(object sender, RoutedEventArgs e)
@@ -68,10 +75,10 @@ namespace Barricade
 	"*3:START,Y5",
 	"*4:START,B5"
             };
-            var game = new Game(new Loader(level2));
-            Content = game;
-            Top = 0;
-            Left = 0;
+            Hide();
+            var game = new Game(new Loader(level2), this);
+            game.Show();
+
 //            game.Visibility = Visibility.Hidden;
 //
 //            Houder.Children.Add(game);
@@ -114,10 +121,17 @@ namespace Barricade
                     "*4:START,Y4",
                     "*5:START,B4"
             };
-            var game = new Game(new Loader(level2));
-            Content = game;
-            Top = 0;
-            Left = 0;
+            Hide();
+            var game = new Game(new Loader(level2), this);
+            game.Show();
+
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+
     }
 }
