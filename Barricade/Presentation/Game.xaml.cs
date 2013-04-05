@@ -242,13 +242,20 @@ namespace Barricade.Presentation
 
         private void AfsluitKnop_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            if (
+                MessageBox.Show("Weet je zeker dat je het huidige spel wilt verlaten?", "Spel afbreken",
+                                MessageBoxButton.YesNo).ToString() == "Yes") Environment.Exit(0);
         }
 
         private void AfbreekKnop_Click(object sender, RoutedEventArgs e)
         {
-            Close();
-            mainWindow.Show();
+            if (
+                MessageBox.Show("Weet je zeker dat je het huidige spel wilt verlaten?", "Spel afbreken",
+                                MessageBoxButton.YesNo).ToString() == "Yes")
+            {
+                Close();
+                mainWindow.Show();
+            }
         }
 
     }
