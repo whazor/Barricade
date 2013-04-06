@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -127,11 +128,27 @@ namespace Barricade
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Afsluiten_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
         }
 
+        private void Open_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Barricade save games (*.bar)|*.bar";
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                var bestand = new System.IO.StreamReader(dialog.FileName).ReadToEnd();
+                if (bestand != null)
+                {
+                    Hide();
+                    var game = new Game(new Loader(bestand), this);
+                    game.Show();
+                }
+            }
+        }
 
     }
 }

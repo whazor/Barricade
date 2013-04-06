@@ -272,7 +272,16 @@ namespace Barricade.Presentation
             dialog.Filter = "Barricade save games (*.bar)|*.bar";
 
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                using (StreamWriter sw = new StreamWriter(dialog.FileName)) sw.Write(huidigeSpel);
+                try
+                {
+                    var sw = new StreamWriter(dialog.FileName);
+                    sw.Write(huidigeSpel);
+                    sw.Close();
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Kan bestand niet wegschrijven", "Fout!", MessageBoxButton.OK);
+                }
         }
 
     }

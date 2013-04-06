@@ -3,9 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Barricade"  SizeToContent="WidthAndHeight" Top="20" ResizeMode="NoResize">
     <Grid Height="Auto" Width="Auto" Name="Houder" Margin="0,0,0,0">
-        <Button Content="Lang" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="41" Click="ButtonLang_Click" Margin="86,155,86,104" Panel.ZIndex="10"/>
-        <Button Content="Kort" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="41" Click="ButtonKort_Click" Margin="86,109,86,150" Panel.ZIndex="10" />
+        <Button Content="Lang" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="60" Click="ButtonLang_Click" Margin="118,151,304,158" Panel.ZIndex="10"/>
+        <Button Content="Kort" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="60" Click="ButtonKort_Click" Margin="333,151,89,158" Panel.ZIndex="10" />
         <Image Source="Presentation\Images/barricade_banner.png" Margin="0,0,0,0" Width="550" Height="350" Panel.ZIndex="5" Stretch="Fill" StretchDirection="Both" />
-        <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="412,270,0,0" VerticalAlignment="Top" Width="75" Panel.ZIndex="10" Click="Button_Click"/>
+        <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="386,300,0,0" VerticalAlignment="Top" Width="75" Panel.ZIndex="10" Click="Afsluiten_Click"/>
+        <Label Content="New Game" Panel.ZIndex="10" HorizontalAlignment="Left" Margin="167,55,0,0" VerticalAlignment="Top" FontSize="45" Foreground="#FF888D1C" FontWeight="Bold" Width="249">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="3"/>
+            </Label.Effect>
+        </Label>
+        <Button Content="Open game" HorizontalAlignment="Left" Margin="118,300,0,0" VerticalAlignment="Top" Width="75" Panel.ZIndex="10" Click="Open_Click"/>
     </Grid>
 </Window> 
