@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  x:Class="Barricade.Presentation.Game" 
-      mc:Ignorable="d" MinHeight="550" MinWidth="250">
+      mc:Ignorable="d" MinHeight="450" MinWidth="250">
 
     <Grid>
         <Rectangle Margin="0,0,0,0">
@@ -17,22 +17,27 @@
                 <Grid x:Name="DynamischGrid" Margin="0,0,0,0">
                     <!--Margin="278,292,0,0"-->
                 </Grid>
-                
+
             </Grid>
         </Viewbox>
-        
+
         <!--        <Images:Bos HorizontalAlignment="Left" Margin="283,185,0,0" VerticalAlignment="Top"/>-->
-        <Grid x:Name="UserControls" Height="50" HorizontalAlignment="Left" MaxHeight="50">
+        <Grid x:Name="UserControls" HorizontalAlignment="Left" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button x:Name="DobbelKnop" Click="DobbelKnop_Click" Grid.ColumnSpan="4" Margin="15,-158,-119,132">Dobbel</Button>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label x:Name="GetalLabel" Grid.Row="0" Content="0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="66" Width="50" FontSize="50" />
+            <Button x:Name="DobbelKnop" Grid.Row="1" Grid.Column="0" Height="80" Width="80" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" >Dobbel</Button>
+            <Button Name="AfbreekKnop" Grid.Row="4" Content="Menu" Height="25" HorizontalAlignment="Left" Width="75" Click="AfbreekKnop_Click"/>
+            <Button Name="AfsluitKnop" Grid.Row="5" Content="Afsluiten" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="AfsluitKnop_Click"/>
         </Grid>
-        <Label x:Name="GetalLabel" Content="0" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Height="66" Width="100" FontSize="50" HorizontalContentAlignment="Center" />
-        <Button Name="AfbreekKnop" Content="Menu" HorizontalAlignment="Left" Margin="21,448,0,0" VerticalAlignment="Top" Width="75" Click="AfbreekKnop_Click"/>
-        <Button Name="AfsluitKnop" Content="Afsluiten" HorizontalAlignment="Left" Margin="21,488,0,0" VerticalAlignment="Top" Width="75" Click="AfsluitKnop_Click"/>
     </Grid>
 </Window>
