@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  x:Class="Barricade.Presentation.Game" 
-      mc:Ignorable="d" MinHeight="450" MinWidth="250">
+      mc:Ignorable="d" MinHeight="500" MinWidth="250">
 
     <Grid>
         <Rectangle Margin="0,0,0,0">
@@ -33,11 +33,13 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
             <Label x:Name="GetalLabel" Grid.Row="0" Content="0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="66" Width="50" FontSize="50" />
             <Button x:Name="DobbelKnop" Grid.Row="1" Grid.Column="0" Height="80" Width="80" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" >Dobbel</Button>
-            <Button Name="AfbreekKnop" Grid.Row="4" Content="Menu" Height="25" HorizontalAlignment="Left" Width="75" Click="AfbreekKnop_Click"/>
-            <Button Name="AfsluitKnop" Grid.Row="5" Content="Afsluiten" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="AfsluitKnop_Click"/>
+            <Button Name="OpslaanKnop" Grid.Row="4" Content="Opslaan" Height="25" HorizontalAlignment="Left" Width="75" Click="OpslaanKnop_Click" />
+            <Button Name="AfbreekKnop" Grid.Row="5" Content="Menu" Height="25" HorizontalAlignment="Left" Width="75" Click="AfbreekKnop_Click"/>
+            <Button Name="AfsluitKnop" Grid.Row="6" Content="Afsluiten" Height="25" HorizontalAlignment="Left" Width="75" Click="AfsluitKnop_Click"/>
         </Grid>
     </Grid>
 </Window>

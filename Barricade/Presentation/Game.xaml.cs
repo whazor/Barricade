@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Forms;
 using System.Windows.Input;
+using Barricade.Data;
 using Barricade.Logic;
 using Barricade.Presentation.Statisch;
 using Barricade.Process;
 using Barricade.Utilities;
+using MessageBox = System.Windows.MessageBox;
+using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 using Pion = Barricade.Logic.Pion;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Barricade.Presentation
 {
@@ -38,6 +43,7 @@ namespace Barricade.Presentation
         private readonly Waiter<IVeld> _veldCompletion = new Waiter<IVeld>();
         private Waiter wachter = new Waiter();
         private int _gedobbeld;
+        private Loader _loader;
 
 
         // Voor het inladen van het spel (klaar met laden)
@@ -60,12 +66,13 @@ namespace Barricade.Presentation
         /// Maak een spelview aan.
         /// </summary>
         /// <param name="loader">desbetreffend spel</param>
-        public Game(Data.Loader loader, MainWindow main)
+        public Game(Loader loader, MainWindow main)
         {
             InitializeComponent();
 
             mainWindow = main;
 
+            _loader = loader;
             _logicSpel = loader.Spel;
             _processSpel = new Process.Spel(_logicSpel, this);
 
@@ -256,6 +263,16 @@ namespace Barricade.Presentation
                 Close();
                 mainWindow.Show();
             }
+        }
+
+        private void OpslaanKnop_Click(object sender, RoutedEventArgs e)
+        {
+            String huidigeSpel = new Saver(_loader.ToArray()).Output();
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Barricade save games (*.bar)|*.bar";
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                using (StreamWriter sw = new StreamWriter(dialog.FileName)) sw.Write(huidigeSpel);
         }
 
     }
