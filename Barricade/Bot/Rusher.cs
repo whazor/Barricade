@@ -10,30 +10,28 @@ using Barricade.Utilities;
 
 namespace Barricade.Bot
 {
-// zet foutmelding over async uit.
-#pragma warning disable 1998
-    class Rusher : Process.ISpeler
+    class Rusher : BaseBot
     {
-        private readonly Speler _speler;
-        private readonly Spel _spel;
-
+        private Random _random;
         public Rusher(Speler speler, Spel spel)
+            : base(speler, spel)
         {
-            _speler = speler;
-            _spel = spel;
+            _random = spel.Random;
         }
 
-
-
-        public async Task<IVeld> VerplaatsBarricade(Func<IVeld, bool> magBarricade)
+        protected override IVeld ZoekBarricadePlaats(Func<IVeld, bool> magBarricade)
         {
-            var concurrentie = _spel.Spelers.Where(speler => speler != _speler).OrderBy(speler => speler.Pionnen.OrderBy(pion => pion.IVeld.Score).First().IVeld.Score).ToList();
-            concurrentie.Shuffle();
+            var concurrentie =
+                Spel.Spelers.Where(speler => speler != Speler)
+                     .OrderBy(speler => speler.Pionnen.OrderBy(pion => pion.IVeld.Score).First().IVeld.Score)
+                     .ToList();
+            concurrentie.Shuffle(_random);
 
-            var following = 3;
+            var following = 1;
             while (true)
             {
-                foreach (var velden in from speler in concurrentie from poin in speler.Pionnen select new List<IVeld>{poin.IVeld})
+                foreach (
+                    var velden in from speler in concurrentie from poin in speler.Pionnen select new List<IVeld> {poin.IVeld})
                 {
                     for (var i = 0; i < following; i++)
                     {
@@ -43,7 +41,7 @@ namespace Barricade.Bot
                         }
                         var kopie = velden.ToList();
                         velden.Clear();
-                            
+
                         velden.AddRange(kopie.SelectMany(veld => veld.Buren));
                     }
                 }
@@ -51,33 +49,16 @@ namespace Barricade.Bot
             }
         }
 
-        private static int VanafVeld(Pion pion, IVeld veld)
+        protected override int ZoekVeld(Pion pion, IVeld veld)
         {
             if (veld is Finishveld) return int.MinValue;
-            return veld.Score - pion.IVeld.Score - veld.Pionnen.Count == 1 ? 4 : 0;
-        }
+            var score = veld.Score - pion.IVeld.Score;
 
-        public async Task<Pion> KiesPion(ICollection<Pion> pionnen)
-        {
-            return pionnen.ToList()
-                .OrderBy(pion =>
-                    {
-                        var tmp = pion
-                        .MogelijkeZetten(Gedobbeld)
-                        .OrderBy(veld => VanafVeld(pion, veld))
-                        .First();
-                        return VanafVeld(pion, tmp);
-                    })
-                .First();
-        }
+            if (veld.Score - pion.IVeld.Score < 0) score += 2;
 
-        public async Task<IVeld> VerplaatsPion(Pion gekozen, ICollection<IVeld> mogelijk)
-        {
-            return mogelijk.ToList().OrderBy(veld => VanafVeld(gekozen, veld)).First();
-        }
+            if (veld.Pionnen.Count == 1) score -= 1;
 
-        public int Gedobbeld { get; set; }
-        public Speler AanDeBeurt { get; set; }
+            return score;
+        }
     }
-#pragma warning restore 1998
-}
+}    

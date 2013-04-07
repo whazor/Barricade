@@ -8,9 +8,8 @@ namespace Barricade.Utilities
 {
     static class LinqExtensions
     {
-        public static void Shuffle<T>(this IList<T> list)
+        public static void Shuffle<T>(this IList<T> list, Random rng)
         {
-            var rng = new Random();
             var n = list.Count;
             while (n > 1)
             {

@@ -88,7 +88,7 @@ namespace Barricade.Data
             var getX = new Func<int, int>(x => (x - firstX)/4);
             var getY = new Func<int, int>(y => (int) Math.Ceiling(((decimal) (y - firstY + 1)/2)) - 1);
 
-            Spel = new Spel();
+            Spel = new Spel(new Random().Next());
 
             for (var i = 0; i < lines.Length; i++)
             {

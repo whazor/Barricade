@@ -13,7 +13,7 @@ namespace Barricade.Process
 {
 	public class Spel
 	{
-	    private const int _wachttijdBot = 300;
+	    private const int _wachttijdBot = 2000;
 	    private readonly Logic.Spel _logicSpel;
 	    private readonly Game _game;
 	    private int _beurt;
@@ -22,11 +22,19 @@ namespace Barricade.Process
 	    public Spel(Logic.Spel logicSpel, Game game)
 	    {
 	        _logicSpel = logicSpel;
+            _random = _logicSpel.Random;
 	        _game = game;
             spelers = new Dictionary<Speler, ISpeler>();
+	        int i = 1;
 	        foreach (var speler in logicSpel.Spelers)
 	        {
-	            spelers.Add(speler, new Rusher(speler, logicSpel));
+                if(i % 2 == 0)
+	                spelers.Add(speler, new Rusher(speler, logicSpel));
+                else
+                {
+                    spelers.Add(speler, new Vriendelijk(speler, logicSpel));
+                }
+	            i++;
 	        }
 	        //spelers[spelers.First().Key] = _game;
 	    }
@@ -42,7 +50,7 @@ namespace Barricade.Process
 	        }
         }
 
-        readonly Random _random = new Random();
+        readonly Random _random;
         
         /// <summary>
         /// Doorloop alle stappen van een beurt

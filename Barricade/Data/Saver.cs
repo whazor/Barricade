@@ -15,7 +15,7 @@ namespace Barricade.Data
 	        _points = points;
 	    }
 
-        public String Output()
+        public String Output(bool metUitzonderingen)
         {
             var result = "";
             var height = _points.GetLength(0);
@@ -85,7 +85,7 @@ namespace Barricade.Data
                         var inhoud = " ";
                         if (_points[i, j].Pionnen.Count > 0)
                         {
-                            inhoud = _points[i, j].Pionnen.First().Speler.Name + "";
+                            inhoud = TekenInhoud(_points[i, j]);
                         }
 
                         if (_points[i, j] is Rustveld)
@@ -173,9 +173,20 @@ namespace Barricade.Data
                 result += "\r\n";
             }
 
-            return result + uitzondering;
+            return result + (metUitzonderingen ? uitzondering : "");
 
         }
+
+	    private static string TekenInhoud(IVeld veld)
+	    {
+	        var inhoud = veld.Pionnen.First().Speler.Name + "";
+	        return inhoud;
+	    }
+
+	    public String Output()
+	    {
+	        return Output(true);
+	    }
 	}
 }
 

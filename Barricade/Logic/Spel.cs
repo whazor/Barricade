@@ -18,10 +18,13 @@
 
         public Bos Bos { get; set; }
 
-        public Spel()
+	    public Random Random { get; private set; }
+
+	    public Spel(int seed)
         {
             Spelers = new List<Speler>();
             Finishvelden = new List<Finishveld>();
+            Random = new Random(seed);
         }
 
         public void BerekenScores()

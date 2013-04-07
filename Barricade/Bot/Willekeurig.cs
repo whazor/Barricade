@@ -8,13 +8,14 @@ using Barricade.Utilities;
 
 namespace Barricade.Bot
 {
-    class Random : BaseBot
+    class Willekeurig : BaseBot
     {
-        readonly Random random;
-        public Random(Speler speler, Spel spel)
+        private readonly Random _random;
+
+        public Willekeurig(Speler speler, Spel spel)
             : base(speler, spel)
         {
-            random = new Random(spel.Seed);
+            _random = spel.Random;
         }
 
         protected override IVeld ZoekBarricadePlaats(Func<IVeld, bool> magBarricade)
@@ -23,7 +24,7 @@ namespace Barricade.Bot
                 Spel.Spelers
                      .OrderBy(speler => speler.Pionnen.OrderBy(pion => pion.IVeld.Score).First().IVeld.Score)
                      .ToList();
-            concurrentie.Shuffle();
+            concurrentie.Shuffle(_random);
 
             var following = 1;
             while (true)
@@ -50,14 +51,7 @@ namespace Barricade.Bot
         protected override int ZoekVeld(Pion pion, IVeld veld)
         {
             if (veld is Finishveld) return int.MinValue;
-            var score = veld.Score - pion.IVeld.Score;
-
-            if (veld.Score - pion.IVeld.Score < 0) score += 2;
-
-            if (veld.Pionnen.Count == 1) score += 20;
-
-            return score;
+            return _random.Next(0, 100000);
         }
-    
     }
 }
