@@ -1,23 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Forms;
 using System.Windows.Input;
+using Barricade.Data;
 using Barricade.Logic;
 using Barricade.Presentation.Statisch;
 using Barricade.Process;
 using Barricade.Utilities;
+using MessageBox = System.Windows.MessageBox;
+using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 using Pion = Barricade.Logic.Pion;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Barricade.Presentation
 {
     /// <summary>
     /// Interaction logic for Game.xaml
     /// </summary>
-    public partial class Game : UserControl, ISpeler
+    public partial class Game : Window, ISpeler
     {
+        public static MainWindow mainWindow;
+
         // Logic spel
         private readonly Logic.Spel _logicSpel;
         private readonly Process.Spel _processSpel;
@@ -33,19 +41,38 @@ namespace Barricade.Presentation
         // Dit is voor de async methodes
         private readonly Waiter<Pion> _pionCompletion = new Waiter<Pion>();
         private readonly Waiter<IVeld> _veldCompletion = new Waiter<IVeld>();
+        private Waiter wachter = new Waiter();
+        private int _gedobbeld;
+        private Loader _loader;
+
 
         // Voor het inladen van het spel (klaar met laden)
         public delegate void ShowableEvent(object sender, RoutedEventArgs e);
         public event ShowableEvent Showable;
 
+        public int Gedobbeld
+        {
+            get { return _gedobbeld; }
+            set
+            {
+                GetalLabel.Content = value;
+                _gedobbeld = value;
+            }
+        }
+
+        public Speler AanDeBeurt { get; set; }
+
         /// <summary>
         /// Maak een spelview aan.
         /// </summary>
         /// <param name="loader">desbetreffend spel</param>
-        public Game(Data.Loader loader)
+        public Game(Loader loader, MainWindow main)
         {
             InitializeComponent();
 
+            mainWindow = main;
+
+            _loader = loader;
             _logicSpel = loader.Spel;
             _processSpel = new Process.Spel(_logicSpel, this);
 
@@ -54,6 +81,13 @@ namespace Barricade.Presentation
             // Inladen moet later voor het opzoeken van veldposities
             Loaded += LaadDynamischeLaag;
             MouseMove += OnMove;
+
+            Closing += OnClosing;
+        }
+
+        private void OnClosing(object sender, CancelEventArgs e)
+        {
+            mainWindow.Show();
         }
 
         /// <summary>
@@ -191,8 +225,10 @@ namespace Barricade.Presentation
             }
         }
 
-        public int Gedobbeld { get; set; }
-        public Speler AanDeBeurt { get; set; }
+        public async Task DobbelTask()
+        {
+            await wachter.Wait();
+        }
 
         public async Task Wacht(int p)
         {
@@ -205,5 +241,48 @@ namespace Barricade.Presentation
             await wachter.Wait();
             dispatcherTimer.Stop();
         }
+
+        private void DobbelKnop_Click(object sender, RoutedEventArgs e)
+        {
+            wachter.Return();
+        }
+
+        private void AfsluitKnop_Click(object sender, RoutedEventArgs e)
+        {
+            if (
+                MessageBox.Show("Weet je zeker dat je het huidige spel wilt verlaten?", "Spel afbreken",
+                                MessageBoxButton.YesNo).ToString() == "Yes") Environment.Exit(0);
+        }
+
+        private void AfbreekKnop_Click(object sender, RoutedEventArgs e)
+        {
+            if (
+                MessageBox.Show("Weet je zeker dat je het huidige spel wilt verlaten?", "Spel afbreken",
+                                MessageBoxButton.YesNo).ToString() == "Yes")
+            {
+                Close();
+                mainWindow.Show();
+            }
+        }
+
+        private void OpslaanKnop_Click(object sender, RoutedEventArgs e)
+        {
+            String huidigeSpel = new Saver(_loader.ToArray()).Output();
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Barricade save games (*.bar)|*.bar";
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                try
+                {
+                    var sw = new StreamWriter(dialog.FileName);
+                    sw.Write(huidigeSpel);
+                    sw.Close();
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Kan bestand niet wegschrijven", "Fout!", MessageBoxButton.OK);
+                }
+        }
+
     }
 }

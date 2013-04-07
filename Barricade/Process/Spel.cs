@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Barricade.Bot;
 using Barricade.Logic;
 using System.Linq;
+using Barricade.Logic.Exceptions;
 using Barricade.Presentation;
 using System.Collections;
 
@@ -36,17 +37,23 @@ namespace Barricade.Process
                 }
 	            i++;
 	        }
-	        //spelers[spelers.First().Key] = _game;
+	        spelers[spelers.First().Key] = _game;
 	    }
 
 	    public virtual async void Start()
         {
-	        while (true)
+	        try
 	        {
-	            var speler = _logicSpel.Spelers[_beurt++%_logicSpel.Spelers.Count];
-                //TODO BUG!!!
-	            await VolgendeBeurt(speler, spelers[speler]);
-                await _game.Wacht(_wachttijdBot);
+	            while (true)
+	            {
+	                var speler = _logicSpel.Spelers[_beurt++%_logicSpel.Spelers.Count];
+	                await VolgendeBeurt(speler, spelers[speler]);
+	                await _game.Wacht(_wachttijdBot);
+	            }
+	        }
+	        catch (GewonnenException e)
+	        {
+                MessageBox.Show("Speler " + e.Speler.Name + " heeft gewonnen!", "Er is een winnaar!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 	        }
         }
 
@@ -64,6 +71,7 @@ namespace Barricade.Process
             int gedobbeld = _random.Next(1, 7);
 
             controller.Gedobbeld = gedobbeld;
+            _game.Gedobbeld = gedobbeld;
             //TODO: dobbelsteen weergeven
 
             // Selecteer alle pionnen die kunnen lopen
@@ -109,13 +117,7 @@ namespace Barricade.Process
                     gekozen.Verplaats(veld);
                     return;
                 }
-                catch (Logic.Exceptions.GewonnenException e)
-                {
-                    //TODO: Naam aan speler hangen en spel afsluiten.
-                    MessageBox.Show("Speler "+e.Speler.Name+" heeft gewonnen!", "Er is een winnaar!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-                }
-                catch (Logic.Exceptions.BarricadeVerplaatsException e)
+                catch (BarricadeVerplaatsException e)
                 {
                     barricade = e.Barricade;
                 }

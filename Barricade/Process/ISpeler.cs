@@ -36,5 +36,7 @@ namespace Barricade.Process
 
         // Wie er aan de beurt is
         Speler AanDeBeurt { get; set; }
+
+        Task DobbelTask();
     }
 }

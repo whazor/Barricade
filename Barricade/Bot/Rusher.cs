@@ -56,7 +56,8 @@ namespace Barricade.Bot
 
             if (veld.Score - pion.IVeld.Score < 0) score += 2;
 
-            if (veld.Pionnen.Count == 1) score -= 1;
+            if (veld.Pionnen.Count == 1)
+                score -= 1;
 
             return score;
         }
