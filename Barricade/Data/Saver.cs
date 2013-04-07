@@ -150,7 +150,7 @@ namespace Barricade.Data
                 result += "\r\n";
 
                 result += "    ";
-                for (var j = 0; j < height; j++)
+                for (var j = 0; j < width; j++)
                 {
                     if (_points[i, j] == null)
                     {
