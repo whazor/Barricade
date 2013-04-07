@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Barricade.Data;
 
-namespace Barricade.Shell
+namespace Barricade.Text
 {
     class Program
     {
@@ -42,8 +42,23 @@ namespace Barricade.Shell
 
             var saver = new Saver(loader.Kaart);
 
-            Console.WriteLine(saver.Output());
-            Console.Read();
+            Console.WriteLine("");
+            Console.WriteLine(@"  .---.           .--.        .--.                             .     ");
+            Console.WriteLine(@"      |           |   :       |   )              o             |     ");
+            Console.WriteLine(@"      |.  . .-.   |   | .-.   |--:  .-.  .--..--..  .-..-.  .-.| .-. ");
+            Console.WriteLine(@"      ;|  |(.-'   |   ;(.-'   |   )(   ) |   |   | (  (   )(   |(.-' ");
+            Console.WriteLine(@"  `--' `--`-`--'  '--'  `--'  '--'  `-'`-'   ' -' `-`-'`-'`-`-'`-`--'");
+            Console.WriteLine("");
+            Console.WriteLine(@"Welk level wilt u spelen?");
+            Console.WriteLine("");
+            Console.WriteLine(@"- Lang (toets 1)");
+            Console.WriteLine(@"- Kort (toets 2)");
+            //TODO: verschillende levels inladen
+
+            var uitkomst = Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine(saver.Output(true));
+            Console.ReadLine();
 //            loader.ToArray();
         }
     }
