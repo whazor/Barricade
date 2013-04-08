@@ -52,8 +52,9 @@ namespace Barricade.Bot
 
         abstract protected IVeld ZoekBarricadePlaats(Func<IVeld, bool> magBarricade);
         abstract protected int ZoekVeld(Pion gekozen, IVeld veld);
-        public async Task DobbelTask()
+        public async Task<int> DobbelTask()
         {
+            return -1;
         }
     }
 }

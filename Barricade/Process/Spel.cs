@@ -94,7 +94,13 @@ namespace Barricade.Process
             //TODO: speler markeren
 
             // Rol dobbelsteen
-            int gedobbeld = _random.Next(1, 7);
+            int dobbelwaarde = await controller.DobbelTask();
+            int gedobbeld;
+
+            if (dobbelwaarde > 0)
+                gedobbeld = dobbelwaarde;
+            else
+                gedobbeld = _random.Next(1, 7);
 
             controller.Gedobbeld = gedobbeld;
             _game.Gedobbeld = gedobbeld;
