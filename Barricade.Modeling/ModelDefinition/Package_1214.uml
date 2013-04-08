@@ -680,8 +680,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
+                  isComposite="false">
                   <lowerValueInternal>
                     <literalString
                       Id="f9bdf8c4-498a-4a67-9329-f01f35ae7862"

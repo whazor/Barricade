@@ -260,16 +260,16 @@
               <lifelineMoniker Id="44f84c9a-7600-4f7a-9de2-35a8147f969b" LastKnownName="gevonden : Pion" />
             </covered>
           </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="77367620-f43d-4d7b-8652-80c8bc163a5d" name="OperandOccurrenceSpecification7">
-            <elementDefinition Id="303ea98c-05c3-48ee-839b-54c68e7656e1" />
-            <covered>
-              <lifelineMoniker Id="e2a61c94-73d1-414c-87fe-300ef388c7e6" LastKnownName="pion : Pion" />
-            </covered>
-          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="b96d7eb6-00c4-435e-92eb-27362df906c2" name="OperandOccurrenceSpecification9">
             <elementDefinition Id="e88715fd-b079-4c77-958c-fc6c3353a4ae" />
             <covered>
               <lifelineMoniker Id="44f84c9a-7600-4f7a-9de2-35a8147f969b" LastKnownName="gevonden : Pion" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="77367620-f43d-4d7b-8652-80c8bc163a5d" name="OperandOccurrenceSpecification7">
+            <elementDefinition Id="303ea98c-05c3-48ee-839b-54c68e7656e1" />
+            <covered>
+              <lifelineMoniker Id="e2a61c94-73d1-414c-87fe-300ef388c7e6" LastKnownName="pion : Pion" />
             </covered>
           </operandOccurrenceSpecification>
           <behaviorExecutionSpecification Id="30e767ce-cfb3-4f90-bb26-b775dbccfb72" name="BehaviorExecutionSpecification18">
@@ -390,16 +390,16 @@
               <lifelineMoniker Id="e2a61c94-73d1-414c-87fe-300ef388c7e6" LastKnownName="pion : Pion" />
             </covered>
           </operandOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="c03b4dd3-0bcc-43f5-b463-3776cc9db9eb" name="MessageOccurrenceSpecification37">
-            <elementDefinition Id="14efb0fd-6dc6-4ef9-8eb7-90b4e562213c" />
-            <covered>
-              <lifelineMoniker Id="268ad7e3-d39a-4efd-9405-506604af1a91" LastKnownName="spel : Spel" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="616dd2c4-539f-4c9d-b19a-e875c7844e51" name="MessageOccurrenceSpecification36">
             <elementDefinition Id="dcbb9921-2255-4e95-9aaf-4a3ec32ed4b3" />
             <covered>
               <lifelineMoniker Id="e2a61c94-73d1-414c-87fe-300ef388c7e6" LastKnownName="pion : Pion" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="c03b4dd3-0bcc-43f5-b463-3776cc9db9eb" name="MessageOccurrenceSpecification37">
+            <elementDefinition Id="14efb0fd-6dc6-4ef9-8eb7-90b4e562213c" />
+            <covered>
+              <lifelineMoniker Id="268ad7e3-d39a-4efd-9405-506604af1a91" LastKnownName="spel : Spel" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="f7e9191e-9945-4850-8dc4-ff3f599248c1" name="ExecutionOccurrenceSpecification26">

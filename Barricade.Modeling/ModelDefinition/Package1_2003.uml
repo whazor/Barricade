@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="85b733ab-c599-4c87-81a9-a5d15cec5c52"
+  name="Process"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="15993a8e-b7b1-4fc4-84b1-9f67fd00cfd8"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DBarricade.Process"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="f2663f83-25ce-4669-a336-deb1a6e84ac2"
+        name="IView"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="8d1a2d71-f928-41fc-8fa2-c9205fbef9d6"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Process Type%3DIView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="32caeee4-2ea0-4001-b9ad-46cf73aeb275"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="73fb26cd-fd4c-4709-b1b6-bc2dc4774efa">
+                <propertyInstance
+                  Id="530208fe-0e02-4741-841a-ee79393ee2b7"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d134a3bd-2634-4a73-b98a-ea77436572a3">
+                <propertyInstance
+                  Id="9ffd52c8-ef8e-4078-9fe8-fe5eadb2c591"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f1c919f2-4530-4bcb-be8c-85070e5f3a00">
+                <propertyInstance
+                  Id="650b35aa-280a-49ca-92eb-a087bf73451f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ea7fdab5-7148-493d-9cc2-130b7412950e">
+                <propertyInstance
+                  Id="b80bf6a7-b5f7-4681-afc9-238aba85ca75"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="5e127946-3f83-48f2-bbf7-23a62cddada9"
+        name="ISpeler"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="d24f5dd9-93aa-41e3-9c0e-8c32bba41bb1"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Process Type%3DISpeler"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="eed824ba-45bc-4490-ab7b-813c317b4e75"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c56bae18-cd88-47d9-8451-2bde83a30b02">
+                <propertyInstance
+                  Id="80e6a140-6123-4d5c-b142-29baab642ec5"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="285b0a86-bba2-4424-920d-bdb215c57a14">
+                <propertyInstance
+                  Id="7499babb-1bed-4d07-b333-685e1de79a30"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f5f16e37-44aa-4b1e-b4e3-c7d048627e0a">
+                <propertyInstance
+                  Id="a3f9fa12-fa02-4c73-b98a-22c5fe5beed1"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8e910ee5-d6c8-4cc9-9976-5b14151a2bfc">
+                <propertyInstance
+                  Id="cac4916e-452c-4aeb-aca9-5d699b779540"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

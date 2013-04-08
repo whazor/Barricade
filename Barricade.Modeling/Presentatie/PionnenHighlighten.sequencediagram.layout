@@ -2,14 +2,14 @@
 <sequenceDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PionnenHighlighten">
   <SequenceDesignerModelMoniker Id="929870b4-e185-4990-8005-ca86aedccd05" />
   <nestedChildShapes>
-    <lifelineShape Id="1f221daf-6d5c-4ae0-aa38-d30aebedb70d" absoluteBounds="1.025, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
+    <lifelineShape Id="1f221daf-6d5c-4ae0-aa38-d30aebedb70d" absoluteBounds="1.025, 1, 0.15, 2.5999999999999996" visible="true" visualStyleMode="Modified">
       <lifelineMoniker Id="8c8aca98-d3f2-4490-a491-142d7376a2ba" LastKnownName="spel : Spel" />
       <relativeChildShapes>
         <umlLifelineHeadShape Id="1a92d842-add2-456c-a9e1-af7b7f5f2c93" absoluteBounds="0.59999999999999987, 0.6, 1, 0.4" customColor="White" visualStyleMode="Modified">
           <lifelineMoniker Id="8c8aca98-d3f2-4490-a491-142d7376a2ba" LastKnownName="spel : Spel" />
           <relativeChildShapes />
         </umlLifelineHeadShape>
-        <lifelineHoverShape Id="6b9ed7a0-1683-448a-9da9-552846fa1d77" absoluteBounds="1.025, 1, 0, 7">
+        <lifelineHoverShape Id="6b9ed7a0-1683-448a-9da9-552846fa1d77" absoluteBounds="1.025, 1, 0, 2.625">
           <lifelineMoniker Id="8c8aca98-d3f2-4490-a491-142d7376a2ba" LastKnownName="spel : Spel" />
         </lifelineHoverShape>
         <umlExecutionSpecificationShape Id="1680cc6d-313b-4974-b450-b76afd8dcd14" absoluteBounds="1.025, 1.3, 0.15, 1.9999999999999998" customColor="184, 204, 215" visualStyleMode="Modified">
@@ -27,14 +27,14 @@
         <umlExecutionSpecificationShapeMoniker Id="1680cc6d-313b-4974-b450-b76afd8dcd14" />
       </nodes>
     </lostFoundMessageConnector>
-    <lifelineShape Id="dd98c7c8-456d-4440-b278-0521d4764492" absoluteBounds="3.075, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
+    <lifelineShape Id="dd98c7c8-456d-4440-b278-0521d4764492" absoluteBounds="3.075, 1, 0.15, 2.697916666666667" visible="true" visualStyleMode="Modified">
       <lifelineMoniker Id="6c0c794f-36f7-4164-bbf1-85b46d128c50" LastKnownName="huidigeSpeler : Speler" />
       <relativeChildShapes>
         <umlLifelineHeadShape Id="d4edfb90-3579-4d15-8d20-737740e178af" absoluteBounds="2.3937775325775146, 0.6, 1.5124449348449707, 0.4" customColor="White" visualStyleMode="Modified">
           <lifelineMoniker Id="6c0c794f-36f7-4164-bbf1-85b46d128c50" LastKnownName="huidigeSpeler : Speler" />
           <relativeChildShapes />
         </umlLifelineHeadShape>
-        <lifelineHoverShape Id="90f38b84-83d2-4fef-a9c6-95fde24a132d" absoluteBounds="3.075, 1, 0, 7">
+        <lifelineHoverShape Id="90f38b84-83d2-4fef-a9c6-95fde24a132d" absoluteBounds="3.075, 1, 0, 2.75">
           <lifelineMoniker Id="6c0c794f-36f7-4164-bbf1-85b46d128c50" LastKnownName="huidigeSpeler : Speler" />
         </lifelineHoverShape>
         <umlExecutionSpecificationShape Id="1a2e5e6d-4f04-4991-b68e-43abdbadabad" absoluteBounds="3.075, 1.6, 0.15, 0.55000000000000027" customColor="184, 204, 215" visualStyleMode="Modified">
@@ -56,14 +56,14 @@
         <umlExecutionSpecificationShapeMoniker Id="1680cc6d-313b-4974-b450-b76afd8dcd14" />
       </nodes>
     </returnMessageConnector>
-    <lifelineShape Id="fb7d7b44-2549-4fa3-800f-6ba12f8cc6d0" absoluteBounds="5.125, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
+    <lifelineShape Id="fb7d7b44-2549-4fa3-800f-6ba12f8cc6d0" absoluteBounds="5.125, 1, 0.15, 2.8333333333333339" visible="true" visualStyleMode="Modified">
       <lifelineMoniker Id="02b481d2-6921-4fbb-a8a3-d5f254cf2462" LastKnownName="spelBord : SpelBord" />
       <relativeChildShapes>
         <umlLifelineHeadShape Id="0d2c313f-c648-4c69-a016-663670641fa0" absoluteBounds="4.3965227715174358, 0.6, 1.606954456965128, 0.4" customColor="White" visualStyleMode="Modified">
           <lifelineMoniker Id="02b481d2-6921-4fbb-a8a3-d5f254cf2462" LastKnownName="spelBord : SpelBord" />
           <relativeChildShapes />
         </umlLifelineHeadShape>
-        <lifelineHoverShape Id="1bac5b65-db2e-4794-a46b-dc5f8431ea1c" absoluteBounds="5.125, 1, 0, 7">
+        <lifelineHoverShape Id="1bac5b65-db2e-4794-a46b-dc5f8431ea1c" absoluteBounds="5.125, 1, 0, 2.875">
           <lifelineMoniker Id="02b481d2-6921-4fbb-a8a3-d5f254cf2462" LastKnownName="spelBord : SpelBord" />
         </lifelineHoverShape>
         <umlExecutionSpecificationShape Id="febe4353-d150-410a-8368-6137b9e8260d" absoluteBounds="5.125, 2.45, 0.15, 0.55" customColor="184, 204, 215" visualStyleMode="Modified">

@@ -2,10 +2,10 @@
 <sequenceDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Verplaats">
   <SequenceDesignerModelMoniker Id="ff3f0b47-2700-4f47-b8ce-0c4f6f8c6326" />
   <nestedChildShapes>
-    <lifelineShape Id="109527b5-2ad6-4d0b-8ea8-d2fe232d3c6b" absoluteBounds="3.1958333333333333, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
+    <lifelineShape Id="109527b5-2ad6-4d0b-8ea8-d2fe232d3c6b" absoluteBounds="3.1958333333333333, 1, 0.15, 6.0620138365775329" visible="true" visualStyleMode="Modified">
       <lifelineMoniker Id="e2a61c94-73d1-414c-87fe-300ef388c7e6" LastKnownName="pion : Pion" />
       <relativeChildShapes>
-        <lifelineHoverShape Id="f814c02b-2b16-4a4e-ba2f-0618fb5bc8e1" absoluteBounds="3.1958333333333333, 1, 0, 7">
+        <lifelineHoverShape Id="f814c02b-2b16-4a4e-ba2f-0618fb5bc8e1" absoluteBounds="3.1958333333333333, 1, 0, 6">
           <lifelineMoniker Id="e2a61c94-73d1-414c-87fe-300ef388c7e6" LastKnownName="pion : Pion" />
         </lifelineHoverShape>
         <umlLifelineHeadShape Id="66d06fb4-c883-4d4a-bb09-d5126ac667e8" absoluteBounds="2.7708333333333335, 0.6, 1, 0.4" customColor="White" visualStyleMode="Modified">
@@ -15,7 +15,7 @@
         <umlExecutionSpecificationShape Id="2b39f656-8762-4740-8fde-879403045937" absoluteBounds="3.1958333333333333, 1.3, 0.15, 5.4620138365775333" customColor="184, 204, 215" visualStyleMode="Modified">
           <behaviorExecutionSpecificationMoniker Id="95c95576-9e04-4215-a904-00d6621803d6" LastKnownName="BehaviorExecutionSpecification13" />
         </umlExecutionSpecificationShape>
-        <lostFoundTargetShape Id="d9f816c8-48f4-4382-ba9a-69bfccd6ff5d" absoluteBounds="4.1958333333333329, 2.1680034596472981, 0.2, 0.2" customColor="89, 89, 89">
+        <lostFoundTargetShape Id="d9f816c8-48f4-4382-ba9a-69bfccd6ff5d" absoluteBounds="4.5291666666666668, 2.1680034596472981, 0.2, 0.2" customColor="89, 89, 89">
           <lostFoundTargetMoniker Id="462c73c5-20b2-4849-a60c-c78c9f5bc939" LastKnownName="LostFoundTarget2" />
         </lostFoundTargetShape>
         <lostFoundTargetShape Id="58508271-5fd5-4395-ab52-14a4f956e95a" absoluteBounds="4.64375, 3.4560069188475606, 0.2, 0.2" customColor="89, 89, 89">
@@ -26,10 +26,10 @@
         </lostFoundTargetShape>
       </relativeChildShapes>
     </lifelineShape>
-    <combinedFragmentShape Id="4cd10e33-5b72-4d79-ad82-0d3cd94cddad" absoluteBounds="2.6758333337803681, 1.6, 2.040000011026859, 0.98800345920026311" visible="true" visualStyleMode="Modified">
+    <combinedFragmentShape Id="4cd10e33-5b72-4d79-ad82-0d3cd94cddad" absoluteBounds="2.6758333337803681, 1.6, 2.3733333443601929, 0.98800345920026311" visible="true" visualStyleMode="Modified">
       <combinedFragmentMoniker Id="ef675d63-9513-45b1-8375-d3c854053744" LastKnownName="CombinedFragment2" />
       <nestedChildShapes>
-        <interactionOperandShape Id="58a9ba77-0acc-46f3-b6c9-b61f64500712" absoluteBounds="2.6958333333333333, 1.85, 1.9950000120326874, 0.718003459647298">
+        <interactionOperandShape Id="58a9ba77-0acc-46f3-b6c9-b61f64500712" absoluteBounds="2.6958333333333333, 1.85, 2.3283333453660213, 0.718003459647298">
           <interactionOperandMoniker Id="f6cfd01b-37ed-4299-9622-57d183a38888" LastKnownName="InteractionOperand1" />
         </interactionOperandShape>
       </nestedChildShapes>
@@ -45,10 +45,10 @@
         </interactionOperandShape>
       </nestedChildShapes>
     </combinedFragmentShape>
-    <lifelineShape Id="0ab491bd-0c96-487c-9d4b-4135dc6c8996" absoluteBounds="5.1270833333333332, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
+    <lifelineShape Id="0ab491bd-0c96-487c-9d4b-4135dc6c8996" absoluteBounds="5.1270833333333332, 1, 0.15, 6.0312500000000009" visible="true" visualStyleMode="Modified">
       <lifelineMoniker Id="44f84c9a-7600-4f7a-9de2-35a8147f969b" LastKnownName="gevonden : Pion" />
       <relativeChildShapes>
-        <lifelineHoverShape Id="80b0d7e3-dcb1-4819-a0ea-164b6e9659cb" absoluteBounds="5.1270833333333332, 1, 0, 7">
+        <lifelineHoverShape Id="80b0d7e3-dcb1-4819-a0ea-164b6e9659cb" absoluteBounds="5.1270833333333332, 1, 0, 6">
           <lifelineMoniker Id="44f84c9a-7600-4f7a-9de2-35a8147f969b" LastKnownName="gevonden : Pion" />
         </lifelineHoverShape>
         <umlLifelineHeadShape Id="9b69b0ed-3dc0-4671-a668-5ef9f3cc1d22" absoluteBounds="4.7020833333333334, 0.6, 1, 0.4" customColor="White" visualStyleMode="Modified">
@@ -68,14 +68,14 @@
         </interactionOperandShape>
       </nestedChildShapes>
     </combinedFragmentShape>
-    <lifelineShape Id="ab2e85c9-0ca6-40f1-b02a-4d2c3a251bef" absoluteBounds="1.025, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
+    <lifelineShape Id="ab2e85c9-0ca6-40f1-b02a-4d2c3a251bef" absoluteBounds="1.025, 1, 0.15, 6.06201383657753" visible="true" visualStyleMode="Modified">
       <lifelineMoniker Id="268ad7e3-d39a-4efd-9405-506604af1a91" LastKnownName="spel : Spel" />
       <relativeChildShapes>
         <umlLifelineHeadShape Id="f8843221-161a-4cb4-b0d6-c1b9bc917dbf" absoluteBounds="0.59999999999999987, 0.6, 1, 0.4" customColor="White" visualStyleMode="Modified">
           <lifelineMoniker Id="268ad7e3-d39a-4efd-9405-506604af1a91" LastKnownName="spel : Spel" />
           <relativeChildShapes />
         </umlLifelineHeadShape>
-        <lifelineHoverShape Id="11e60368-866e-4f95-aabe-959502e956a9" absoluteBounds="1.025, 1, 0, 7">
+        <lifelineHoverShape Id="11e60368-866e-4f95-aabe-959502e956a9" absoluteBounds="1.025, 1, 0, 6">
           <lifelineMoniker Id="268ad7e3-d39a-4efd-9405-506604af1a91" LastKnownName="spel : Spel" />
         </lifelineHoverShape>
       </relativeChildShapes>
@@ -87,7 +87,7 @@
         <umlExecutionSpecificationShapeMoniker Id="2b39f656-8762-4740-8fde-879403045937" />
       </nodes>
     </syncMessageConnector>
-    <lostFoundMessageConnector edgePoints="[(3.34583333333333 : 2.2680034596473); (4.19583333333333 : 2.2680034596473)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e24617ce-6c7e-4c7d-802a-63014f02e313" customColor="Black" visible="true" visualStyleMode="Modified" messageId="00000000-0000-0000-0000-000000000000">
+    <lostFoundMessageConnector edgePoints="[(3.34583333333333 : 2.2680034596473); (4.52916666666667 : 2.2680034596473)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e24617ce-6c7e-4c7d-802a-63014f02e313" customColor="Black" visible="true" visualStyleMode="Modified" messageId="00000000-0000-0000-0000-000000000000">
       <relativeChildShapes />
       <nodes>
         <umlExecutionSpecificationShapeMoniker Id="2b39f656-8762-4740-8fde-879403045937" />

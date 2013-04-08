@@ -560,7 +560,7 @@
                   <classMoniker Id="c8cbd58c-edff-4767-a020-31ed2b8b512e" LastKnownName="Spel" />
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
-                      <memberEnd Id="48b020ad-280b-455c-9285-a164a263cc97" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                      <memberEnd Id="48b020ad-280b-455c-9285-a164a263cc97" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <lowerValueInternal>
                           <literalString Id="38098bd9-4f5b-4469-a18b-13465f1fb3b7" name="Lower" value="1">
                             <elementDefinition Id="f9bdf8c4-498a-4a67-9329-f01f35ae7862" />
@@ -1220,6 +1220,11 @@
                 <packageHasNamedElement>
                   <class Id="c20c9f8c-fc16-4e6a-87dc-e5f19e8bf907" name="GewonnenException" isAbstract="false" isLeaf="false" isActiveClass="false">
                     <elementDefinition Id="96ccd1df-cc7f-4119-b8de-44b7d372d48a" />
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="12d05cf1-e49b-423e-9b0c-d85e50ac9802" name="BarricadeVerplaatsException" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="3f47b291-9ac4-4607-80e9-6ae8f8a305ee" />
                   </class>
                 </packageHasNamedElement>
               </packagedElements>

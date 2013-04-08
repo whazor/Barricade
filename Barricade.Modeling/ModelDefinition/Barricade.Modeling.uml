@@ -1,19 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="3e5f4f86-0a24-4669-b7de-0fb16dd60e3e"
   name="Barricade.Modeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
-    <comment
-      Id="171a8359-0412-486d-8730-18843868017c">
-      <body>Dit klassediagram gaat meer over het tekenen, wat hier ontbreekt is de koppeling tussen andere lagen.</body>
-      <annotatedElements>
-        <packageMoniker
-          Id="efa4655e-a1f5-4083-aff2-700788f83342"
-          LastKnownName="Presentation"
-          LastKnownLocation="Package_2320.uml" />
-      </annotatedElements>
-    </comment>
     <comment
       Id="a2df80ee-848d-48b4-9f1e-e08eeeb70a7e">
       <body>Nieuwe beurt</body>
@@ -4276,22 +4266,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="fdbdc86e-403c-40da-b624-f4af8c073b31"
-            name="MessageOccurrenceSpecification4">
-            <covered>
-              <lifelineMoniker
-                Id="af7e69aa-026c-4114-8a4d-43ef73b14413"
-                LastKnownName="huidigeSpeler : Speler"
-                LastKnownLocation="Barricade.Modeling.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="e974fa26-439a-404d-b446-fcd259c51077"
             name="MessageOccurrenceSpecification5">
             <covered>
               <lifelineMoniker
                 Id="83ba6ae1-85b1-4ac7-9471-45b4bb2a02e9"
                 LastKnownName="spel : Spel"
+                LastKnownLocation="Barricade.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="fdbdc86e-403c-40da-b624-f4af8c073b31"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="af7e69aa-026c-4114-8a4d-43ef73b14413"
+                LastKnownName="huidigeSpeler : Speler"
                 LastKnownLocation="Barricade.Modeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4714,7 +4704,7 @@
           <operationMoniker
             Id="66f34eaf-0c89-4795-b308-a142b98c3efa"
             LastKnownName="Highlight"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownLocation="Package_2320.uml" />
         </operation>
       </sendOperationEvent>
     </packageHasNamedElement>
@@ -4725,7 +4715,7 @@
           <operationMoniker
             Id="66f34eaf-0c89-4795-b308-a142b98c3efa"
             LastKnownName="Highlight"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownLocation="Package_2320.uml" />
         </operation>
       </receiveOperationEvent>
     </packageHasNamedElement>
@@ -4757,7 +4747,7 @@
           <operationMoniker
             Id="66f34eaf-0c89-4795-b308-a142b98c3efa"
             LastKnownName="Highlight"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownLocation="Package_2320.uml" />
         </operation>
       </sendOperationEvent>
     </packageHasNamedElement>
@@ -4768,7 +4758,7 @@
           <operationMoniker
             Id="66f34eaf-0c89-4795-b308-a142b98c3efa"
             LastKnownName="Highlight"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownLocation="Package_2320.uml" />
         </operation>
       </receiveOperationEvent>
     </packageHasNamedElement>
@@ -4840,8 +4830,8 @@
         <operation>
           <operationMoniker
             Id="f7dd01c2-819d-4286-b449-f11c096f2412"
-            LastKnownName="Highlight"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownName="Highlight velden"
+            LastKnownLocation="Package_2320.uml" />
         </operation>
       </sendOperationEvent>
     </packageHasNamedElement>
@@ -4851,8 +4841,8 @@
         <operation>
           <operationMoniker
             Id="f7dd01c2-819d-4286-b449-f11c096f2412"
-            LastKnownName="Highlight"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownName="Highlight velden"
+            LastKnownLocation="Package_2320.uml" />
         </operation>
       </receiveOperationEvent>
     </packageHasNamedElement>
@@ -4873,7 +4863,7 @@
           <operationMoniker
             Id="66f34eaf-0c89-4795-b308-a142b98c3efa"
             LastKnownName="Highlight"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownLocation="Package_2320.uml" />
         </operation>
       </sendOperationEvent>
     </packageHasNamedElement>
@@ -4884,7 +4874,7 @@
           <operationMoniker
             Id="66f34eaf-0c89-4795-b308-a142b98c3efa"
             LastKnownName="Highlight"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownLocation="Package_2320.uml" />
         </operation>
       </receiveOperationEvent>
     </packageHasNamedElement>
@@ -4904,8 +4894,8 @@
         <operation>
           <operationMoniker
             Id="f7dd01c2-819d-4286-b449-f11c096f2412"
-            LastKnownName="Highlight"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownName="Highlight velden"
+            LastKnownLocation="Package_2320.uml" />
         </operation>
       </sendOperationEvent>
     </packageHasNamedElement>
@@ -4915,8 +4905,8 @@
         <operation>
           <operationMoniker
             Id="f7dd01c2-819d-4286-b449-f11c096f2412"
-            LastKnownName="Highlight"
-            LastKnownLocation="Barricade.Modeling.uml" />
+            LastKnownName="Highlight velden"
+            LastKnownLocation="Package_2320.uml" />
         </operation>
       </receiveOperationEvent>
     </packageHasNamedElement>
@@ -5025,6 +5015,18 @@
             LastKnownLocation="Package_1216.uml" />
         </operation>
       </receiveOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ccd57081-5280-4293-8399-054516907c18"
+        LastKnownName="Barricade"
+        LastKnownLocation="Package_2003.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="41be2869-3ae2-4c29-9ab4-bde73fad54d6"
+        LastKnownName="System"
+        LastKnownLocation="Package2_2003.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
