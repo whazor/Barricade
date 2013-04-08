@@ -5,10 +5,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using Barricade.Logic;
 using Barricade.Logic.Velden;
 using Barricade.Presentation.Statisch;
-using Bos = Barricade.Logic.Velden.Bos;
 
 namespace Barricade.Presentation
 {
@@ -33,108 +31,97 @@ namespace Barricade.Presentation
 
             grid.Width = gameWidth;
             grid.Height = gameHeight;
-            for (var i = 0; i < width; i++)
-            {
-                var size = new GridLength(nodeSize, GridUnitType.Pixel);
-                var nodeColumnDefinition = new ColumnDefinition { Width = size };
-                var pathDefinition = new ColumnDefinition
-                {
-                    Width = new GridLength(pathSize, GridUnitType.Pixel)
-                };
-                grid.ColumnDefinitions.Add(nodeColumnDefinition);
-                if (i < width - 1)
-                    grid.ColumnDefinitions.Add(pathDefinition);
-            }
-            for (var i = 0; i < height - 1; i++)
-            {
-                var size = new GridLength(nodeSize, GridUnitType.Pixel);
-                var nodeRowDefinition = new RowDefinition { Height = size };
-                var pathDefinition = new RowDefinition
-                {
-                    Height = new GridLength(pathSize, GridUnitType.Pixel)
-                };
-                grid.RowDefinitions.Add(nodeRowDefinition);
-                if (i < height)
-                    grid.RowDefinitions.Add(pathDefinition);
-            }
 
-            var startDefinition = new RowDefinition
-            {
-                Height = new GridLength(200 - pathSize, GridUnitType.Pixel)
-            };
-            grid.RowDefinitions.Add(startDefinition);
+            PlaatsVakjes(kaart, height, width, nodeSize, pathSize);
+        }
 
+        private void PlaatsVakjes(IVeld[,] kaart, int height, int width, int nodeSize, int pathSize)
+        {
             var level = kaart;
             for (var i = 0; i < height; i++)
             {
+                int first = width;
+                int last = 0;
+                var isDorp = false;
                 for (var j = 0; j < width; j++)
                 {
                     var veld = level[i, j];
                     if (level[i, j] == null) continue;
+                    if (level[i, j].IsDorp) isDorp = true;
+
+                    first = Math.Min(j, first);
+                    last = Math.Max(j, last);
 
                     UserControl vakje = null;
+                    var vakjeWidth = nodeSize;
+                    var vakjeHeight = nodeSize;
 
-                    if (veld is Bos)
+                    if (veld is Logic.Velden.Bos)
                     {
                         vakje = new Statisch.Bos(level[i, j]);
-                        Grid.SetRow(vakje, i * 2);
-                        Grid.SetColumn(vakje, j * 2 - 2);
-                        Grid.SetColumnSpan(vakje, 5);
+                        vakjeWidth *= 2;
                     }
                     else if (veld is Startveld)
                     {
-                        vakje = new Statisch.StartVeld(veld as Startveld);
-                        Grid.SetRow(vakje, i * 2 + 2);
-                        Grid.SetRowSpan(vakje, 1);
-                        Grid.SetColumn(vakje, j * 2 - 2);
-                        Grid.SetColumnSpan(vakje, 5);
+                        vakje = new StartVeld(veld as Startveld);
+                        vakjeWidth = 150;
+                        vakjeHeight = 150;
                     }
                     else if (veld is Finishveld)
                     {
-                        vakje = new Statisch.FinishVeld(veld);
-                        Grid.SetRow(vakje, i * 2);
-                        Grid.SetColumn(vakje, j * 2);
+                        vakje = new FinishVeld(veld);
                     }
                     else if (veld is Rustveld)
                     {
-                        vakje = new Statisch.LoopVeld(veld)
-                        {
-                            IsRustVeld = true
-                        };
-                        Grid.SetRow(vakje, i * 2);
-                        Grid.SetColumn(vakje, j * 2);
+                        vakje = new LoopVeld(veld) { IsRustVeld = true };
                     }
                     else if (veld is Veld)
                     {
-                        vakje = new Statisch.LoopVeld(veld)
-                        {
-                            IsBarricadeVeld = (veld as Veld).StandaardBarricade
-                        };
-                        Grid.SetRow(vakje, i * 2);
-                        Grid.SetColumn(vakje, j * 2);
+                        vakje = new LoopVeld(veld) { IsBarricadeVeld = (veld as Veld).StandaardBarricade };
                     }
 
                     if (vakje != null)
                     {
-                        grid.Children.Add(vakje);
-                        vakje.MouseUp += (sender, args) =>
-                            {
-                                if (VeldKlik != null) VeldKlik(sender, args);
-                            };
+                        vakje.Width = vakjeWidth;
+                        vakje.Height = vakjeHeight;
+                        vakje.Margin = new Thickness(
+                            nodeSize * j + pathSize * (j-1) + (nodeSize - vakjeWidth) / 2,
+                            nodeSize * i + pathSize * i,
+                            0, 0);
+                        vakje.HorizontalAlignment = HorizontalAlignment.Left;
+                        vakje.VerticalAlignment = VerticalAlignment.Top;
+                        _grid.Children.Add(vakje);
+                        vakje.MouseUp += (sender, args) => { if (VeldKlik != null) VeldKlik(sender, args); };
                         Velden[veld] = vakje as IElement;
                     }
-                    GenereerLijntjes(j, width, level, i, height);
+                    GenereerLijntjes(j, width, level, i, height, nodeSize, pathSize);
                 }
+                if (isDorp)
+                {
+                    var el = new Border
+                        {
+                            CornerRadius = new CornerRadius(nodeSize/2,nodeSize/2, nodeSize/2, nodeSize/2),
+                            HorizontalAlignment = HorizontalAlignment.Left,
+                            VerticalAlignment = VerticalAlignment.Top,
+                            Background = new SolidColorBrush(Color.FromArgb(130, 255, 255, 255)),
+                            Width = (nodeSize + pathSize)*(last - first + 1) - pathSize,
+                            Height = nodeSize,
+                            Margin = new Thickness(nodeSize * first + pathSize * (first - 1), (nodeSize + pathSize) * i, 0, 0)
+                        };
+                    Panel.SetZIndex(el, -2);
+                    _grid.Children.Add(el);
+                }
+
             }
         }
 
-        private void GenereerLijntjes(int j, int width, IVeld[,] level, int i, int height)
+        private void GenereerLijntjes(int j, int width, IVeld[,] level, int i, int height, int nodeSize, int pathSize)
         {
             for (var k = j + 1; k < width; k++)
             {
                 if (level[i, k] == null)
                 {
-                    break;
+                    continue;
                 }
                 if (level[i, j].Buren.Contains(level[i, k]))
                 {
@@ -144,19 +131,21 @@ namespace Barricade.Presentation
                             {
                                 Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0)),
                                 Height = 5,
-                                Margin = new Thickness(10, 0, 10, 0)
+                                Width = pathSize * (k - j) + nodeSize * (k - j - 1),
+                                HorizontalAlignment = HorizontalAlignment.Left,
+                                VerticalAlignment = VerticalAlignment.Top
                             };
-                        Grid.SetRow(line, i*2);
-                        Grid.SetColumn(line, j*2 + l - 1);
-                        Grid.SetColumnSpan(line, 3);
+                        line.Margin = new Thickness(
+                            nodeSize * (j + 1) + pathSize * (j - 1),
+                            nodeSize * i + pathSize * (i) + nodeSize / 2 - line.Height / 2,
+                            0, 0);
+
                         Panel.SetZIndex(line, -1);
                         _grid.Children.Add(line);
                     }
                 }
-                else
-                {
-                    break;    
-                }
+               
+                    break;  
             }
             for (var k = i + 1; k < height; k++)
             {
@@ -172,15 +161,15 @@ namespace Barricade.Presentation
                         {
                             Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0)),
                             Width = 5,
-                            Margin = new Thickness(0, 10, 0, 10)
+                            Height = pathSize * (k - i) + nodeSize * (k - i - 1),
+                            //Margin = new Thickness(0, 10, 0, 10),
+                            HorizontalAlignment = HorizontalAlignment.Left,
+                            VerticalAlignment = VerticalAlignment.Top
                         };
-                        Grid.SetRow(line, i * 2 + l - 1);
-                        Grid.SetRowSpan(line, 3);
-                        if (k == height - 1)
-                        {
-                            line.Margin = new Thickness(0, 10, 0, 130);
-                        }
-                        Grid.SetColumn(line, j * 2);
+                        line.Margin = new Thickness(
+                            nodeSize * (j) + pathSize * (j - 1) - line.Width / 2 + nodeSize / 2,
+                            nodeSize * (i + 1) + pathSize * (i),
+                            0, 0);
                         Panel.SetZIndex(line, -1);
                         _grid.Children.Add(line);
                     }
