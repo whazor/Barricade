@@ -7,7 +7,7 @@ Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Barricade.Modeling", "Barri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barricade.Testing", "Barricade.Testing\Barricade.Testing.csproj", "{7C677416-127B-49C7-A729-219FF956E8DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barricade.Console", "Barricade.Console\Barricade.Console.csproj", "{B304DED3-B5D6-4AB3-937D-2F09C4379FF0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barricade.Shell", "Barricade.Console\Barricade.Shell.csproj", "{B304DED3-B5D6-4AB3-937D-2F09C4379FF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

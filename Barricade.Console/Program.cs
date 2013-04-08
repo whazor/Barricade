@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Barricade.Data;
+using Barricade.Logic;
+using Barricade.Logic.Velden;
+using Barricade.Process;
+using Spel = Barricade.Process.Spel;
 
-namespace Barricade.Text
+namespace Barricade.Shell
 {
-    class Program
+    class Program : IView, ISpeler
     {
         static void Main(string[] args)
         {
@@ -40,8 +43,52 @@ namespace Barricade.Text
                 }
             );
 
-            var saver = new Saver(loader.Kaart);
+            Console.SetWindowSize(100, 50);
+            var dictionary = new Dictionary<string, Loader>();
+            dictionary["Kort"] = loader;
+            new Program(dictionary);
+        }
 
+        public Program(IReadOnlyDictionary<string, Loader> levels)
+        {
+            Logo();
+            var result = KiesLevel(levels);
+            Console.Clear();
+            var drawer = new Drawer(result);
+
+            var thread = new Thread(drawer.Start);
+            thread.Start();
+            while (!thread.IsAlive)
+            {
+            }
+
+            var spel = new Spel(result.Spel, this);
+            spel.Start();
+            Console.ReadLine();
+        }
+
+        private static Loader KiesLevel(IReadOnlyDictionary<string, Loader> levels)
+        {
+            Console.WriteLine(@"Welk level wilt u spelen?");
+            Console.WriteLine("");
+            var i = 1;
+            var mapping = new Dictionary<string, string>();
+            foreach (var game in levels)
+            {
+                Console.WriteLine(@"- {0} (toets {1})", game.Key, i);
+                mapping[i + ""] = game.Key;
+                i++;
+            }
+            var keuze = "?";
+            while (!mapping.ContainsKey(keuze))
+            {
+                keuze = Console.ReadKey().KeyChar + "";
+            }
+            return levels[mapping[keuze]];
+        }
+
+        private static void Logo()
+        {
             Console.WriteLine("");
             Console.WriteLine(@"  .---.           .--.        .--.                             .     ");
             Console.WriteLine(@"      |           |   :       |   )              o             |     ");
@@ -49,17 +96,66 @@ namespace Barricade.Text
             Console.WriteLine(@"      ;|  |(.-'   |   ;(.-'   |   )(   ) |   |   | (  (   )(   |(.-' ");
             Console.WriteLine(@"  `--' `--`-`--'  '--'  `--'  '--'  `-'`-'   ' -' `-`-'`-'`-`-'`-`--'");
             Console.WriteLine("");
-            Console.WriteLine(@"Welk level wilt u spelen?");
-            Console.WriteLine("");
-            Console.WriteLine(@"- Lang (toets 1)");
-            Console.WriteLine(@"- Kort (toets 2)");
-            //TODO: verschillende levels inladen
+        }
 
-            var uitkomst = Console.ReadKey();
-            Console.Clear();
-            Console.WriteLine(saver.Output(true));
-            Console.ReadLine();
-//            loader.ToArray();
+        public void Highlight(IEnumerable<Pion> pionnen, bool status)
+        {
+            int i = 0;
+//            Console.Write("Kies uit pion:");
+            foreach (var pion in pionnen)
+            {
+//                Console.Write(" " + (++i));
+            }
+        }
+
+        public void Highlight(IEnumerable<IVeld> mogelijk, bool status)
+        {
+//            Console.Write("Kies veld.");
+        }
+
+        public void Klem(Logic.Barricade barricade, bool status)
+        {
+//            Console.Write("Kies barricade.");
+        }
+
+        public async Task Wacht(int wachttijdBot)
+        {
+            Thread.Sleep(1000);
+        }
+
+        public Task<IVeld> VerplaatsBarricade(Func<IVeld, bool> magBarricade)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Pion> KiesPion(ICollection<Pion> pionnen)
+        {
+            int pion = -1;
+            while (pion < 0 || pion >= pionnen.Count)
+            {
+                int.TryParse(Console.ReadKey().KeyChar + "", out pion);
+            }
+            int i = 0;
+            foreach (var current in pionnen)
+            {
+                if (i == pion)
+                    return current;
+                i++;
+            }
+            Console.WriteLine();
+            return null;
+        }
+
+        public Task<IVeld> VerplaatsPion(Pion gekozen, ICollection<IVeld> mogelijk)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Gedobbeld { get; set; }
+        public Speler AanDeBeurt { get; set; }
+        public Task DobbelTask()
+        {
+            throw new NotImplementedException();
         }
     }
 }

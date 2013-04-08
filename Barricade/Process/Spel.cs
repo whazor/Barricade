@@ -7,6 +7,7 @@ using Barricade.Bot;
 using Barricade.Logic;
 using System.Linq;
 using Barricade.Logic.Exceptions;
+using Barricade.Logic.Velden;
 using Barricade.Presentation;
 using System.Collections;
 
@@ -16,29 +17,53 @@ namespace Barricade.Process
 	{
 	    private const int _wachttijdBot = 2000;
 	    private readonly Logic.Spel _logicSpel;
-	    private readonly Game _game;
+        private readonly IView _game;
 	    private int _beurt;
 	    private readonly Dictionary<Logic.Speler, ISpeler> spelers;
 
-	    public Spel(Logic.Spel logicSpel, Game game)
-	    {
-	        _logicSpel = logicSpel;
+
+        public Spel(Logic.Spel logicSpel, IView game)
+        {
+            _logicSpel = logicSpel;
             _random = _logicSpel.Random;
-	        _game = game;
+            _game = game;
             spelers = new Dictionary<Speler, ISpeler>();
-	        int i = 1;
-	        foreach (var speler in logicSpel.Spelers)
-	        {
-                if(i % 2 == 0)
-	                spelers.Add(speler, new Rusher(speler, logicSpel));
+            int i = 1;
+            foreach (var speler in logicSpel.Spelers)
+            {
+                if (i % 2 == 0)
+                    spelers.Add(speler, new Rusher(speler, logicSpel));
                 else
                 {
                     spelers.Add(speler, new Vriendelijk(speler, logicSpel));
                 }
-	            i++;
-	        }
-	        spelers[spelers.First().Key] = _game;
+                i++;
+            }
+
+        }
+
+        public Spel(Logic.Spel logicSpel, IView game, ISpeler viewSpeler)
+        {
+            _logicSpel = logicSpel;
+            _random = _logicSpel.Random;
+            _game = game;
+            spelers = new Dictionary<Speler, ISpeler>();
+            int i = 1;
+            foreach (var speler in logicSpel.Spelers)
+            {
+                if (i % 2 == 0)
+                    spelers.Add(speler, new Rusher(speler, logicSpel));
+                else
+                {
+                    spelers.Add(speler, new Vriendelijk(speler, logicSpel));
+                }
+                i++;
+            }
+            if (viewSpeler != null)
+                spelers[spelers.First().Key] = viewSpeler;
 	    }
+
+        
 
 	    public virtual async void Start()
         {
@@ -58,8 +83,9 @@ namespace Barricade.Process
         }
 
         readonly Random _random;
-        
-        /// <summary>
+
+
+	    /// <summary>
         /// Doorloop alle stappen van een beurt
         /// </summary>
         private async Task VolgendeBeurt(Speler speler, ISpeler controller)
@@ -109,6 +135,8 @@ namespace Barricade.Process
             _game.Highlight(new[] { gekozen }, false);
 
             // Het spel de zet laten zetten
+            gekozen.Oppakken();
+
             while(true)
             {
                 Logic.Barricade barricade;

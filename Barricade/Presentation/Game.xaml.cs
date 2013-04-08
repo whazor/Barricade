@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using Barricade.Data;
 using Barricade.Logic;
+using Barricade.Logic.Velden;
 using Barricade.Presentation.Statisch;
 using Barricade.Process;
 using Barricade.Utilities;
@@ -22,7 +23,7 @@ namespace Barricade.Presentation
     /// <summary>
     /// Interaction logic for Game.xaml
     /// </summary>
-    public partial class Game : Window, ISpeler
+    public partial class Game : Window, ISpeler, IView
     {
         public static MainWindow mainWindow;
 
@@ -74,7 +75,7 @@ namespace Barricade.Presentation
 
             _loader = loader;
             _logicSpel = loader.Spel;
-            _processSpel = new Process.Spel(_logicSpel, this);
+            _processSpel = new Process.Spel(_logicSpel, this, this);
 
             _statischeLaag = new StatischeLaag(Spelbord, loader.Kaart);
 
@@ -138,7 +139,7 @@ namespace Barricade.Presentation
         /// </summary>
         /// <param name="velden">de desbetreffende velden</param>
         /// <param name="status">aan of uit</param>
-        public void Highlight(IEnumerable<Logic.IVeld> velden, bool status)
+        public void Highlight(IEnumerable<IVeld> velden, bool status)
         {
             _statischeLaag.Highlight(velden, status);
         }
