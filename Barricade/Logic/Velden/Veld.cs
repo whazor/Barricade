@@ -22,7 +22,7 @@ namespace Barricade.Logic.Velden
 
 	    public override bool MagBarricade
 	    {
-            get { return !IsBeschermd && Barricade == null; }
+            get { return !IsBeschermd && Barricade == null && Pionnen.Count == 0; }
 	    }
 
         public override bool MagPionErlangs { get { return Barricade == null; } }
