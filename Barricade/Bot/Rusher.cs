@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Barricade.Logic;
+using Barricade.Logic.Velden;
 using Barricade.Utilities;
 
 namespace Barricade.Bot
@@ -25,7 +26,7 @@ namespace Barricade.Bot
                 Spel.Spelers.Where(speler => speler != Speler)
                      .OrderBy(speler => speler.Pionnen.OrderBy(pion => pion.IVeld.Score).First().IVeld.Score)
                      .ToList();
-            concurrentie.Shuffle(_random);
+            //concurrentie.Shuffle(_random);
 
             var following = 1;
             while (true)

@@ -1,4 +1,6 @@
-﻿namespace Barricade.Logic
+﻿using Barricade.Logic.Velden;
+
+namespace Barricade.Logic
 {
 	using Process;
 	using System;
@@ -11,7 +13,6 @@
         public delegate void PositieWijzigingEvent(Pion pion, IVeld nieuwVeld);
         public event PositieWijzigingEvent PositieWijziging;
 	    public Dictionary<IVeld, List<IVeld>> Paden { get; private set; }
-	    private int aantalStappen;
 
 	    public Pion(Speler speler)
 	    {
@@ -55,8 +56,9 @@
                 if (stappen >= 1)
                 {
                     // Kijk of er een barricade opstaat
-                    if (veld is Veld && (veld as Veld).Barricade != null) continue;
+                    if(!veld.MagPionErlangs) continue;
 
+                    // Zoek verdere zetten op
                     var nieuw = MogelijkeZetten(begin, veld, stappen);
                     foreach (var lijst in nieuw)
                     {
@@ -66,33 +68,35 @@
                 }
                 else
                 {
-                    // mag niet terug naar startveld
-                    if (veld is Startveld) continue;
-                    // bezette rustvelden worden oververslagen
-                    if (veld is Rustveld && veld.Pionnen.Count > 0) continue;
-                    // wanneer het veld geen bos is, maar wel een speler opstaat
-                    if (!(veld is Bos) && veld.Pionnen.Count > 0 && veld.Pionnen.First().Speler == Speler) continue;
-
-                    lijsten.Add(new List<IVeld> {veld});
+                    if (veld.MagPion(this))
+                    {
+                        lijsten.Add(new List<IVeld> { veld });
+                    }
                 }
             }
             // Filter de lege lijsten eruit
             return lijsten.Where(lijst => lijst.Any()).ToList();
         }
 
+        public virtual void Oppakken()
+        {
+            if (IVeld == null) return;
+            IVeld.Pionnen.Remove(this);
+            IVeld = null;
+        }
+
 	    public virtual bool Verplaats(IVeld bestemming)
 	    {
-	        var vorig = IVeld;
+            Oppakken();
             if (bestemming.Plaats(this))
             {
-                vorig.Pionnen.Remove(this);
                 IVeld = bestemming;
+                if (PositieWijziging != null) 
+                    PositieWijziging(this, bestemming);
 
-                if (PositieWijziging != null) PositieWijziging(this, bestemming);
                 Paden = null;
                 return true;
             }
-
 	        return false;
 	    }
 	}

@@ -4,16 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Barricade.Logic;
+using Barricade.Logic.Velden;
 using Barricade.Utilities;
 
 namespace Barricade.Bot
 {
     class Vriendelijk : BaseBot
     {
+        private readonly Speler _speler;
         private readonly Random _random;
 
         public Vriendelijk(Speler speler, Spel spel) : base(speler, spel)
         {
+            _speler = speler;
             _random = spel.Random;
         }
 
@@ -21,6 +24,7 @@ namespace Barricade.Bot
         {
             var concurrentie =
                 Spel.Spelers
+                     .Where(speler => speler != _speler)
                      .OrderBy(speler => speler.Pionnen.OrderBy(pion => pion.IVeld.Score).First().IVeld.Score)
                      .ToList();
             concurrentie.Shuffle(_random);

@@ -2,6 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Barricade.Logic;
+using Barricade.Logic.Velden;
 
 namespace Barricade.Presentation.Statisch
 {

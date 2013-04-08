@@ -62,6 +62,13 @@
     <Compile Include="Bot\Willekeurig.cs" />
     <Compile Include="Bot\Rusher.cs" />
     <Compile Include="Bot\Vriendelijk.cs" />
+    <Compile Include="Logic\Velden\Bos.cs" />
+    <Compile Include="Logic\Velden\Finishveld.cs" />
+    <Compile Include="Logic\Velden\IVeld.cs" />
+    <Compile Include="Logic\Velden\Rustveld.cs" />
+    <Compile Include="Logic\Velden\Startveld.cs" />
+    <Compile Include="Logic\Velden\Veld.cs" />
+    <Compile Include="Logic\Velden\VeldBase.cs" />
     <Compile Include="Process\ISpeler.cs" />
     <Compile Include="Process\IView.cs" />
     <Compile Include="Utilities\LinqExtensions.cs" />
@@ -77,18 +84,11 @@
     <Compile Include="Data\Loader.cs" />
     <Compile Include="Data\Saver.cs" />
     <Compile Include="Logic\Barricade.cs" />
-    <Compile Include="Logic\Bos.cs" />
     <Compile Include="Logic\Exceptions\BarricadeVerplaatsException.cs" />
     <Compile Include="Logic\Exceptions\GewonnenException.cs" />
-    <Compile Include="Logic\Finishveld.cs" />
-    <Compile Include="Logic\IVeld.cs" />
     <Compile Include="Logic\Pion.cs" />
-    <Compile Include="Logic\Rustveld.cs" />
     <Compile Include="Logic\Spel.cs" />
     <Compile Include="Logic\Speler.cs" />
-    <Compile Include="Logic\Startveld.cs" />
-    <Compile Include="Logic\Veld.cs" />
-    <Compile Include="Logic\VeldBase.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Barricade.Logic;
+using Barricade.Logic.Velden;
 
 namespace Barricade.Presentation.Statisch
 {
@@ -16,7 +17,7 @@ namespace Barricade.Presentation.Statisch
         private readonly Dictionary<Logic.Pion, Ellipse> _ellipses = new Dictionary<Logic.Pion, Ellipse>(); 
 //        private readonly Ellipse[] _ellipses;
 
-        public StartVeld(Logic.Startveld veld)
+        public StartVeld(Startveld veld)
         {
             InitializeComponent();
             Veld = veld;

@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Barricade.Logic;
+using Barricade.Logic.Velden;
 
 namespace Barricade.Presentation.Statisch
 {

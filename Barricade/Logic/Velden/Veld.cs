@@ -25,7 +25,7 @@ namespace Barricade.Logic.Velden
             get { return !IsBeschermd && Barricade == null; }
 	    }
 
-        public override bool MagPionErlangs { get { return Barricade != null; } }
+        public override bool MagPionErlangs { get { return Barricade == null; } }
 
 	    public override bool Plaats(Pion pion)
         {
@@ -39,7 +39,6 @@ namespace Barricade.Logic.Velden
                     var nieuwVeld = IsDorp ? (IVeld) pion.Speler.Spel.Bos : vorig.Speler.Startveld;
                     vorig.Verplaats(nieuwVeld);
                 }
-                 
                 
                 Pionnen.Clear();
             }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Barricade.Logic;
+using Barricade.Logic.Velden;
 
 namespace Barricade.Process
 {
@@ -10,6 +11,7 @@ namespace Barricade.Process
         void Highlight(IEnumerable<IVeld> mogelijk, bool status);
         void Klem(Logic.Barricade barricade, bool status);
 
-        Task Wait(int millisec);
+        Task Wacht(int wachttijdBot);
+        int Gedobbeld { get; set; }
     }
 }

@@ -6,6 +6,7 @@
 //------------------------------------------------------------------------------
 
 using System.Windows.Media;
+using Barricade.Logic.Velden;
 
 namespace Barricade.Logic
 {

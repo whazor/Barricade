@@ -1,4 +1,6 @@
-﻿namespace Barricade.Logic
+﻿using Barricade.Logic.Velden;
+
+namespace Barricade.Logic
 {
     public class Barricade
 	{

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using Barricade.Logic;
+using Barricade.Logic.Velden;
 
 namespace Barricade.Data
 {
@@ -23,23 +24,6 @@ namespace Barricade.Data
 
             var uitzonderingCount = 0;
             var uitzondering = "";
-
-//            for (var i = 0; i < height; i++)
-//            {
-//                for (var j = 0; j < width; j++)
-//                {
-//                    if (_points[i, j] != null)
-//                    {
-//                        Console.Write(_points[i, j].Buren.Count);
-//                    }
-//                    else
-//                    {
-//                        Console.Write(" ");
-//                    }
-//                    Console.Write(" ");
-//                }
-//                Console.Write("\r\n");
-//            }
 
             for (var i = 0; i < height; i++)
             {

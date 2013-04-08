@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using Barricade.Logic;
+using Barricade.Logic.Velden;
 using Barricade.Presentation.Statisch;
 
 namespace Barricade.Presentation

@@ -6,8 +6,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Barricade.Logic;
+using Barricade.Logic.Velden;
 using Barricade.Presentation.Statisch;
-using Bos = Barricade.Logic.Bos;
+using Bos = Barricade.Logic.Velden.Bos;
 
 namespace Barricade.Presentation
 {
@@ -73,28 +74,28 @@ namespace Barricade.Presentation
 
                     UserControl vakje = null;
 
-                    if (veld is Logic.Bos)
+                    if (veld is Bos)
                     {
                         vakje = new Statisch.Bos(level[i, j]);
                         Grid.SetRow(vakje, i * 2);
                         Grid.SetColumn(vakje, j * 2 - 2);
                         Grid.SetColumnSpan(vakje, 5);
                     }
-                    else if (veld is Logic.Startveld)
+                    else if (veld is Startveld)
                     {
-                        vakje = new Statisch.StartVeld(veld as Logic.Startveld);
+                        vakje = new Statisch.StartVeld(veld as Startveld);
                         Grid.SetRow(vakje, i * 2 + 2);
                         Grid.SetRowSpan(vakje, 1);
                         Grid.SetColumn(vakje, j * 2 - 2);
                         Grid.SetColumnSpan(vakje, 5);
                     }
-                    else if (veld is Logic.Finishveld)
+                    else if (veld is Finishveld)
                     {
                         vakje = new Statisch.FinishVeld(veld);
                         Grid.SetRow(vakje, i * 2);
                         Grid.SetColumn(vakje, j * 2);
                     }
-                    else if (veld is Logic.Rustveld)
+                    else if (veld is Rustveld)
                     {
                         vakje = new Statisch.LoopVeld(veld)
                         {
@@ -103,11 +104,11 @@ namespace Barricade.Presentation
                         Grid.SetRow(vakje, i * 2);
                         Grid.SetColumn(vakje, j * 2);
                     }
-                    else if (veld is Logic.Veld)
+                    else if (veld is Veld)
                     {
                         vakje = new Statisch.LoopVeld(veld)
                         {
-                            IsBarricadeVeld = (veld as Logic.Veld).StandaardBarricade
+                            IsBarricadeVeld = (veld as Veld).StandaardBarricade
                         };
                         Grid.SetRow(vakje, i * 2);
                         Grid.SetColumn(vakje, j * 2);
@@ -127,7 +128,6 @@ namespace Barricade.Presentation
             }
         }
 
-
         private void GenereerLijntjes(int j, int width, IVeld[,] level, int i, int height)
         {
             for (var k = j + 1; k < width; k++)
@@ -138,22 +138,25 @@ namespace Barricade.Presentation
                 }
                 if (level[i, j].Buren.Contains(level[i, k]))
                 {
-                    for (var l = 1; l < (k - j - 1) * 2 + 2; l++)
+                    for (var l = 1; l < (k - j - 1)*2 + 2; l++)
                     {
                         var line = new Rectangle
-                        {
-                            Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0)),
-                            Height = 5,
-                            Margin = new Thickness(10, 0, 10, 0)
-                        };
-                        Grid.SetRow(line, i * 2);
-                        Grid.SetColumn(line, j * 2 + l - 1);
+                            {
+                                Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0)),
+                                Height = 5,
+                                Margin = new Thickness(10, 0, 10, 0)
+                            };
+                        Grid.SetRow(line, i*2);
+                        Grid.SetColumn(line, j*2 + l - 1);
                         Grid.SetColumnSpan(line, 3);
                         Panel.SetZIndex(line, -1);
                         _grid.Children.Add(line);
                     }
                 }
-                break;
+                else
+                {
+                    break;    
+                }
             }
             for (var k = i + 1; k < height; k++)
             {
