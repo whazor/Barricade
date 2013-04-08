@@ -41,7 +41,7 @@ namespace Barricade.Presentation
         // Dit is voor de async methodes
         private readonly Waiter<Pion> _pionCompletion = new Waiter<Pion>();
         private readonly Waiter<IVeld> _veldCompletion = new Waiter<IVeld>();
-        private Waiter wachter = new Waiter();
+        private Waiter<int> wachter = new Waiter<int>();
         private int _gedobbeld;
         private Loader _loader;
 
@@ -225,9 +225,9 @@ namespace Barricade.Presentation
             }
         }
 
-        public async Task DobbelTask()
+        public async Task<int> DobbelTask()
         {
-            await wachter.Wait();
+            return await wachter.Wait();;
         }
 
         public async Task Wacht(int p)
@@ -244,7 +244,7 @@ namespace Barricade.Presentation
 
         private void DobbelKnop_Click(object sender, RoutedEventArgs e)
         {
-            wachter.Return();
+            wachter.Return(0);
         }
 
         private void AfsluitKnop_Click(object sender, RoutedEventArgs e)
