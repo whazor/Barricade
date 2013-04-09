@@ -135,12 +135,12 @@
       <SubType>Content</SubType>
       <DependentUpon>Presentatie\Presentation.classdiagram</DependentUpon>
     </Content>
-    <Content Include="Proces\GameLoop.sequencediagram">
+    <Content Include="Proces\AanZet.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Proces\GameLoop.sequencediagram.layout">
+    <Content Include="Proces\AanZet.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Proces\GameLoop.sequencediagram</DependentUpon>
+      <DependentUpon>Proces\AanZet.sequencediagram</DependentUpon>
     </Content>
     <Content Include="Proces\Process.classdiagram">
       <SubType>Content</SubType>
