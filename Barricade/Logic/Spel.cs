@@ -9,7 +9,8 @@ namespace Barricade.Logic
 	using System.Text;
 
 	public class Spel
-	{
+    {
+        #region properties
         public List<Speler> Spelers
         {
             get; private set;
@@ -22,14 +23,18 @@ namespace Barricade.Logic
         public Bos Bos { get; set; }
 
         public CountedRandom Random { get; private set; }
+        #endregion
 
-	    public Spel(int seed, int counter)
+        #region constructor
+        public Spel(int seed, int counter)
         {
             Spelers = new List<Speler>();
             Finishvelden = new List<Finishveld>();
             Random = new CountedRandom(seed, counter);
         }
+        #endregion constructor
 
+        #region method
         public void BerekenScores()
         {
             foreach (IVeld vanaf in Finishvelden)
@@ -54,6 +59,7 @@ namespace Barricade.Logic
                 GaVeldAf(veld, score + 1);
             }
         }
-	}
+        #endregion
+    }
 }
 

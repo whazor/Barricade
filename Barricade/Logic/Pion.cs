@@ -9,28 +9,41 @@ namespace Barricade.Logic
 	using System.Text;
 
 	public class Pion
-	{
+    {
+        #region events
         public delegate void PositieWijzigingEvent(Pion pion, IVeld nieuwVeld);
         public event PositieWijzigingEvent PositieWijziging;
-	    public Dictionary<IVeld, List<IVeld>> Paden { get; private set; }
+        #endregion
 
-	    public Pion(Speler speler)
+        #region properties
+        public Dictionary<IVeld, List<IVeld>> Paden { get; private set; }
+        public virtual IVeld IVeld
+        {
+            get;
+            set;
+        }
+
+        public virtual Speler Speler
+        {
+            get;
+            private set;
+        }
+        #endregion
+
+        #region constructor
+        public Pion(Speler speler)
 	    {
 	        Speler = speler;
 	    }
+        #endregion
 
-	    public virtual IVeld IVeld
-		{
-			get;
-			set;
-		}
-
-		public virtual Speler Speler
-		{
-			get; private set;
-		}
-
-		public virtual List<IVeld> MogelijkeZetten(int stappen = 1)
+        #region methods
+        /// <summary>
+        /// Geeft mogelijke zetten terug als list
+        /// </summary>
+        /// <param name="stappen">aantal stappen</param>
+        /// <returns>list met velden</returns>
+        public virtual List<IVeld> MogelijkeZetten(int stappen = 1)
 		{
             // Kijk welke zetten er mogelijk zijn
 		    var mogelijk = MogelijkeZetten(IVeld, IVeld, stappen);
@@ -45,6 +58,13 @@ namespace Barricade.Logic
             return willkeurigUniek.Select(lijst => lijst.First()).ToList();
 		}
 
+        /// <summary>
+        /// Recursieve functie die de mogelijke zeten berkend.
+        /// </summary>
+        /// <param name="vorige">het vorige veld</param>
+        /// <param name="begin">het begin veld</param>
+        /// <param name="stappen">aantal stappen</param>
+        /// <returns>geeft een lijst met velden terug</returns>
         private IEnumerable<List<IVeld>> MogelijkeZetten(IVeld vorige, IVeld begin, int stappen)
         {
             stappen--;
@@ -78,6 +98,9 @@ namespace Barricade.Logic
             return lijsten.Where(lijst => lijst.Any()).ToList();
         }
 
+        /// <summary>
+        /// Pakt de pion op
+        /// </summary>
         public virtual void Oppakken()
         {
             if (IVeld == null) return;
@@ -85,6 +108,11 @@ namespace Barricade.Logic
             IVeld = null;
         }
 
+        /// <summary>
+        /// Verplaatst pion op bestemming
+        /// </summary>
+        /// <param name="bestemming">bestemming als in een iveld</param>
+        /// <return>ja of nee</returns>
 	    public virtual bool Verplaats(IVeld bestemming)
 	    {
             Oppakken();
@@ -98,7 +126,8 @@ namespace Barricade.Logic
                 return true;
             }
 	        return false;
-	    }
-	}
+        }
+        #endregion
+    }
 }
 

@@ -2,11 +2,11 @@ using System.Collections.Generic;
 
 namespace Barricade.Logic.Velden
 {
-    public interface IVeld 
-	{
-		List<IVeld> Buren { get; }
+    public interface IVeld
+    {
+        #region variablen en properties
+        List<IVeld> Buren { get; }
 		List<Pion> Pionnen { get; }
-	    bool Plaats(Pion pion);
 
         // Dit komt van buitenaf
         bool IsDorp { get; set; }
@@ -15,8 +15,13 @@ namespace Barricade.Logic.Velden
 
         // Dit is afleidbaar
         bool MagBarricade { get; }
-	    bool MagPionErlangs { get; }
+        bool MagPionErlangs { get; }
+        #endregion
+
+        #region methodes
+        bool Plaats(Pion pion);
 	    bool MagPion(Pion pion);
-	}
+        #endregion
+    }
 }
 

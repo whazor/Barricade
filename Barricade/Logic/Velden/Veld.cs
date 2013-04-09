@@ -5,8 +5,9 @@ using Barricade.Logic.Exceptions;
 namespace Barricade.Logic.Velden
 {
     public class Veld : VeldBase
-	{
-	    public bool StandaardBarricade = false;
+    {
+        #region properties
+        public bool StandaardBarricade = false;
 
 		public virtual bool IsBeschermd
 		{
@@ -26,8 +27,16 @@ namespace Barricade.Logic.Velden
 	    }
 
         public override bool MagPionErlangs { get { return Barricade == null; } }
+        #endregion
 
-	    public override bool Plaats(Pion pion)
+        #region method
+
+        /// <summary>
+        /// plaats een pion op dit veld
+        /// </summary>
+        /// <param name="pion">Pion</param>
+        /// <returns>altijd ja</returns>
+        public override bool Plaats(Pion pion)
         {
             CheckBarricade();
 
@@ -57,12 +66,18 @@ namespace Barricade.Logic.Velden
 	        }
 	    }
 
+        /// <summary>
+        /// Plaatst een barricade op het veld
+        /// </summary>
+        /// <param name="bar">barricade</param>
+        /// <returns>ja of nee</returns>
 	    public bool Plaats(Barricade bar)
 	    {
             if (!MagBarricade) return false;
 	        Barricade = bar;
 	        return true;
-	    }
-	}
+        }
+        #endregion
+    }
 }
 
