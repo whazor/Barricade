@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Barricade.Bot;
 using Barricade.Data;
+using Barricade.Logic;
 using Barricade.Presentation;
+using Barricade.Utilities;
+using Barricade.Process;
 
 namespace Barricade
 {
@@ -24,6 +29,7 @@ namespace Barricade
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Loader loader;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +37,7 @@ namespace Barricade
             MaxHeight = SystemParameters.WorkArea.Height;
 
             Closing += OnClosing;
+            LevelPicker.ItemsSource = Levels.Lijst();
         }
 
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
@@ -38,94 +45,37 @@ namespace Barricade
             Environment.Exit(0);
         }
 
-        private void ButtonLang_Click(object sender, RoutedEventArgs e)
+        private void SpeelButton_Click(object sender, RoutedEventArgs e)
         {
-            var level2 = new[]
+            var spelers = new Dictionary<Speler, ISpeler>();
+
+            foreach (Speler speler in SpelersChooser.Items)
             {
-    "                                    < >                                ",
-    "                                     |                                 ",
-    "    ( )-( )-( )-( )-( )-( )-( )-( )-[*]-( )-( )-( )-( )-( )-( )-( )-( )",
-    "     |                                                               | ",
-    "    ( )                                                             ( )",
-    "     |                                                               | ",
-    "    ( )-( )-( )-( )-( )-( )-( )-( )-[*]-( )-( )-( )-( )-( )-( )-( )-( )",
-    "                                     |                                 ",
-    "                                    [*]                                ",
-    "                                     |                                 ",
-    "                            ( )-( )-[*]-( )-( )                        ",
-    "                             |               |                         ",
-    "                            ( )             ( )                        ",
-    "                             |               |                         ",
-    "                    ( )-( )-[*]-( )-( )-( )-[*]-( )-( )                ",
-    "                     |                               |                 ",
-    "                    ( )                             ( )                ",
-	"                     |                               |                 ",
-    "            ( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )        ",
-	"             |               |               |               |         ",
-	"            ( )             ( )             ( )             ( )        ",
-	"             |               |               |               |         ",
-	"    [*]-( )-( )-( )-[*]-( )-( )-( )-[*]-( )-( )-( )-[*]-( )-( )-( )-[*]",
-	"     |               |               |               |               | ",	
-	"    ( )             ( )             ( )             ( )             ( )",
-	"     |               |               |               |               | ",	
-	"-   ( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )",
-	"             |               |               |               |         ",	
-	"            <1>             <2>             <3>             <4>        ",	
-	"*1:START,R5",
-	"*2:START,G5",
-	"*3:START,Y5",
-	"*4:START,B5"
-            };
-            Hide();
-            var game = new Game(new Loader(level2), this);
+                var item = SpelersChooser.ItemContainerGenerator.ContainerFromItem(speler);
+
+                var combo = item.FindVisualChild<System.Windows.Controls.ComboBox>();
+
+                Debug.Assert(combo != null, "combo != null");
+
+                switch (((ComboBoxItem) combo.SelectedItem).Content.ToString())
+                {
+                    case "Handmatig":
+                        spelers.Add(speler, null);
+                        break;
+                    case "Rusher":
+                        spelers.Add(speler, new Rusher(speler, loader.Spel));
+                        break;
+                    case "Vriendelijk":
+                        spelers.Add(speler, new Vriendelijk(speler, loader.Spel));
+                        break;
+                    case "Willekeurig":
+                        spelers.Add(speler, new Willekeurig(speler, loader.Spel));
+                        break;
+                }
+            }
+
+            var game = new Game(loader, spelers, this);
             game.Show();
-
-//            game.Visibility = Visibility.Hidden;
-//
-//            Houder.Children.Add(game);
-//            game.Showable += (a, b) =>
-//                {
-//                    Houder.Children.Clear();
-//                    Content = game;
-//                    game.Visibility = Visibility.Visible;
-//                };
-//            Top = 0;
-//            Left = 0;
-        }
-
-        private void ButtonKort_Click(object sender, RoutedEventArgs e)
-        {
-            var level2 = new[]
-            {
-                    "                        < >                    ",
-                    "                         |                     ",
-                    "D       ( )-( )-( )-( )-[*]-( )-( )-( )-( )    ",
-                    "         |                               |     ",
-                    "D       ( )-( )-( )-{ }-[*]-{ }-( )-( )-( )    ",
-                    "                         |                     ",
-                    "D           ( )-( )-[*]-( )-[*]-( )-( )        ",
-                    "             |                       |         ",
-                    "            { }-[*]-( )-( )-( )-[*]-{ }        ",
-                    "                         |                     ",
-                    "                ( )-( )-{ }-( )-( )            ",
-                    "                 |       |       |             ",
-                    "                 |      <1>      |             ",
-                    "                 |               |             ",
-                    "    { }-( )-{ }-(*)-( )-{ }-( )-(*)-{ }-( )-{ }",
-                    "     |       |           |           |       | ",
-                    "-   ( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )",
-                    "         |       |               |       |     ",
-                    "        <2>     <3>             <4>     <5>    ",
-                    "*1:BOS,",
-                    "*2:START,R4",
-                    "*3:START,G4",
-                    "*4:START,Y4",
-                    "*5:START,B4"
-            };
-            Hide();
-            var game = new Game(new Loader(level2), this);
-            game.Show();
-
         }
 
         private void Afsluiten_Click(object sender, RoutedEventArgs e)
@@ -135,19 +85,23 @@ namespace Barricade
 
         private void Open_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Barricade save games (*.bar)|*.bar";
+            var dialog = new OpenFileDialog {Filter = "Barricade save games (*.bar)|*.bar"};
 
-            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (dialog.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+
+            var bestand = new System.IO.StreamReader(dialog.FileName).ReadToEnd();
             {
-                var bestand = new System.IO.StreamReader(dialog.FileName).ReadToEnd();
-                if (bestand != null)
-                {
-                    Hide();
-                    var game = new Game(new Loader(bestand), this);
-                    game.Show();
-                }
+                loader = new Loader(bestand);
+                SpelersChooser.ItemsSource = loader.Spel.Spelers;
+                SpeelButton.IsEnabled = true;
             }
+        }
+
+        private void LevelPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            loader = new Loader(Levels.Open(LevelPicker.SelectedItem as String));
+            SpelersChooser.ItemsSource = loader.Spel.Spelers;
+            SpeelButton.IsEnabled = true;
         }
 
     }

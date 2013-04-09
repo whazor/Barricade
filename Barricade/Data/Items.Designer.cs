@@ -59,5 +59,25 @@ namespace Barricade.Data {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Kort {
+            get {
+                object obj = ResourceManager.GetObject("Kort", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Lang {
+            get {
+                object obj = ResourceManager.GetObject("Lang", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

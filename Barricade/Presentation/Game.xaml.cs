@@ -75,16 +75,23 @@ namespace Barricade.Presentation
         /// Maak een spelview aan.
         /// </summary>
         /// <param name="loader">desbetreffend spel</param>
+        /// <param name="spelers"></param>
         /// <param name="main"></param>
-        public Game(Loader loader, MainWindow main)
+        public Game(Loader loader, Dictionary<Speler, ISpeler> spelers, MainWindow main)
         {
             InitializeComponent();
+
+            foreach (var speler in spelers.Keys.ToList())
+            {
+                if (spelers[speler] == null)
+                    spelers[speler] = this;
+            }
 
             MainWindow = main;
 
             _loader = loader;
             _logicSpel = loader.Spel;
-            _processSpel = new Process.Spel(_logicSpel, this, this);
+            _processSpel = new Process.Spel(_logicSpel, this, spelers);
 
             _statischeLaag = new StatischeLaag(Spelbord, loader.Kaart);
 

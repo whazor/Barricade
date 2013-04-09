@@ -2,16 +2,50 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Barricade"  SizeToContent="WidthAndHeight" Top="20" ResizeMode="NoResize">
-    <Grid Height="Auto" Width="Auto" Name="Houder" Margin="0,0,0,0">
-        <Button Content="Lang" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="60" Click="ButtonLang_Click" Margin="118,151,304,158" Panel.ZIndex="10"/>
-        <Button Content="Kort" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="60" Click="ButtonKort_Click" Margin="333,151,89,158" Panel.ZIndex="10" />
-        <Image Source="Presentation\Images/barricade_banner.png" Margin="0,0,0,0" Width="550" Height="350" Panel.ZIndex="5" Stretch="Fill" StretchDirection="Both" />
-        <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="386,300,0,0" VerticalAlignment="Top" Width="75" Panel.ZIndex="10" Click="Afsluiten_Click"/>
-        <Label Content="New Game" Panel.ZIndex="10" HorizontalAlignment="Left" Margin="167,55,0,0" VerticalAlignment="Top" FontSize="45" Foreground="#FF888D1C" FontWeight="Bold" Width="249">
+    <Grid Height="573" Width="948" Name="Houder" Margin="0,0,0,0">
+        <Image Source="Presentation\Images/barricade_banner.png" Margin="0,0,0,0" Stretch="Fill" StretchDirection="Both" Opacity="0.15" />
+        <Button Name="SpeelButton" Content="Speel!" HorizontalAlignment="Center" VerticalAlignment="Center" Width="228" Height="60" Click="SpeelButton_Click" Margin="373,341,347,172" FontSize="24" IsEnabled="False" />
+
+        <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="420,438,0,0" VerticalAlignment="Top" Width="129" Click="Afsluiten_Click" Height="36"/>
+        <Label Content="Nieuw spel" HorizontalAlignment="Left" Margin="370,64,0,0" VerticalAlignment="Top" FontSize="45" Foreground="#FFF4FF09" FontWeight="Bold" Width="249">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="3"/>
             </Label.Effect>
         </Label>
-        <Button Content="Open game" HorizontalAlignment="Left" Margin="118,300,0,0" VerticalAlignment="Top" Width="75" Panel.ZIndex="10" Click="Open_Click"/>
+        <Button Content="Open bestand..." HorizontalAlignment="Left" Margin="722,156,0,0" VerticalAlignment="Top" Width="146" Click="Open_Click" Height="61"/>
+        <ComboBox Name="LevelPicker" HorizontalAlignment="Left" Margin="152,193,0,0" VerticalAlignment="Top" Width="231" SelectionChanged="LevelPicker_SelectionChanged"/>
+
+        <ListView Name="SpelersChooser"  HorizontalAlignment="Left" Height="100" Margin="149,230,0,0" VerticalAlignment="Top" Width="718">
+            <ListView.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+            </ListView.Resources>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="100" Margin="0,0,10,0">
+                        <Label Content="Speler:"/>
+                        <ComboBox Name="Type" SelectedIndex="0">
+                            <ComboBoxItem Content="Handmatig" />
+                            <ComboBoxItem Content="Rusher" />
+                            <ComboBoxItem Content="Vriendelijk" />
+                            <ComboBoxItem Content="Willekeurig" />
+                        </ComboBox>
+                        <Rectangle Height="25" Margin="10,10,10,10">
+                            <Rectangle.Fill>
+                                <SolidColorBrush Color="{Binding Kleur}"></SolidColorBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Content="Kies level:" HorizontalAlignment="Left" Margin="154,162,0,0" VerticalAlignment="Top" Width="221"/>
+
     </Grid>
 </Window> 

@@ -23,45 +23,12 @@ namespace Barricade.Process
 	    private int _beurt;
 	    private readonly Dictionary<Logic.Speler, ISpeler> _spelers;
 
-
-        public Spel(Logic.Spel logicSpel, IView game)
+        public Spel(Logic.Spel logicSpel, IView game, Dictionary<Logic.Speler, ISpeler> spelers)
         {
             _logicSpel = logicSpel;
             _random = _logicSpel.Random;
             _game = game;
-            _spelers = new Dictionary<Speler, ISpeler>();
-            int i = 1;
-            foreach (var speler in logicSpel.Spelers)
-            {
-                if (i % 2 == 0)
-                    _spelers.Add(speler, new Rusher(speler, logicSpel));
-                else
-                {
-                    _spelers.Add(speler, new Vriendelijk(speler, logicSpel));
-                }
-                i++;
-            }
-        }
-
-        public Spel(Logic.Spel logicSpel, IView game, ISpeler viewSpeler)
-        {
-            _logicSpel = logicSpel;
-            _random = _logicSpel.Random;
-            _game = game;
-            _spelers = new Dictionary<Speler, ISpeler>();
-            int i = 1;
-            foreach (var speler in logicSpel.Spelers)
-            {
-                if (i % 2 == 0)
-                    _spelers.Add(speler, new Rusher(speler, logicSpel));
-                else
-                {
-                    _spelers.Add(speler, new Vriendelijk(speler, logicSpel));
-                }
-                i++;
-            }
-            if (viewSpeler != null)
-                _spelers[_spelers.First().Key] = viewSpeler;
+            _spelers = spelers;
 	    }
 
 	    public virtual async void Start()
