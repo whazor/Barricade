@@ -101,6 +101,13 @@ namespace Barricade.Data
             }
             Spel = new Spel(seed, tries);
 
+            foreach (var start in uitzonderingen.Where(line => line.Value.StartsWith("START")))
+            {
+                char playerName = start.Value.Split(',')[1][0];
+                CreatePlayer(playerName, Spelers);
+
+            }
+
             for (var i = 0; i < lines.Length; i++)
             {
                 if (lines[i].Length < 2) continue;
@@ -178,10 +185,6 @@ namespace Barricade.Data
                 second.Buren.Add(first);
             }
 
-            foreach (var speler in Spelers)
-            {
-                Spel.Spelers.Add(speler.Value);
-            }
             Spel.BerekenScores();
 
         }
@@ -224,7 +227,7 @@ namespace Barricade.Data
                             string players = uitzondering.Split(',')[1];
                             foreach (char player in players)
                             {
-                                var speler = CreatePlayer(player, Spelers, veld);
+                                var speler = CreatePlayer(player, Spelers);
                                 NieuwPion(speler, veld);
                             }
                         }
@@ -238,7 +241,7 @@ namespace Barricade.Data
                             char playerName = uitzondering.Split(',')[1][0];
                             int amount = int.Parse(uitzondering.Split(',')[1].Substring(1));
 
-                            var speler = CreatePlayer(playerName, Spelers, veld);
+                            var speler = CreatePlayer(playerName, Spelers);
                             for (int i = 0; i < amount; i++)
                             {
                                 NieuwPion(speler, veld);
@@ -294,7 +297,7 @@ namespace Barricade.Data
              */
             if (letters[1] != '*' && letters[1] != ' ')
             {
-                var speler = CreatePlayer(letters[1], Spelers, veld);
+                var speler = CreatePlayer(letters[1], Spelers);
                 NieuwPion(speler, veld);
             }
 
@@ -309,11 +312,12 @@ namespace Barricade.Data
             speler.Pionnen.Add(pion);
         }
 
-        private Speler CreatePlayer(char letter, Dictionary<char, Speler> spelers, IVeld veld)
+        private Speler CreatePlayer(char letter, Dictionary<char, Speler> spelers)
         {
             if (!spelers.ContainsKey(letter))
             {
                 spelers[letter] = new Speler(letter) {Spel = Spel};
+                Spel.Spelers.Add(spelers[letter]);
             }
             return spelers[letter];
         }
