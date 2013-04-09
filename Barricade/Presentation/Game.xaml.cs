@@ -235,7 +235,8 @@ namespace Barricade.Presentation
 
         private void DobbelKnop_Click(object sender, RoutedEventArgs e)
         {
-            wachter.Return(0);
+            var knop = (Button) sender;
+            wachter.Return((int) knop.Tag);
         }
 
         private void AfsluitKnop_Click(object sender, RoutedEventArgs e)

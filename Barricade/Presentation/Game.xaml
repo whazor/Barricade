@@ -29,17 +29,33 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="180"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
             <Label x:Name="GetalLabel" Grid.Row="0" Content="0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="66" Width="50" FontSize="50" />
-            <Button x:Name="DobbelKnop" Grid.Row="1" Grid.Column="0" Height="80" Width="80" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" >Dobbel</Button>
+            <Button x:Name="DobbelKnop" Tag="0" Grid.Row="1" Grid.Column="0" Height="80" Width="80" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" >Dobbel</Button>
             <Button Name="OpslaanKnop" Grid.Row="4" Content="Opslaan" Height="25" HorizontalAlignment="Left" Width="75" Click="OpslaanKnop_Click" />
             <Button Name="AfbreekKnop" Grid.Row="5" Content="Menu" Height="25" HorizontalAlignment="Left" Width="75" Click="AfbreekKnop_Click"/>
             <Button Name="AfsluitKnop" Grid.Row="6" Content="Afsluiten" Height="25" HorizontalAlignment="Left" Width="75" Click="AfsluitKnop_Click"/>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Tag="1" Grid.Row="0" Grid.Column="0" Height="20" Width="80" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" >Dobbel 1</Button>
+                <Button Tag="2" Grid.Row="1" Grid.Column="0" Height="20" Width="80" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" >Dobbel 2</Button>
+                <Button Tag="3" Grid.Row="2" Grid.Column="0" Height="20" Width="80" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" >Dobbel 3</Button>
+                <Button Tag="4" Grid.Row="3" Grid.Column="0" Height="20" Width="80" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" >Dobbel 4</Button>
+                <Button Tag="5" Grid.Row="4" Grid.Column="0" Height="20" Width="80" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" >Dobbel 5</Button>
+                <Button Tag="6" Grid.Row="5" Grid.Column="0" Height="20" Width="80" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" >Dobbel 6</Button>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
