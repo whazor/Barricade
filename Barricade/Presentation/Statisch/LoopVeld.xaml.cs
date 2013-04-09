@@ -18,7 +18,6 @@ namespace Barricade.Presentation.Statisch
         {
             Veld = vakje;
             InitializeComponent();
-            Score.Content = vakje.Score;
         }
 
         public bool IsRustVeld

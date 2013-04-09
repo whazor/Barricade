@@ -13,6 +13,7 @@ using Barricade.Logic.Velden;
 using Barricade.Presentation.Statisch;
 using Barricade.Process;
 using Barricade.Utilities;
+using HorizontalAlignment = System.Windows.HorizontalAlignment;
 using MessageBox = System.Windows.MessageBox;
 using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 using Pion = Barricade.Logic.Pion;
@@ -25,7 +26,8 @@ namespace Barricade.Presentation
     /// </summary>
     public partial class Game : Window, ISpeler, IView
     {
-        public static MainWindow mainWindow;
+        public static MainWindow MainWindow;
+        private readonly UserInterface _userControls;
 
         // Logic spel
         private readonly Logic.Spel _logicSpel;
@@ -42,9 +44,7 @@ namespace Barricade.Presentation
         // Dit is voor de async methodes
         private readonly Waiter<Pion> _pionCompletion = new Waiter<Pion>();
         private readonly Waiter<IVeld> _veldCompletion = new Waiter<IVeld>();
-        private Waiter<int> wachter = new Waiter<int>();
-        private int _gedobbeld;
-        private Loader _loader;
+        private readonly Loader _loader;
 
 
         // Voor het inladen van het spel (klaar met laden)
@@ -53,12 +53,20 @@ namespace Barricade.Presentation
 
         public int Gedobbeld
         {
-            get { return _gedobbeld; }
+            get { return _userControls.Gedobbeld; }
             set
             {
-                GetalLabel.Content = value;
-                _gedobbeld = value;
+                _userControls.Gedobbeld = value;
             }
+        }
+
+        public Speler IsAanBeurt { get { return _userControls.IsAanBeurt; } set { _userControls.IsAanBeurt = value; } }
+
+        public void Gewonnen(Speler speler)
+        {
+            MessageBox.Show("Speler " + speler.Name + " heeft gewonnen!", "Er is een winnaar!", MessageBoxButton.OK,
+                            MessageBoxImage.Information);
+
         }
 
         public Speler AanDeBeurt { get; set; }
@@ -67,11 +75,12 @@ namespace Barricade.Presentation
         /// Maak een spelview aan.
         /// </summary>
         /// <param name="loader">desbetreffend spel</param>
+        /// <param name="main"></param>
         public Game(Loader loader, MainWindow main)
         {
             InitializeComponent();
 
-            mainWindow = main;
+            MainWindow = main;
 
             _loader = loader;
             _logicSpel = loader.Spel;
@@ -84,11 +93,14 @@ namespace Barricade.Presentation
             MouseMove += OnMove;
 
             Closing += OnClosing;
+
+            _userControls = new UserInterface(this, _logicSpel.Spelers) {HorizontalAlignment = HorizontalAlignment.Left };
+            GameHolder.Children.Add(_userControls);
         }
 
         private void OnClosing(object sender, CancelEventArgs e)
         {
-            mainWindow.Show();
+            MainWindow.Show();
         }
 
         /// <summary>
@@ -147,21 +159,6 @@ namespace Barricade.Presentation
             _sleepTarget.Margin = new Thickness(Math.Min(position.X + 20, DynamischGrid.ActualWidth - 50), Math.Min(position.Y + 20, DynamischGrid.ActualHeight - 50), 0, 0);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="item"></param>
-        private void PionKlik(Pion item)
-        {
-            _pionCompletion.Return(item);
-        }
-
-        private void VeldKlik(object sender, MouseButtonEventArgs mouseButtonEventArgs)
-        {
-            var bestemming = ((IElement) sender).Veld;
-            _veldCompletion.Return(bestemming);
-        }
-
         public async Task<Pion> KiesPion(ICollection<Pion> pionnen, int gedobbeld)
         {
             _dynamischeLaag.Highlight(pionnen, true);
@@ -216,14 +213,14 @@ namespace Barricade.Presentation
             }
         }
 
-        public async Task<int> DobbelTask()
+        public Task<Tuple<Speler, int>> DobbelTask(Speler speler, int gedobbeld)
         {
-            return await wachter.Wait();
+            return _userControls.DobbelTask(speler, gedobbeld);
         }
 
         public async Task Wacht(int p)
         {
-            Waiter wachter = new Waiter();
+            var wachter = new Waiter();
             var dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += (sender, args) => wachter.Return();
             dispatcherTimer.Interval = TimeSpan.FromMilliseconds(p);
@@ -233,31 +230,8 @@ namespace Barricade.Presentation
             dispatcherTimer.Stop();
         }
 
-        private void DobbelKnop_Click(object sender, RoutedEventArgs e)
-        {
-            var knop = (Button) sender;
-            wachter.Return((int) knop.Tag);
-        }
 
-        private void AfsluitKnop_Click(object sender, RoutedEventArgs e)
-        {
-            if (
-                MessageBox.Show("Weet je zeker dat je het huidige spel wilt verlaten?", "Spel afbreken",
-                                MessageBoxButton.YesNo).ToString() == "Yes") Environment.Exit(0);
-        }
-
-        private void AfbreekKnop_Click(object sender, RoutedEventArgs e)
-        {
-            if (
-                MessageBox.Show("Weet je zeker dat je het huidige spel wilt verlaten?", "Spel afbreken",
-                                MessageBoxButton.YesNo).ToString() == "Yes")
-            {
-                Close();
-                mainWindow.Show();
-            }
-        }
-
-        private void OpslaanKnop_Click(object sender, RoutedEventArgs e)
+        public void Opslaan()
         {
             String huidigeSpel = new Saver(_logicSpel, _loader.ToArray()).Output();
             SaveFileDialog dialog = new SaveFileDialog();
@@ -275,6 +249,5 @@ namespace Barricade.Presentation
                     MessageBox.Show("Kan bestand niet wegschrijven", "Fout!", MessageBoxButton.OK);
                 }
         }
-
     }
 }

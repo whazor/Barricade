@@ -3,9 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
+             mc:Ignorable="d" Height="500" Width="130">
+    <Grid Margin="10,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="98"></RowDefinition>
+            <RowDefinition Height="69"></RowDefinition>
+            <RowDefinition/>
+            <RowDefinition Height="0*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="GetalLabel" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="77" Width="59" FontSize="50" Margin="30,0,31,0" IsEnabled="False" TextAlignment="Center" UndoLimit="0" TextChanged="GetalLabel_TextChanged" />
+        
+        <Button x:Name="DobbelKnop" Grid.Row="2" Grid.Column="0" Height="99" Width="120" HorizontalAlignment="Left" Click="DobbelKnop_Click" VerticalAlignment="Top" IsEnabled="False" Margin="0,0,0,0">Dobbel</Button>
+        <Rectangle Name="KnopRand" Grid.Row="2" Grid.Column="0" Height="99" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Stroke="White" StrokeThickness="10" Opacity="0.5"/>
+        
+        
+        <Button Name="OpslaanKnop" Grid.Row="4" Content="Opslaan" HorizontalAlignment="Left" Width="113" Click="OpslaanKnop_Click" Margin="0,8,0,7" />
+        <Button Name="AfbreekKnop" Grid.Row="5" Content="Menu" HorizontalAlignment="Left" Width="113" Click="AfbreekKnop_Click" Margin="0,8,0,7"/>
+        <Button Name="AfsluitKnop" Grid.Row="6" Content="Afsluiten" HorizontalAlignment="Left" Width="113" Click="AfsluitKnop_Click" Margin="0,8,0,7"/>
+        <ComboBox Name="SpelerKiezer" IsEnabled="False" HorizontalAlignment="Left" Margin="-2,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="22" SelectionChanged="SpelerKiezer_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Aan de beurt:" HorizontalAlignment="Left" Margin="-2,2,0,0" VerticalAlignment="Top" Height="26" Width="82" Grid.Row="1"/>
+        
+
     </Grid>
 </UserControl>

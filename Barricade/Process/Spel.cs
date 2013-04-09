@@ -17,11 +17,11 @@ namespace Barricade.Process
 	public class Spel
 	{
         readonly CountedRandom _random;
-	    private const int _wachttijdBot = 2000;
+	    private const int WachttijdBot = 2000;
 	    private readonly Logic.Spel _logicSpel;
         private readonly IView _game;
 	    private int _beurt;
-	    private readonly Dictionary<Logic.Speler, ISpeler> spelers;
+	    private readonly Dictionary<Logic.Speler, ISpeler> _spelers;
 
 
         public Spel(Logic.Spel logicSpel, IView game)
@@ -29,15 +29,15 @@ namespace Barricade.Process
             _logicSpel = logicSpel;
             _random = _logicSpel.Random;
             _game = game;
-            spelers = new Dictionary<Speler, ISpeler>();
+            _spelers = new Dictionary<Speler, ISpeler>();
             int i = 1;
             foreach (var speler in logicSpel.Spelers)
             {
                 if (i % 2 == 0)
-                    spelers.Add(speler, new Rusher(speler, logicSpel));
+                    _spelers.Add(speler, new Rusher(speler, logicSpel));
                 else
                 {
-                    spelers.Add(speler, new Vriendelijk(speler, logicSpel));
+                    _spelers.Add(speler, new Vriendelijk(speler, logicSpel));
                 }
                 i++;
             }
@@ -48,20 +48,20 @@ namespace Barricade.Process
             _logicSpel = logicSpel;
             _random = _logicSpel.Random;
             _game = game;
-            spelers = new Dictionary<Speler, ISpeler>();
+            _spelers = new Dictionary<Speler, ISpeler>();
             int i = 1;
             foreach (var speler in logicSpel.Spelers)
             {
                 if (i % 2 == 0)
-                    spelers.Add(speler, new Rusher(speler, logicSpel));
+                    _spelers.Add(speler, new Rusher(speler, logicSpel));
                 else
                 {
-                    spelers.Add(speler, new Vriendelijk(speler, logicSpel));
+                    _spelers.Add(speler, new Vriendelijk(speler, logicSpel));
                 }
                 i++;
             }
             if (viewSpeler != null)
-                spelers[spelers.First().Key] = viewSpeler;
+                _spelers[_spelers.First().Key] = viewSpeler;
 	    }
 
 	    public virtual async void Start()
@@ -71,27 +71,36 @@ namespace Barricade.Process
 	            while (true)
 	            {
 	                var speler = _logicSpel.Spelers[_beurt++%_logicSpel.Spelers.Count];
-	                await VolgendeBeurt(speler, spelers[speler]);
-	                await _game.Wacht(_wachttijdBot);
+
+	                _game.IsAanBeurt = speler;
+                    
+                    // Rol dobbelsteen
+                    int gedobbeld = _random.Next(1, 7);
+
+                    // Cheatfunctionaliteit
+                    var cheat = await _spelers[speler].DobbelTask(speler, gedobbeld);
+                    // Beurt verplaatsen
+                    while (speler != cheat.Item1)
+                    {
+                        speler = _logicSpel.Spelers[_beurt++ % _logicSpel.Spelers.Count];
+                    }
+	                gedobbeld = cheat.Item2;
+
+	                await VolgendeBeurt(gedobbeld, speler, _spelers[speler]);
+	                await _game.Wacht(WachttijdBot);
 	            }
 	        }
 	        catch (GewonnenException e)
 	        {
-                MessageBox.Show("Speler " + e.Speler.Name + " heeft gewonnen!", "Er is een winnaar!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+	            _game.Gewonnen(e.Speler);
 	        }
         }
 
 	    /// <summary>
         /// Doorloop alle stappen van een beurt
         /// </summary>
-        private async Task VolgendeBeurt(Speler speler, ISpeler controller)
+        private async Task VolgendeBeurt(int gedobbeld, Speler speler, ISpeler controller)
         {
-            //TODO: speler markeren
-
-            // Rol dobbelsteen
-            int dobbelwaarde = await controller.DobbelTask();
-	        int gedobbeld = dobbelwaarde > 0 ? dobbelwaarde : _random.Next(1, 7);
-
             // Geef dobbelwaarde neer
             _game.Gedobbeld = gedobbeld;
             controller.Gedobbeld = gedobbeld;
