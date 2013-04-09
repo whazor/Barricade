@@ -1,0 +1,1702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="b3bca4ba-564f-466c-a7be-7be6680e0567"
+  name="Logic" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="f674eb1c-afbc-43c2-b582-ab7ddd849985"
+        name="Spel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="fe2f5610-cf29-4409-8197-6512bbb35c59"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DSpel"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="44145672-0e70-41c7-aa40-5c6b1377f6f8"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="047cb06f-656d-4e90-90ad-f96247804f6b">
+                <propertyInstance
+                  Id="288ce24d-7d3d-42c1-8666-42a049eba11f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="233a4c60-e8bd-431b-8089-e2a783a93534">
+                <propertyInstance
+                  Id="88fafd63-afc0-417e-8ab5-74c3a9d93098"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7186b67b-9348-4b1d-b7f0-d7ddc5992173">
+                <propertyInstance
+                  Id="eaffb085-a19c-4878-9c48-8902a3c244a6"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c6f64c49-9ee2-48bf-9c7b-88d207ae8a69">
+                <propertyInstance
+                  Id="7a640687-a4b8-4542-8fa1-f4f1918b112f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0fd87827-8533-4302-b761-b689cb5d30e1">
+                <propertyInstance
+                  Id="b5665853-41b8-435e-850a-12d89b7c96c9"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="bb6abc8f-601e-4744-8006-460e6748bbbb"
+            isDerived="false"
+            sourceEndRoleName="Spel"
+            targetEndRoleName="Spelers"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="2be5417f-4609-4815-9fba-c708b8a3a7a8"
+              LastKnownName="List&lt;Speler‎&gt;"
+              LastKnownLocation="Package4_2003.uml" />
+            <description>Property Spelers references type List&lt;Speler‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2b84707c-0915-47e8-bf84-9966c0787660"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ebcc00a4-7cda-4fdb-b49c-b5802a013585"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1fd23563-ae08-46ca-baa6-b6ad9fd9fc7a"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="05de1727-8087-4adf-8548-746d9ecdc624"
+                  name="Spelers"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="6a82e46d-eee4-45d8-8f7b-03ed1bc62536"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b661cb13-40fb-42bf-ab0e-a9a52474dd4b"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7d171ecc-6687-4f72-9197-279cdccd4919"
+            isDerived="false"
+            sourceEndRoleName="Spel"
+            targetEndRoleName="Finishvelden"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="257ed98e-67a8-4f35-9463-2a19ccbaa15e"
+              LastKnownName="List&lt;Finishveld‎&gt;"
+              LastKnownLocation="Package4_2003.uml" />
+            <description>Property Finishvelden references type List&lt;Finishveld‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="070ffc16-d87e-470f-a051-831bae5db980"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="3f5af1c0-0b04-48be-8671-b8022b8d20e5"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="654e0ce5-24c4-4448-b36f-7e499cf6857f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a70d5afa-18a8-495c-9fae-99087c0ab8e8"
+                  name="Finishvelden"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="2c1e43cc-851a-45b7-af70-f42fe66840a5"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="06517dbc-7aa3-48cd-8c29-46e21c68f221"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="195a0e8b-2223-48fa-84d4-a48638db46ff"
+            isDerived="false"
+            sourceEndRoleName="Spel"
+            targetEndRoleName="Bos"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6f6364ff-b00f-4a16-a49f-5cde8f743805"
+              LastKnownName="Bos"
+              LastKnownLocation="Package2_0019.uml" />
+            <description>Property Bos references type Bos.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c4ce7216-3488-4e35-b6df-f57922db8917"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="bff36c03-aec4-4aa6-860e-d0a6ba1a6f6f"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="45ac1e51-d22d-401b-9a40-312361ab56cb"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7d40d8b7-3d87-4b63-9f0b-18c6ad52b311"
+                  name="Bos"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="49a4e320-158b-46d4-8191-544c4ae1f25e"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9d3e5bd9-37dd-435a-a0f2-b8a4d71a9358"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="16c85792-543b-4e65-807a-16075417e05a"
+            isDerived="false"
+            sourceEndRoleName="Spel"
+            targetEndRoleName="Random"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a25a6317-8064-4dd2-9894-1100bf65115a"
+              LastKnownName="Random"
+              LastKnownLocation="Package2_2003.uml" />
+            <description>Property Random references type Random.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1301e88a-d433-4781-9043-637cf3d64152"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="626f410c-d180-4bc1-a235-d022cf961749"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b543139c-6713-4b2b-862c-b01f5f84a895"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bc81bb9d-be9d-4439-9f8a-dac7e3738016"
+                  name="Random"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="31310706-37fb-41df-ab80-a6dade25b201"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7d7ff2be-5dcf-4a5a-b9c4-c9f533b2cd70"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4cd5ca31-13f6-479e-9f41-1306089fe21b"
+            isDerived="false"
+            sourceEndRoleName="Spel"
+            targetEndRoleName="Spelers"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e92afc07-5708-4cdd-a8a8-2de5d8c3975c"
+              LastKnownName="Speler"
+              LastKnownLocation="Package_0018.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="27c917b8-fd62-402f-a7d9-2ec0a8fcc19e"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3b2af4dd-9fc4-45b9-bacd-02db50053334"
+                  name="Spelers"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isOrdered="true"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f64ab76f-59b3-44a2-89e9-5914333837b4"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="16b3c708-e4d4-44eb-9347-9407c1971b50"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="b5f22b0e-e79e-46d6-9288-8675a85f2bf3"
+            name="BerekenScores"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5a925f29-5212-4320-b94d-65cbb68b1a80"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DSpel Member%3DBerekenScores"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="20059a74-1409-47b0-ad27-f2840e79023d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ba59374-4410-4ba5-8a33-f156f91ffeaa">
+                    <propertyInstance
+                      Id="4425e246-0baa-44a3-ad77-3ffa6c4438b7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3191f12-790a-49a9-96be-6a5b7ac6690c">
+                    <propertyInstance
+                      Id="35ec36e5-7a98-449f-8e35-ab18fd21043b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95870267-b05b-4a6e-9f0d-0e815ff860c5">
+                    <propertyInstance
+                      Id="6d6ee3e0-20c7-4420-b46e-838e4fb760b6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4424779-fb23-4dae-be09-b7f5150f8b77">
+                    <propertyInstance
+                      Id="d68ed5f7-4430-47cd-a80f-93a846d77066"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3f619f7e-a759-4f6c-86b4-1e899c0b51fe">
+                    <propertyInstance
+                      Id="f0d9162b-49c0-45da-b6a0-d6617160f5d0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="185ff1c9-07d3-46f6-9f31-92f3825b159f">
+                    <propertyInstance
+                      Id="e0792109-ee40-41aa-9a12-ba1fe3c3f872"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c1d2dcd0-694d-44a0-9175-a1cbe73e2262"
+        LastKnownName="Velden"
+        LastKnownLocation="Package2_0019.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e92afc07-5708-4cdd-a8a8-2de5d8c3975c"
+        name="Speler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="61fd1bec-1a92-4936-80fb-599afe77148c"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DSpeler"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="dd0f1d07-9d77-4d26-b885-8e961337a6ed"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d1708f29-a02a-416a-a484-b425b6f5a2cd">
+                <propertyInstance
+                  Id="c3122b50-a09e-44c0-b925-cae29639fbcd"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="580510bb-0086-4948-8fe0-45b1056df3dc">
+                <propertyInstance
+                  Id="65ac0931-d8c7-471e-8abc-0c3ffcd7ce16"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4f5c87b5-77a0-433c-b6c3-b8117a22e4ea">
+                <propertyInstance
+                  Id="592941c8-098a-4d16-99d5-f39545dc987c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="46ede264-67f2-48a8-a9b2-3bec63426649">
+                <propertyInstance
+                  Id="f044c501-5a6c-4cd1-b0ba-8f65e77befa2"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a064d9ce-2e66-4aeb-9f40-6c367c34ba78">
+                <propertyInstance
+                  Id="ceb57026-a4a4-45e0-8fc3-577aa9d3b27c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="9d55d57b-1e3d-4d4c-a4c4-59c694a49fcd"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Name"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="f56f096a-0352-4d18-9b93-a48a3bb0e9da"
+              LastKnownName="Char"
+              LastKnownLocation="Package2_2003.uml" />
+            <description>Property Name references type Char.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="107a865b-163e-4e09-bee3-8ddf97debf5f"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="90e98970-1c2c-4ab2-8e99-34914c77274b"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a0088b69-c2e8-442a-bfe3-01ec22ad06a4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9cc66077-c84d-43ea-bba2-34931b3e6eec"
+                  name="Name"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="0d353b58-e961-4536-9744-65e52e5e5ce6"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a0a2a333-27a9-4e7f-b1b8-b502e263736f"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="beddad6d-f343-4eee-a0a1-87e0a5a2fc89"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Kleur"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6a2d32f9-49cf-4576-88b1-b1a3af1cf4e4"
+              LastKnownName="Color"
+              LastKnownLocation="Package_0019.uml" />
+            <description>Property Kleur references type Color.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="935666da-a691-4123-8708-31148fb48b2d"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="4180e9eb-066b-432a-b787-5a60789568a5"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7b6dee20-8876-4174-8a09-f189d1b0296e"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a8b1f36c-2057-44db-9c83-e03d83bc6e2a"
+                  name="Kleur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e4467f62-eaa1-4335-a646-22f1cfa9b4db"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="2db8e0c0-67fa-40f3-a8b5-319aa004aeff"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f4aebc4e-65ab-4cee-92eb-8cc8d5010deb"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Pionnen"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="974e1e62-3fd9-4de0-aa04-b3fdfd9af905"
+              LastKnownName="List&lt;Pion‎&gt;"
+              LastKnownLocation="Package4_2003.uml" />
+            <description>Property Pionnen references type List&lt;Pion‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e52fc8bd-c482-4a60-8afe-1f978db314e9"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="76748aaa-f9bf-4281-83ee-364ab07deb39"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9f5146fa-b91d-476d-878e-d98621a3de2d"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f864fffa-d9cb-4751-8f75-98ffece1edf9"
+                  name="Pionnen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a268ce71-9bd0-43f4-80ec-654af18d6d1f"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="2d9c7617-4c33-47fe-b5a7-e8bee332f505"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6d6a5f70-9150-4f58-b2d6-b7e5e6a390eb"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Spel"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7759c3dc-f9f0-4824-942d-9c728494e392"
+              LastKnownName="Spel"
+              LastKnownLocation="Package5_2003.uml" />
+            <description>Property Spel references type Spel.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bff788b5-a9b9-477f-b23e-72acf0358f45"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f1c5e48c-0441-4fef-9695-912dc70f0edb"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c6822fda-c538-4559-afce-aa7a53630115"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7b73dad3-a20e-4c9d-a6f7-f593de33ebff"
+                  name="Spel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e0be21df-846a-4b3b-b130-f3bd77f7f534"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e1fc51bc-bd3c-4675-9fc7-3bb5b29bb003"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="1284524e-d8ba-4725-bcfc-138522bcf734"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9a4c6535-5de2-4534-bbf3-742063e1421e"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DSpeler Member%3DName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e6ca1817-3758-48c8-a894-92e85bf3b8ec"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7357a674-fbf3-4f07-b2bb-9249963dacd3">
+                    <propertyInstance
+                      Id="503e765b-01c3-412d-bbc0-8a2e7b39e387"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1642c694-1e82-40a0-98f3-a9f9d8fb7ecd">
+                    <propertyInstance
+                      Id="d1e134b4-3ee2-4541-a344-ba1573651e9c"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bac72df4-13a7-49df-8894-a8b1ab07012c">
+                    <propertyInstance
+                      Id="bb0ba6d8-3b54-4b09-89da-5623198d96d0"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="44d426a0-6288-49bd-9c60-faf72c942856">
+                    <propertyInstance
+                      Id="832e93ee-1222-4bcb-8d40-c072393306cb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b836b046-c66c-4663-9fa2-026aff73ec47">
+                    <propertyInstance
+                      Id="d84a3253-1e57-43e7-984f-f090e03d3ebd"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a98101a-bea1-4073-83cf-b8cd53ec5064">
+                    <propertyInstance
+                      Id="8c19a7d1-46ae-4c31-9de3-a073ea4e1312"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f955a52a-de3a-4ac0-90f4-3c54d1065eab">
+                    <propertyInstance
+                      Id="b7a2800b-1293-4d7c-a1fd-cc1e0f976c82"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="f56f096a-0352-4d18-9b93-a48a3bb0e9da"
+                LastKnownName="Char"
+                LastKnownLocation="Package2_2003.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1eb3033b-0c60-4fec-8c81-e639c9c0b448"
+            name="Kleur"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="cf421af1-9077-49d3-9389-1eab282a7355"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DSpeler Member%3DKleur"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a6352a0f-3a1d-4457-ab26-1501f7c4ead8"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="162a7a0f-f46b-464d-ad7b-a9c7ab5f5b63">
+                    <propertyInstance
+                      Id="e5c45137-a5a9-4f01-9df4-3adeac52a4b9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23a495b4-c562-4e0f-b76b-6b2eae327e65">
+                    <propertyInstance
+                      Id="06234316-b93b-4752-94ad-bbc055e02a25"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8111be0c-5bcc-4ec4-af7d-fc98b924f838">
+                    <propertyInstance
+                      Id="c5676d2f-b2b7-4f4d-a336-91da7ae26e0b"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd889096-eefc-404b-bbe4-7c39fe97f853">
+                    <propertyInstance
+                      Id="ad6348b2-8c1f-482c-8ea8-929cce4015ce"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="44d3623f-dee4-47ad-a26f-cde67726f5b4">
+                    <propertyInstance
+                      Id="09e27830-1e0b-48e1-913d-e39ebfb7258d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ce00b85-46a8-48d0-b044-f08ba89e6be8">
+                    <propertyInstance
+                      Id="1264449f-9081-48a4-aebd-781c492aaca6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9bc09ac9-5c7b-45f0-a4da-3943d21aee30">
+                    <propertyInstance
+                      Id="beb947e3-6bb2-45f3-9203-f40c96a2b152"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6a2d32f9-49cf-4576-88b1-b1a3af1cf4e4"
+                LastKnownName="Color"
+                LastKnownLocation="Package_0019.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="20530145-0c78-4355-800d-4fbf7d47ce0d"
+        name="Pion"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d5e72135-d4c8-4a85-92ce-541d716f6097"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DPion"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="09c8ebf3-37f6-4ee4-9878-9523cc33912f"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="212beded-190d-47a5-b885-e2ffd4acfdac">
+                <propertyInstance
+                  Id="a70e6429-df2f-4ef6-bbd8-c9f2b3d61e88"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6637f76b-7ac2-40db-8f38-416ad6b6afdd">
+                <propertyInstance
+                  Id="98aaaa9e-ce62-44e0-a6b0-39f18994edec"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="464f0189-6010-4c00-94b2-0f075f29a55a">
+                <propertyInstance
+                  Id="c1a68080-3f28-4d45-83c2-c12aca9cba62"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="864f44d0-2c8f-4267-98be-3bedc09ecf0c">
+                <propertyInstance
+                  Id="eba77432-8014-4ef5-ada9-3dff8b050f29"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="334232db-42e1-46b9-9a45-61e8c28a8cb1">
+                <propertyInstance
+                  Id="89792ae2-c93b-4049-ae30-90c96d3157ee"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="550ab7fd-428a-4267-99aa-478080080c1c"
+            isDerived="false"
+            sourceEndRoleName="Pion"
+            targetEndRoleName="Paden"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ea0111d8-7669-44e1-bc03-454967d0818c"
+              LastKnownName="Dictionary&lt;IVeld‎, List‎&lt;IVeld‎&gt;‎&gt;"
+              LastKnownLocation="Package4_2003.uml" />
+            <description>Property Paden references type Dictionary&lt;IVeld‎, List‎&lt;IVeld‎&gt;‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fa85a979-ac5e-4afa-aeca-eab026d11040"
+                  name="Pion"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b2735e27-6b00-476e-b48c-66969676e24b"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b3280b07-25c4-4ef8-967a-1d5aa687a2a2"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="30804182-1309-4c45-a780-1b0fd34aeace"
+                  name="Paden"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="3c7d95da-1262-4f03-a4fd-095e8e9d2292"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5b781741-2ab2-43bb-b14a-9f2130349378"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="acdf9a26-9694-4822-b45e-b4ba3971cc0f"
+            isDerived="false"
+            sourceEndRoleName="Pion"
+            targetEndRoleName="IVeld"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="27fd20cc-0983-4b2a-a01a-ed3de0f0fd27"
+              LastKnownName="IVeld"
+              LastKnownLocation="Package2_0019.uml" />
+            <description>Property IVeld references type IVeld.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cf1a2ded-2e23-48d8-ab85-f79580938d31"
+                  name="Pion"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="caa0b05c-3ff2-4625-ae02-17da9b791ccf"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7a010d52-6d31-4fd6-b636-3fc7068492f1"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ea4c8019-1c7a-4a1a-a851-5c9883727ee5"
+                  name="IVeld"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="51e42de2-881a-4720-96b5-669d5694c298"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d1049c81-3a7b-49ab-9104-4f223666bae7"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="18928761-2fb6-44e0-b691-e1ed338cb9fc"
+            isDerived="false"
+            sourceEndRoleName="Pion"
+            targetEndRoleName="Speler"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e92afc07-5708-4cdd-a8a8-2de5d8c3975c"
+              LastKnownName="Speler"
+              LastKnownLocation="Package_0018.uml" />
+            <description>Property Speler references type Speler.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4dcd9521-79ef-4189-b44b-b3f40e2c44cc"
+                  name="Pion"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="71b8b195-f1a7-4c51-9953-2fc72ead093e"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="358fa54f-a162-438a-a532-bf2744179f08"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2cdc00ad-17f7-4f39-8d02-6a6452b80544"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="62ed7a23-c0af-4ad9-8a6d-15d043e7eef1"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="47dafe76-1cd7-410d-b4bd-3d77f689d65e"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="bc6edcd8-4aca-4332-8010-bc559f1af153"
+            name="PositieWijziging"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6c855aef-68b9-4a15-8553-b89839adbb53"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DPion Member%3DPositieWijziging"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cd97f83c-f2f0-4260-a3de-98da617f3e6c"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c369d3f4-eab1-455f-9e6d-50556cc29253">
+                    <propertyInstance
+                      Id="6e2cf05b-2cb3-40b7-8f8d-f760c8b730f1"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c17b26cd-8a92-45a1-bbd8-296a74a2110f">
+                    <propertyInstance
+                      Id="0ebf37b7-c4f7-4381-834d-cc6b479eed2a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="71f06eb2-938b-4b51-9608-0f64a10a57c5">
+                    <propertyInstance
+                      Id="bbda166b-834b-4a82-a8b0-e894250db570"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="221eafa4-6f6d-448e-870d-c7274f5b44ff">
+                    <propertyInstance
+                      Id="76e722c4-ec1c-4bd9-bba8-41940a759bd8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca277468-6a69-4d09-b46f-d570d0e613ec">
+                    <propertyInstance
+                      Id="8b99bd39-8511-4f46-b8d3-4867cf255ba6"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fc9335c0-f112-4bc6-8b73-617387694d12"
+                LastKnownName="PositieWijzigingEvent"
+                LastKnownLocation="Package5_2003.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ffe4aa06-6f13-4603-b3dd-de782cb158da"
+            name="MogelijkeZetten"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="cf348d74-99f7-4a5b-8649-4e562007f98a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DPion Member%3D(Name%3DMogelijkeZetten OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="33db2cbf-431f-42a6-a4a6-d70205335a47"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="313b1faa-17f8-4434-8ed0-11a3c9acafd0">
+                    <propertyInstance
+                      Id="d113861a-2d3f-47a8-a40b-c7b13f30ea96"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="85dc046f-044a-44bd-bfdc-e91f247e9383">
+                    <propertyInstance
+                      Id="8a4fbc32-8ba6-4aa8-b3c2-3e7faf86a4e9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1749abf7-ddf6-477c-91d7-fc20a20a5798">
+                    <propertyInstance
+                      Id="b83f0a36-c809-4808-af8a-d2795e969232"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0671eafc-9612-4de1-af01-bfeb71bab5b7">
+                    <propertyInstance
+                      Id="4b18129c-e858-48dc-8d48-1ba000182838"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f0ec0245-52b3-42d7-a8b3-c8c3591d3f92">
+                    <propertyInstance
+                      Id="f008ee02-023b-478b-95a8-7065b1431764"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3248b46-71ff-4b0e-86b4-4985f95eaf08">
+                    <propertyInstance
+                      Id="7be62217-0545-48ef-b14c-56df01ef774c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8c10b173-029f-417a-8a7e-111ddab51de8"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="9e42cce0-9f4b-4462-bf66-0a60a3460649"
+                      LastKnownName="List&lt;IVeld‎&gt;"
+                      LastKnownLocation="Package4_2003.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="be21cf51-03db-4b54-b8e2-f46c263457b2"
+                  name="stappen"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="737c4597-e4c4-4fb4-a582-5851c2708a66"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DPion Member%3D(Name%3DMogelijkeZetten OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dstappen"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7ebee494-01a8-4fb5-aff3-d318950941da"
+            name="Verplaats"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0dbda32d-1c20-4aea-88b8-35b92b4ad0b1"
+                  name="bestemming"
+                  direction="In">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="0cc9dfdf-cec6-4b0f-8b53-3250cbc9a491"
+                      LastKnownName="IVeld"
+                      LastKnownLocation="Package5_2003.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1c6a8c9c-5740-42cf-83e8-2a4f13e1f520"
+            name="Oppakken"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a359dfe0-f0aa-413c-8f7c-614f479e554a"
+        name="Barricade"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="17b05152-c8f4-4ff9-9125-450838a19cb8"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DBarricade"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b445b9fa-4b0b-44b4-96a4-397b47b9c569"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="64e58c1b-c85a-48fb-99bb-cdf068d5cd2c">
+                <propertyInstance
+                  Id="948eccd4-7243-45fd-b9e6-27a37cc1b5af"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="91fd0845-0ba2-425c-9eeb-286e876ea776">
+                <propertyInstance
+                  Id="e30e3c67-e82b-4f34-982d-259720919ae1"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6f9462c5-ebc6-4ed6-b9dc-58cc8fa00cdb">
+                <propertyInstance
+                  Id="24af43e5-8990-402e-971e-d716f7452039"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9e72a36a-dda3-4545-a06b-b1330df6b19a">
+                <propertyInstance
+                  Id="a6b85dab-53b3-4856-881b-15a1423f6ccd"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="687010f6-1825-4a4d-8fe6-67f65e3a8b8a">
+                <propertyInstance
+                  Id="50a2c1e0-017b-4342-ae13-0f0875f41e42"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="fad3b938-334b-425a-ab6a-d81fa9b6e227"
+            isDerived="false"
+            sourceEndRoleName="Barricade"
+            targetEndRoleName="Veld"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="bab21eb6-529a-446e-af38-fb25c4d33a43"
+              LastKnownName="Veld"
+              LastKnownLocation="Package1_0018.uml" />
+            <description>Property Veld references type Veld.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5f000447-9c8c-4712-8839-3070bba51b61"
+                  name="Barricade"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b2a18ab3-b82b-47ff-8875-1a06dc85030c"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f149c2ed-36c0-4402-8657-3529e35c92f4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f3c0f463-3524-4469-8c23-66e833db4192"
+                  name="Veld"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="429acdf0-c108-4056-848d-b59b8190d3ef"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c5f68590-924f-458a-8ee5-64fa2dba7f8a"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="80e8f417-cccc-421c-b62e-792d077689df"
+            name="PositieWijziging"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="64c73f02-340c-402b-93c1-b47c06915ec9"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DBarricade Member%3DPositieWijziging"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7588f79a-a9e0-41e1-a661-460df450916d"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b667287-0d36-4f8d-83aa-96273f195538">
+                    <propertyInstance
+                      Id="3700ab8f-d0ca-4be2-a971-ba26c0f49c38"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b98ce07-92ed-409b-80eb-65d909c3d4fb">
+                    <propertyInstance
+                      Id="fa3d8254-1033-41ec-a95e-2db2d90ce9a1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d8b4bc9d-58a2-43bf-829d-3b61fc685c0a">
+                    <propertyInstance
+                      Id="f18df51d-0cdc-43cd-a3be-a5d04ece5d11"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f24becbe-df70-41db-9657-620e3aabef29">
+                    <propertyInstance
+                      Id="5610e13f-7642-4cae-9459-c7fc8bdd2b0e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06b65a85-2e2e-48b5-aad2-39bc492b7754">
+                    <propertyInstance
+                      Id="419a3e74-8ce6-490f-82d4-7253618e65c2"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fc9335c0-f112-4bc6-8b73-617387694d12"
+                LastKnownName="PositieWijzigingEvent"
+                LastKnownLocation="Package5_2003.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="25c9c5b5-7759-417e-b93e-9ae5205242cd"
+            name="Verplaats"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3ed6c945-150c-410b-8a5d-79ac40cf8d96"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DBarricade Member%3D(Name%3DVerplaats OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Velden Type%3DVeld)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="09958662-1c47-445d-a335-e1d7720abd22"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81707220-125b-4094-8c2c-8b120dd4f570">
+                    <propertyInstance
+                      Id="25a62ec4-2b83-4c24-a217-8981147623b1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07f193e5-9b7d-4677-958a-de1c3e14ca7a">
+                    <propertyInstance
+                      Id="d03bf2d4-20ae-44d5-9476-7603a9f54884"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25b45086-3e56-4ade-af48-746905bcdf83">
+                    <propertyInstance
+                      Id="b1b2ee16-f857-4d04-9787-fb436f6c833e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81266cb6-8fbf-454e-855f-1d2caae7c16f">
+                    <propertyInstance
+                      Id="29a6f839-fe5f-491a-a9ec-9536e2864607"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3b580220-13c8-4ec0-8ad5-99bdbc90495c">
+                    <propertyInstance
+                      Id="7adf66d6-0db3-45c9-9a30-0e2f3766787c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6578cdc-52e1-49de-a434-74c93ff0f8be">
+                    <propertyInstance
+                      Id="4877a21a-b7a0-4073-81ed-1e308e0aae80"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="40cec582-b97e-4ebc-b22a-761d5c8a9962"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0d762b0e-2802-4bf1-98fc-600ff1802f5c"
+                  name="bestemming"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="ec6351db-6643-40dc-be76-3349c5c02efa"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DBarricade Member%3D(Name%3DVerplaats OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Velden Type%3DVeld)]) ParameterIdentifier%3Dbestemming"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="bab21eb6-529a-446e-af38-fb25c4d33a43"
+                      LastKnownName="Veld"
+                      LastKnownLocation="Package1_0018.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c0797481-022f-418e-9392-b862de43e96c"
+        LastKnownName="Exceptions"
+        LastKnownLocation="Package_0034.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

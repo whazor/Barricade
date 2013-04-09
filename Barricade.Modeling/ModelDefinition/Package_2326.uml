@@ -118,14 +118,7 @@
                 <parameter
                   Id="05fe1213-45cd-44eb-bf5d-319dd9ef8210"
                   name="barricade"
-                  direction="In">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="f906f0bf-8597-439f-b3ce-e1916d14b5ec"
-                      LastKnownName="Barricade"
-                      LastKnownLocation="Package_1214.uml" />
-                  </type_NamedElement>
-                </parameter>
+                  direction="In" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -204,14 +197,7 @@
                 <parameter
                   Id="d0176fa8-0dfd-4d1c-a66d-9666188002d8"
                   name="poin"
-                  direction="In">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="cecdfa20-532c-4e6d-805d-04da79377c61"
-                      LastKnownName="Pion"
-                      LastKnownLocation="Package_1214.uml" />
-                  </type_NamedElement>
-                </parameter>
+                  direction="In" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -334,14 +320,7 @@
                 <parameter
                   Id="84e1e8ff-f9d9-4144-86aa-1e72860c1b24"
                   name="pion"
-                  direction="In">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="cecdfa20-532c-4e6d-805d-04da79377c61"
-                      LastKnownName="Pion"
-                      LastKnownLocation="Package_1214.uml" />
-                  </type_NamedElement>
-                </parameter>
+                  direction="In" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -464,14 +443,7 @@
                 <parameter
                   Id="ea236527-9ce5-4130-8e7f-13890734f255"
                   name="pion"
-                  direction="In">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="cecdfa20-532c-4e6d-805d-04da79377c61"
-                      LastKnownName="Pion"
-                      LastKnownLocation="Package_1214.uml" />
-                  </type_NamedElement>
-                </parameter>
+                  direction="In" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -594,14 +566,7 @@
                 <parameter
                   Id="12185a05-779d-4634-b87e-97655d62e901"
                   name="pion"
-                  direction="In">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="cecdfa20-532c-4e6d-805d-04da79377c61"
-                      LastKnownName="Pion"
-                      LastKnownLocation="Package_1214.uml" />
-                  </type_NamedElement>
-                </parameter>
+                  direction="In" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -729,14 +694,7 @@
                 <parameter
                   Id="72d8e7b6-8478-4f78-a731-f9d1a6b715d1"
                   name="pion"
-                  direction="In">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="cecdfa20-532c-4e6d-805d-04da79377c61"
-                      LastKnownName="Pion"
-                      LastKnownLocation="Package_1214.uml" />
-                  </type_NamedElement>
-                </parameter>
+                  direction="In" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter

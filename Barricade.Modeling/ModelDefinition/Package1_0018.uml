@@ -1,65 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
-  Id="85b733ab-c599-4c87-81a9-a5d15cec5c52"
-  name="Process"
+  Id="b7029eee-8ab1-4feb-aa0e-874375fe144e"
+  name="Velden"
   visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <referencesInternal>
     <reference
-      Id="15993a8e-b7b1-4fc4-84b1-9f67fd00cfd8"
-      handle="viewcode://./CodeSchema_Namespace?Namespace%3DBarricade.Process"
+      Id="c7ea5f6a-3439-41e6-97b5-fd69074d8a1b"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DBarricade.Logic.Velden"
       tag="ViewCode" />
   </referencesInternal>
   <packagedElements>
     <packageHasNamedElement>
-      <Interface
-        Id="5e127946-3f83-48f2-bbf7-23a62cddada9"
-        name="ISpeler"
+      <class
+        Id="bab21eb6-529a-446e-af38-fb25c4d33a43"
+        name="Veld"
         isAbstract="false"
-        isLeaf="false">
+        isLeaf="false"
+        isActiveClass="false">
         <referencesInternal>
           <reference
-            Id="d24f5dd9-93aa-41e3-9c0e-8c32bba41bb1"
-            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Process Type%3DISpeler"
+            Id="f39b34c9-429d-44d6-9e61-8e64e7317bec"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Velden Type%3DVeld"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
           <stereotypeInstance
-            Id="eed824ba-45bc-4490-ab7b-813c317b4e75"
-            name="interface"
+            Id="a4b8dae3-2ca0-49c3-a673-c2e040d71907"
+            name="class"
             profile="CSharpProfile">
             <propertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="c56bae18-cd88-47d9-8451-2bde83a30b02">
+                Id="36dfc68f-06b2-4437-928d-80f41f088d66">
                 <propertyInstance
-                  Id="80e6a140-6123-4d5c-b142-29baab642ec5"
+                  Id="2123f080-7ddc-4cfb-9dc9-737d1360cc02"
                   name="ClrAttributes" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="285b0a86-bba2-4424-920d-bdb215c57a14">
+                Id="87d46627-6bd2-4ecc-af44-a43d3dbf9ead">
                 <propertyInstance
-                  Id="7499babb-1bed-4d07-b333-685e1de79a30"
+                  Id="d8fac0e3-54c2-4377-8d42-c3d222f624df"
                   name="IsPartial"
                   value="false" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="f5f16e37-44aa-4b1e-b4e3-c7d048627e0a">
+                Id="8e147a51-39d3-479d-8a8e-d2b683ca2feb">
                 <propertyInstance
-                  Id="a3f9fa12-fa02-4c73-b98a-22c5fe5beed1"
+                  Id="454a78f2-8530-4a44-8d5c-92d62eccfd98"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b2c5789a-e680-4c91-b45f-5f9ac42d5fbc">
+                <propertyInstance
+                  Id="977ddaba-4a41-4c1f-b589-8499f28906b1"
                   name="IsUnsafe"
                   value="false" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="8e910ee5-d6c8-4cc9-9976-5b14151a2bfc">
+                Id="be70d063-0390-4cc0-b913-514cdd720111">
                 <propertyInstance
-                  Id="cac4916e-452c-4aeb-aca9-5d699b779540"
+                  Id="7ab1c883-d924-4e0c-bf93-f39cb49ce6b4"
                   name="PackageVisibility"
                   value="internal" />
               </stereotypeInstanceHasPropertyInstances>
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-      </Interface>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>

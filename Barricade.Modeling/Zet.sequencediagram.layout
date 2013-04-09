@@ -26,11 +26,11 @@
         <lostFoundTargetShape Id="f8a38b1d-6fc9-422c-9697-b2f7f9c86ab0" absoluteBounds="1.7020833333333338, 1.2, 0.2, 0.2" customColor="89, 89, 89">
           <lostFoundTargetMoniker Id="45f054e0-b43d-441d-b4d0-f367e8bb6211" LastKnownName="LostFoundTarget2" />
         </lostFoundTargetShape>
-        <lostFoundTargetShape Id="adcfb63f-7250-4cda-925d-cf73961e22bd" absoluteBounds="4.2541666666666664, 13.504010377824313, 0.2, 0.2" customColor="89, 89, 89">
-          <lostFoundTargetMoniker Id="ec2f9307-4544-4aae-ad97-a0484fd440a6" LastKnownName="LostFoundTarget3" />
-        </lostFoundTargetShape>
         <lostFoundTargetShape Id="4c2f2158-98a9-4bfa-bab6-7c3e338c147a" absoluteBounds="4.4989583333333325, 4.1180034596472979, 0.2, 0.2" customColor="89, 89, 89">
           <lostFoundTargetMoniker Id="d6ba8856-024e-4795-90fa-5275d1e7d4e4" LastKnownName="LostFoundTarget4" />
+        </lostFoundTargetShape>
+        <lostFoundTargetShape Id="adcfb63f-7250-4cda-925d-cf73961e22bd" absoluteBounds="4.2541666666666664, 13.504010377824313, 0.2, 0.2" customColor="89, 89, 89">
+          <lostFoundTargetMoniker Id="ec2f9307-4544-4aae-ad97-a0484fd440a6" LastKnownName="LostFoundTarget3" />
         </lostFoundTargetShape>
       </relativeChildShapes>
     </lifelineShape>
@@ -171,7 +171,7 @@
       <commentMoniker Id="790f5cbd-7fc5-489c-9e21-b3e24dea2816" />
       <relativeChildShapes />
     </commentShape>
-    <commentConnector edgePoints="[(1.25 : 6.125); (1.175 : 5.38800345920026)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(1.25 : 6.125); (1.175 : 5.38800345920026)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="52d129d5-d81b-4299-b2c0-4e4245bb054e" />
@@ -302,7 +302,7 @@
         <umlExecutionSpecificationShapeMoniker Id="19441d14-3bbc-4936-ba62-c5ae65e6c659" />
       </nodes>
     </syncSelfMessageConnector>
-    <commentConnector edgePoints="[(1.25 : 6.625); (1.175 : 8.23800345920026)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(1.25 : 6.625); (1.175 : 8.23800345920026)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="52d129d5-d81b-4299-b2c0-4e4245bb054e" />

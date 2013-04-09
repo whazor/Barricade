@@ -30,14 +30,44 @@
       <SubType>Content</SubType>
       <DependentUpon>Data.classdiagram</DependentUpon>
     </Content>
-    <Content Include="Logic.classdiagram">
+    <Content Include="Domein\ClassDiagram.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Logic.classdiagram.layout">
+    <Content Include="Domein\ClassDiagram.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Logic.classdiagram</DependentUpon>
+      <DependentUpon>Domein\ClassDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Domein\MogelijkeZetten.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Domein\MogelijkeZetten.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Domein\MogelijkeZetten.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Domein\VerplaatsBarricade.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Domein\VerplaatsBarricade.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Domein\VerplaatsBarricade.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Domein\VerplaatsPion.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Domein\VerplaatsPion.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Domein\VerplaatsPion.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Package1_0018.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_0019.uml">
+      <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package1_2003.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_0019.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package2_2003.uml">
@@ -58,13 +88,22 @@
     <Content Include="ModelDefinition\Package7_2003.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_0018.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_0019.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_0034.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_0035.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package_1214.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1216.uml">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ModelDefinition\Package_1656.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1711.uml">
@@ -96,19 +135,19 @@
       <SubType>Content</SubType>
       <DependentUpon>Presentatie\Presentation.classdiagram</DependentUpon>
     </Content>
-    <Content Include="Process.classdiagram">
+    <Content Include="Proces\GameLoop.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Process.classdiagram.layout">
+    <Content Include="Proces\GameLoop.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Process.classdiagram</DependentUpon>
+      <DependentUpon>Proces\GameLoop.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="Verplaats.sequencediagram">
+    <Content Include="Proces\Process.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Verplaats.sequencediagram.layout">
+    <Content Include="Proces\Process.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Verplaats.sequencediagram</DependentUpon>
+      <DependentUpon>Proces\Process.classdiagram</DependentUpon>
     </Content>
     <Content Include="Zet.sequencediagram">
       <SubType>Content</SubType>
@@ -121,6 +160,8 @@
     <Content Include="ModelDefinition\Barricade.Modeling.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="Domein" />
+    <Folder Include="Proces" />
     <Folder Include="Presentatie" />
   </ItemGroup>
   <ItemGroup>

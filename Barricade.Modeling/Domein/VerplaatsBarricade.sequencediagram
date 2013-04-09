@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="832359c0-b34f-42e9-8f57-27ed5d89ac61" name="VerplaatsBarricade" linkedPackageId="d0961072-ba02-43a3-8a8e-30e750e46523" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="57c513b9-6a89-484c-928c-4a4540709131" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="f48c2951-7ff7-4af1-955e-485e26118e7c" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="caedc734-4b1c-4860-95ba-e0e12e8e37e5">
+          <propertyInstance Id="371dda8b-d5b3-4944-bf46-bba4fdff757b" name="BaseName">
+            <elementDefinition Id="c3978a33-05d5-46b3-b65a-96d1396989de" />
+          </propertyInstance>
+          <elementDefinition Id="95b4ed45-4f0b-44c7-a867-87a4bcdf1947" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="3e24ad12-7d7b-4894-a7eb-b468f6b53702">
+          <propertyInstance Id="d36fe129-b418-4c7b-a9b5-8ffc0b5cb7b8" name="ClrAttributes">
+            <elementDefinition Id="370bea9a-949b-45d6-8b67-8c53c45d632a" />
+          </propertyInstance>
+          <elementDefinition Id="78149b53-bc0e-4d73-b43d-98c9684fa600" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="98f4ae83-8f3d-4e71-8c22-6bca3ff51339">
+          <propertyInstance Id="05a87713-d8e5-4173-af0e-d51716392f34" name="Usings">
+            <elementDefinition Id="e0ea2e9b-1328-42c8-953b-d27066ba41e8" />
+          </propertyInstance>
+          <elementDefinition Id="47568e55-e8de-46e5-bfcd-0ef1faa6d4b5" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="b5806a42-ac5d-4644-8f63-a46ff0849276" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="7994fd9d-16a7-4fef-ba18-9005066e4b64" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="005b18e7-e450-4af7-b79f-bf330e47b0d6">
+          <propertyInstance Id="588a20cb-8f0b-4efa-8468-5510c403e2c8" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="4a6ad0dd-00ea-4d76-992b-d79a32c45356" />
+          </propertyInstance>
+          <elementDefinition Id="f9e62442-ab74-41f9-9ed5-887b000cc3ea" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="1fe9d38f-45bf-41cc-ae51-c34bdf373df0">
+          <propertyInstance Id="69a290e3-7e18-4da6-b399-ed5c13442888" name="TemplateFilePath" value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="5f7a9dd3-c703-41c8-8e91-5a31a44c124c" />
+          </propertyInstance>
+          <elementDefinition Id="c86fc5c3-0e71-4d78-8e10-7d7824fb85d9" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="70c8f926-af23-42db-807e-2503f367dff3">
+          <propertyInstance Id="637bf2f4-a55e-4732-a861-ce5b9b6760bf" name="ProjectPath" value="ClassTemplate=..\Barricade\Barricade.csproj|EnumTemplate=..\Barricade\Barricade.csproj|InterfaceTemplate=..\Barricade\Barricade.csproj|StructTemplate=..\Barricade\Barricade.csproj">
+            <elementDefinition Id="58d62d21-3e22-41e5-898f-3b71fbd4f10e" />
+          </propertyInstance>
+          <elementDefinition Id="4198f6d2-0748-4b69-9da9-9dbe92fb36be" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="6f125adb-1056-4c79-a11f-4b8034ccbef4">
+          <propertyInstance Id="528d785d-55c1-4b9e-8e72-ac8b735c60fc" name="TargetDirectory" value="ClassTemplate={PackageStructure}|EnumTemplate={PackageStructure}|InterfaceTemplate={PackageStructure}|StructTemplate={PackageStructure}">
+            <elementDefinition Id="87ac7ef7-d2b8-4691-a469-8de2e3c814bd" />
+          </propertyInstance>
+          <elementDefinition Id="09471332-3cf5-4a4f-9bf9-12df1efe0e3c" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="68c11fde-b27c-4b8c-9e1d-038587724975">
+          <propertyInstance Id="6713a5dc-cc57-4662-a3f8-4e945ef30205" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="ed981011-79b1-4bd5-91a5-e53282a1a81b" />
+          </propertyInstance>
+          <elementDefinition Id="9ad479de-7c62-45e8-b95d-2c51721484ee" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="d96028e9-2fd9-4403-aadc-18c79cbd6450">
+          <propertyInstance Id="4c8657f4-b375-4de5-90cd-914ed10896bd" name="Overwrite" value="ClassTemplate=False|EnumTemplate=False|InterfaceTemplate=False|StructTemplate=False">
+            <elementDefinition Id="d0d36c56-cbb0-4ac5-80c7-f9abb71eca94" />
+          </propertyInstance>
+          <elementDefinition Id="4c9d2cbb-6433-460a-891e-d88786d70409" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="a38150b4-f0bd-4453-8d80-73cf7311c0b9">
+          <propertyInstance Id="2c6871dc-3af0-435d-b8ed-49fd73e0d5e6" name="Parameters">
+            <elementDefinition Id="4a62903d-f130-4f81-9d38-08db827a1e38" />
+          </propertyInstance>
+          <elementDefinition Id="2fd44cc4-3ad5-474e-98a9-7b0920effe17" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="95d7afe3-2395-40cc-a7f3-fead882a35a1">
+      <profileInstance Id="f74589ce-8c55-4553-9b7d-1ef38fda2773" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="d4ae4524-d8dd-40ec-ae3b-719b93b5ab1c">
+      <profileInstance Id="7a6a7ba8-f2b1-4cef-86b0-69e215028154" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="edf9d781-0723-47e8-9e6f-86a627e74211">
+      <profileInstance Id="28ff238c-f63c-4d3d-923d-40f850a50895" name="CSharpProfile">
+        <elementDefinition Id="7425ede2-cb4f-4fc2-a7cd-8b852ba24dfb" />
+      </profileInstance>
+      <elementDefinition Id="11d91cb2-76f8-4799-a0ef-afe97c07e395" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="dcc784d6-da6e-469e-9afe-11c142727e0d">
+      <profileInstance Id="0a424284-791b-4c32-b5f1-53dd395f5dea" name="TextTemplateBindings">
+        <elementDefinition Id="60c91028-ca96-4d92-9206-29143c7706d9" />
+      </profileInstance>
+      <elementDefinition Id="a68f1681-406e-433c-8e88-03f3ad3ec3fc" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="dbe7b24f-048f-4f23-9542-ce475b47666e" name="VerplaatsBarricade" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <elementDefinition Id="1e9ef1af-d9b1-43f0-b93d-560d8ea45d7b" />
+        <fragments>
+          <behaviorExecutionSpecification Id="591f6f08-e7e7-43a8-935a-98be0894e5a6" name="BehaviorExecutionSpecification2">
+            <elementDefinition Id="b1fbf513-d215-417d-bdf3-c20ab027beb5" />
+            <coveredLifelines>
+              <lifelineMoniker Id="dca39905-c7bc-4224-90ef-29ac48e79f0f" LastKnownName="spel : Spel" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="e3de6a7b-178b-4202-90ea-68866a50784f" LastKnownName="ExecutionOccurrenceSpecification4" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="cab6bc50-2444-44b0-b95e-28944c882d12" LastKnownName="ExecutionOccurrenceSpecification3" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="1b4f38fe-6766-4bd6-820c-4bc1edbae9e7" LastKnownName="MessageOccurrenceSpecification5" />
+              <messageOccurrenceSpecificationMoniker Id="72f4e323-8852-4e34-920a-356a8dc93d79" LastKnownName="MessageOccurrenceSpecification1" />
+              <messageOccurrenceSpecificationMoniker Id="79b131c6-a8e7-4f22-8f10-533ebf159ac8" LastKnownName="MessageOccurrenceSpecification4" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="cab6bc50-2444-44b0-b95e-28944c882d12" name="ExecutionOccurrenceSpecification3">
+            <elementDefinition Id="747d71ed-c350-40a7-a196-66b36c6642d2" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="cc47a9b8-08c4-460e-a8f9-d893f584d76a" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="dca39905-c7bc-4224-90ef-29ac48e79f0f" LastKnownName="spel : Spel" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <lostFoundTarget Id="4d24837b-8a1c-4637-88cb-7c37d37a4d87" name="LostFoundTarget1">
+            <elementDefinition Id="1d2fd88d-e83d-4adc-a14d-9127827af6cc" />
+          </lostFoundTarget>
+          <messageOccurrenceSpecification Id="1b4f38fe-6766-4bd6-820c-4bc1edbae9e7" name="MessageOccurrenceSpecification5">
+            <elementDefinition Id="79d01351-e636-4350-9afa-5e68126e19e9" />
+            <covered>
+              <lifelineMoniker Id="dca39905-c7bc-4224-90ef-29ac48e79f0f" LastKnownName="spel : Spel" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="b536d027-5a15-4a47-a307-de26dacbe467" name="BehaviorExecutionSpecification1">
+            <elementDefinition Id="9722378f-73c1-47cd-9d76-cf09e5451870" />
+            <coveredLifelines>
+              <lifelineMoniker Id="54f9fbee-effd-4156-925d-ed716192672f" LastKnownName="barricade : Barricade" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="16b42189-2d8f-4bae-9460-5ffcf521d0bb" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="9a1d66d2-ca34-4383-b3b8-5e14b5b8e16f" LastKnownName="ExecutionOccurrenceSpecification1" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="6e59f89a-c46c-4a7b-8915-ba5f4d802de6" LastKnownName="MessageOccurrenceSpecification2" />
+              <messageOccurrenceSpecificationMoniker Id="02c63e3c-4856-461a-898c-4d9c5c1089f5" LastKnownName="MessageOccurrenceSpecification10" />
+              <messageOccurrenceSpecificationMoniker Id="257af1b0-3397-45ca-b3e4-6a327bcd1e43" LastKnownName="MessageOccurrenceSpecification13" />
+              <messageOccurrenceSpecificationMoniker Id="a82850f8-6139-4c5b-a58d-f9e4f62430d0" LastKnownName="MessageOccurrenceSpecification14" />
+              <messageOccurrenceSpecificationMoniker Id="18202b4e-4a73-4521-9a93-51affde2bad1" LastKnownName="MessageOccurrenceSpecification3" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="9a1d66d2-ca34-4383-b3b8-5e14b5b8e16f" name="ExecutionOccurrenceSpecification1">
+            <elementDefinition Id="fda7096d-66dd-4bb3-a08b-1595684aea9e" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="6b84fd67-7ec7-40fd-87be-03ac3820b915" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="54f9fbee-effd-4156-925d-ed716192672f" LastKnownName="barricade : Barricade" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="72f4e323-8852-4e34-920a-356a8dc93d79" name="MessageOccurrenceSpecification1">
+            <elementDefinition Id="a95c997e-13f7-428e-a6e2-483e45f2b6dd" />
+            <covered>
+              <lifelineMoniker Id="dca39905-c7bc-4224-90ef-29ac48e79f0f" LastKnownName="spel : Spel" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="6e59f89a-c46c-4a7b-8915-ba5f4d802de6" name="MessageOccurrenceSpecification2">
+            <elementDefinition Id="bef0f68d-0a0b-4901-90f7-f222d438f931" />
+            <covered>
+              <lifelineMoniker Id="54f9fbee-effd-4156-925d-ed716192672f" LastKnownName="barricade : Barricade" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="8ce76b6a-b034-423e-8a57-3b3cbfe63c36" name="BehaviorExecutionSpecification4">
+            <elementDefinition Id="2c183877-bd8c-4c45-b29b-73f710ac6067" />
+            <coveredLifelines>
+              <lifelineMoniker Id="63800be6-b9ab-42f6-a195-75273b729a59" LastKnownName="veld : Veld" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="ac307246-2a7c-4a5e-8b22-38eb70e2056a" LastKnownName="ExecutionOccurrenceSpecification8" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="8b9a8b10-728b-44e0-a7f5-c279b3f2dd75" LastKnownName="ExecutionOccurrenceSpecification7" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="4eb40104-c70c-44c7-ad1b-edd3979cedc8" LastKnownName="MessageOccurrenceSpecification11" />
+              <messageOccurrenceSpecificationMoniker Id="5d2a6d83-3a58-4b32-ace8-9e5d63987c87" LastKnownName="MessageOccurrenceSpecification12" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="8b9a8b10-728b-44e0-a7f5-c279b3f2dd75" name="ExecutionOccurrenceSpecification7">
+            <elementDefinition Id="de2a6239-fa7d-4be6-bb69-bef7a7d15c14" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="5e919777-7724-4ead-ac90-cba06b37c092" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="63800be6-b9ab-42f6-a195-75273b729a59" LastKnownName="veld : Veld" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="02c63e3c-4856-461a-898c-4d9c5c1089f5" name="MessageOccurrenceSpecification10">
+            <elementDefinition Id="9e6a5b0a-1c78-4e31-8a02-06e611035f2b" />
+            <covered>
+              <lifelineMoniker Id="54f9fbee-effd-4156-925d-ed716192672f" LastKnownName="barricade : Barricade" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="4eb40104-c70c-44c7-ad1b-edd3979cedc8" name="MessageOccurrenceSpecification11">
+            <elementDefinition Id="f1d3962a-f30c-44fa-b069-b105b6dd6510" />
+            <covered>
+              <lifelineMoniker Id="63800be6-b9ab-42f6-a195-75273b729a59" LastKnownName="veld : Veld" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="257af1b0-3397-45ca-b3e4-6a327bcd1e43" name="MessageOccurrenceSpecification13">
+            <elementDefinition Id="b7339244-de0f-4b8d-9bc8-70b8139245de" />
+            <covered>
+              <lifelineMoniker Id="54f9fbee-effd-4156-925d-ed716192672f" LastKnownName="barricade : Barricade" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="5d2a6d83-3a58-4b32-ace8-9e5d63987c87" name="MessageOccurrenceSpecification12">
+            <elementDefinition Id="8676cce7-d5de-4e98-89d0-b95faa9dd651" />
+            <covered>
+              <lifelineMoniker Id="63800be6-b9ab-42f6-a195-75273b729a59" LastKnownName="veld : Veld" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="ac307246-2a7c-4a5e-8b22-38eb70e2056a" name="ExecutionOccurrenceSpecification8">
+            <elementDefinition Id="54e765d6-9ddf-4604-ba3e-94bd97c8a516" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="3d609a46-789b-40cd-a4fc-33295f2debc4" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="63800be6-b9ab-42f6-a195-75273b729a59" LastKnownName="veld : Veld" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="a82850f8-6139-4c5b-a58d-f9e4f62430d0" name="MessageOccurrenceSpecification14">
+            <elementDefinition Id="1582674c-5be9-4b50-8e5e-df38103b2d79" />
+            <covered>
+              <lifelineMoniker Id="54f9fbee-effd-4156-925d-ed716192672f" LastKnownName="barricade : Barricade" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <lostFoundTarget Id="18c808c5-c291-43be-b757-dba333672eb4" name="LostFoundTarget2">
+            <elementDefinition Id="c40ab8b9-4f74-4788-b5a1-79ed2073b08b" />
+          </lostFoundTarget>
+          <messageOccurrenceSpecification Id="18202b4e-4a73-4521-9a93-51affde2bad1" name="MessageOccurrenceSpecification3">
+            <elementDefinition Id="1048bf2d-3d26-4d4b-ac88-9a2e97beec7b" />
+            <covered>
+              <lifelineMoniker Id="54f9fbee-effd-4156-925d-ed716192672f" LastKnownName="barricade : Barricade" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="79b131c6-a8e7-4f22-8f10-533ebf159ac8" name="MessageOccurrenceSpecification4">
+            <elementDefinition Id="5550f4df-1c86-4c71-8c77-484e2e390f98" />
+            <covered>
+              <lifelineMoniker Id="dca39905-c7bc-4224-90ef-29ac48e79f0f" LastKnownName="spel : Spel" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="16b42189-2d8f-4bae-9460-5ffcf521d0bb" name="ExecutionOccurrenceSpecification2">
+            <elementDefinition Id="828c5d77-8765-40c3-b6c9-fabd72b4cf21" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="398befa4-ed77-4988-8a32-f7f2d581abc2" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="54f9fbee-effd-4156-925d-ed716192672f" LastKnownName="barricade : Barricade" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="e3de6a7b-178b-4202-90ea-68866a50784f" name="ExecutionOccurrenceSpecification4">
+            <elementDefinition Id="14d10ccb-0db4-4208-a378-ab3f00480e6e" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="8df68a2c-408b-4269-bad9-735675bb21eb" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="dca39905-c7bc-4224-90ef-29ac48e79f0f" LastKnownName="spel : Spel" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="dca39905-c7bc-4224-90ef-29ac48e79f0f" name="spel : Spel" isActor="true" lifelineDisplayName="spel : Spel">
+            <elementDefinition Id="ae362744-748a-40c9-86e5-06c8c9280a15" />
+            <represents>
+              <propertyMoniker Id="b6130e57-e639-4bfd-ba66-be79e3ef4443" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="cab6bc50-2444-44b0-b95e-28944c882d12" LastKnownName="ExecutionOccurrenceSpecification3" />
+              <executionOccurrenceSpecificationMoniker Id="e3de6a7b-178b-4202-90ea-68866a50784f" LastKnownName="ExecutionOccurrenceSpecification4" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="54f9fbee-effd-4156-925d-ed716192672f" name="barricade : Barricade" isActor="false" lifelineDisplayName="barricade : Barricade">
+            <elementDefinition Id="913c476e-e70c-4ecf-b325-a535c6ec7e85" />
+            <represents>
+              <propertyMoniker Id="9d2d8a8f-c15b-4f42-88cb-67e25f6a3155" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="9a1d66d2-ca34-4383-b3b8-5e14b5b8e16f" LastKnownName="ExecutionOccurrenceSpecification1" />
+              <executionOccurrenceSpecificationMoniker Id="16b42189-2d8f-4bae-9460-5ffcf521d0bb" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="63800be6-b9ab-42f6-a195-75273b729a59" name="veld : Veld" isActor="false" lifelineDisplayName="veld : Veld">
+            <elementDefinition Id="f9fe5321-0ba5-444f-a7d2-6a991be9a9eb" />
+            <represents>
+              <propertyMoniker Id="27227e7d-a0f5-45bb-916f-9514c1e67191" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="8b9a8b10-728b-44e0-a7f5-c279b3f2dd75" LastKnownName="ExecutionOccurrenceSpecification7" />
+              <executionOccurrenceSpecificationMoniker Id="ac307246-2a7c-4a5e-8b22-38eb70e2056a" LastKnownName="ExecutionOccurrenceSpecification8" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="19c95435-e1ef-4d76-a690-44296c815445" name="Beurt" messageKind="Found" messageSort="AsynchCall" createSelfMessage="false">
+            <elementDefinition Id="422b8790-40df-4811-a04b-4c39c43504b1" />
+            <sendEvent>
+              <lostFoundTargetMoniker Id="4d24837b-8a1c-4637-88cb-7c37d37a4d87" LastKnownName="LostFoundTarget1" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="1b4f38fe-6766-4bd6-820c-4bc1edbae9e7" LastKnownName="MessageOccurrenceSpecification5" />
+            </receiveEvent>
+          </message>
+          <message Id="38f8f874-1a97-482e-b796-63d8fe3994b4" name="Verplaats barricade" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="+ Verplaats(bestemming : Veld) : Boolean">
+            <elementDefinition Id="59678a72-9353-4cef-a4a2-05af3c6dd3f9" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="72f4e323-8852-4e34-920a-356a8dc93d79" LastKnownName="MessageOccurrenceSpecification1" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="6e59f89a-c46c-4a7b-8915-ba5f4d802de6" LastKnownName="MessageOccurrenceSpecification2" />
+            </receiveEvent>
+          </message>
+          <message Id="685b70e2-1221-4261-9d56-5ce99dec0f8c" name="Plaats barricade" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="+ Plaats(bar : Barricade) : Boolean">
+            <elementDefinition Id="fd15a880-23b2-4f24-9f6a-36f10370a93a" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="02c63e3c-4856-461a-898c-4d9c5c1089f5" LastKnownName="MessageOccurrenceSpecification10" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="4eb40104-c70c-44c7-ad1b-edd3979cedc8" LastKnownName="MessageOccurrenceSpecification11" />
+            </receiveEvent>
+          </message>
+          <message Id="3a2eb805-150a-4dc4-a370-8453e69b04f9" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <elementDefinition Id="bc11276e-5bb3-44da-b09a-e51e16195825" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="5d2a6d83-3a58-4b32-ace8-9e5d63987c87" LastKnownName="MessageOccurrenceSpecification12" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="257af1b0-3397-45ca-b3e4-6a327bcd1e43" LastKnownName="MessageOccurrenceSpecification13" />
+            </receiveEvent>
+          </message>
+          <message Id="7fdf9f27-ca89-4023-b339-cedf6c9dc6cb" name="PositieVerplaatsing" messageKind="Lost" messageSort="AsynchCall" createSelfMessage="false">
+            <elementDefinition Id="399a0c11-878a-4332-ace8-646f42276166" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="a82850f8-6139-4c5b-a58d-f9e4f62430d0" LastKnownName="MessageOccurrenceSpecification14" />
+            </sendEvent>
+            <receiveEvent>
+              <lostFoundTargetMoniker Id="18c808c5-c291-43be-b757-dba333672eb4" LastKnownName="LostFoundTarget2" />
+            </receiveEvent>
+          </message>
+          <message Id="799f600f-9b3c-4caf-9cf7-657e97a6cbbe" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <elementDefinition Id="4e922a8c-2c76-43fc-b376-4da1c0824f43" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="18202b4e-4a73-4521-9a93-51affde2bad1" LastKnownName="MessageOccurrenceSpecification3" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="79b131c6-a8e7-4f22-8f10-533ebf159ac8" LastKnownName="MessageOccurrenceSpecification4" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property Id="b6130e57-e639-4bfd-ba66-be79e3ef4443" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="22309e32-3910-4ff7-b193-9132116bc243" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="74ef5747-9dfc-4d29-b092-227734db6209" LastKnownName="Spel" />
+            </type_NamedElement>
+          </property>
+          <property Id="9d2d8a8f-c15b-4f42-88cb-67e25f6a3155" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="637a4a48-29b2-4405-8ef9-2799df023bea" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="1c65ffff-3042-4567-bc0c-91a3357fbdc5" LastKnownName="Barricade" />
+            </type_NamedElement>
+          </property>
+          <property Id="8ca676ed-e7af-42cf-bc91-aa1e71c63187" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b2aa2408-59d3-431a-9515-2f8d2e78ec72" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ede8a8f4-b4e6-4c4c-87a9-8e190f8f0c41" LastKnownName="IVeld" />
+            </type_NamedElement>
+          </property>
+          <property Id="27227e7d-a0f5-45bb-916f-9514c1e67191" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c86883b8-74bf-4397-9fbb-c1089836ed43" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="17a5e5aa-0f6f-410b-97d5-073622ef6b7b" LastKnownName="Veld" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="74ef5747-9dfc-4d29-b092-227734db6209" name="Spel" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Process::Spel">
+        <elementDefinition Id="5b54f3f5-b993-4aae-8d4c-1a9f58c9f78d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1c65ffff-3042-4567-bc0c-91a3357fbdc5" name="Barricade" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Barricade">
+        <elementDefinition Id="a359dfe0-f0aa-413c-8f7c-614f479e554a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="cc47a9b8-08c4-460e-a8f9-d893f584d76a" name="ExecutionEvent">
+        <elementDefinition Id="94539db3-a968-4ab9-92ac-4d11cc476377" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="8df68a2c-408b-4269-bad9-735675bb21eb" name="ExecutionEvent">
+        <elementDefinition Id="135a0456-7abd-478d-9182-702e31718618" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="6b84fd67-7ec7-40fd-87be-03ac3820b915" name="ExecutionEvent">
+        <elementDefinition Id="10e45b4b-e50d-4adb-b9e2-fba4fac63d5e" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="398befa4-ed77-4988-8a32-f7f2d581abc2" name="ExecutionEvent">
+        <elementDefinition Id="18a819f6-6096-485f-bd91-8cf5ae379c83" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ede8a8f4-b4e6-4c4c-87a9-8e190f8f0c41" name="IVeld" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Velden::IVeld">
+        <elementDefinition Id="27fd20cc-0983-4b2a-a01a-ed3de0f0fd27" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="17a5e5aa-0f6f-410b-97d5-073622ef6b7b" name="Veld" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Logic::Velden::Veld">
+        <elementDefinition Id="836b8fa8-5fa2-492f-8795-f1f8bbfb1bd3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="5e919777-7724-4ead-ac90-cba06b37c092" name="ExecutionEvent">
+        <elementDefinition Id="c769bf29-700b-4790-9a78-502a6650811f" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="3d609a46-789b-40cd-a4fc-33295f2debc4" name="ExecutionEvent">
+        <elementDefinition Id="ea1691ea-349b-4bc0-99dd-e89721056603" />
+      </executionEvent>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="d0961072-ba02-43a3-8a8e-30e750e46523" name="Barricade.Modeling">
+    <elementDefinition Id="3e5f4f86-0a24-4669-b7de-0fb16dd60e3e" />
+  </package>
+</SequenceDesignerModel>

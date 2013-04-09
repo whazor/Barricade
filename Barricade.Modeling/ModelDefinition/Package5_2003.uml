@@ -12,64 +12,6 @@
   </referencesInternal>
   <packagedElements>
     <packageHasNamedElement>
-      <class
-        Id="20530145-0c78-4355-800d-4fbf7d47ce0d"
-        name="Pion"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <referencesInternal>
-          <reference
-            Id="d5e72135-d4c8-4a85-92ce-541d716f6097"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DPion"
-            tag="ViewCode" />
-        </referencesInternal>
-        <appliedStereotypesInternal>
-          <stereotypeInstance
-            Id="09c8ebf3-37f6-4ee4-9878-9523cc33912f"
-            name="class"
-            profile="CSharpProfile">
-            <propertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="212beded-190d-47a5-b885-e2ffd4acfdac">
-                <propertyInstance
-                  Id="a70e6429-df2f-4ef6-bbd8-c9f2b3d61e88"
-                  name="ClrAttributes" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="6637f76b-7ac2-40db-8f38-416ad6b6afdd">
-                <propertyInstance
-                  Id="98aaaa9e-ce62-44e0-a6b0-39f18994edec"
-                  name="IsPartial"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="464f0189-6010-4c00-94b2-0f075f29a55a">
-                <propertyInstance
-                  Id="c1a68080-3f28-4d45-83c2-c12aca9cba62"
-                  name="IsStatic"
-                  value="False" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="864f44d0-2c8f-4267-98be-3bedc09ecf0c">
-                <propertyInstance
-                  Id="eba77432-8014-4ef5-ada9-3dff8b050f29"
-                  name="IsUnsafe"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="334232db-42e1-46b9-9a45-61e8c28a8cb1">
-                <propertyInstance
-                  Id="89792ae2-c93b-4049-ae30-90c96d3157ee"
-                  name="PackageVisibility"
-                  value="internal" />
-              </stereotypeInstanceHasPropertyInstances>
-            </propertyInstances>
-          </stereotypeInstance>
-        </appliedStereotypesInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <Interface
         Id="0cc9dfdf-cec6-4b0f-8b53-3250cbc9a491"
         name="IVeld"
@@ -120,55 +62,47 @@
       </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
+      <packageMoniker
+        Id="b7029eee-8ab1-4feb-aa0e-874375fe144e"
+        LastKnownName="Velden"
+        LastKnownLocation="Package1_0018.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
       <class
-        Id="a359dfe0-f0aa-413c-8f7c-614f479e554a"
-        name="Barricade"
+        Id="fc9335c0-f112-4bc6-8b73-617387694d12"
+        name="PositieWijzigingEvent"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <referencesInternal>
           <reference
-            Id="17b05152-c8f4-4ff9-9125-450838a19cb8"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DBarricade"
+            Id="0760cedd-2fd7-4fb6-9769-39733fa10b4d"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3D(Name%3DPositieWijzigingEvent ParentType%3DBarricade)"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
           <stereotypeInstance
-            Id="b445b9fa-4b0b-44b4-96a4-397b47b9c569"
-            name="class"
+            Id="aebb33a1-0d65-4b1d-90ef-cd40c9110236"
+            name="delegate"
             profile="CSharpProfile">
             <propertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="64e58c1b-c85a-48fb-99bb-cdf068d5cd2c">
+                Id="703bcb53-31c6-44c3-854d-4c54ecdb1a24">
                 <propertyInstance
-                  Id="948eccd4-7243-45fd-b9e6-27a37cc1b5af"
+                  Id="cff0bc9b-8d9f-4ae5-82b3-149408261658"
                   name="ClrAttributes" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="91fd0845-0ba2-425c-9eeb-286e876ea776">
+                Id="ec9f8f0b-ae74-472f-8bc9-b1b4f8f52254">
                 <propertyInstance
-                  Id="e30e3c67-e82b-4f34-982d-259720919ae1"
-                  name="IsPartial"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="6f9462c5-ebc6-4ed6-b9dc-58cc8fa00cdb">
-                <propertyInstance
-                  Id="24af43e5-8990-402e-971e-d716f7452039"
-                  name="IsStatic"
-                  value="False" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="9e72a36a-dda3-4545-a06b-b1330df6b19a">
-                <propertyInstance
-                  Id="a6b85dab-53b3-4856-881b-15a1423f6ccd"
+                  Id="e5217043-27ad-4aff-91cd-89bdd4dd0d5b"
                   name="IsUnsafe"
                   value="false" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="687010f6-1825-4a4d-8fe6-67f65e3a8b8a">
+                Id="70f824c3-e19b-4421-a954-f525016a71f6">
                 <propertyInstance
-                  Id="50a2c1e0-017b-4342-ae13-0f0875f41e42"
+                  Id="e66899fb-bd68-476c-afbd-c442fc870d0d"
                   name="PackageVisibility"
                   value="internal" />
               </stereotypeInstanceHasPropertyInstances>
@@ -179,112 +113,176 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
-        Id="e92afc07-5708-4cdd-a8a8-2de5d8c3975c"
-        name="Speler"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <referencesInternal>
-          <reference
-            Id="61fd1bec-1a92-4936-80fb-599afe77148c"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DSpeler"
-            tag="ViewCode" />
-        </referencesInternal>
-        <appliedStereotypesInternal>
-          <stereotypeInstance
-            Id="dd0f1d07-9d77-4d26-b885-8e961337a6ed"
-            name="class"
-            profile="CSharpProfile">
-            <propertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="d1708f29-a02a-416a-a484-b425b6f5a2cd">
-                <propertyInstance
-                  Id="c3122b50-a09e-44c0-b925-cae29639fbcd"
-                  name="ClrAttributes" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="580510bb-0086-4948-8fe0-45b1056df3dc">
-                <propertyInstance
-                  Id="65ac0931-d8c7-471e-8abc-0c3ffcd7ce16"
-                  name="IsPartial"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="4f5c87b5-77a0-433c-b6c3-b8117a22e4ea">
-                <propertyInstance
-                  Id="592941c8-098a-4d16-99d5-f39545dc987c"
-                  name="IsStatic"
-                  value="False" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="46ede264-67f2-48a8-a9b2-3bec63426649">
-                <propertyInstance
-                  Id="f044c501-5a6c-4cd1-b0ba-8f65e77befa2"
-                  name="IsUnsafe"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="a064d9ce-2e66-4aeb-9f40-6c367c34ba78">
-                <propertyInstance
-                  Id="ceb57026-a4a4-45e0-8fc3-577aa9d3b27c"
-                  name="PackageVisibility"
-                  value="internal" />
-              </stereotypeInstanceHasPropertyInstances>
-            </propertyInstances>
-          </stereotypeInstance>
-        </appliedStereotypesInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="f674eb1c-afbc-43c2-b582-ab7ddd849985"
+        Id="7759c3dc-f9f0-4824-942d-9c728494e392"
         name="Spel"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <referencesInternal>
           <reference
-            Id="fe2f5610-cf29-4409-8197-6512bbb35c59"
+            Id="af809478-5c78-4c52-9d11-a575df0a53e8"
             handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DSpel"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
           <stereotypeInstance
-            Id="44145672-0e70-41c7-aa40-5c6b1377f6f8"
+            Id="29b3927d-2711-4b72-b9ca-b2694ca92895"
             name="class"
             profile="CSharpProfile">
             <propertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="047cb06f-656d-4e90-90ad-f96247804f6b">
+                Id="6aff8e93-c4e8-4b73-a295-5fbac5da308b">
                 <propertyInstance
-                  Id="288ce24d-7d3d-42c1-8666-42a049eba11f"
+                  Id="dd15b824-7b5d-4272-b1ab-04dd3e086b7a"
                   name="ClrAttributes" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="233a4c60-e8bd-431b-8089-e2a783a93534">
+                Id="3958f6a5-edee-4828-a2a9-47bee781447c">
                 <propertyInstance
-                  Id="88fafd63-afc0-417e-8ab5-74c3a9d93098"
+                  Id="3236430b-e426-4357-8df7-a3950e50e4b9"
                   name="IsPartial"
                   value="false" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="7186b67b-9348-4b1d-b7f0-d7ddc5992173">
+                Id="3c209020-f685-4238-b5b6-350037ce3630">
                 <propertyInstance
-                  Id="eaffb085-a19c-4878-9c48-8902a3c244a6"
+                  Id="7c757b1e-5741-4b0e-9837-14748ca17f28"
                   name="IsStatic"
                   value="False" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="c6f64c49-9ee2-48bf-9c7b-88d207ae8a69">
+                Id="df5a2d13-90fa-4a9c-852a-566631851a7a">
                 <propertyInstance
-                  Id="7a640687-a4b8-4542-8fa1-f4f1918b112f"
+                  Id="6ab00d6d-b61c-46b5-a1b9-9f7dd84328ff"
                   name="IsUnsafe"
                   value="false" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="0fd87827-8533-4302-b761-b689cb5d30e1">
+                Id="a74bd1c2-b7ff-4bee-a745-5c429701cea6">
                 <propertyInstance
-                  Id="b5665853-41b8-435e-850a-12d89b7c96c9"
+                  Id="9645236d-1e29-40b0-a0b9-2f5fa3fed926"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2693b322-c114-46a0-b29e-97cc39ff14d9"
+        LastKnownName="Exceptions"
+        LastKnownLocation="Package_0035.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b59ea3c3-aad3-4627-a654-c62542bbc2bd"
+        name="Barricade"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="9a94c717-d77e-4711-a238-265f7134378d"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DBarricade"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1462075b-38d0-4f11-9543-0e85492703cc"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ce654c0a-5a11-4693-b7e5-b348be7fe2d2">
+                <propertyInstance
+                  Id="e48264ca-707d-4bcb-b39f-76b9b30267db"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dd1bd70e-32d8-486e-bdd9-4ef4c10da4e9">
+                <propertyInstance
+                  Id="66ccd0de-5ce1-44ec-8045-e9ae401524b7"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ce6e26a2-2f4a-42d9-a3b0-0c7f067f4cc7">
+                <propertyInstance
+                  Id="f624d92d-fdfd-45a6-8398-16ccde5f671f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="30901476-e148-4f41-959c-7154a02901e3">
+                <propertyInstance
+                  Id="4d393bc6-b839-4508-a0b9-46bf389f13a7"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f5e9ff6e-0f69-4389-a696-6d91a637e325">
+                <propertyInstance
+                  Id="3f658f33-6f77-4cf2-b7b9-ab12fef676ab"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e4d9a348-3410-409f-894d-6013e5a06547"
+        name="Speler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b1fbf09f-d2b1-44f5-8e97-8859b22378d2"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DSpeler"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="486336bc-c0c1-4826-8917-651ba17bee9a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dbbdd3b5-1210-4fa0-993c-472fed9e6135">
+                <propertyInstance
+                  Id="8616b0a7-a60e-4cec-b6b9-23bc529849d5"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fd55182d-f2cd-44d8-a844-bffbd3be8f9a">
+                <propertyInstance
+                  Id="d1b77222-c06f-42d9-a4e1-55c89237d19f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="901c3a0a-3017-47b7-83eb-60dc7513156c">
+                <propertyInstance
+                  Id="a08c219b-a2f1-4803-87d7-b19f219f85d3"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ced7a423-a0b7-43fa-a00f-20055eb2661b">
+                <propertyInstance
+                  Id="be854cbe-20fb-40a7-814d-2861c6a367de"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="90acdabe-3cb8-4abf-9980-89de4a2e8b6a">
+                <propertyInstance
+                  Id="3d70a4b4-5945-4fd5-8613-f45d9fde3e14"
                   name="PackageVisibility"
                   value="internal" />
               </stereotypeInstanceHasPropertyInstances>

@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="c0797481-022f-418e-9392-b862de43e96c"
+  name="Exceptions" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="02e92dac-1b3a-437e-a940-0851e30f28df"
+        name="BarricadeVerplaatsException"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a086f6de-cb4a-47bf-a1c1-193eb3618793"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Exceptions Type%3DBarricadeVerplaatsException"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="553230b0-9789-45b9-93d1-1b56278f8ec4"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bf67b326-6fdd-49a6-b868-ab02d7e56c41">
+                <propertyInstance
+                  Id="65704357-2091-409e-a45c-6b98b2239f18"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dc58e2e9-4516-43ed-860d-d4b9f83359a2">
+                <propertyInstance
+                  Id="c9ffe00d-877b-4872-be20-583a7885e3e7"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5e26d264-de1b-43d6-b1e4-0a9f85c1be1c">
+                <propertyInstance
+                  Id="f9f9eee1-a024-427e-b37e-06b7f7720261"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="58b88b9b-ccb0-4109-8676-48f72d46ee17">
+                <propertyInstance
+                  Id="b0ad943f-ca3b-4186-8615-d47df38be57c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="04b24224-d52c-4825-a510-f7b0efcf1b9c">
+                <propertyInstance
+                  Id="9e633206-f09a-4a87-b7c4-82ec65881cf1"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="7a540665-1d80-498f-9ce6-e358671b10bb"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1b8619b0-0784-482c-a123-3d98def64d13"
+              LastKnownName="Exception"
+              LastKnownLocation="Package2_2003.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="c679a2df-03dd-4110-8252-1ae0fd038e7e"
+            isDerived="false"
+            sourceEndRoleName="BarricadeVerplaatsException"
+            targetEndRoleName="Veld"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="bab21eb6-529a-446e-af38-fb25c4d33a43"
+              LastKnownName="Veld"
+              LastKnownLocation="Package1_0018.uml" />
+            <description>Property Veld references type Veld.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="26f20e4a-7b63-4c8d-bedd-3d0fbd6fd33b"
+                  name="BarricadeVerplaatsException"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ffda37a4-6db7-409a-81e5-547772c8d2d8"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="886a5156-5905-4213-b4ba-ea8dc09999e7"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1e449378-f2f7-4321-8b78-c2061d4b88d7"
+                  name="Veld"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e183d027-f980-40f8-9911-3500f15222cf"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ce12c32c-21ed-438a-9081-fafb3cd21a9a"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="c293dffa-c2cd-4782-b390-a7baa9b161ef"
+            isDerived="false"
+            sourceEndRoleName="BarricadeVerplaatsException"
+            targetEndRoleName="Barricade"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b59ea3c3-aad3-4627-a654-c62542bbc2bd"
+              LastKnownName="Barricade"
+              LastKnownLocation="Package5_2003.uml" />
+            <description>Property Barricade references type Barricade.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="10b8ea9e-37a6-46fa-8915-caf6fa500244"
+                  name="BarricadeVerplaatsException"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ad7639ee-4b1a-4b42-ba13-0b51713ac408"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="99d6bf8a-5727-4ebc-9a92-f332d973fa34"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b03b8925-0441-4a12-8d39-3221c3410629"
+                  name="Barricade"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c2f4a35d-c00b-4918-b8a5-95a302ef18d2"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="92327cb9-9900-4b3a-b7f3-52e3feda1489"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="39891ca3-7914-4d39-8454-7342670db158"
+            name="Veld"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ba2a21ab-b804-49f3-b861-dfefd9dcf36d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Exceptions Type%3DBarricadeVerplaatsException Member%3DVeld"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5da3c11f-0c17-43b5-a963-92d117cd9ea2"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a535a130-f083-4ded-928e-c7974f8c30d3">
+                    <propertyInstance
+                      Id="8cf7a54c-9c49-4b5e-82e6-d9cd6a815ac8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be1142dc-30f6-42f2-abc1-3db910ef31a4">
+                    <propertyInstance
+                      Id="4774cabf-2957-4013-9bb3-a6c67c21c29c"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="05c3e2fd-db34-4835-b66c-6813effcfa2c">
+                    <propertyInstance
+                      Id="0ce573ce-bd3f-4820-8bc5-afbde61fefc6"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a14fe6ea-a568-42af-95ab-8706e96767f5">
+                    <propertyInstance
+                      Id="b1085002-23fd-4007-b28d-c8056a99cc46"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bbf3e8ca-fd2c-4ca6-8b95-b189ed154bdc">
+                    <propertyInstance
+                      Id="83fcdee6-fd66-492b-816a-d6551da54ca4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f58d1d18-f7fb-4dc7-8543-f32d28004377">
+                    <propertyInstance
+                      Id="8c351bbd-cf14-4635-a01e-3c7ae0fc2e65"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2e2dcbc9-d86a-4969-a0e3-4ffbda413966">
+                    <propertyInstance
+                      Id="eafc4c55-dca5-44e1-96a0-d109cca3c54f"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="bab21eb6-529a-446e-af38-fb25c4d33a43"
+                LastKnownName="Veld"
+                LastKnownLocation="Package1_0018.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="647d6cee-caea-439a-aa3a-4b7cc90571a4"
+            name="Barricade"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f0e67cd9-1937-4e1d-93f6-8fad68f7a989"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Exceptions Type%3DBarricadeVerplaatsException Member%3DBarricade"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="852966a2-522c-4f25-997f-b4c8279f7b93"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="10c46b73-fc18-40df-adde-fee2285b148a">
+                    <propertyInstance
+                      Id="73a76781-f74b-4728-b6bd-afc4ba577d08"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8cbe167e-d6d7-43f6-ac00-5a4f530e26e5">
+                    <propertyInstance
+                      Id="42c9fa31-b417-4698-924a-feee434127a9"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="39b3e02a-7cc7-4c4b-a57c-c8c78b8fe41d">
+                    <propertyInstance
+                      Id="9db58e06-2516-49a7-a63e-ca0247e13d09"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9d85551-986f-46c6-8daf-83a5efb8ae93">
+                    <propertyInstance
+                      Id="e426cf33-47ea-455f-8be5-a0e022e4defc"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61b45a59-cfc8-4b01-8c2b-959de9f721ce">
+                    <propertyInstance
+                      Id="7336264b-fddc-44b8-9fa5-62320cb7fda9"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a0b9958-ea0e-44b7-89a9-bf014f9ee3af">
+                    <propertyInstance
+                      Id="33f384a6-9fc0-4f79-8f9e-7f17bafcb0bf"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2fd7ea7-421e-4953-a50a-84c7258fbff0">
+                    <propertyInstance
+                      Id="34508fd9-6c9c-4618-b6ce-195f1e414e90"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="b59ea3c3-aad3-4627-a654-c62542bbc2bd"
+                LastKnownName="Barricade"
+                LastKnownLocation="Package5_2003.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9ce04274-219f-4edd-af5f-37a7ed8ba806"
+        name="GewonnenException"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="570dacfd-f9a9-41de-93c5-0e8ea5ba273d"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Exceptions Type%3DGewonnenException"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a826d1e2-bbaa-4d45-ae05-49a63392d548"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a6f81f32-0695-47ec-98ad-abbde7e9b49d">
+                <propertyInstance
+                  Id="98113dad-7e82-4dd8-80e2-7a1b6394b708"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ad4a9189-609a-4f17-bb43-3860b74828a1">
+                <propertyInstance
+                  Id="453ad7b3-e609-42eb-bd28-fe657828667c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="55893b38-a66c-4db9-837c-2e940262fce5">
+                <propertyInstance
+                  Id="6d426172-b739-40f0-9096-6b836dd81c5b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9fcf3c6c-70be-455f-94bf-ca4acd8ca9f5">
+                <propertyInstance
+                  Id="45f78ff5-2e68-46cb-8058-4f7743e73d92"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="55af5ff2-10df-4fe9-93c0-533a3b28c039">
+                <propertyInstance
+                  Id="260bb9c7-bfcd-4d36-a6b4-35c33dfb2e9d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="7e47f5fa-5819-4e57-ae1a-22334a4aead5"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1b8619b0-0784-482c-a123-3d98def64d13"
+              LastKnownName="Exception"
+              LastKnownLocation="Package2_2003.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="f284aa4a-7d34-490b-b118-1eaecbdf4268"
+            isDerived="false"
+            sourceEndRoleName="GewonnenException"
+            targetEndRoleName="Speler"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e4d9a348-3410-409f-894d-6013e5a06547"
+              LastKnownName="Speler"
+              LastKnownLocation="Package5_2003.uml" />
+            <description>Property Speler references type Speler.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7c37c7c5-8db2-484f-8e4e-e981ab1a40c1"
+                  name="GewonnenException"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="5a91a65f-6836-46bc-ab16-196ace776af7"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b60d9325-8ff0-466c-983a-ef7016320ea3"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4e3403ab-a0a6-476d-858f-3564a4a4f1ca"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="4dcaa730-c4e5-4c9c-870a-4182c71c345a"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="32d7910b-dc58-421d-8eb3-75dc389404f4"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="978aec03-47c5-4118-94b6-8c21d2b32c29"
+            name="Speler"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3b1a3e3b-3aa6-48cc-9244-5d9cc1f60fa8"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Exceptions Type%3DGewonnenException Member%3DSpeler"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="baf9d315-6fb3-4a12-91a9-cee1f497eb72"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="783131e0-ddd5-4017-9a89-91ec1b46c046">
+                    <propertyInstance
+                      Id="872cecd1-27e2-49d1-bedc-01d4fa847bec"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="323eec55-c1a5-47f0-8096-c9fc4703f9b3">
+                    <propertyInstance
+                      Id="5b93d151-c3c9-4b86-b8aa-6f36e264de6e"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f396ad53-c2d0-4598-b9df-4f526094c84a">
+                    <propertyInstance
+                      Id="07bf7091-807e-4a29-8bfb-f61654ebb262"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b871fd11-759d-470d-b2ee-daf1622558e7">
+                    <propertyInstance
+                      Id="24385c36-a3f0-4f9d-95a4-0f05195b963d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f22477f-53a9-484b-8341-eb9f3e3e99e3">
+                    <propertyInstance
+                      Id="a45f7f31-c424-4029-8eff-a485bbea680d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64732746-4028-41a8-b7c0-8209c6a1ca0a">
+                    <propertyInstance
+                      Id="a42cb853-4ff3-462e-a7ab-2a5e2d8a515d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e0807407-5a8e-425f-8991-ede6187f6c58">
+                    <propertyInstance
+                      Id="b9b59e14-1137-4f75-a567-6896c516e0ec"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="e4d9a348-3410-409f-894d-6013e5a06547"
+                LastKnownName="Speler"
+                LastKnownLocation="Package5_2003.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
