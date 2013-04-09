@@ -145,12 +145,12 @@ namespace Barricade.Data
 	            // Haal de rijopties op
 	            for (var veld = 0; veld < _width; veld++)
 	            {
-	                if (_points[rij, veld] == null) continue;
+	                if (_points[i, veld] == null) continue;
 
-	                isDorp = isDorp || _points[rij, veld].IsDorp;
+	                isDorp = isDorp || _points[i, veld].IsDorp;
 
-	                if (_points[rij, veld] is Veld)
-	                    barricadeVrij = barricadeVrij || (_points[rij, veld] as Veld).IsBeschermd;
+	                if (_points[i, veld] is Veld)
+	                    barricadeVrij = barricadeVrij || (_points[i, veld] as Veld).IsBeschermd;
 	            }
 
 	            // Teken de rijopties
