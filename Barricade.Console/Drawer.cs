@@ -16,7 +16,7 @@ namespace Barricade.Shell
         public Drawer(Loader loader)
         {
             _loader = loader;
-            _saver = new Saver(loader.Kaart);
+            _saver = new Saver(loader);
         }
 
         public void Start()

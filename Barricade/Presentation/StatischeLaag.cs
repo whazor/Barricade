@@ -15,6 +15,8 @@ namespace Barricade.Presentation
         private readonly Grid _grid;
         // IVeld komt uit domeinlaag, IElement uit presentatielaag
         public readonly Dictionary<IVeld, IElement> Velden = new Dictionary<IVeld, IElement>();
+        public delegate void VeldClickHandler(IVeld sender);
+        public event VeldClickHandler VeldKlik;
 
         public StatischeLaag(Grid grid, IVeld[,] kaart)
         {
@@ -91,7 +93,15 @@ namespace Barricade.Presentation
                         vakje.HorizontalAlignment = HorizontalAlignment.Left;
                         vakje.VerticalAlignment = VerticalAlignment.Top;
                         _grid.Children.Add(vakje);
-                        vakje.MouseUp += (sender, args) => { if (VeldKlik != null) VeldKlik(sender, args); };
+                        vakje.MouseUp += (sender, args) =>
+                            {
+                                if (VeldKlik != null && sender != null)
+                                {
+                                    var target = vakje as IElement;
+                                    VeldKlik(target.Veld);
+                                }
+                                    
+                            };
                         Velden[veld] = vakje as IElement;
                     }
                     GenereerLijntjes(j, width, level, i, height, nodeSize, pathSize);
@@ -186,6 +196,6 @@ namespace Barricade.Presentation
             }
         }
 
-        public event EventHandler<MouseButtonEventArgs> VeldKlik;
+        
     }
 }

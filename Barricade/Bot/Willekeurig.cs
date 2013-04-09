@@ -11,7 +11,7 @@ namespace Barricade.Bot
 {
     class Willekeurig : BaseBot
     {
-        private readonly Random _random;
+        private readonly CountedRandom _random;
 
         public Willekeurig(Speler speler, Spel spel)
             : base(speler, spel)

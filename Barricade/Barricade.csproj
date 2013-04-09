@@ -72,6 +72,7 @@
     <Compile Include="Process\ISpeler.cs" />
     <Compile Include="Process\IView.cs" />
     <Compile Include="Utilities\LinqExtensions.cs" />
+    <Compile Include="Utilities\Random.cs" />
     <Compile Include="Utilities\Waiter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

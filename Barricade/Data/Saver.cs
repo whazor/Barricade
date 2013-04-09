@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Barricade.Logic;
@@ -9,21 +10,40 @@ namespace Barricade.Data
 
 	public class Saver
 	{
+	    private readonly Spel _spel;
 	    private readonly IVeld[,] _points;
 
-	    public Saver(IVeld[,] points)
+	    public Saver(Spel spel, IVeld[,] points)
 	    {
+	        _spel = spel;
 	        _points = points;
 	    }
 
-        public String Output(bool metUitzonderingen)
+	    public Saver(Loader loader)
+	    {
+	        _spel = loader.Spel;
+	        _points = loader.Kaart;
+	    }
+
+	    public String Output(bool metUitzonderingen)
         {
             var result = "";
             var height = _points.GetLength(0);
             var width = _points.GetLength(1);
 
             var uitzonderingCount = 0;
-            var uitzondering = "";
+            var uitzondering = "*SEED:"+_spel.Random.Seed+","+_spel.Random.Counter+"\r\n";
+	        var startVelden = new Dictionary<Startveld, int>();
+            foreach (var start in _spel.Spelers.Select(speler => speler.Startveld))
+            {
+                var i = ++uitzonderingCount;
+
+                startVelden[start] = i;
+                uitzondering += "*" + i + ":START,";
+                uitzondering += "" + start.Speler.Name + start.Pionnen.Count;
+                uitzondering += "\r\n";
+            }
+
 
             for (var i = 0; i < height; i++)
             {
@@ -82,23 +102,21 @@ namespace Barricade.Data
                         }
                         else if (_points[i, j] is Startveld || _points[i, j] is Bos)
                         {
-                            result += "<"+(++uitzonderingCount)+">";
+                            
                             if (_points[i, j] is Startveld)
                             {
-                                uitzondering += "*"+ uitzonderingCount + ":START,";
-                                // voeg speler toe
-                                uitzondering += ""+(_points[i, j] as Startveld).Speler.Name + _points[i, j].Pionnen.Count;
+                                result += "<" + startVelden[(_points[i, j] as Startveld)] + ">";
                             }
                             else
                             {
+                                result += "<" + (++uitzonderingCount) + ">";
                                 uitzondering += "*" + uitzonderingCount + ":BOS,";
                                 // voeg spelers toe
                                 uitzondering = _points[i, j].Pionnen.Aggregate(uitzondering,
                                                                                (current, point) =>
                                                                                current + (point.Speler.Name + ""));
+                                uitzondering += "\r\n";
                             }
-                            // enter voor de volgende uitzondering
-                            uitzondering += "\r\n";
                         } 
                         else if(_points[i,j] is Veld)
                         {

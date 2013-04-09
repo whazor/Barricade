@@ -13,7 +13,7 @@ namespace Barricade.Bot
 {
     class Rusher : BaseBot
     {
-        private Random _random;
+        private CountedRandom _random;
         public Rusher(Speler speler, Spel spel)
             : base(speler, spel)
         {

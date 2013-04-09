@@ -26,12 +26,12 @@ namespace Barricade.Bot
             Spel = spel;
         }
 
-        public async Task<IVeld> VerplaatsBarricade(Func<IVeld, bool> magBarricade)
+        public async Task<IVeld> VerplaatsBarricade(Logic.Barricade barricade, Func<IVeld, bool> magBarricade)
         {
             return ZoekBarricadePlaats(magBarricade);
         }
 
-        public async Task<Pion> KiesPion(ICollection<Pion> pionnen)
+        public async Task<Pion> KiesPion(ICollection<Pion> pionnen, int gedobbeld)
         {
             return pionnen.ToList()
                 .OrderBy(pion =>

@@ -13,16 +13,18 @@ namespace Barricade.Process
         /// <summary>
         /// Uit deze methode komt de bestemming van een barricade, dit mag lang duren.
         /// </summary>
+        /// <param name="barricade"></param>
         /// <param name="magBarricade">methode die bepaald of een veld een barricade is</param>
         /// <returns>veld</returns>
-        Task<IVeld> VerplaatsBarricade(Func<IVeld, bool> magBarricade);
+        Task<IVeld> VerplaatsBarricade(Logic.Barricade barricade, Func<IVeld, bool> magBarricade);
 
         /// <summary>
         /// Uit deze methode komt een pion, dit mag lang duren.
         /// </summary>
         /// <param name="pionnen"></param>
+        /// <param name="gedobbeld"></param>
         /// <returns></returns>
-        Task<Pion> KiesPion(ICollection<Pion> pionnen);
+        Task<Pion> KiesPion(ICollection<Pion> pionnen, int gedobbeld);
 
         /// <summary>
         /// Uit deze methode komt de bestemming van een pion, dit mag lang duren.

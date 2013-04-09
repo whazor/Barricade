@@ -50,7 +50,9 @@ namespace Barricade.Logic
                 kleuren['Y'] = Color.FromRgb(255, 255, 0);
                 kleuren['Z'] = Color.FromRgb(80, 96, 34);
             }
-	        return kleuren[speler];
+            if(kleuren.ContainsKey(speler))
+	            return kleuren[speler];
+            return Color.FromRgb(0,0,0);
 	    }
 
 

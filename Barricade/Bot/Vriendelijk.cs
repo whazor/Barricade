@@ -12,7 +12,7 @@ namespace Barricade.Bot
     class Vriendelijk : BaseBot
     {
         private readonly Speler _speler;
-        private readonly Random _random;
+        private readonly CountedRandom _random;
 
         public Vriendelijk(Speler speler, Spel spel) : base(speler, spel)
         {

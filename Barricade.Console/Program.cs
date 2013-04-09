@@ -98,37 +98,17 @@ namespace Barricade.Shell
             Console.WriteLine("");
         }
 
-        public void Highlight(IEnumerable<Pion> pionnen, bool status)
-        {
-            int i = 0;
-//            Console.Write("Kies uit pion:");
-            foreach (var pion in pionnen)
-            {
-//                Console.Write(" " + (++i));
-            }
-        }
-
-        public void Highlight(IEnumerable<IVeld> mogelijk, bool status)
-        {
-//            Console.Write("Kies veld.");
-        }
-
-        public void Klem(Logic.Barricade barricade, bool status)
-        {
-//            Console.Write("Kies barricade.");
-        }
-
         public async Task Wacht(int wachttijdBot)
         {
             Thread.Sleep(1000);
         }
 
-        public Task<IVeld> VerplaatsBarricade(Func<IVeld, bool> magBarricade)
+        public Task<IVeld> VerplaatsBarricade(Logic.Barricade barricade, Func<IVeld, bool> magBarricade)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<Pion> KiesPion(ICollection<Pion> pionnen)
+        public async Task<Pion> KiesPion(ICollection<Pion> pionnen, int gedobbeld)
         {
             int pion = -1;
             while (pion < 0 || pion >= pionnen.Count)
@@ -153,9 +133,9 @@ namespace Barricade.Shell
 
         public int Gedobbeld { get; set; }
         public Speler AanDeBeurt { get; set; }
-        public Task DobbelTask()
+        public async Task<int> DobbelTask()
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }

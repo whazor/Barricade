@@ -10,11 +10,13 @@ using Barricade.Logic.Exceptions;
 using Barricade.Logic.Velden;
 using Barricade.Presentation;
 using System.Collections;
+using Barricade.Utilities;
 
 namespace Barricade.Process
 {
 	public class Spel
 	{
+        readonly CountedRandom _random;
 	    private const int _wachttijdBot = 2000;
 	    private readonly Logic.Spel _logicSpel;
         private readonly IView _game;
@@ -39,7 +41,6 @@ namespace Barricade.Process
                 }
                 i++;
             }
-
         }
 
         public Spel(Logic.Spel logicSpel, IView game, ISpeler viewSpeler)
@@ -63,8 +64,6 @@ namespace Barricade.Process
                 spelers[spelers.First().Key] = viewSpeler;
 	    }
 
-        
-
 	    public virtual async void Start()
         {
 	        try
@@ -82,29 +81,19 @@ namespace Barricade.Process
 	        }
         }
 
-        readonly Random _random;
-
-
 	    /// <summary>
         /// Doorloop alle stappen van een beurt
         /// </summary>
         private async Task VolgendeBeurt(Speler speler, ISpeler controller)
         {
-
             //TODO: speler markeren
 
             // Rol dobbelsteen
             int dobbelwaarde = await controller.DobbelTask();
-            int gedobbeld;
+	        int gedobbeld = dobbelwaarde > 0 ? dobbelwaarde : _random.Next(1, 7);
 
-            if (dobbelwaarde > 0)
-                gedobbeld = dobbelwaarde;
-            else
-                gedobbeld = _random.Next(1, 7);
-
-            controller.Gedobbeld = gedobbeld;
+            // Geef dobbelwaarde neer
             _game.Gedobbeld = gedobbeld;
-            //TODO: dobbelsteen weergeven
 
             // Selecteer alle pionnen die kunnen lopen
             var pionnen = speler.Pionnen.Where(pion => pion.MogelijkeZetten(gedobbeld).Count != 0).ToList();
@@ -112,33 +101,17 @@ namespace Barricade.Process
             // Wanneer er geen zetten mogelijk zijn doorspelen
             if (!pionnen.Any())
             {
-                //TODO: kijken of deze slaapwaarde goed is
-                // Tijdelijk de dobbelsteenwaarde laten zien
-                //Thread.Sleep(4000);
-                //_game.wait; //voorlater
                 return;
             }
             
-            // Markeer alle kiesbare pionnen
-            _game.Highlight(pionnen, true);
-
             // Laat speler een pion kiezen
-            var gekozen = await controller.KiesPion(pionnen);
-
-            // Markeer nu alleen de gekozen pion
-            _game.Highlight(pionnen, false);
-            _game.Highlight(new[]{gekozen}, true);
+            var gekozen = await controller.KiesPion(pionnen, gedobbeld);
 
             // Markeer alle kiesbare velden
             var mogelijk = gekozen.MogelijkeZetten(gedobbeld);
-            _game.Highlight(mogelijk, true);
 
             // Laat speler een veld kiezen
             var veld = await controller.VerplaatsPion(gekozen, mogelijk);
-
-            // Markeer nu niks meer
-            _game.Highlight(mogelijk, false);
-            _game.Highlight(new[] { gekozen }, false);
 
             // Het spel de zet laten zetten
             gekozen.Oppakken();
@@ -156,14 +129,9 @@ namespace Barricade.Process
                     barricade = e.Barricade;
                 }
                 // Barricade verplaatsen
-                if (barricade != null)
-                {
-                    _game.Klem(barricade, true);
-                    var target = await controller.VerplaatsBarricade(a => a.MagBarricade);
-                    _game.Klem(barricade, false);
-
-                    barricade.Verplaats(target as Veld);
-                }
+                if (barricade == null) continue;
+                var target = await controller.VerplaatsBarricade(barricade, a => a.MagBarricade);
+                barricade.Verplaats(target as Veld);
             }
         }
 	}

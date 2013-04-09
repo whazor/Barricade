@@ -89,7 +89,17 @@ namespace Barricade.Data
             var getX = new Func<int, int>(x => (x - firstX)/4);
             var getY = new Func<int, int>(y => (int) Math.Ceiling(((decimal) (y - firstY + 1)/2)) - 1);
 
-            Spel = new Spel(new Random().Next());
+            var seeds = lines.Where(line => line.StartsWith("*SEED:")).ToList();
+            var seed = new Random().Next();
+            var tries = 0;
+            if (seeds.Any())
+            {
+                var first = seeds.First().Split(':')[1];
+                var splitsel = first.Split(',');
+                seed = int.Parse(splitsel[0]);
+                tries = int.Parse(splitsel[1]);
+            }
+            Spel = new Spel(seed, tries);
 
             for (var i = 0; i < lines.Length; i++)
             {

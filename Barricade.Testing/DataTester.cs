@@ -91,10 +91,10 @@ namespace Barricade.Testing
 //            var loader2 = new Loader(level2);
 //            loader2.ToArray();
 
-            var output1 = new Saver(loader1.Kaart).Output();
+            var output1 = new Saver(loader1).Output();
 
             var loader2 = new Loader(output1);
-            var output2 = new Saver(loader2.Kaart).Output();
+            var output2 = new Saver(loader2).Output();
             Assert.AreEqual(output1, output2);
 //            Assert.AreEqual(saver.Output(), level1, "Kaart 1 is niet hetzelfde als opgeslagen kaart.");
 

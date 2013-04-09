@@ -114,8 +114,8 @@ namespace Barricade.Presentation
             _dynamischeLaag.TekenBarricades(barricades.ToList());
 
             // Bij een pion klik wordt er een actie uitgevoerd
-            _dynamischeLaag.PionKlik += PionKlik;
-            _statischeLaag.VeldKlik += VeldKlik;
+            _dynamischeLaag.PionKlik += _pionCompletion.Return;
+            _statischeLaag.VeldKlik += _veldCompletion.Return;
 
             // Geef een event af voor het laadscherm
             if(Showable != null) Showable(sender, e);
@@ -125,31 +125,11 @@ namespace Barricade.Presentation
         }
 
         /// <summary>
-        /// Licht bepaalde poinnen op
-        /// </summary>
-        /// <param name="pionnen">de desbetreffende poinnen</param>
-        /// <param name="status">aan of uit</param>
-        public void Highlight(IEnumerable<Logic.Pion> pionnen, bool status)
-        {
-            _dynamischeLaag.Highlight(pionnen, status);
-        }
-
-        /// <summary>
-        /// Licht bepaalde velden op
-        /// </summary>
-        /// <param name="velden">de desbetreffende velden</param>
-        /// <param name="status">aan of uit</param>
-        public void Highlight(IEnumerable<IVeld> velden, bool status)
-        {
-            _statischeLaag.Highlight(velden, status);
-        }
-
-        /// <summary>
         /// Klem een barricade aan de muis vast (of los)
         /// </summary>
         /// <param name="barricade">desbetreffende barricade</param>
         /// <param name="b">vast of los</param>
-        public void Klem(Logic.Barricade barricade, bool b)
+        private void Klem(Logic.Barricade barricade, bool b)
         {
             _sleepTarget = _dynamischeLaag.Zoek(barricade);
             _sleepende = b;
@@ -182,18 +162,23 @@ namespace Barricade.Presentation
             _veldCompletion.Return(bestemming);
         }
 
-        public async Task<Pion> KiesPion(ICollection<Pion> pionnen)
+        public async Task<Pion> KiesPion(ICollection<Pion> pionnen, int gedobbeld)
         {
+            _dynamischeLaag.Highlight(pionnen, true);
             while (true)
             {
                 var pion = await _pionCompletion.Wait();
                 if (pionnen.Contains(pion))
+                {
+                    _dynamischeLaag.Highlight(pionnen, false);
                     return pion;
+                }
             }
         }
 
-        public async Task<IVeld> VerplaatsBarricade(Func<IVeld, bool> mogelijk)
+        public async Task<IVeld> VerplaatsBarricade(Logic.Barricade barricade, Func<IVeld, bool> mogelijk)
         {
+            Klem(barricade, true);
             DynamischGrid.IsHitTestVisible = false;
             while (true)
             {
@@ -205,12 +190,15 @@ namespace Barricade.Presentation
                 }
 
                 DynamischGrid.IsHitTestVisible = true;
+                Klem(barricade, false);
                 return veld;
             }
         }
 
         public async Task<IVeld> VerplaatsPion(Pion gekozen, ICollection<IVeld> mogelijk)
         {
+            _dynamischeLaag.Highlight(new[] { gekozen }, true);
+            _statischeLaag.Highlight(mogelijk, true);
             DynamischGrid.IsHitTestVisible = false;
             while (true)
             {
@@ -222,13 +210,15 @@ namespace Barricade.Presentation
                 }
 
                 DynamischGrid.IsHitTestVisible = true;
+                _dynamischeLaag.Highlight(new[] { gekozen }, false);
+                _statischeLaag.Highlight(mogelijk, false);
                 return veld;
             }
         }
 
         public async Task<int> DobbelTask()
         {
-            return await wachter.Wait();;
+            return await wachter.Wait();
         }
 
         public async Task Wacht(int p)
@@ -268,7 +258,7 @@ namespace Barricade.Presentation
 
         private void OpslaanKnop_Click(object sender, RoutedEventArgs e)
         {
-            String huidigeSpel = new Saver(_loader.ToArray()).Output();
+            String huidigeSpel = new Saver(_logicSpel, _loader.ToArray()).Output();
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Barricade save games (*.bar)|*.bar";
 

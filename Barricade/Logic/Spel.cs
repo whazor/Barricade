@@ -1,4 +1,5 @@
 ﻿using Barricade.Logic.Velden;
+using Barricade.Utilities;
 
 namespace Barricade.Logic
 {
@@ -20,13 +21,13 @@ namespace Barricade.Logic
 
         public Bos Bos { get; set; }
 
-	    public Random Random { get; private set; }
+        public CountedRandom Random { get; private set; }
 
-	    public Spel(int seed)
+	    public Spel(int seed, int counter)
         {
             Spelers = new List<Speler>();
             Finishvelden = new List<Finishveld>();
-            Random = new Random(seed);
+            Random = new CountedRandom(seed, counter);
         }
 
         public void BerekenScores()
