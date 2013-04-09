@@ -58,9 +58,7 @@ namespace Barricade.Shell
 
             var thread = new Thread(drawer.Start);
             thread.Start();
-            while (!thread.IsAlive)
-            {
-            }
+            while (!thread.IsAlive) { }
 
             var spel = new Spel(result.Spel, this);
             spel.Start();

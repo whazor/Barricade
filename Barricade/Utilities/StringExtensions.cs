@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Barricade.Utilities
 {
-    class StringExtensions
+    static class StringExtensions
     {
+        public static string Replace(this string target, int i, string value)
+        {
+            return target.Insert(i, value).Remove(i + value.Length, value.Length);
+        }
     }
 }
