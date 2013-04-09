@@ -40,6 +40,6 @@ namespace Barricade.Process
         // Wie er aan de beurt is
         Speler AanDeBeurt { get; set; }
 
-        Task<int> DobbelTask();
+        Task<Tuple<Speler, int>> DobbelTask(Speler speler, int gedobbeld);
     }
 }

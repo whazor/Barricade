@@ -69,6 +69,9 @@
     <Compile Include="Logic\Velden\Startveld.cs" />
     <Compile Include="Logic\Velden\Veld.cs" />
     <Compile Include="Logic\Velden\VeldBase.cs" />
+    <Compile Include="Presentation\UserInterface.xaml.cs">
+      <DependentUpon>UserInterface.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Process\ISpeler.cs" />
     <Compile Include="Process\IView.cs" />
     <Compile Include="Utilities\LinqExtensions.cs" />
@@ -120,6 +123,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Presentation\Game.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\UserInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

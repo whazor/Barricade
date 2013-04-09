@@ -52,10 +52,12 @@ namespace Barricade.Bot
 
         abstract protected IVeld ZoekBarricadePlaats(Func<IVeld, bool> magBarricade);
         abstract protected int ZoekVeld(Pion gekozen, IVeld veld);
-        public async Task<int> DobbelTask()
+
+        public async Task<Tuple<Speler, int>> DobbelTask(Speler speler, int gedobbeld)
         {
-            return -1;
+            return new Tuple<Speler, int>(speler, gedobbeld);
         }
+
     }
 }
 #pragma warning restore 1998

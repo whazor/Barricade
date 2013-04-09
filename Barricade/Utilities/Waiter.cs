@@ -42,8 +42,8 @@ namespace Barricade.Utilities
 
         public async Task<T> Wait()
         {
-            var result = await _completion.Task;
             _completion = new TaskCompletionSource<T>();
+            var result = await _completion.Task;
             return result;
         }
     }

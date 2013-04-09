@@ -9,5 +9,7 @@ namespace Barricade.Process
     {
         Task Wacht(int wachttijdBot);
         int Gedobbeld { get; set; }
+        Speler IsAanBeurt { get; set; }
+        void Gewonnen(Speler speler);
     }
 }
