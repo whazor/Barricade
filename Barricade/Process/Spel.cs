@@ -94,6 +94,7 @@ namespace Barricade.Process
 
             // Geef dobbelwaarde neer
             _game.Gedobbeld = gedobbeld;
+            controller.Gedobbeld = gedobbeld;
 
             // Selecteer alle pionnen die kunnen lopen
             var pionnen = speler.Pionnen.Where(pion => pion.MogelijkeZetten(gedobbeld).Count != 0).ToList();

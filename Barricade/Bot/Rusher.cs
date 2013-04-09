@@ -26,7 +26,6 @@ namespace Barricade.Bot
                 Spel.Spelers.Where(speler => speler != Speler)
                      .OrderBy(speler => speler.Pionnen.OrderBy(pion => pion.IVeld.Score).First().IVeld.Score)
                      .ToList();
-            //concurrentie.Shuffle(_random);
 
             var following = 1;
             while (true)
