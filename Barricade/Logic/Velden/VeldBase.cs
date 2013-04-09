@@ -24,7 +24,7 @@ namespace Barricade.Logic.Velden
         /// <returns>ja of nee</returns>
         public virtual bool MagPion(Pion pion)
 	    {
-	        return Pionnen.Count == 0 || Pionnen.Select(other => other.Speler).Contains(pion.Speler);
+	        return Pionnen.Count == 0 || !Pionnen.Select(other => other.Speler).Contains(pion.Speler);
 	    }
 
 	    protected VeldBase()
