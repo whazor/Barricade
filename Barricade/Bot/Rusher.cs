@@ -11,7 +11,7 @@ using Barricade.Utilities;
 
 namespace Barricade.Bot
 {
-    class Rusher : BaseBot
+    public class Rusher : BaseBot
     {
         private CountedRandom _random;
         public Rusher(Speler speler, Spel spel)

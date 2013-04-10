@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Barricade.Data
 {
-    class Levels
+    public class Levels
     {
         static public List<string> Lijst()
         {

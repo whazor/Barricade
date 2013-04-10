@@ -91,7 +91,7 @@ namespace Barricade.Data
             TekenVakjes(stringmap);
 
             // Seed opslaan, werkt nog niet goed:
-            _uitzonderingen = "*SEED:" + _spel.Random.Seed + "," + _spel.Random.Counter + "\r\n" + _uitzonderingen;
+//            _uitzonderingen = "*SEED:" + _spel.Random.Seed + "," + _spel.Random.Counter + "\r\n" + _uitzonderingen;
 
             // Teken alle connecties op de kaart.
 	        TekenLijntjes(stringmap);
