@@ -6,42 +6,52 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2013-04-08T20:04:13" Importance="High" Text="Reverse Engineering Started." />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '7701326d-26da-41bb-a730-86ea6fa735eb' -  (ClassifierTemplateParameter)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade' -  (Package)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Logic' -  (Package)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Logic::Spel' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Logic::Speler' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process' -  (Package)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::ISpeler' -  (Interface)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::IView' -  (Interface)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Medium" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel' -  (Class)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::_beurt' -  (Property)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::_game' -  (Property)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::_logicSpel' -  (Property)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::_random' -  (Property)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::_wachttijdBot' -  (Property)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::Spel' -  (Operation)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::Spel::game' -  (Parameter)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::Spel::logicSpel' -  (Parameter)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::Spel::viewSpeler' -  (Parameter)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::spelers' -  (Property)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::Start' -  (Operation)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::VolgendeBeurt' -  (Operation)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::VolgendeBeurt::controller' -  (Parameter)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Process::Spel::VolgendeBeurt::speler' -  (Parameter)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System' -  (Package)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Collections' -  (Package)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Collections::Generic' -  (Package)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Collections::Generic::Dictionary' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Collections::Generic::Dictionary&lt;Speler‎, ISpeler‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Random' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Threading' -  (Package)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Threading::Tasks' -  (Package)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Threading::Tasks::Task' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'd8a78c59-5412-4864-9172-46d935dad93d' -  (ClassifierTemplateParameter)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="High" Text="(1) type(s) fully reverse engineered." />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="High" Text="(8) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
-  <Message Timestamp="2013-04-08T20:04:18" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+  <Message Timestamp="2013-04-10T11:49:18" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '7701326d-26da-41bb-a730-86ea6fa735eb' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade' -  (Package)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data' -  (Package)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Loader' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Medium" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver' -  (Class)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::_height' -  (Property)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::_points' -  (Property)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::_spel' -  (Property)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::_startVelden' -  (Property)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::_uitzonderingCount' -  (Property)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::_uitzonderingen' -  (Property)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::_width' -  (Property)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::Output' -  (Operation)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::Output::metUitzonderingen' -  (Parameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::Saver' -  (Operation)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::Saver::loader' -  (Parameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::Saver::points' -  (Parameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::Saver::spel' -  (Parameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::TekenLijntjes' -  (Operation)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::TekenLijntjes::stringmap' -  (Parameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::TekenRijOpties' -  (Operation)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::TekenRijOpties::stringmap' -  (Parameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::TekenVakjes' -  (Operation)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::TekenVakjes::stringmap' -  (Parameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::ZetInhoudOm' -  (Operation)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::ZetInhoudOm::veld' -  (Parameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::ZetVeldOm' -  (Operation)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::ZetVeldOm::inhoud' -  (Parameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Data::Saver::ZetVeldOm::iveld' -  (Parameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Logic' -  (Package)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Logic::Spel' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Logic::Velden' -  (Package)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Logic::Velden::IVeld' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Logic::Velden::IVeld' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::Barricade::Logic::Velden::Startveld' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System' -  (Package)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Collections' -  (Package)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Collections::Generic::Dictionary' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Barricade.Modeling::System::Collections::Generic::Dictionary&lt;Startveld‎, Int32‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'd8a78c59-5412-4864-9172-46d935dad93d' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="High" Text="(7) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2013-04-10T11:49:21" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
 </Log>

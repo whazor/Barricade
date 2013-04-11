@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="25003b41-625f-45ce-b55d-8296b28d8dc1"
+  name="Presentation"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="181cdba4-e0a7-4919-96f1-34dd1c15ba95"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DBarricade.Presentation"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="48cb09aa-7002-4055-b36c-a6d3d873611f"
+        LastKnownName="Statisch"
+        LastKnownLocation="Package2_1136.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="781f181d-57f5-4757-8f08-c9fe82471f76"
+        LastKnownName="Dynamisch"
+        LastKnownLocation="Package3_1136.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="78dd7469-fe61-4e36-a575-35e47795f4d5"
+        name="PionClickHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="8fcf28f4-8841-41bb-b2c2-a3b43303fa15"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Presentation Type%3D(Name%3DPionClickHandler ParentType%3DDynamischeLaag)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9f0055c3-6b7d-4338-be7d-c2f4e9f4ca32"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="048d41d6-7030-4719-8e0a-9d8938257799">
+                <propertyInstance
+                  Id="9d0b6012-62d4-4eca-9f4d-e4c6410b91ae"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ecad0556-9986-4023-ac61-c9b3dfb66854">
+                <propertyInstance
+                  Id="00447b2c-2935-4e72-a5ec-b5bdb18f872b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fd281844-8117-48ac-ab62-d1bc470eabb1">
+                <propertyInstance
+                  Id="b1b7a25f-2403-48a5-8ee2-414e83333cd2"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

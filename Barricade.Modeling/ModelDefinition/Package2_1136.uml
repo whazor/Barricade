@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="48cb09aa-7002-4055-b36c-a6d3d873611f"
+  name="Statisch"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="2f19f5e3-0e42-4c7a-830e-384087be8f27"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DBarricade.Presentation.Statisch"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="4f5667ee-5f45-4d7d-8364-0f4e2ba22455"
+        name="IElement"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="5c9f6698-2380-426a-9ad0-a1e701127df7"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Presentation.Statisch Type%3DIElement"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c10beb16-9062-4218-a6ad-a82c3ec9ba59"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b86722b1-35f5-4f60-9eae-095b5ab4c51f">
+                <propertyInstance
+                  Id="7887dcd7-198f-4598-940b-a682227f62b9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fcd88a91-5fcc-413e-b86a-765964dcc497">
+                <propertyInstance
+                  Id="bf1be890-6708-4645-bdae-331b5f972cd5"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a032237c-a53b-46b8-a489-2c6f25f11c31">
+                <propertyInstance
+                  Id="ca25093d-0b9f-4e7f-890d-c728f6e9828d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="74773cd7-245c-424d-a42c-fc96ab7cc1e4">
+                <propertyInstance
+                  Id="aa7484a1-fc8d-4a80-a3ac-0952997a9c7b"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

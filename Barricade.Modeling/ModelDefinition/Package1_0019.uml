@@ -17,5 +17,11 @@
         LastKnownName="Media"
         LastKnownLocation="Package_0019.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="87acf042-da94-4cc5-a9f1-e8d1ef19d32e"
+        LastKnownName="Controls"
+        LastKnownLocation="Package1_1136.uml" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>
