@@ -603,6 +603,32 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2529e265-e900-4151-bb79-c664b6d1c013"
+                  name="speler"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="e4d9a348-3410-409f-894d-6013e5a06547"
+                      LastKnownName="Speler"
+                      LastKnownLocation="Package5_2003.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="695e51d1-5e2d-4007-bcad-e840bfbf9915"
+                  name="gedobbeld"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
         </ownedOperations>
@@ -1276,6 +1302,24 @@
                 LastKnownLocation="Barricade.Modeling.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="ae854dfa-0c8d-45e1-9e0c-f1da7d5027f9"
+            name="IsAanBeurt"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="e4d9a348-3410-409f-894d-6013e5a06547"
+                LastKnownName="Speler"
+                LastKnownLocation="Package5_2003.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributes>
         <ownedOperations>
           <operation
@@ -1371,6 +1415,30 @@
                       Id="220a3521-e091-4221-bae9-3ef9018e845c"
                       LastKnownName="Integer"
                       LastKnownLocation="Barricade.Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="92ac2b94-5248-40f2-a4e9-7ed5a9a11cee"
+            name="Gewonnen"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3c4e42c8-9731-4c8b-8d66-9f032efbb99f"
+                  name="speler"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="e92afc07-5708-4cdd-a8a8-2de5d8c3975c"
+                      LastKnownName="Speler"
+                      LastKnownLocation="Package_0018.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>

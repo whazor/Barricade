@@ -23,12 +23,19 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="Data.classdiagram">
+    <Content Include="Data\Data.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Data.classdiagram.layout">
+    <Content Include="Data\Data.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Data.classdiagram</DependentUpon>
+      <DependentUpon>Data\Data.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Data\Inladen.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Data\Inladen.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Data\Inladen.sequencediagram</DependentUpon>
     </Content>
     <Content Include="Domein\ClassDiagram.classdiagram">
       <SubType>Content</SubType>
@@ -64,13 +71,25 @@
     <Content Include="ModelDefinition\Package1_0019.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package1_1136.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1149.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package1_2003.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package2_0019.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package2_1136.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package2_2003.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_1136.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package3_2003.uml">
@@ -98,6 +117,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_0035.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1136.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1149.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1214.uml">
@@ -135,6 +160,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Presentatie\Presentation.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Presentatie\UMLSequenceDiagram1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Presentatie\UMLSequenceDiagram1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Presentatie\UMLSequenceDiagram1.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Proces\AanZet.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -149,18 +181,12 @@
       <SubType>Content</SubType>
       <DependentUpon>Proces\Process.classdiagram</DependentUpon>
     </Content>
-    <Content Include="Zet.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Zet.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Zet.sequencediagram</DependentUpon>
-    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\Barricade.Modeling.uml">
       <SubType>Content</SubType>
     </Content>
     <Folder Include="Domein" />
+    <Folder Include="Data" />
     <Folder Include="Proces" />
     <Folder Include="Presentatie" />
   </ItemGroup>

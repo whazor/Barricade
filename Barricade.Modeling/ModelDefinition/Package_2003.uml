@@ -23,5 +23,17 @@
         LastKnownName="Logic"
         LastKnownLocation="Package5_2003.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="25003b41-625f-45ce-b55d-8296b28d8dc1"
+        LastKnownName="Presentation"
+        LastKnownLocation="Package_1136.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d8ce8107-7dcc-45ca-a583-9147c6057b65"
+        LastKnownName="Data"
+        LastKnownLocation="Package_1149.uml" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>

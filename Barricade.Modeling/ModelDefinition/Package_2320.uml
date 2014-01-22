@@ -3,29 +3,11 @@
   dslVersion="1.0.0.0"
   Id="efa4655e-a1f5-4083-aff2-700788f83342"
   name="Presentation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
-  <ownedCommentsInternal>
-    <comment
-      Id="c51e6964-55b3-4035-9783-37fcaf4656d3">
-      <body>Het statische grid gaat op basis van rijen en kolommen.
-
-Het dynamische grid niet.</body>
-      <annotatedElements>
-        <classMoniker
-          Id="6a1a9338-3efb-4156-86ac-d0a69e71683b"
-          LastKnownName="StatischeLaag"
-          LastKnownLocation="Package_2320.uml" />
-        <classMoniker
-          Id="ea170cc6-2f9d-4e1f-bc92-12b0a721c61b"
-          LastKnownName="DynamischeLaag"
-          LastKnownLocation="Package_2320.uml" />
-      </annotatedElements>
-    </comment>
-  </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
       <class
         Id="c8769902-8045-4783-a1f1-7562ea984526"
-        name="SpelBord"
+        name="Game"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -70,21 +52,21 @@ Het dynamische grid niet.</body>
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="f174dd03-1145-4ae0-92e5-a9a5cd5127aa"
+            Id="aa3b63f2-71c1-48c4-be4f-a665f3d63032"
             isDerived="false"
-            sourceEndRoleName="Spel"
+            sourceEndRoleName="Game"
             targetEndRoleName="DynamischeLaag"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="ea170cc6-2f9d-4e1f-bc92-12b0a721c61b"
+              Id="b90c0ee1-1725-429c-bb99-9c151dae24a7"
               LastKnownName="DynamischeLaag"
               LastKnownLocation="Package_2320.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="dcc0a85a-509c-4263-b9db-d3e12a73d6b3"
-                  name="Spel"
+                  Id="c52a9337-da7b-47ca-8309-805ef85b7f88"
+                  name="Game"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -96,7 +78,7 @@ Het dynamische grid niet.</body>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="99f22a71-d6d9-45a9-b02d-6a4e5046e82e"
+                  Id="5ae63da3-5c65-4cf0-9811-b112810b0536"
                   name="DynamischeLaag"
                   isLeaf="false"
                   isStatic="false"
@@ -164,14 +146,6 @@ Het dynamische grid niet.</body>
             isQuery="false" />
         </ownedOperationsInternal>
       </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="e9226d03-bd8f-4c84-9b14-6cf7f63383ab"
-        name="Pion"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <packageMoniker
@@ -243,18 +217,73 @@ Het dynamische grid niet.</body>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
+      <packageMoniker
+        Id="3d4e0441-5ad5-423e-89ec-084d15cab4d7"
+        LastKnownName="Dynamisch"
+        LastKnownLocation="Package_2058.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
       <class
-        Id="ea170cc6-2f9d-4e1f-bc92-12b0a721c61b"
+        Id="b90c0ee1-1725-429c-bb99-9c151dae24a7"
         name="DynamischeLaag"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f6b8c275-ebd4-473e-8250-efb6442f31af"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Presentation Type%3DDynamischeLaag"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9b5856c3-63eb-4914-8338-a86ad13b62c6"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="16fa2282-ba29-4686-ac3c-f646431c9c79">
+                <propertyInstance
+                  Id="1190bd91-1936-452f-b129-ce7ebb88e1c0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d6d69e19-391e-43bb-b511-dafacc157ea9">
+                <propertyInstance
+                  Id="b483e2fd-5e06-4b80-a35e-b5f447cd8080"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="218f2130-5785-4c32-bc5c-b5fa952bd164">
+                <propertyInstance
+                  Id="1f60a35d-20fc-4bb7-ae5b-9fdbf8880a9c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="84a4ea66-b9b7-4ba1-8a3f-b2cdc18e613e">
+                <propertyInstance
+                  Id="7adce50a-1fa4-45aa-8c32-3af1f3e35234"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a4b5a032-86b1-46cd-b0db-3a1cef2057e3">
+                <propertyInstance
+                  Id="3966b55a-4c07-4f55-93fb-7d1ef5d1c360"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="4843cb56-6f31-4696-b0df-78b191f3925f"
+            Id="006aa305-ab00-4212-8d68-7c0394c1ec6a"
             isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName="Pionnen"
+            sourceEndRoleName="DynamischeLaag"
+            targetEndRoleName="Pion"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -264,7 +293,8 @@ Het dynamische grid niet.</body>
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="2f5d2a98-cc4e-4a63-b109-594598c8194a"
+                  Id="4e5ebeb4-34da-4ee7-afb3-88101a0b5d34"
+                  name="DynamischeLaag"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -276,8 +306,8 @@ Het dynamische grid niet.</body>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="8eeda694-fff8-403c-b4cf-65f6f373bbb3"
-                  name="Pionnen"
+                  Id="0cfcd10f-eddf-4059-adbc-5b0e1d1bdc58"
+                  name="Pion"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -287,13 +317,13 @@ Het dynamische grid niet.</body>
                   isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="71d624f3-b88c-46ca-bd23-3e7f5dbc87d8"
+                      Id="82b9f871-cc70-4f25-8910-9a0fdab89946"
                       name="Lower"
                       value="*" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="8a5aa27d-9b28-49d0-a563-58bb94c73769"
+                      Id="af2bbf4f-18cb-4737-b80e-7471bb1b2e79"
                       name="Upper"
                       value="*" />
                   </upperValueInternal>
@@ -302,10 +332,10 @@ Het dynamische grid niet.</body>
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="5bdc2916-650b-4eec-b79a-92a7df420024"
+            Id="951f9e55-322c-445d-8869-d12289126c46"
             isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName="Barricades"
+            sourceEndRoleName="DynamischeLaag"
+            targetEndRoleName="Barricade"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -315,7 +345,8 @@ Het dynamische grid niet.</body>
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="77772901-fb22-49a6-98a0-7324a7db0e75"
+                  Id="46fe122a-434b-4677-9cef-1eb085b209f6"
+                  name="DynamischeLaag"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -327,8 +358,8 @@ Het dynamische grid niet.</body>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="15ed07ae-71f7-4983-979f-429cc2d62342"
-                  name="Barricades"
+                  Id="c41bc62c-4698-4bce-ad18-04e7e84853cf"
+                  name="Barricade"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -338,13 +369,13 @@ Het dynamische grid niet.</body>
                   isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="d8f9868b-98e3-486a-9ca4-89ee710555bd"
+                      Id="313cb4f3-b0c5-49c1-89ba-0120051db215"
                       name="Lower"
                       value="*" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="a49c0233-6283-470b-a1fc-46cf8859e601"
+                      Id="3a07289d-fdc8-42a3-8846-fc9d7c606b2c"
                       name="Upper"
                       value="*" />
                   </upperValueInternal>
@@ -353,13 +384,360 @@ Het dynamische grid niet.</body>
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="2af9aea6-bf59-4aa9-8624-75993f340789"
+            name="_poinnen"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a578dae7-fc48-4fff-8589-16dd38a3163b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Presentation Type%3DDynamischeLaag Member%3D_poinnen"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e986c9e7-b9e2-48ee-8f7f-b2445d167c6c"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2e6ae0c-5079-4780-be39-7c50511fdbc4">
+                    <propertyInstance
+                      Id="27bd8f32-f4ba-4aa6-9198-cf5f137b7a46"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5c8e376f-1190-426c-98d6-1392f9289210">
+                    <propertyInstance
+                      Id="a3e59411-ff14-46ed-933b-719d2b4fdfc1"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4f60d61-5579-4a93-ae6f-63cbdda3486b">
+                    <propertyInstance
+                      Id="ea07b369-62f4-4bed-b0ee-e41d88f89732"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d00fb2f-4acd-4a2d-b287-388ed130a87c">
+                    <propertyInstance
+                      Id="03569c54-ba5c-42f9-acdc-b3076224b800"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f99cd03-4c29-4412-914a-c10dd394401e">
+                    <propertyInstance
+                      Id="88f90b7b-a260-468f-b74a-b37725cf94aa"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="0ded5304-6053-4875-a38f-d86fe502f220"
+                LastKnownName="Dictionary&lt;Pion‎, Pion‎&gt;"
+                LastKnownLocation="Package4_2003.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="384c18a8-057a-4cb5-bbed-f1b482b4c4a9"
+            name="_barricades"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d4dd6f30-05a6-47d0-9789-8a7588e2e3ca"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Presentation Type%3DDynamischeLaag Member%3D_barricades"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0fd0e44a-1f74-49d6-aca5-6189bc8e000b"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25cebe65-6b39-439c-8055-3b76e10a0bd1">
+                    <propertyInstance
+                      Id="b4ef38ae-6532-4f26-98f3-6ab890f1966d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0a290564-c167-4268-9eea-22fe675dc7c6">
+                    <propertyInstance
+                      Id="9af7fc5a-fffc-4fb3-8d54-db1295457ba6"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="73ccd7ad-a703-45ef-93b8-a9d501b29f32">
+                    <propertyInstance
+                      Id="27b71440-9d5a-4d77-baf9-0e3999e0ea18"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1355fba0-1980-4134-bf20-089c734da1cc">
+                    <propertyInstance
+                      Id="200ddfbd-01b4-488f-8996-3d760e6f0bd7"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d64a93aa-cee3-472e-a32d-816ea6fb35b3">
+                    <propertyInstance
+                      Id="d3c044f7-948e-46fa-b3a1-7ea4c0d71b02"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="4d0d244d-c000-4b70-87b0-787ea3dc45b8"
+                LastKnownName="Dictionary&lt;Barricade‎, Barricade‎&gt;"
+                LastKnownLocation="Package4_2003.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="7041c7c8-3fc5-4896-9aa7-be8f978b805a"
+            name="Beweeg"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5ff62a33-9ca7-4223-9591-7e7559aa0d46"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Presentation Type%3DDynamischeLaag Member%3D(Name%3DBeweeg OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DPion)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Velden Type%3DIVeld)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="63b6d660-837e-439d-8f13-7f3c0f323d58"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1958c330-76bc-4b4e-8479-f34010d479c0">
+                    <propertyInstance
+                      Id="3dfa615b-cbd9-491e-8dd9-0f2a3d5e170a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9a75b9a6-4edd-48f8-a083-491394b7547d">
+                    <propertyInstance
+                      Id="62ab58a6-5807-4527-92eb-a9e07604c992"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed609151-adf1-43d0-bac9-938b8a9652e0">
+                    <propertyInstance
+                      Id="46716f35-4293-433e-ab94-d57e15a2b90a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ef28756-b148-49bb-b0ed-f95f5358fa15">
+                    <propertyInstance
+                      Id="84999769-7dc5-410a-8154-80672b3a2d86"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8cc24d0e-d952-4e15-bcfa-74aad20c989a">
+                    <propertyInstance
+                      Id="563a3603-aabc-498c-9e20-81ff3a2374f9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="31167a8b-fa78-4d22-8aa2-57bce029c9ba">
+                    <propertyInstance
+                      Id="8d3fda46-04bd-4707-a0b0-5873162dff59"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="df80d530-7d3c-46de-8cab-2654dcb74886"
+                  name="pion"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="0683ee28-8ea6-4410-85dd-29173d1ba26d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Presentation Type%3DDynamischeLaag Member%3D(Name%3DBeweeg OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DPion)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Velden Type%3DIVeld)]) ParameterIdentifier%3Dpion"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="0320ecbe-8d60-417b-b3b9-7fa810474a9a"
+                      LastKnownName="Pion"
+                      LastKnownLocation="Package5_2003.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d7b705e1-561f-49d6-8d16-5859ceea03b4"
+                  name="pad"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="895c72d5-415c-4865-bbbe-f51bf336eb8d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Presentation Type%3DDynamischeLaag Member%3D(Name%3DBeweeg OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DPion)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic.Velden Type%3DIVeld)]) ParameterIdentifier%3Dbestemming"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <lowerValueInternal>
+                    <literalString
+                      Id="3c3d2760-12d1-4bfe-9488-1d55205c4eb4"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6bdffe6a-7b15-4292-a56d-e520aad2a729"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="5a70dc03-3b42-49b0-a2b8-903a673da4c2"
+                      LastKnownName="IVeld"
+                      LastKnownLocation="Package1_0018.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b86249c1-be09-4862-825e-5b940d96bca4"
+            name="Zoek"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1be65c9c-d70b-4002-84fd-486167d44d2a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Presentation Type%3DDynamischeLaag Member%3D(Name%3DZoek OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DBarricade)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7eb05053-55ee-4f96-bb79-76fe5d88b9a0"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="377ee9f6-0a13-4520-86ef-8f50c9df83f7">
+                    <propertyInstance
+                      Id="064d42dd-eac2-4e50-ab27-afd9edce5320"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81b78bfe-4616-461b-8772-bc32a2e7a076">
+                    <propertyInstance
+                      Id="5e3dc8c8-ab06-4a3e-84ef-4b3e8b3e44f8"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce07c7e8-0b79-4e50-90da-98a6dc6ccd60">
+                    <propertyInstance
+                      Id="47c0fcad-4223-4867-b102-1b874e5b6eb8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f05bcbc2-72e8-4297-9e0e-5c108ed5ebc1">
+                    <propertyInstance
+                      Id="f7522d7f-2985-4917-81e0-dbc0b76b87d9"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="339a2f87-ff8f-4270-aca9-1fda25402a99">
+                    <propertyInstance
+                      Id="a1553882-530f-460d-9fea-51ac69eefaf3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4192562b-1bc7-4a7d-b1f1-915f2be46888">
+                    <propertyInstance
+                      Id="faa5a64b-a83c-4bfc-b02d-0d37916bd48f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="44edaff1-5d75-42e6-a2ef-5d065962ced4"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="518622f8-3547-4ad7-abe3-269bd3125c37"
+                      LastKnownName="UserControl"
+                      LastKnownLocation="Package1_1136.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c07ceae2-ce0b-425d-97e8-1e907c4d6fbe"
+                  name="barricade"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d6fb61c3-c5c8-4112-875b-a27b0cade28f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Presentation Type%3DDynamischeLaag Member%3D(Name%3DZoek OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DBarricade)]) ParameterIdentifier%3Dbarricade"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="b59ea3c3-aad3-4627-a654-c62542bbc2bd"
+                      LastKnownName="Barricade"
+                      LastKnownLocation="Package5_2003.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <packageMoniker
-        Id="3d4e0441-5ad5-423e-89ec-084d15cab4d7"
-        LastKnownName="Dynamisch"
-        LastKnownLocation="Package_2058.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

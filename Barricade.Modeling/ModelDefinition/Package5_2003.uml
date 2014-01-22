@@ -291,5 +291,63 @@
         </appliedStereotypesInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0320ecbe-8d60-417b-b3b9-7fa810474a9a"
+        name="Pion"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="01fd2110-e314-4f5c-be95-86f8baad5bc1"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fnanne%2FDocuments%2FGitHub%2FBarricade%2FBarricade%2Fbin%2FDebug%2FBarricade.exe Namespace%3DBarricade.Logic Type%3DPion"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1fdb50e5-5981-46db-a27c-6c7a8c230304"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f7d6954c-3b47-47b2-88ec-3190b6faa43c">
+                <propertyInstance
+                  Id="ea7c6ffc-78b8-4eb1-8fdb-568575d9b6c0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3c927c40-cd16-40e2-b6bf-75f7248db7af">
+                <propertyInstance
+                  Id="74c16571-0c09-4e68-b910-e9ad988e2891"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ba269ae3-efcf-4691-8280-b383263570c5">
+                <propertyInstance
+                  Id="978e1246-f7ae-4207-92f0-82dd1586d738"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="61f11db5-d02e-4efb-9fc8-75c6206e2625">
+                <propertyInstance
+                  Id="cf2b71c6-3793-454d-a847-b3553d8e33b2"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7184513d-d24b-4eef-b11a-f0f1a4c0d541">
+                <propertyInstance
+                  Id="3c4a1a41-bdf7-42fa-bb93-e13be7ed1f0f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
 </package>

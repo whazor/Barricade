@@ -20,6 +20,44 @@
               LastKnownLocation="Package_2058.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4f66d9a3-d9bf-45b7-9f8f-17ffb41aa399"
+            name="Beweeg"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4add2189-8652-48d0-b801-def7e5837cfc"
+                  name="pad"
+                  direction="In">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f746e53a-e66e-44c7-866c-8a5d71348867"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8ab3b087-c525-4644-a9a6-807148193fef"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4378c0b3-3da7-4e28-b2e2-93da05b8c71d"
+                      LastKnownName="Point"
+                      LastKnownLocation="Package_2058.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -46,6 +84,11 @@
         name="UIElement"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="4378c0b3-3da7-4e28-b2e2-93da05b8c71d"
+        name="Point" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

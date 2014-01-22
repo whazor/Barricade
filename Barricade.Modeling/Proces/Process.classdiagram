@@ -473,6 +473,22 @@
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="be8c04f5-caea-4a29-93cc-38a4f01b7d2e" name="speler" direction="In">
+                        <elementDefinition Id="2529e265-e900-4151-bb79-c664b6d1c013" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="fd78d49d-7837-488b-a898-0de26d48cec9" LastKnownName="Speler" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="dc18067f-0a82-4dd3-b486-0282e089c090" name="gedobbeld" direction="In">
+                        <elementDefinition Id="695e51d1-5e2d-4007-bcad-e840bfbf9915" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="d8eb994d-0cd3-4c30-bf1c-30a23e49189b" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
               </ownedOperations>
@@ -955,6 +971,12 @@
                     <referencedTypeMoniker Id="d8eb994d-0cd3-4c30-bf1c-30a23e49189b" LastKnownName="Integer" />
                   </type_NamedElement>
                 </property>
+                <property Id="9e60f938-d805-421e-a6f2-9ed4c9a595ef" name="IsAanBeurt" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ae854dfa-0c8d-45e1-9e0c-f1da7d5027f9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="fd78d49d-7837-488b-a898-0de26d48cec9" LastKnownName="Speler" />
+                  </type_NamedElement>
+                </property>
               </ownedAttributes>
               <ownedOperations>
                 <operation Id="1e184f4b-c102-40c0-b916-f8ee2f460767" name="Wacht" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -1031,6 +1053,19 @@
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
+                <operation Id="0f112b10-364b-4896-9934-91292734f613" name="Gewonnen" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="92ac2b94-5248-40f2-a4e9-7ed5a9a11cee" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d5c38803-a82d-4fd7-a5ac-9596427bea22" name="speler" direction="In">
+                        <elementDefinition Id="3c4e42c8-9731-4c8b-8d66-9f032efbb99f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="49b76136-c6e1-4ac0-bbcc-9f4fbcf607cc" LastKnownName="Speler" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
               </ownedOperations>
             </Interface>
           </packageHasNamedElement>
@@ -1095,6 +1130,11 @@
     <packageHasNamedElement>
       <referencedType Id="b056515c-71a6-4d8a-968d-6b4bed06f782" name="ISpeler" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Barricade::Process::ISpeler">
         <elementDefinition Id="5e127946-3f83-48f2-bbf7-23a62cddada9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fd78d49d-7837-488b-a898-0de26d48cec9" name="Speler" isAbstract="false" isLeaf="false" cachedFullName="Barricade.Modeling::Barricade::Logic::Speler">
+        <elementDefinition Id="e4d9a348-3410-409f-894d-6013e5a06547" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

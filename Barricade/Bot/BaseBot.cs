@@ -12,7 +12,7 @@ namespace Barricade.Bot
     /// <summary>
     /// Abstracte bot, deze bevat alle benodige methodes en sorteert velden op score.
     /// </summary>
-    abstract class BaseBot : Process.ISpeler
+    public abstract class BaseBot : Process.ISpeler
     {
         protected readonly Speler Speler;
         protected readonly Spel Spel;

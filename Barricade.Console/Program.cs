@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Barricade.Bot;
 using Barricade.Data;
 using Barricade.Logic;
 using Barricade.Logic.Velden;
@@ -10,49 +11,18 @@ using Spel = Barricade.Process.Spel;
 
 namespace Barricade.Shell
 {
-    class Program : IView, ISpeler
+    class Program : IView
     {
         static void Main(string[] args)
         {
-            var loader = new Loader(new[]
-                {
-                    "                        < >                    ",
-                    "                         |                     ",
-                    "D       ( )-( )-( )-( )-[*]-( )-( )-( )-( )    ",
-                    "         |                               |     ",
-                    "D       ( )-( )-( )-{ }-[*]-{ }-( )-( )-( )    ",
-                    "                         |                     ",
-                    "D           ( )-( )-[*]-( )-[*]-( )-( )        ",
-                    "             |                       |         ",
-                    "            { }-[*]-( )-( )-( )-[*]-{ }        ",
-                    "                         |                     ",
-                    "                ( )-( )-{ }-( )-( )            ",
-                    "                 |       |       |             ",
-                    "                 |      <1>      |             ",
-                    "                 |               |             ",
-                    "    { }-( )-{ }-( )-( )-{ }-( )-( )-{ }-( )-{ }",
-                    "     |       |           |           |       | ",
-                    "-   ( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )",
-                    "         |       |               |       |     ",
-                    "        <2>     <3>             <4>     <5>    ",
-                    "*1:BOS,",
-                    "*2:START,R4",
-                    "*3:START,G4",
-                    "*4:START,Y4",
-                    "*5:START,B4"
-                }
-            );
-
             Console.SetWindowSize(100, 50);
-            var dictionary = new Dictionary<string, Loader>();
-            dictionary["Kort"] = loader;
-            new Program(dictionary);
+            new Program();
         }
 
-        public Program(IReadOnlyDictionary<string, Loader> levels)
+        public Program()
         {
             Logo();
-            var result = KiesLevel(levels);
+            var result = KiesLevel();
             Console.Clear();
             var drawer = new Drawer(result);
 
@@ -60,21 +30,28 @@ namespace Barricade.Shell
             thread.Start();
             while (!thread.IsAlive) { }
 
-            var spel = new Spel(result.Spel, this);
+            var spelers = new Dictionary<Speler, ISpeler>();
+
+            foreach (var speler in result.Spel.Spelers)
+            {
+                spelers[speler] = new Rusher(speler, result.Spel);
+            }
+
+            var spel = new Spel(result.Spel, this, spelers);
             spel.Start();
             Console.ReadLine();
         }
 
-        private static Loader KiesLevel(IReadOnlyDictionary<string, Loader> levels)
+        private static Loader KiesLevel()
         {
             Console.WriteLine(@"Welk level wilt u spelen?");
             Console.WriteLine("");
             var i = 1;
             var mapping = new Dictionary<string, string>();
-            foreach (var game in levels)
+            foreach (var game in Levels.Lijst())
             {
-                Console.WriteLine(@"- {0} (toets {1})", game.Key, i);
-                mapping[i + ""] = game.Key;
+                Console.WriteLine(@"- {0} (toets {1})", game, i);
+                mapping[i + ""] = game;
                 i++;
             }
             var keuze = "?";
@@ -82,7 +59,7 @@ namespace Barricade.Shell
             {
                 keuze = Console.ReadKey().KeyChar + "";
             }
-            return levels[mapping[keuze]];
+            return new Loader(Levels.Open(mapping[keuze]));
         }
 
         private static void Logo()
@@ -101,35 +78,41 @@ namespace Barricade.Shell
             Thread.Sleep(1000);
         }
 
-        public Task<IVeld> VerplaatsBarricade(Logic.Barricade barricade, Func<IVeld, bool> magBarricade)
-        {
-            throw new NotImplementedException();
-        }
+//        public Task<IVeld> VerplaatsBarricade(Logic.Barricade barricade, Func<IVeld, bool> magBarricade)
+//        {
+//            throw new NotImplementedException();
+//        }
 
-        public async Task<Pion> KiesPion(ICollection<Pion> pionnen, int gedobbeld)
-        {
-            int pion = -1;
-            while (pion < 0 || pion >= pionnen.Count)
-            {
-                int.TryParse(Console.ReadKey().KeyChar + "", out pion);
-            }
-            int i = 0;
-            foreach (var current in pionnen)
-            {
-                if (i == pion)
-                    return current;
-                i++;
-            }
-            Console.WriteLine();
-            return null;
-        }
-
-        public Task<IVeld> VerplaatsPion(Pion gekozen, ICollection<IVeld> mogelijk)
-        {
-            throw new NotImplementedException();
-        }
+//        public async Task<Pion> KiesPion(ICollection<Pion> pionnen, int gedobbeld)
+//        {
+//            int pion = -1;
+//            while (pion < 0 || pion >= pionnen.Count)
+//            {
+//                int.TryParse(Console.ReadKey().KeyChar + "", out pion);
+//            }
+//            int i = 0;
+//            foreach (var current in pionnen)
+//            {
+//                if (i == pion)
+//                    return current;
+//                i++;
+//            }
+//            Console.WriteLine();
+//            return null;
+//        }
+//
+//        public Task<IVeld> VerplaatsPion(Pion gekozen, ICollection<IVeld> mogelijk)
+//        {
+//            throw new NotImplementedException();
+//        }
 
         public int Gedobbeld { get; set; }
+        public Speler IsAanBeurt { get; set; }
+        public void Gewonnen(Speler speler)
+        {
+            Console.WriteLine(@"Speler " + speler.Name + @" heeft gewonnen!");
+        }
+
         public Speler AanDeBeurt { get; set; }
         public async Task<int> DobbelTask()
         {
